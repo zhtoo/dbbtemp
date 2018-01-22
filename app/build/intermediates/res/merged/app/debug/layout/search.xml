@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/search_container"
+              android:layout_width="@dimen/x625"
+              android:layout_height="@dimen/y800"
+              android:layout_marginRight="@dimen/x10"
+              android:background="@drawable/ic_search_menu_bg"
+              android:baselineAligned="false"
+              android:focusable="true"
+              android:focusableInTouchMode="true"
+              android:gravity="center_horizontal"
+              android:orientation="vertical">
+    <!--@drawable/ic_search_menu_bg-->
+
+    <EditText
+        android:id="@+id/search_name"
+        style="@style/main_search_edittext_style"
+        android:layout_width="@dimen/x590"
+        android:layout_height="@dimen/y64"
+        android:layout_marginLeft="@dimen/x1"
+        android:background="@drawable/ic_search_edit_bg"
+        android:hint="输入客户名称/门店名称/电话号进行搜索"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/x5">
+
+        <TextView
+            android:layout_width="@dimen/x200"
+            android:layout_height="@dimen/y64"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/x38"
+            android:text="贷款类别："/>
+
+
+        <Spinner
+            android:id="@+id/search_load_type"
+            android:layout_width="@dimen/x350"
+            android:layout_height="@dimen/y64"
+            android:background="@drawable/ic_search_spinner"
+            android:dropDownHorizontalOffset="@dimen/x12"
+            android:gravity="center"
+            android:dropDownVerticalOffset="@dimen/y64"
+            android:dropDownWidth="@dimen/x280"
+            android:entries="@array/search_loan_categories"
+
+            android:paddingLeft="@dimen/x12"
+            android:spinnerMode="dropdown"
+            android:textSize="@dimen/x28"/>
+        <!--
+          android:background="@drawable/bg_edit_text_corner"
+            android:drawableRight="@drawable/ic_search_arrow"
+        -->
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/x5">
+
+        <TextView
+            android:layout_width="@dimen/x200"
+            android:layout_height="@dimen/y64"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/x38"
+            android:text="贷款期限："/>
+
+
+        <Spinner
+            android:id="@+id/search_load_periods"
+            android:layout_width="@dimen/x350"
+            android:layout_height="@dimen/y64"
+            android:background="@drawable/ic_search_spinner"
+            android:dropDownHorizontalOffset="@dimen/x12"
+            android:dropDownVerticalOffset="@dimen/y64"
+            android:dropDownWidth="@dimen/x280"
+            android:entries="@array/search_loan_periods_arr"
+            android:paddingLeft="@dimen/x12"
+            android:spinnerMode="dropdown"
+            android:textSize="@dimen/x28"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/x5">
+
+        <TextView
+            android:layout_width="@dimen/x200"
+            android:layout_height="@dimen/y64"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/x38"
+            android:text="状态："/>
+
+
+        <Spinner
+            android:id="@+id/search_load_status"
+            android:layout_width="@dimen/x350"
+            android:layout_height="@dimen/y64"
+            android:layout_gravity="center_horizontal"
+            android:animationCache="true"
+            android:background="@drawable/ic_search_spinner"
+            android:drawableRight="@drawable/ic_search_arrow"
+            android:dropDownHorizontalOffset="@dimen/x12"
+            android:dropDownVerticalOffset="@dimen/y64"
+            android:dropDownWidth="@dimen/x280"
+            android:entries="@array/search_load_status_arr"
+            android:paddingLeft="@dimen/x12"
+            android:spinnerMode="dropdown"
+            android:textSize="@dimen/x28"
+            android:textColor = "#999999"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="@dimen/x200"
+        android:layout_height="@dimen/y64"
+        android:layout_gravity="left"
+        android:gravity="center|left"
+        android:paddingLeft="@dimen/x38"
+        android:text="金额范围："/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/search_account_start"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y64"
+            android:layout_marginLeft="@dimen/x56"
+            android:background="@drawable/bg_edit_text_corner"
+            android:hint="请输入"
+            android:gravity="center|left"
+            android:inputType="numberDecimal"
+            android:textSize="@dimen/x24"/>
+
+        <TextView
+            android:layout_width="@dimen/x48"
+            android:layout_height="@dimen/y64"
+            android:layout_marginLeft="@dimen/x13"
+            android:text="万元"
+            android:textSize="@dimen/x24"/>
+
+        <ImageView
+            android:layout_width="@dimen/x38"
+            android:layout_height="@dimen/y2"
+            android:layout_marginLeft="@dimen/x19"
+            android:layout_marginRight="@dimen/x19"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_dotted_line"/>
+
+        <EditText
+            android:id="@+id/search_account_end"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y64"
+            android:background="@drawable/bg_edit_text_corner"
+            android:hint="请输入"
+            android:gravity="center|left"
+            android:inputType="numberDecimal"
+            android:textSize="@dimen/x24"/>
+
+        <TextView
+            android:layout_width="@dimen/x48"
+            android:layout_height="@dimen/y64"
+            android:layout_marginLeft="@dimen/x13"
+            android:text="万元"
+            android:textSize="@dimen/x24"/>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="@dimen/x200"
+        android:layout_height="@dimen/y64"
+        android:layout_gravity="left"
+        android:gravity="center|left"
+        android:paddingLeft="@dimen/x38"
+        android:text="申请时间："/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/search_apply_time_start"
+            style="@style/search_date_style"
+            android:layout_marginLeft="@dimen/x56"
+            android:text="开始日期"/>
+
+        <ImageView
+            android:layout_width="@dimen/x38"
+            android:layout_height="@dimen/y2"
+            android:layout_marginLeft="@dimen/x19"
+            android:layout_marginRight="@dimen/x19"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_dotted_line"/>
+
+        <TextView
+            android:id="@+id/search_apply_time_end"
+            style="@style/search_date_style"
+            android:text="结束日期"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y70"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View style="@style/autoFillStyle"/>
+
+        <Button
+            android:id="@+id/search_reset"
+            android:layout_width="@dimen/x180"
+            android:layout_height="@dimen/y54"
+            android:background="@drawable/ic_reset_bt_selector"
+            android:onClick="resetSearch"
+            android:text="重置"
+            android:textColor="@color/textGray"
+            android:textSize="@dimen/x24"/>
+
+        <View
+            style="@style/autoFillStyle"/>
+
+        <Button
+            android:id="@+id/search_start"
+            android:layout_width="@dimen/x180"
+            android:layout_height="@dimen/y54"
+            android:background="@drawable/ic_complete_bt_selector"
+            android:onClick="startSearch"
+            android:text="完成"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x24"/>
+
+        <View
+            style="@style/autoFillStyle"/>
+
+    </LinearLayout>
+
+</LinearLayout>

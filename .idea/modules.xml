@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/autolayout/autolayout.iml" filepath="$PROJECT_DIR$/autolayout/autolayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/citypicker/citypicker.iml" filepath="$PROJECT_DIR$/citypicker/citypicker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/datepicker/datepicker.iml" filepath="$PROJECT_DIR$/datepicker/datepicker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dbbtemp.iml" filepath="$PROJECT_DIR$/dbbtemp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pickphotoview/pickphotoview.iml" filepath="$PROJECT_DIR$/pickphotoview/pickphotoview.iml" />
+    </modules>
+  </component>
+</project>

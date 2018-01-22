@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/expandable_view_clickable_content"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y90">
+
+        <ImageView
+            android:id="@+id/expandable_view_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x30"/>
+
+        <TextView
+            android:id="@+id/expandable_view_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="#222"
+            android:textSize="@dimen/x28"
+            android:layout_marginLeft="@dimen/x30"
+            android:layout_toRightOf="@id/expandable_view_image"/>
+
+        <ImageView
+            android:id="@+id/expandable_view_right_icon"
+            android:layout_width="@dimen/x31"
+            android:layout_height="@dimen/y22"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:src="@drawable/ic_expandacle_icon"/>
+        <!--分割线-->
+        <View
+            android:visibility="gone"
+            android:id="@+id/expandable_view_separator"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y2"
+            android:layout_alignParentBottom="true"
+            android:background="@color/lineBackground"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/expandable_view_content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/expandable_view_clickable_content"
+        android:orientation="vertical">
+    </LinearLayout>
+</merge>

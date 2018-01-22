@@ -1,0 +1,409 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:windowBackground">@drawable/bg_start_page</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- 网络加载等待动画（自定义dialog的样式） -->
+    <style name="CustomDialog" parent="android:Theme.Dialog">
+        <item name="android:backgroundDimAmount">0.4</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <!--菜单条目文字-->
+    <style name="menu_item_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/x80</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/x28</item>
+        <item name="android:textColor">@drawable/menu_text_selector</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:drawablePadding">@dimen/x22</item>
+        <item name="android:paddingLeft">@dimen/x20</item>
+    </style>
+
+    <!-- 横向线条 -->
+    <style name="horizontalLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/x1</item>
+        <item name="android:background">@color/lineBackground</item>
+    </style>
+
+    <!-- 横向线条 -->
+    <style name="verticalLine">
+        <item name="android:layout_width">@dimen/x1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/lineBackground</item>
+    </style>
+
+    <style name="detail_item_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:background">@drawable/bg_detail_selector</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@drawable/detail_text_selector</item>
+
+    </style>
+<!--主界面的搜索文字-->
+    <style name="main_search_text_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/x25</item>
+        <item name="android:layout_marginLeft">@dimen/x25</item>
+        <item name="android:textSize">@dimen/x28</item>
+    </style>
+    <!--主界面的搜索文字-->
+    <style name="main_search_edittext_style">
+        <item name="android:layout_width">@dimen/x400</item>
+        <item name="android:layout_height">@dimen/y44</item>
+        <item name="android:layout_marginTop">@dimen/x19</item>
+        <item name="android:layout_marginLeft">@dimen/x25</item>
+        <item name="android:drawableLeft">@drawable/ic_search</item>
+        <item name="android:drawablePadding">@dimen/x14</item>
+        <item name="android:paddingLeft">@dimen/x24</item>
+        <item name="android:textSize">@dimen/x24</item>
+        <item name="android:background">@drawable/bg_edit_text_bg</item>
+    </style>
+<!--自动填充布局（线性布局使用）-->
+    <style name="autoFillStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="referenceItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/y60</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@color/whiteBackground</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="referenceText1">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">@dimen/y60</item>
+        <item name="android:layout_marginLeft">@dimen/x36</item>
+        <item name="android:textColor">@color/textGray</item>
+    </style>
+
+    <style name="referenceText2">
+        <item name="android:layout_marginLeft">@dimen/x200</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxWidth">@dimen/x320</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">@dimen/y60</item>
+        <item name="android:textColor">@color/textAggravating</item>
+    </style>
+
+    <style name="referenceText3">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">@dimen/y60</item>
+        <item name="android:layout_marginRight">@dimen/x36</item>
+        <item name="android:maxWidth">@dimen/x150</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:textColor">@color/textOrange</item>
+    </style>
+
+
+    <style name="referenceText4">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">@dimen/y60</item>
+        <item name="android:layout_marginRight">@dimen/x36</item>
+        <item name="android:maxWidth">@dimen/x400</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:textColor">@color/textAggravating</item>
+    </style>
+
+
+    <style name="referenceEditText5">
+        <item name="android:layout_width">@dimen/x200</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/y60</item>
+        <item name="android:layout_marginRight">@dimen/x36</item>
+        <item name="android:maxWidth">@dimen/x400</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:gravity">right|center</item>
+        <item name="android:textColor">@color/textAggravating</item>
+        <item name="android:textSize">@dimen/x28</item>
+    </style>
+
+    <style name="search_date_style">
+        <item name="android:layout_width">@dimen/x230</item>
+        <item name="android:layout_height">@dimen/y64</item>
+        <item name="android:gravity">center</item>
+        <item name="android:drawableRight">@drawable/ic_del</item>
+        <item name="android:paddingRight">@dimen/x25</item>
+        <item name="android:background">@drawable/bg_edit_text_corner</item>
+        <item name="android:textSize">@dimen/x24</item>
+    </style>
+
+
+    <style name="expandableListChildItem">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/y60</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/x28</item>
+        <item name="android:singleLine">true</item>
+
+    </style>
+    <style name="expandableListChildItem1" parent="expandableListChildItem">
+        <item name="android:textColor">#808080</item>
+    </style>
+
+    <style name="expandableListChildItem2" parent="expandableListChildItem">
+        <item name="android:textColor">#000000</item>
+    </style>
+
+<!--填表界面Item得样式-->
+    <style name="filloutItemLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:layout_height">@dimen/y90</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="filloutItemText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/x30</item>
+        <item name="android:textSize">@dimen/x28</item>
+    </style>
+
+
+    <style name="filloutItemTextRight">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">@dimen/x30</item>
+        <item name="android:textSize">@dimen/x28</item>
+    </style>
+
+    <style name="filloutItemEdit">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColorHint">@color/textGray</item>
+        <item name="android:layout_marginRight">@dimen/x30</item>
+        <item name="android:theme">@style/MyEditText</item>
+        <item name="android:textSize">@dimen/x28</item>
+    </style>
+
+
+    <style name="filloutItemEditRight"  parent="filloutItemEdit">
+        <item name="android:layout_marginRight">@dimen/x10</item>
+    </style>
+
+    <!--ImageView-->
+    <style name="filloutImageStyle">
+        <item name="android:layout_width">@dimen/x30</item>
+        <item name="android:layout_marginRight">@dimen/x30</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:contentDescription">@null</item>
+        <item name="android:src">@drawable/ic_arrow_right</item>
+    </style>
+
+
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+        <!--失去焦点的时候-->
+        <item name="colorControlNormal">@color/transparent</item>
+        <!--获取焦点的时候-->
+        <item name="colorControlActivated">@color/dialog_button_ensure</item>
+    </style>
+
+
+<!--自定义主题样式-->
+    <style name="MyRadioButton" parent="Theme.AppCompat.Light">
+        <!--失去焦点的时候-->
+        <item name="colorControlNormal">@color/textGray</item>
+        <!--获取焦点的时候-->
+        <item name="colorControlActivated">@color/dialog_button_ensure</item>
+    </style>
+
+<!--自定义-->
+    <style name="MyCheckBox" parent="Theme.AppCompat.Light">
+        <!--失去焦点的时候-->
+        <item name="colorControlNormal">@color/textGray</item>
+        <!--获取焦点的时候-->
+        <item name="colorControlActivated">@color/dialog_button_ensure</item>
+    </style>
+
+    <style name="radio_bt_style">
+        <item name="android:layout_width">@dimen/x200</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/x30</item>
+        <item name="android:theme">@style/MyRadioButton</item>
+        <item name="android:textColor">#777777</item>
+    </style>
+
+    <style name="evaluationContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/y80</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="evaluationText01">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/x30</item>
+        <item name="android:textColor">#000000</item>
+
+    </style>
+
+    <style name="evaluationText02">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">@dimen/x10</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="evaluationEdit">
+        <item name="android:layout_width">@dimen/x120</item>
+        <item name="android:layout_height">@dimen/y46</item>
+        <item name="android:textSize">@dimen/x24</item>
+        <item name="android:layout_marginRight">@dimen/x10</item>
+        <item name="android:paddingLeft">@dimen/x10</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/bg_edit_corner</item>
+    </style>
+
+    <style name="evaluationText03">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">@dimen/x30</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="evaluationStandardRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/y80</item>
+        <item name="android:layout_marginLeft">1dp</item>
+        <item name="android:layout_marginRight">1dp</item>
+        <item name="android:layout_marginTop">1dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+
+
+    <style name="evaluationStandardRowText">
+        <item name="android:paddingLeft">@dimen/x10</item>
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">#FFF</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="evaluationStandardRowText01" parent="evaluationStandardRowText">
+        <item name="android:layout_marginRight">1dp</item>
+    </style>
+
+    <style name="evaluationStandardRowText02" parent="evaluationStandardRowText">
+    </style>
+
+    <style name="addLoanTable">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">@dimen/y269</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="addLoanTableText">
+        <item name="android:layout_marginTop">@dimen/x5</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="addTableIcon">
+        <item name="android:layout_width">@dimen/x168</item>
+        <item name="android:layout_height">@dimen/y168</item>
+    </style>
+
+    <style name="loanEvaluationQueryText01">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/x30</item>
+    </style>
+
+    <style name="loanEvaluationQueryEdit">
+        <item name="android:layout_width">@dimen/x300</item>
+        <item name="android:layout_height">wrap_content</item>
+
+        <item name="android:paddingRight">@dimen/x20</item>
+        <item name="android:gravity">right|center</item>
+    </style>
+
+    <style name="loanEvaluationQueryText02">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">@dimen/x30</item>
+    </style>
+
+    <style name="filloutLinearLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">#FFFFFF</item>
+    </style>
+
+    <style name="filloutRadioButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:theme">@style/MyRadioButton</item>
+        <item name="android:layout_marginRight">@dimen/x30</item>
+        <item name="android:textSize">@dimen/x28</item>
+    </style>
+
+    <style name="investigaOpinionEdit">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/y200</item>
+        <item name="android:background">@null</item>
+        <item name="android:paddingTop">@dimen/y10</item>
+        <item name="android:textCursorDrawable">@drawable/edit_cursor_color</item>
+        <item name="android:paddingLeft">@dimen/x30</item>
+        <item name="android:gravity">left|top</item>
+        <item name="android:textSize">@dimen/x26</item>
+    </style>
+
+    <style name="investigaOpinionCheckBox">
+        <item name="android:theme">@style/MyCheckBox</item>
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/x26</item>
+    </style>
+
+    <style name="investigaOpinionCheckBoxLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/x20</item>
+        <item name="android:paddingRight">@dimen/x20</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+
+</resources>

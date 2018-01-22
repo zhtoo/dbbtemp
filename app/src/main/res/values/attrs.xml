@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="BaseDoT">
+        <attr name="circleColor" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="BaseDoTView">
+        <attr name="slideCount" format="integer|reference" />
+        <attr name="selectPosition" format="integer|reference" />
+        <attr name="selectedIndicatorColor" format="color|reference" />
+        <attr name="unselectedIndicatorColor" format="color|reference" />
+        <attr name="circleRadius" format="dimension|reference" />
+    </declare-styleable>
+
+
+    <!--ArcProgressView-->
+    <declare-styleable name="ArcProgressView">
+        <attr name="arcCircleWidth" format="float"/>
+        <attr name="arcProgress" format="float"/>
+        <attr name="arcProgressMax" format="float"/>
+        <attr name="arcStartAngle" format="float"/>
+        <attr name="arcMaxAngle" format="float"/>
+        <attr name="arcBackgroundColor" format="color"/>
+        <attr name="arcProgressColor" format="color"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="HstogramView">
+        <attr name="startColor" format="color"/>
+        <attr name="endColor" format="color"/>
+        <attr name="lineColor" format="color"/>
+        <attr name="normalBarChartColor" format="color"/>
+        <attr name="spacing" format="dimension"/>
+        <attr name="allTextSize" format="dimension"/>
+        <attr name="allTextColor" format="color"/>
+        <attr name="equal" format="integer"/>
+    </declare-styleable>
+
+    <!--圆形的ImageView-->
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension"/>
+        <attr name="civ_border_color" format="color"/>
+        <attr name="civ_border_overlay" format="boolean"/>
+        <attr name="civ_fill_color" format="color"/>
+    </declare-styleable>
+
+</resources>

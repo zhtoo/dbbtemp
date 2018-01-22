@@ -1,0 +1,1058 @@
+[
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_approval.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_approval.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\citypickerview.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\me.leefeng\\citypicker\\1.0\\res\\layout\\citypickerview.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_video_choose.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\item_video_choose.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_pictrue_choose.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\item_pictrue_choose.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_contact_infor.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_contact_infor.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_invalid_list.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\item_invalid_list.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_recycler.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\item_recycler.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\fragment_pictrue.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\fragment_pictrue.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_contact_infor.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_contact_infor.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\fragment_reference.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\fragment_reference.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_navigation_item.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_navigation_item.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_evaluation_standard.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_evaluation_standard.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\notification_action.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_action.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_applyload_child.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\item_applyload_child.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\fragment_fillout_live_info.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\fragment_fillout_live_info.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_lender_info_optional.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_lender_info_optional.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_layout_snackbar_include.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_search_view.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_mutual_lender_info.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_mutual_lender_info.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_risk_control_approval.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_risk_control_approval.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_pictrue_fragment.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\item_pictrue_fragment.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_bottom_navigation_item.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_bottom_navigation_item.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\expandable_view.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\expandable_view.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_text_input_password_icon.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_text_input_password_icon.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\layout_title_bar.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\layout_title_bar.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\fragment_video.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\fragment_video.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\main.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\main.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\menu.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\menu.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_navigation_item.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_navigation_item.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_video_list.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\item_video_list.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\fragment_fillout_live_info.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\fragment_fillout_live_info.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_navigation_item_subheader.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\pick_item_list_layout.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\dbbtemp\\pickphotoview\\unspecified\\res\\layout\\pick_item_list_layout.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_bottom_sheet_dialog.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_bottom_sheet_dialog.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\pick_widget_my_toolbar.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\dbbtemp\\pickphotoview\\unspecified\\res\\layout\\pick_widget_my_toolbar.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\load_waiting.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\load_waiting.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_pager_image.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\item_pager_image.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_detail.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_detail.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_invalid_reason.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_invalid_reason.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\pick_widget_my_toolbar.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\dbb2\\pickphotoview\\unspecified\\res\\layout\\pick_widget_my_toolbar.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_mian.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\item_mian.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\notification_template_lines_media.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_template_lines_media.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_navigation_item_subheader.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_detail_particulars.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\item_detail_particulars.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_video_list.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_video_list.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\dialog_bottom_select.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\bottomdialog\\res\\layout\\dialog_bottom_select.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_pictrue_choose.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\item_pictrue_choose.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\notification_template_lines_media.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_template_lines_media.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_department_statistics.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_department_statistics.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_ds_viewpager.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\item_ds_viewpager.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\fragment_particulars.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\fragment_particulars.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_text_input_password_icon.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_text_input_password_icon.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_department_trial.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_department_trial.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_spinner_dropdown.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\item_spinner_dropdown.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_layout_tab_text.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_layout_tab_text.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_investiga_opinion.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_investiga_opinion.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_apply_load.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_apply_load.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_applyload_parent.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\item_applyload_parent.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\notification_template_icon_group.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_navigation_menu.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_navigation_menu.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\dialog_reason_not_pass.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\dialog_reason_not_pass.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_guide.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_guide.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_screen_simple.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_contact_info01.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\item_contact_info01.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_navigation_menu.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_navigation_menu.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_the_loans.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_the_loans.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\pick_activity_pick_photo.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\dbb2\\pickphotoview\\unspecified\\res\\layout\\pick_activity_pick_photo.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_screen_simple.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_bottom_navigation_item.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_bottom_navigation_item.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_recycler.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\item_recycler.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\notification_template_icon_group.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_navigation_item_separator.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_navigation_item_separator.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_alert_dialog_title_material.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_alert_dialog_title_material.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_contact_info03.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\item_contact_info03.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_mutual_lender_info.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_mutual_lender_info.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_navigation_item_separator.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_navigation_item_separator.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_lender_info_optional.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_lender_info_optional.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\dialog_wheel_select_week.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\dbb2\\datepicker\\unspecified\\res\\layout\\dialog_wheel_select_week.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\notification_template_media.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\layout_null.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\layout_null.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\layout_null.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\layout_null.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_layout_tab_text.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_layout_tab_text.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\cube_ptr_simple_loading.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\UltraPTR\\res\\layout\\cube_ptr_simple_loading.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\dialog_reason_not_pass.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\dialog_reason_not_pass.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\dialog_edit_text.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\bottomdialog\\res\\layout\\dialog_edit_text.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_video_list.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_video_list.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_general_manager_approval.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_general_manager_approval.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_car_infor.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_car_infor.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\notification_action_tombstone.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\pick_widget_select_layout.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\dbb2\\pickphotoview\\unspecified\\res\\layout\\pick_widget_select_layout.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_invalid_list.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_invalid_list.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_add_loan_table.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_add_loan_table.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\search.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\search.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\fragment_reference.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\fragment_reference.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_imagepager.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_imagepager.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_app_bar.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_app_bar.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_department_trial.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_department_trial.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_navigation_menu_item.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_navigation_item_header.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_navigation_item_header.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\pick_activity_pick_photo.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\dbbtemp\\pickphotoview\\unspecified\\res\\layout\\pick_activity_pick_photo.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_mian.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\item_mian.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\pick_item_grid_layout.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\dbb2\\pickphotoview\\unspecified\\res\\layout\\pick_item_grid_layout.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\menu.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\menu.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_menu_item_action_area.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_menu_item_action_area.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\notification_action.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_action.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\main.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\main.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_contact_info02.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\item_contact_info02.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\citypickerview.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\me.leefeng\\citypicker\\1.0\\res\\layout\\citypickerview.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_fillout_lender_information.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_fillout_lender_information.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_pictrue_title_fragment.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\item_pictrue_title_fragment.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_guide.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_guide.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\cube_ptr_classic_default_header.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\UltraPTR\\res\\layout\\cube_ptr_classic_default_header.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_video_choose.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\item_video_choose.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_layout_snackbar_include.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_loan_evaluation.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_loan_evaluation.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\pick_item_camera_layout.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\dbb2\\pickphotoview\\unspecified\\res\\layout\\pick_item_camera_layout.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_upload_video.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_upload_video.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_detail.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_detail.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_applyload_parent.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\item_applyload_parent.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\pick_activty_preview_photo.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\dbb2\\pickphotoview\\unspecified\\res\\layout\\pick_activty_preview_photo.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\notification_template_media_custom.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_template_media_custom.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\fragment_fillout_basic_info.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\fragment_fillout_basic_info.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\cube_ptr_classic_default_header.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\UltraPTR\\res\\layout\\cube_ptr_classic_default_header.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_menu_item_action_area.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_menu_item_action_area.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\pick_item_camera_layout.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\dbbtemp\\pickphotoview\\unspecified\\res\\layout\\pick_item_camera_layout.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\fragment_fillout_asset_info.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\fragment_fillout_asset_info.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\pick_widget_select_layout.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\dbbtemp\\pickphotoview\\unspecified\\res\\layout\\pick_widget_select_layout.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\pick_item_grid_layout.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\dbbtemp\\pickphotoview\\unspecified\\res\\layout\\pick_item_grid_layout.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_loan_evaluation.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_loan_evaluation.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\fragment_particulars.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\fragment_particulars.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\dialog_wheel_select_date.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\dbbtemp\\datepicker\\unspecified\\res\\layout\\dialog_wheel_select_date.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_fillout_lender_information.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_fillout_lender_information.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_approval.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_approval.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\fragment_upload_video.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\fragment_upload_video.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_login.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_the_loans.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_the_loans.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_spinner_simple.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\item_spinner_simple.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_department_statistics.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_department_statistics.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\dialog_wheel_select_week.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\dbbtemp\\datepicker\\unspecified\\res\\layout\\dialog_wheel_select_week.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\notification_template_part_time.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_video_fragment.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\item_video_fragment.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\notification_template_media_custom.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_template_media_custom.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\fragment_fillout_asset_info.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\fragment_fillout_asset_info.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_pager_image.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\item_pager_image.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_main.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_invalid_list.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_invalid_list.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_navigation_item_header.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_navigation_item_header.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\fragment_upload_picture.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\fragment_upload_picture.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_spinner_simple.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\item_spinner_simple.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_contact_info04.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\item_contact_info04.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_investiga_opinion.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_investiga_opinion.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\dialog_bottom_select.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\bottomdialog\\res\\layout\\dialog_bottom_select.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\search.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\search.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_search_view.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_general_manager_approval.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_general_manager_approval.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_invalid_list.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\item_invalid_list.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_ds_viewpager.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\item_ds_viewpager.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_video_list.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\item_video_list.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\pick_activty_preview_photo.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\dbbtemp\\pickphotoview\\unspecified\\res\\layout\\pick_activty_preview_photo.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\notification_template_part_time.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_video_fragment.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\item_video_fragment.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_contact_info01.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\item_contact_info01.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_upload_picture.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_upload_picture.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_contact_info04.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\item_contact_info04.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\dialog_wheel_select_date.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\dbb2\\datepicker\\unspecified\\res\\layout\\dialog_wheel_select_date.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_spinner_dropdown.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\item_spinner_dropdown.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\load_waiting.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\load_waiting.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\dialog_wheel_select_time.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\dbb2\\datepicker\\unspecified\\res\\layout\\dialog_wheel_select_time.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\fragment_upload_picture.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\fragment_upload_picture.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_contact_info03.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\item_contact_info03.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_navigation_menu_item.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\cube_ptr_simple_loading.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\UltraPTR\\res\\layout\\cube_ptr_simple_loading.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_invalid_reason.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_invalid_reason.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\fragment_video.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\fragment_video.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_contact_info02.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\item_contact_info02.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\fragment_upload_video.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\fragment_upload_video.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_car_infor.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_car_infor.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_detail_particulars.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\item_detail_particulars.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_pictrue_title_fragment.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\item_pictrue_title_fragment.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_login.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\pick_item_list_layout.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\dbb2\\pickphotoview\\unspecified\\res\\layout\\pick_item_list_layout.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\dialog_edit_text.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\bottomdialog\\res\\layout\\dialog_edit_text.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\notification_action_tombstone.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_layout_snackbar.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_layout_snackbar.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_upload_picture.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_upload_picture.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_evaluation_standard.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_evaluation_standard.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_main.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\fragment_fillout_basic_info.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\fragment_fillout_basic_info.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_layout_tab_icon.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_layout_tab_icon.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_layout_snackbar.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_layout_snackbar.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_risk_control_approval.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_risk_control_approval.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\layout_title_bar.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\layout_title_bar.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_pictrue_fragment.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\item_pictrue_fragment.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_app_bar.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\activity_app_bar.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_bottom_sheet_dialog.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_bottom_sheet_dialog.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_alert_dialog_title_material.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_alert_dialog_title_material.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\item_applyload_child.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\item_applyload_child.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_upload_video.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_upload_video.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\expandable_view.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\expandable_view.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\fragment_pictrue.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\layout\\fragment_pictrue.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\dialog_wheel_select_time.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\dbbtemp\\datepicker\\unspecified\\res\\layout\\dialog_wheel_select_time.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\notification_template_media.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\design_layout_tab_icon.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\layout\\design_layout_tab_icon.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_imagepager.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_imagepager.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_apply_load.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_apply_load.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\layout\\activity_add_loan_table.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\layout\\activity_add_loan_table.xml"
+    }
+]

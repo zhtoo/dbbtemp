@@ -1,0 +1,7 @@
+#Mon Jan 22 15:52:57 CST 2018
+base.0=E\:\\github\\dbbtemp\\app\\build\\intermediates\\transforms\\dex\\app\\debug\\folders\\1000\\10\\instant-run-bootstrap_28c23606936d58a27d12ecf6b4c41317196dd5ab
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=E\:\\github\\dbbtemp\\app\\build\\intermediates\\transforms\\dex\\app\\debug\\folders\\1000\\10\\instant-run_4a61cff37e304e647d21d3d3d0ca43171dda342e\\classes.dex
+base.1=E\:\\github\\dbbtemp\\app\\build\\intermediates\\transforms\\dex\\app\\debug\\folders\\1000\\10\\instant-run_4a61cff37e304e647d21d3d3d0ca43171dda342e
+file.0=E\:\\github\\dbbtemp\\app\\build\\intermediates\\transforms\\dex\\app\\debug\\folders\\1000\\10\\instant-run-bootstrap_28c23606936d58a27d12ecf6b4c41317196dd5ab\\classes.dex

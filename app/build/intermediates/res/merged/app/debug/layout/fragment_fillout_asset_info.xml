@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#f3f4f5"
+            android:orientation="vertical"
+            android:scrollIndicators="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            style="@style/horizontalLine"
+            android:layout_marginTop="@dimen/y10"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/lender_own_house_address"
+                style="@style/filloutItemLayout">
+
+                <TextView
+                    style="@style/filloutItemText"
+                    android:text="自有房产地址："/>
+
+                <View style="@style/autoFillStyle"/>
+
+                <TextView
+                    android:id="@+id/lender_own_address_edit"
+                    style="@style/filloutItemEdit"
+                    android:layout_marginRight="0px"
+                    android:text="请选择"/>
+
+                <ImageView style="@style/filloutImageStyle"/>
+
+            </LinearLayout>
+
+
+            <View
+                style="@style/horizontalLine"
+                android:layout_marginLeft="@dimen/y22"/>
+
+            <LinearLayout style="@style/filloutItemLayout">
+
+                <TextView
+                    style="@style/filloutItemText"
+                    android:text="街道："/>
+
+                <View style="@style/autoFillStyle"/>
+
+                <EditText
+                    android:id="@+id/lender_own_street_edit"
+                    style="@style/filloutItemEdit"
+                    android:hint="乡镇/街道/小区/楼"/>
+
+            </LinearLayout>
+
+            <View style="@style/horizontalLine"/>
+
+        </LinearLayout>
+
+
+        <View
+            style="@style/horizontalLine"
+            android:layout_marginTop="@dimen/y10"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/filloutItemLayout">
+
+                <TextView
+                    style="@style/filloutItemText"
+                    android:text="自有房产建筑面积："/>
+
+                <View
+                    style="@style/autoFillStyle"/>
+
+                <EditText
+                    android:id="@+id/lender_own_house_area_edit"
+                    style="@style/filloutItemEdit"
+                    android:layout_marginRight="@dimen/x10"
+                    android:inputType="numberDecimal"
+                    android:hint="请输入面积"/>
+
+                <TextView
+                    style="@style/filloutItemText"
+                    android:layout_marginLeft="0px"
+                    android:layout_marginRight="@dimen/x30"
+                    android:text="m²"/>
+
+            </LinearLayout>
+
+            <View
+                style="@style/horizontalLine"
+                android:layout_marginLeft="@dimen/y22"/>
+
+            <LinearLayout
+                android:id="@+id/lender_own_house_property"
+                style="@style/filloutItemLayout">
+
+                <TextView
+
+                    style="@style/filloutItemText"
+                    android:text="自有房产性质："/>
+
+                <View style="@style/autoFillStyle"/>
+
+                <TextView
+                    android:id="@+id/lender_own_house_property_edit"
+                    style="@style/filloutItemEdit"
+                    android:layout_marginRight="0px"
+                    android:text="请选择"/>
+
+                <ImageView style="@style/filloutImageStyle"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/lender_buildPrice"
+                style="@style/filloutItemLayout">
+
+                <TextView
+                    style="@style/filloutItemText"
+                    android:text="每月需要还："/>
+
+                <View
+                    style="@style/autoFillStyle"/>
+
+                <EditText
+                    android:id="@+id/lender_buildPrice_edit"
+                    style="@style/filloutItemEdit"
+                    android:inputType="numberDecimal"
+                    android:layout_marginRight="@dimen/x10"
+                    android:hint="请输入还款金额"/>
+
+                <TextView
+                    style="@style/filloutItemText"
+                    android:layout_marginLeft="0px"
+                    android:layout_marginRight="@dimen/x30"
+                    android:text="元"/>
+
+            </LinearLayout>
+
+            <View
+                style="@style/horizontalLine"
+                android:layout_marginLeft="@dimen/y22"/>
+
+            <LinearLayout
+                style="@style/filloutItemLayout">
+
+                <TextView
+                    style="@style/filloutItemText"
+                    android:text="工资月收入："/>
+
+                <View
+                    style="@style/autoFillStyle"/>
+
+                <EditText
+                    android:inputType="numberDecimal"
+                    android:id="@+id/lender_monthly_income_edit"
+                    style="@style/filloutItemEdit"
+                    android:layout_marginRight="@dimen/x10"
+                    android:hint="请输入金额"/>
+
+                <TextView
+                    style="@style/filloutItemText"
+                    android:layout_marginLeft="0px"
+                    android:layout_marginRight="@dimen/x30"
+                    android:text="元"/>
+
+            </LinearLayout>
+
+            <View style="@style/horizontalLine"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>

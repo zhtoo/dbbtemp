@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/menu"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/x590"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/menu_logo_bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y420"
+        android:background="@drawable/ic_menu_header"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/menu_person_name"
+            android:layout_width="@dimen/x260"
+            android:layout_height="@dimen/y105"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/x270"
+            android:background="@drawable/ic_menu_name_bg"
+            android:gravity="center"
+            android:text="客服大倩"/>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_menu"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <!-- ScrollView只能有一个直接的子孩子 -->
+            <LinearLayout
+                android:id="@+id/ll_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x59"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <!--贷款申请-->
+                <LinearLayout
+                    android:id="@+id/menu_loan_apply"
+                    android:onClick="onLoanApplyClick"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x80"
+                    android:layout_marginTop="@dimen/x20"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/x34"
+                        android:layout_height="@dimen/y40"
+                        android:src="@drawable/ic_risk_selector"
+                        android:layout_marginLeft="@dimen/x188" />
+
+                    <TextView
+                        style="@style/menu_item_text_style"
+                        android:text="贷款申请"/>
+
+                    <com.hs.doubaobao.view.DotView
+                        android:visibility="gone"
+                        android:id="@+id/menu_loan_apply_dot"
+                        android:layout_marginBottom="@dimen/y15"
+                        android:layout_width="@dimen/x20"
+                        android:layout_height="@dimen/y20"/>
+
+                </LinearLayout>
+                <!--部门初审-->
+                <LinearLayout
+                    android:id="@+id/menu_department_trial"
+                    android:onClick="onDepartmentTrialClick"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x80"
+                    android:layout_marginTop="@dimen/x20"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/x34"
+                        android:layout_height="@dimen/y40"
+                        android:src="@drawable/ic_risk_selector"
+                        android:layout_marginLeft="@dimen/x188" />
+
+                    <TextView
+                        style="@style/menu_item_text_style"
+                        android:text="部门初审"/>
+
+                    <com.hs.doubaobao.view.DotView
+                        android:visibility="gone"
+                        android:id="@+id/menu_department_trial_dot"
+                        android:layout_marginBottom="@dimen/y15"
+                        android:layout_width="@dimen/x20"
+                        android:layout_height="@dimen/y20"/>
+
+                </LinearLayout>
+                <!--部门统计-->
+                <LinearLayout
+                    android:id="@+id/menu_department_statistics"
+                    android:onClick="onDepartmentStatisticsClick"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x80"
+                    android:layout_marginTop="@dimen/x20"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/x34"
+                        android:layout_height="@dimen/y40"
+                        android:src="@drawable/ic_risk_selector"
+                        android:layout_marginLeft="@dimen/x188" />
+
+                    <TextView
+                        style="@style/menu_item_text_style"
+                        android:text="部门统计"/>
+
+                    <com.hs.doubaobao.view.DotView
+                        android:visibility="gone"
+                        android:id="@+id/menu_loan_evaluation_dot"
+                        android:layout_marginBottom="@dimen/y15"
+                        android:layout_width="@dimen/x20"
+                        android:layout_height="@dimen/y20"/>
+
+                </LinearLayout>
+                <!--门店一审-->
+                <LinearLayout
+                    android:id="@+id/menu_store_instance"
+                    android:onClick="onStoreInstanceClick"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x80"
+                    android:layout_marginTop="@dimen/x20"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/x34"
+                        android:layout_height="@dimen/y40"
+                        android:src="@drawable/ic_risk_selector"
+                        android:layout_marginLeft="@dimen/x188" />
+
+                    <TextView
+                        style="@style/menu_item_text_style"
+                        android:text="门店一审"/>
+
+                    <com.hs.doubaobao.view.DotView
+                        android:visibility="gone"
+                        android:id="@+id/menu_store_instance_dot"
+                        android:layout_marginBottom="@dimen/y15"
+                        android:layout_width="@dimen/x20"
+                        android:layout_height="@dimen/y20"/>
+
+                </LinearLayout>
+
+
+                <!--风控审批-->
+                <LinearLayout
+                    android:id="@+id/menu_risk"
+                    android:onClick="onRiskClick"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x80"
+                    android:layout_marginTop="@dimen/x20"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/x34"
+                        android:layout_height="@dimen/y40"
+                        android:src="@drawable/ic_risk_selector"
+                       android:layout_marginLeft="@dimen/x188" />
+
+                    <TextView
+                        style="@style/menu_item_text_style"
+                        android:text="@string/risk_control"/>
+
+                    <com.hs.doubaobao.view.DotView
+                        android:visibility="gone"
+                        android:id="@+id/menu_risk_dot"
+                        android:layout_marginBottom="@dimen/y15"
+                        android:layout_width="@dimen/x20"
+                        android:layout_height="@dimen/y20"/>
+
+                </LinearLayout>
+
+                <!--总经理审批-->
+                <LinearLayout
+                    android:id="@+id/menu_manager"
+                    android:onClick="onManagerClick"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x80"
+                    android:layout_marginTop="@dimen/x20"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/x32"
+                        android:layout_height="@dimen/y45"
+                        android:src="@drawable/ic_manager_selector"
+                        android:layout_marginLeft="@dimen/x188" />
+
+                    <TextView
+                        style="@style/menu_item_text_style"
+                        android:text="@string/general_manager"/>
+
+                    <com.hs.doubaobao.view.DotView
+                        android:visibility="gone"
+                        android:layout_marginBottom="@dimen/y15"
+                        android:id="@+id/menu_manager_dot"
+                        android:layout_width="@dimen/x20"
+                        android:layout_height="@dimen/y20"/>
+
+                </LinearLayout>
+                <!--无效列表-->
+                <LinearLayout
+                    android:id="@+id/menu_invalid"
+                    android:onClick="onInvalidClick"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x80"
+                    android:layout_marginTop="@dimen/x20"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/x40"
+                        android:layout_height="@dimen/y36"
+                        android:src="@drawable/ic_invalid_selector"
+                        android:layout_marginLeft="@dimen/x188" />
+                    <TextView
+                        style="@style/menu_item_text_style"
+                        android:text="@string/invalid_list"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:onClick="onExit"
+            android:padding="@dimen/x20"
+            android:layout_marginBottom="@dimen/y30"
+            android:text="退出"
+            android:textColor="@drawable/menu_text_selector"
+            android:textSize="@dimen/x28"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

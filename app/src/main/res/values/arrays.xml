@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--搜索的条件列表start-->
+    <!--货贷类别-->
+    <string-array name="search_loan_categories">
+        <item>查看全部</item>
+        <item>汇民贷</item>
+        <item>汇商贷 </item>
+        <item>汇业贷</item>
+        <item>汇车贷</item>
+        <item>汇农贷</item>
+        <item>汇房贷</item>
+    </string-array>
+
+    <!--贷款期数-->
+    <string-array name="search_loan_periods_arr">
+        <item>查看全部</item>
+        <item>12期</item>
+        <item>18期 </item>
+        <item>24期</item>
+        <item>36期</item>
+        <item>48期</item>
+        <item>60期</item>
+    </string-array>
+
+    <!--贷款状态-->
+    <string-array name="search_load_status_arr">
+        <item>查看全部</item>
+        <item>待签约</item>
+        <item>待放款</item>
+        <item>放款成功</item>
+    </string-array>
+    <!--搜索的条件列表end-->
+
+</resources>

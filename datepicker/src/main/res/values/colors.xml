@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--日期选择-->
+    <color name="button_ensure">#ff6000</color>
+    <color name="cutting_line">#dfdfdf</color>
+    <color name="wheel_unselect_text">#c2c1c1</color>
+    <color name="wheel_select_text">#ee7900</color>
+    <color name="wheel_bg">#f2f2f2</color>
+
+</resources>

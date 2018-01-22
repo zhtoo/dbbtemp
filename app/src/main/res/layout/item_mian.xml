@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/main_item_all"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="@dimen/x10"
+              android:orientation="vertical">
+    <!--时间、用途、审批状态-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y51"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/main_list_time"
+            android:layout_width="@dimen/x159"
+            android:layout_height="@dimen/y53"
+            android:background="@drawable/bg_main_time"
+            android:gravity="center"
+            android:text="2017-09-13"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x20"/>
+
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <View
+                style="@style/horizontalLine"
+                android:layout_marginTop="@dimen/y12"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/whiteBackground"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/main_list_purpose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:maxWidth="@dimen/x350"
+                    android:singleLine="true"
+                    android:text="借款用途dasdadadadadsadsasdfaffaff"
+                    android:textColor="@color/textAggravating"
+                    android:textSize="@dimen/x24"/>
+
+                <View style="@style/autoFillStyle"/>
+
+                <TextView
+                    android:id="@+id/main_list_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/x16"
+                    android:singleLine="true"
+                    android:text="总经理审批通过"
+                    android:textColor="@color/textGray"
+                    android:textSize="@dimen/x20"/>
+
+                <View style="@style/verticalLine"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View style="@style/horizontalLine"/>
+
+    <!--整体内容-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y200"
+        android:background="@color/whiteBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View style="@style/verticalLine"/>
+
+        <!--客户姓名-->
+        <LinearLayout
+            android:layout_width="@dimen/x158"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/main_list_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:singleLine="true"
+                android:text="王伟义eqwewqeqwewqe"
+                android:textColor="@color/textAggravating"
+                android:textSize="@dimen/x28"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y18"
+                android:layout_weight="1"
+                android:gravity="top|center"
+                android:text="@string/customer_name"
+                android:textColor="@color/textGray"
+                android:textSize="@dimen/x20"/>
+
+        </LinearLayout>
+
+        <!--中间竖线-->
+        <View
+            style="@style/verticalLine"
+            android:layout_height="@dimen/y88"/>
+
+        <!--贷款金额、放款金额、客户电话-->
+        <LinearLayout
+            android:layout_width="@dimen/x214"
+            android:layout_height="@dimen/x180"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/x30">
+
+            <TextView
+                android:id="@+id/main_list_load_amount"
+                android:layout_width="@dimen/x184"
+                android:layout_height="@dimen/y43"
+                android:gravity="bottom"
+                android:paddingBottom="@dimen/y3"
+                android:singleLine="true"
+                android:text="23.00万元"
+                android:textColor="@color/textOrange"
+                android:textSize="@dimen/x28"/>
+
+            <TextView
+                android:layout_width="@dimen/x184"
+                android:layout_height="@dimen/y23"
+                android:gravity="bottom"
+                android:text="贷款金额"
+                android:textColor="@color/textGray"
+                android:textSize="@dimen/x20"/>
+
+            <TextView
+                android:id="@+id/main_list_loan_amount"
+                android:layout_width="@dimen/x184"
+                android:layout_height="@dimen/y30"
+                android:layout_marginTop="@dimen/x8"
+                android:gravity="bottom"
+                android:text="18.00万元"
+                android:textColor="@color/textOrange"
+                android:textSize="@dimen/x28"/>
+
+            <TextView
+                android:layout_width="@dimen/x184"
+                android:layout_height="@dimen/y23"
+                android:gravity="bottom"
+                android:text="放款金额"
+                android:textColor="@color/textGray"
+                android:textSize="@dimen/x20"/>
+
+
+            <TextView
+                android:id="@+id/main_list_custom_phone"
+                android:layout_width="@dimen/x184"
+                android:layout_height="@dimen/y30"
+                android:gravity="bottom"
+                android:layout_marginTop="@dimen/x5"
+                android:text="13812345678"
+                android:textColor="@color/textAggravating"
+                android:textSize="@dimen/x20"/>
+
+            <TextView
+                android:layout_width="@dimen/x184"
+                android:layout_height="@dimen/y23"
+                android:gravity="bottom"
+                android:text="@string/customer_phone"
+                android:textColor="@color/textGray"
+                android:textSize="@dimen/x20"/>
+
+        </LinearLayout>
+        <!--贷款期数、实批期数、门店名称-->
+        <LinearLayout
+            android:layout_width="@dimen/x180"
+            android:layout_height="@dimen/y180"
+            android:gravity="center|left"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/x10">
+
+            <TextView
+                android:id="@+id/main_list_loan_periods"
+                android:layout_width="@dimen/x184"
+                android:layout_height="@dimen/y43"
+                android:gravity="bottom"
+                android:paddingBottom="@dimen/y3"
+                android:text="18期"
+                android:textColor="@color/textAggravating"
+                android:textSize="@dimen/x24"/>
+
+            <TextView
+                android:layout_width="@dimen/x184"
+                android:layout_height="@dimen/y23"
+                android:gravity="bottom"
+                android:text="贷款期数"
+                android:textColor="@color/textGray"
+                android:textSize="@dimen/x20"/>
+
+            <com.hs.doubaobao.view.MarqueeTextView
+                android:id="@+id/main_list_real_number_periods"
+                android:layout_width="@dimen/x184"
+                android:layout_height="@dimen/y30"
+                android:layout_marginTop="@dimen/x8"
+                android:gravity="bottom"
+                android:maxWidth="@dimen/x180"
+                android:singleLine="true"
+                android:text="12期"
+                android:textColor="@color/textAggravating"
+                android:textSize="@dimen/x24"/>
+
+            <TextView
+                android:layout_width="@dimen/x184"
+                android:layout_height="@dimen/y23"
+                android:gravity="bottom"
+                android:text="实批期数"
+                android:textColor="@color/textGray"
+                android:textSize="@dimen/x20"/>
+
+            <TextView
+                android:id="@+id/main_list_store_name"
+                android:layout_width="@dimen/x184"
+                android:layout_height="@dimen/y30"
+                android:layout_marginTop="@dimen/x5"
+                android:gravity="bottom"
+                android:paddingBottom="@dimen/y3"
+                android:text="合肥一部"
+                android:textColor="@color/textAggravating"
+                android:textSize="@dimen/x20"/>
+
+            <TextView
+                android:layout_width="@dimen/x184"
+                android:layout_height="@dimen/y23"
+                android:gravity="bottom"
+                android:text="门店名称"
+                android:textColor="@color/textGray"
+                android:textSize="@dimen/x20"/>
+
+        </LinearLayout>
+
+        <View style="@style/autoFillStyle"/>
+
+        <ImageView
+            android:id="@+id/main_list_arrow"
+            android:layout_width="@dimen/x20"
+            android:layout_height="@dimen/y30"
+            android:layout_marginRight="@dimen/x64"
+            android:src="@drawable/ic_right_arrow_selector"
+            android:visibility="visible"/>
+
+        <View style="@style/verticalLine"/>
+
+    </LinearLayout>
+
+    <View style="@style/horizontalLine"/>
+
+</LinearLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/pager_title"
+        android:layout_gravity="left"
+        android:layout_width="@dimen/x350"
+        android:layout_height="@dimen/y55"
+        android:gravity="center"
+        android:background="#EF8000"
+        android:textColor="#fff"
+        android:text="贷款个数最近7天统计"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/pager_title_y"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/x24"
+            android:layout_marginLeft="@dimen/x30"
+            android:text="个数(个)"/>
+
+
+        <View style="@style/autoFillStyle"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:visibility="invisible"
+                android:layout_marginTop="@dimen/y20"
+                android:id="@+id/pager_refreah_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/x24"
+                android:text="1031每个月"/>
+
+            <TextView
+                android:visibility="invisible"
+                android:layout_marginTop="@dimen/y15"
+                android:id="@+id/pager_refreah_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/x20"
+                android:paddingRight="@dimen/x30"
+                android:text="最近更新：今日"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <com.hs.doubaobao.view.main.HstogramView
+        android:layout_marginTop="@dimen/x20"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/main_hstogram"
+        android:layout_width="@dimen/x660"
+        android:layout_height="@dimen/y370"
+        android:layout_gravity="center"
+        android:background="@android:color/white"
+        app:allTextSize="12sp"
+        app:allTextColor="#C2C3C1"
+        app:normalBarChartColor="#9F9FA0"/>
+
+</LinearLayout>

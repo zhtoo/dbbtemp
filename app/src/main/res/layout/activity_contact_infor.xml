@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@android:color/white"
+              android:orientation="vertical">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:layout_marginTop="@dimen/y20"
+               style="@style/horizontalLine"/>
+            <com.hs.doubaobao.view.ExpandableView
+                android:id="@+id/expandable_view1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FAEEE2"/>
+            <View
+                style="@style/horizontalLine"/>
+
+            <View
+                android:layout_marginTop="@dimen/y20"
+                style="@style/horizontalLine"/>
+            <com.hs.doubaobao.view.ExpandableView
+                android:id="@+id/expandable_view2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FAEEE2"/>
+            <View
+                style="@style/horizontalLine"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!--保存-->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="保存"/>
+
+</LinearLayout>

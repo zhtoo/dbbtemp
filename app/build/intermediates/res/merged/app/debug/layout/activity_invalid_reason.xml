@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/grayBackground"
+              android:orientation="vertical">
+
+    <View
+        style="@style/horizontalLine"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y70"
+        android:layout_marginTop="@dimen/y21"
+        android:gravity="center_vertical"
+        android:background="@color/whiteBackground">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x36"
+            android:text="客户姓名："
+            android:textColor="@color/textGray"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/invalid_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x350"
+            android:text=""
+            android:textColor="@color/textAggravating"
+            android:textSize="16sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y70"
+        android:layout_marginTop="@dimen/y10"
+        android:gravity="center_vertical"
+        android:background="@color/whiteBackground">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x36"
+            android:background="@color/whiteBackground"
+            android:text="客户经理："
+            android:textColor="@color/textGray"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/invalid_manager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x350"
+            android:text=""
+            android:textColor="@color/textAggravating"
+            android:textSize="16sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y70"
+        android:layout_marginTop="@dimen/y10"
+        android:gravity="center_vertical"
+        android:background="@color/whiteBackground">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x36"
+            android:text="理由填写人："
+            android:textColor="@color/textGray"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/invalid_writer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x350"
+            android:text=""
+            android:textColor="@color/textAggravating"
+            android:textSize="16sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y70"
+        android:layout_marginTop="@dimen/y10"
+        android:gravity="center_vertical"
+        android:background="@color/whiteBackground">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x36"
+            android:text="填写时间："
+            android:textColor="@color/textGray"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/invalid_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x350"
+            android:text=""
+            android:textColor="@color/textAggravating"
+            android:textSize="16sp"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/invalid_reason"
+        android:layout_marginTop="@dimen/y15"
+        android:background="@color/whiteBackground"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x500"
+        android:paddingTop="@dimen/y42"
+        android:paddingLeft="@dimen/x36"
+        android:paddingRight="@dimen/x20"
+        android:text=""/>
+
+</LinearLayout>

@@ -1,0 +1,258 @@
+[
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\pick_finish_slide_out_bottom.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\dbbtemp\\pickphotoview\\unspecified\\res\\anim\\pick_finish_slide_out_bottom.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\pick_start_slide_in_bottom.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\dbbtemp\\pickphotoview\\unspecified\\res\\anim\\pick_start_slide_in_bottom.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\pick_img_zoom_in.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\dbbtemp\\pickphotoview\\unspecified\\res\\anim\\pick_img_zoom_in.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\slide_out_from_left.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\anim\\slide_out_from_left.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\pick_img_zoom_in.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\dbb2\\pickphotoview\\unspecified\\res\\anim\\pick_img_zoom_in.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\slide_out_from_left.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\anim\\slide_out_from_left.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\pick_finish_slide_out_left.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\dbbtemp\\pickphotoview\\unspecified\\res\\anim\\pick_finish_slide_out_left.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\design_bottom_sheet_slide_out.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\anim\\design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\slide_out_bottom.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\me.leefeng\\citypicker\\1.0\\res\\anim\\slide_out_bottom.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\design_snackbar_out.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\anim\\design_snackbar_out.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\slide_out_bottom.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\me.leefeng\\citypicker\\1.0\\res\\anim\\slide_out_bottom.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\abc_fade_out.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\alertview_bgin.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\me.leefeng\\citypicker\\1.0\\res\\anim\\alertview_bgin.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\alertview_bgout.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\me.leefeng\\citypicker\\1.0\\res\\anim\\alertview_bgout.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\design_snackbar_in.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\slide_out_to_right.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\anim\\slide_out_to_right.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\slide_in_to_left.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\anim\\slide_in_to_left.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\alertview_bgout.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\me.leefeng\\citypicker\\1.0\\res\\anim\\alertview_bgout.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\pick_start_slide_in_right.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\dbb2\\pickphotoview\\unspecified\\res\\anim\\pick_start_slide_in_right.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\pick_finish_slide_out_bottom.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\dbb2\\pickphotoview\\unspecified\\res\\anim\\pick_finish_slide_out_bottom.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\pick_img_zoom_out.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\dbb2\\pickphotoview\\unspecified\\res\\anim\\pick_img_zoom_out.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\design_fab_out.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\anim\\design_fab_out.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\slide_in_to_left.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\anim\\slide_in_to_left.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\slide_out_to_right.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\anim\\slide_out_to_right.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\slide_out_to_bottom.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\bottomdialog\\res\\anim\\slide_out_to_bottom.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\slide_in_from_bottom.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\bottomdialog\\res\\anim\\slide_in_from_bottom.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\abc_popup_exit.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\abc_fade_out.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\slide_in_from_right.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\src\\main\\res\\anim\\slide_in_from_right.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\slide_in_from_bottom.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\bottomdialog\\res\\anim\\slide_in_from_bottom.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\design_bottom_sheet_slide_in.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\anim\\design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\abc_popup_enter.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\anim\\abc_popup_enter.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\slide_in_bottom.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\me.leefeng\\citypicker\\1.0\\res\\anim\\slide_in_bottom.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\pick_start_slide_in_bottom.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\dbb2\\pickphotoview\\unspecified\\res\\anim\\pick_start_slide_in_bottom.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\design_fab_out.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\anim\\design_fab_out.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\slide_in_bottom.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\me.leefeng\\citypicker\\1.0\\res\\anim\\slide_in_bottom.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\slide_in_from_right.xml",
+        "source": "E:\\github\\dbbtemp\\app\\src\\main\\res\\anim\\slide_in_from_right.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\design_snackbar_in.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\slide_out_to_bottom.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\bottomdialog\\res\\anim\\slide_out_to_bottom.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\abc_popup_enter.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\anim\\abc_popup_enter.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\alertview_bgin.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\me.leefeng\\citypicker\\1.0\\res\\anim\\alertview_bgin.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\pick_img_zoom_out.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\dbbtemp\\pickphotoview\\unspecified\\res\\anim\\pick_img_zoom_out.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\abc_popup_exit.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\design_bottom_sheet_slide_in.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\anim\\design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\design_snackbar_out.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\anim\\design_snackbar_out.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\pick_finish_slide_out_left.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\dbb2\\pickphotoview\\unspecified\\res\\anim\\pick_finish_slide_out_left.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\design_fab_in.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\anim\\design_fab_in.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\abc_fade_in.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\abc_fade_in.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\pick_start_slide_in_right.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\dbbtemp\\pickphotoview\\unspecified\\res\\anim\\pick_start_slide_in_right.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\design_fab_in.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\anim\\design_fab_in.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\app\\build\\intermediates\\res\\merged\\app\\debug\\anim\\design_bottom_sheet_slide_out.xml",
+        "source": "E:\\github\\dbbtemp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.1\\res\\anim\\design_bottom_sheet_slide_out.xml"
+    }
+]

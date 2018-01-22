@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\pickphotoview\\build\\intermediates\\res\\merged\\debug\\xml\\pick_file_paths.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\pickphotoview\\src\\main\\res\\xml\\pick_file_paths.xml"
+    },
+    {
+        "merged": "E:\\github\\dbbtemp\\pickphotoview\\build\\intermediates\\res\\merged\\debug\\xml\\pick_file_paths.xml",
+        "source": "E:\\github\\dbbtemp\\pickphotoview\\src\\main\\res\\xml\\pick_file_paths.xml"
+    }
+]

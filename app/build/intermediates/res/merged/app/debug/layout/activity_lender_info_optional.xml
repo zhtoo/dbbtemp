@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#FFF"
+              android:orientation="vertical">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                style="@style/horizontalLine"
+                android:layout_height="@dimen/y20"
+                android:background="#F3F4F5"/>
+
+            <View
+                style="@style/horizontalLine"/>
+
+            <LinearLayout
+                style="@style/filloutLinearLayout">
+
+                <!--居住地址建筑面积-->
+                <LinearLayout
+                    style="@style/filloutItemLayout">
+
+                    <TextView
+
+                        style="@style/filloutItemText"
+                        android:text="居住地址建筑面积："/>
+
+                    <View
+                        style="@style/autoFillStyle"/>
+
+                    <EditText
+                        style="@style/filloutItemEditRight"
+                        android:hint="请输入"/>
+
+                    <TextView
+                        style="@style/filloutItemTextRight"
+                        android:text="m²"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/horizontalLine"
+                    android:layout_marginLeft="@dimen/x30"/>
+
+                <!--现在居住时间-->
+                <LinearLayout
+                    style="@style/filloutItemLayout">
+
+                    <TextView
+                        style="@style/filloutItemText"
+                        android:text="现在居住时间"/>
+
+                    <View
+                        style="@style/autoFillStyle"/>
+
+                    <EditText
+                        style="@style/filloutItemEdit"
+                        android:hint="请输入时间"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/horizontalLine"/>
+
+            </LinearLayout>
+
+            <View
+                style="@style/horizontalLine"
+                android:layout_height="@dimen/y20"
+                android:background="#F3F4F5"/>
+
+            <View
+                style="@style/horizontalLine"/>
+
+            <LinearLayout
+                style="@style/filloutLinearLayout">
+
+                <!--其他房产信息-->
+                <LinearLayout
+                    style="@style/filloutItemLayout">
+
+                    <TextView
+                        style="@style/filloutItemText"
+                        android:text="其他房产信息"/>
+
+                    <View
+                        style="@style/autoFillStyle"/>
+
+                    <EditText
+                        style="@style/filloutItemEdit"
+                        android:hint="请输入信息"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/horizontalLine"
+                    android:layout_marginLeft="@dimen/x30"/>
+
+                <!--其他房产建筑面积-->
+                <LinearLayout
+                    style="@style/filloutItemLayout">
+
+                    <TextView
+
+                        style="@style/filloutItemText"
+                        android:text="其他房产建筑面积："/>
+
+                    <View
+                        style="@style/autoFillStyle"/>
+
+                    <EditText
+                        style="@style/filloutItemEditRight"
+                        android:hint="请输入"/>
+
+                    <TextView
+                        style="@style/filloutItemTextRight"
+                        android:text="m²"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/horizontalLine"
+                    android:layout_marginLeft="@dimen/x30"/>
+
+                <!--其他房产性质-->
+                <LinearLayout
+                    style="@style/filloutItemLayout">
+
+                    <TextView
+                        style="@style/filloutItemText"
+                        android:text="其他房产性质："/>
+
+                    <View style="@style/autoFillStyle"/>
+
+                    <TextView
+                        style="@style/filloutItemEdit"
+                        android:text="请选择"/>
+
+                    <ImageView style="@style/filloutImageStyle"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/horizontalLine"/>
+
+            </LinearLayout>
+
+
+            <View
+                style="@style/horizontalLine"
+                android:layout_height="@dimen/y20"
+                android:background="#F3F4F5"/>
+
+            <View
+                style="@style/horizontalLine"/>
+
+        <LinearLayout
+            style="@style/filloutLinearLayout">
+
+            <!--单位名称-->
+            <LinearLayout
+                style="@style/filloutItemLayout">
+
+                <TextView
+                    style="@style/filloutItemText"
+                    android:text="单位名称："/>
+
+                <View
+                    style="@style/autoFillStyle"/>
+
+                <EditText
+                    style="@style/filloutItemEdit"
+                    android:hint="请输入单位名称"/>
+
+            </LinearLayout>
+            <View
+                style="@style/horizontalLine"
+                android:layout_marginLeft="@dimen/x30"/>
+
+            <!--部门职务-->
+            <LinearLayout
+                style="@style/filloutItemLayout">
+
+                <TextView
+                    style="@style/filloutItemText"
+                    android:text="部门职务："/>
+
+                <View
+                    style="@style/autoFillStyle"/>
+
+                <EditText
+                    style="@style/filloutItemEdit"
+                    android:hint="请输入"/>
+
+            </LinearLayout>
+            <View
+                style="@style/horizontalLine"
+                android:layout_marginLeft="@dimen/x30"/>
+
+            <!--是否企业主/个体户-->
+            <LinearLayout
+                style="@style/filloutItemLayout">
+
+                <TextView
+                    style="@style/filloutItemText"
+                    android:text="是否企业主/个体户："/>
+
+                <View
+                    style="@style/autoFillStyle"/>
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        style="@style/filloutRadioButton"
+                        android:text="是"/>
+
+                    <RadioButton
+                        style="@style/filloutRadioButton"
+                        android:text="否"/>
+
+                </RadioGroup>
+
+            </LinearLayout>
+            <View
+                style="@style/horizontalLine"/>
+
+            </LinearLayout>
+
+            <View
+                style="@style/horizontalLine"
+                android:layout_height="@dimen/y20"
+                android:background="#F3F4F5"/>
+
+            <View
+                style="@style/horizontalLine"/>
+
+
+        <LinearLayout
+            style="@style/filloutLinearLayout">
+
+            <!--单位性质-->
+            <LinearLayout
+                style="@style/filloutItemLayout">
+
+                <TextView
+                    style="@style/filloutItemText"
+                    android:text="单位性质："/>
+
+                <View style="@style/autoFillStyle"/>
+
+                <TextView
+                    style="@style/filloutItemEdit"
+                    android:text="请选择"/>
+
+                <ImageView style="@style/filloutImageStyle"/>
+
+            </LinearLayout>
+            <View
+                style="@style/horizontalLine"
+                android:layout_marginLeft="@dimen/x30"/>
+            <!--单位电话-->
+            <LinearLayout
+                style="@style/filloutItemLayout">
+
+                <TextView
+                    style="@style/filloutItemText"
+                    android:text="单位电话"/>
+
+                <View
+                    style="@style/autoFillStyle"/>
+
+                <EditText
+                    style="@style/filloutItemEdit"
+                    android:hint="请输入单位电话"/>
+
+            </LinearLayout>
+            <View
+                style="@style/horizontalLine"
+                android:layout_marginLeft="@dimen/x30"/>
+            <!--分机-->
+            <LinearLayout
+                style="@style/filloutItemLayout">
+
+                <TextView
+                    style="@style/filloutItemText"
+                    android:text="分机"/>
+
+                <View
+                    style="@style/autoFillStyle"/>
+
+                <EditText
+                    style="@style/filloutItemEdit"
+                    android:hint="请输入分机号码"/>
+
+            </LinearLayout>
+            <View
+                style="@style/horizontalLine"
+                android:layout_marginLeft="@dimen/x30"/>
+
+            <!--累计工作年限-->
+            <LinearLayout
+                style="@style/filloutItemLayout">
+
+                <TextView
+
+                    style="@style/filloutItemText"
+                    android:text="累计工作年限："/>
+
+                <View
+                    style="@style/autoFillStyle"/>
+
+                <EditText
+                    style="@style/filloutItemEditRight"
+                    android:hint="请输入"/>
+
+                <TextView
+                    style="@style/filloutItemTextRight"
+                    android:text="年"/>
+
+            </LinearLayout>
+            <View
+                style="@style/horizontalLine"
+                android:layout_marginLeft="@dimen/x30"/>
+            <!--是否有社保/公积金-->
+            <LinearLayout
+                style="@style/filloutItemLayout">
+
+                <TextView
+                    style="@style/filloutItemText"
+                    android:text="是否有社保/公积金："/>
+
+                <View
+                    style="@style/autoFillStyle"/>
+
+
+                <CheckBox
+                    android:theme="@style/MyCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="社保"
+                    android:layout_marginRight="@dimen/x30"
+                    android:textSize="@dimen/x28"/>
+
+                <CheckBox
+                    android:theme="@style/MyCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="公积金"
+                    android:layout_marginRight="@dimen/x30"
+                    android:textSize="@dimen/x28"/>
+
+
+            </LinearLayout>
+            <View
+                style="@style/horizontalLine"
+                android:layout_marginLeft="@dimen/x30"/>
+            <!--单位地址-->
+            <LinearLayout
+                style="@style/filloutItemLayout">
+
+                <TextView
+                    style="@style/filloutItemText"
+                    android:text="单位地址："/>
+
+                <View style="@style/autoFillStyle"/>
+
+                <TextView
+                    style="@style/filloutItemEdit"
+                    android:text="请选择"/>
+
+                <ImageView style="@style/filloutImageStyle"/>
+
+            </LinearLayout>
+            <View
+                style="@style/horizontalLine"
+                android:layout_marginLeft="@dimen/x30"/>
+
+            <!--单位详细地址-->
+            <LinearLayout
+                style="@style/filloutItemLayout">
+
+                <TextView
+                    style="@style/filloutItemText"
+                    android:text="街道："/>
+
+                <View style="@style/autoFillStyle"/>
+
+                <EditText
+                    style="@style/filloutItemEdit"
+                    android:hint="乡镇/街道/小区/楼层"/>
+
+            </LinearLayout>
+            <View
+                style="@style/horizontalLine"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y80"
+                android:background="#F3F4F5"
+                android:gravity="center"
+                android:text="互联网信息"/>
+
+            <View
+                style="@style/horizontalLine"/>
+
+        <LinearLayout
+            style="@style/filloutLinearLayout"
+            android:layout_marginBottom="@dimen/y50">
+
+            <!--腾讯QQ/微信号码-->
+            <LinearLayout
+                style="@style/filloutItemLayout">
+
+                <TextView
+                    style="@style/filloutItemText"
+                    android:text="腾讯QQ/微信号码"/>
+
+                <View
+                    style="@style/autoFillStyle"/>
+
+                <EditText
+                    style="@style/filloutItemEdit"
+                    android:hint="请输入号码"/>
+
+            </LinearLayout>
+            <View
+                style="@style/horizontalLine"
+                android:layout_marginLeft="@dimen/x30"/>
+            <!--淘宝网/支付宝账号-->
+            <LinearLayout
+                style="@style/filloutItemLayout">
+
+                <TextView
+                    style="@style/filloutItemText"
+                    android:text="淘宝网/支付宝账号"/>
+
+                <View
+                    style="@style/autoFillStyle"/>
+
+                <EditText
+                    style="@style/filloutItemEdit"
+                    android:hint="请输入账号"/>
+
+            </LinearLayout>
+            <View
+                style="@style/horizontalLine"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="保存"/>
+
+</LinearLayout>

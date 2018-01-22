@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="E:\github\dbbtemp\app\src\main\shaders"/></dataSet><dataSet config="app"><source path="E:\github\dbbtemp\app\src\app\shaders"/></dataSet><dataSet config="debug"><source path="E:\github\dbbtemp\app\src\debug\shaders"/></dataSet><dataSet config="appDebug"><source path="E:\github\dbbtemp\app\src\appDebug\shaders"/></dataSet></merger>
