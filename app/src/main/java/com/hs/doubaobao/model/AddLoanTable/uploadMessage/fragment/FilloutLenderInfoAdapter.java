@@ -27,8 +27,6 @@ public class FilloutLenderInfoAdapter extends FragmentPagerAdapter {
         mFragmentList = fragmentList;
     }
 
-
-
     /**
      * titles是给TabLayout设置title用的
      *

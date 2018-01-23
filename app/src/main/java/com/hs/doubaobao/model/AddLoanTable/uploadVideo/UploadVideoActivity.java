@@ -58,6 +58,7 @@ public class UploadVideoActivity extends AppBarActivity {
         addFragment();//初始化Fragmrnt，并添加到ViewPager中。
         initViewPager();
         tablayout.setupWithViewPager(mViewpager);
+        mViewpager.setOffscreenPageLimit(fragments.size());
         checkPermission();
     }
 

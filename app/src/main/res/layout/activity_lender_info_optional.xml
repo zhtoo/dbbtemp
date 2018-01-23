@@ -31,7 +31,6 @@
                     style="@style/filloutItemLayout">
 
                     <TextView
-
                         style="@style/filloutItemText"
                         android:text="居住地址建筑面积："/>
 
@@ -39,6 +38,7 @@
                         style="@style/autoFillStyle"/>
 
                     <EditText
+                        android:id="@+id/lender_exiting_build_acreage"
                         style="@style/filloutItemEditRight"
                         android:hint="请输入"/>
 
@@ -64,6 +64,7 @@
                         style="@style/autoFillStyle"/>
 
                     <EditText
+                        android:id="@+id/lender_exiting_build_live_time"
                         style="@style/filloutItemEdit"
                         android:hint="请输入时间"/>
 
@@ -97,6 +98,7 @@
                         style="@style/autoFillStyle"/>
 
                     <EditText
+                        android:id="@+id/lender_other_build_info"
                         style="@style/filloutItemEdit"
                         android:hint="请输入信息"/>
 
@@ -119,6 +121,7 @@
                         style="@style/autoFillStyle"/>
 
                     <EditText
+                        android:id="@+id/lender_other_build_acreage"
                         style="@style/filloutItemEditRight"
                         android:hint="请输入"/>
 
@@ -134,6 +137,7 @@
 
                 <!--其他房产性质-->
                 <LinearLayout
+                    android:id="@+id/lender_other_build_property_item"
                     style="@style/filloutItemLayout">
 
                     <TextView
@@ -143,10 +147,36 @@
                     <View style="@style/autoFillStyle"/>
 
                     <TextView
+                        android:id="@+id/lender_other_build_property"
                         style="@style/filloutItemEdit"
                         android:text="请选择"/>
 
                     <ImageView style="@style/filloutImageStyle"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    style="@style/filloutItemLayout">
+
+                    <TextView
+                        style="@style/filloutItemText"
+                        android:text="每月需要还："/>
+
+                    <View
+                        style="@style/autoFillStyle"/>
+
+                    <EditText
+                        style="@style/filloutItemEdit"
+                        android:inputType="numberDecimal"
+                        android:layout_marginRight="@dimen/x10"
+                        android:hint="请输入还款金额"/>
+
+                    <TextView
+                        style="@style/filloutItemText"
+                        android:layout_marginLeft="0px"
+                        android:layout_marginRight="@dimen/x30"
+                        android:text="元"/>
 
                 </LinearLayout>
 
@@ -179,6 +209,7 @@
                     style="@style/autoFillStyle"/>
 
                 <EditText
+                    android:id="@+id/lender_workunit_name"
                     style="@style/filloutItemEdit"
                     android:hint="请输入单位名称"/>
 
@@ -199,6 +230,7 @@
                     style="@style/autoFillStyle"/>
 
                 <EditText
+                    android:id="@+id/lender_job_department"
                     style="@style/filloutItemEdit"
                     android:hint="请输入"/>
 
@@ -225,10 +257,12 @@
                     android:orientation="horizontal">
 
                     <RadioButton
+                        android:id="@+id/lender_is_business_owner"
                         style="@style/filloutRadioButton"
                         android:text="是"/>
 
                     <RadioButton
+                        android:id="@+id/lender_un_business_owner"
                         style="@style/filloutRadioButton"
                         android:text="否"/>
 
@@ -254,6 +288,7 @@
 
             <!--单位性质-->
             <LinearLayout
+                android:id="@+id/lender_workunit_nature_item"
                 style="@style/filloutItemLayout">
 
                 <TextView
@@ -263,6 +298,7 @@
                 <View style="@style/autoFillStyle"/>
 
                 <TextView
+                    android:id="@+id/lender_workunit_nature"
                     style="@style/filloutItemEdit"
                     android:text="请选择"/>
 
@@ -284,7 +320,9 @@
                     style="@style/autoFillStyle"/>
 
                 <EditText
+                    android:id="@+id/lender_workunit_phone"
                     style="@style/filloutItemEdit"
+                    android:inputType="phone"
                     android:hint="请输入单位电话"/>
 
             </LinearLayout>
@@ -303,7 +341,9 @@
                     style="@style/autoFillStyle"/>
 
                 <EditText
+                    android:id="@+id/lender_workunit_ext_phone"
                     style="@style/filloutItemEdit"
+                    android:inputType="phone"
                     android:hint="请输入分机号码"/>
 
             </LinearLayout>
@@ -324,6 +364,7 @@
                     style="@style/autoFillStyle"/>
 
                 <EditText
+                    android:id="@+id/lender_workunit_age"
                     style="@style/filloutItemEditRight"
                     android:hint="请输入"/>
 
@@ -348,6 +389,7 @@
 
 
                 <CheckBox
+                    android:id="@+id/lender_social_security"
                     android:theme="@style/MyCheckBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -356,6 +398,7 @@
                     android:textSize="@dimen/x28"/>
 
                 <CheckBox
+                    android:id="@+id/lender_reserved_funds"
                     android:theme="@style/MyCheckBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -370,6 +413,7 @@
                 android:layout_marginLeft="@dimen/x30"/>
             <!--单位地址-->
             <LinearLayout
+                android:id="@+id/lender_workunit_pca_item"
                 style="@style/filloutItemLayout">
 
                 <TextView
@@ -379,6 +423,7 @@
                 <View style="@style/autoFillStyle"/>
 
                 <TextView
+                    android:id="@+id/lender_workunit_pca"
                     style="@style/filloutItemEdit"
                     android:text="请选择"/>
 
@@ -400,6 +445,7 @@
                 <View style="@style/autoFillStyle"/>
 
                 <EditText
+                    android:id="@+id/lender_workunit_street"
                     style="@style/filloutItemEdit"
                     android:hint="乡镇/街道/小区/楼层"/>
 
@@ -435,6 +481,7 @@
                     style="@style/autoFillStyle"/>
 
                 <EditText
+                    android:id="@+id/lender_qq"
                     style="@style/filloutItemEdit"
                     android:hint="请输入号码"/>
 
@@ -454,6 +501,7 @@
                     style="@style/autoFillStyle"/>
 
                 <EditText
+                    android:id="@+id/lender_alipay"
                     style="@style/filloutItemEdit"
                     android:hint="请输入账号"/>
 

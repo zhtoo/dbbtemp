@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\github\dbbtemp\app\src\main\jniLibs"/></dataSet><dataSet config="app"><source path="E:\github\dbbtemp\app\src\app\jniLibs"/></dataSet><dataSet config="debug"><source path="E:\github\dbbtemp\app\src\debug\jniLibs"/></dataSet><dataSet config="appDebug"><source path="E:\github\dbbtemp\app\src\appDebug\jniLibs"/></dataSet></merger>

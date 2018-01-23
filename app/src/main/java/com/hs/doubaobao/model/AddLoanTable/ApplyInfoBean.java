@@ -294,11 +294,11 @@ public class ApplyInfoBean {
                 private String cardid;
                 private String color;
                 private int id;
-                private int monthlyMoney;
+                private double monthlyMoney;
                 private String otherInfo;
                 private String owner;
-                private int price;
-                private String status;
+                private double price;
+                private int status;
 
                 public String getBrand() {
                     return brand;
@@ -340,11 +340,11 @@ public class ApplyInfoBean {
                     this.id = id;
                 }
 
-                public int getMonthlyMoney() {
+                public double getMonthlyMoney() {
                     return monthlyMoney;
                 }
 
-                public void setMonthlyMoney(int monthlyMoney) {
+                public void setMonthlyMoney(double monthlyMoney) {
                     this.monthlyMoney = monthlyMoney;
                 }
 
@@ -364,19 +364,19 @@ public class ApplyInfoBean {
                     this.owner = owner;
                 }
 
-                public int getPrice() {
+                public double getPrice() {
                     return price;
                 }
 
-                public void setPrice(int price) {
+                public void setPrice(double price) {
                     this.price = price;
                 }
 
-                public String getStatus() {
+                public int getStatus() {
                     return status;
                 }
 
-                public void setStatus(String status) {
+                public void setStatus(int status) {
                     this.status = status;
                 }
             }
@@ -656,9 +656,9 @@ public class ApplyInfoBean {
                 private String exitingBuildAddr;
                 private String extPhone;
                 private int id;
-                private String isBusinessOwner;
+                private int isBusinessOwner;
                 private String mobilephone;
-                private int monthlyIncome;
+                private double monthlyIncome;
                 private String phone;
                 private int providentFund;
                 private int sex;
@@ -740,11 +740,11 @@ public class ApplyInfoBean {
                     this.id = id;
                 }
 
-                public String getIsBusinessOwner() {
+                public int getIsBusinessOwner() {
                     return isBusinessOwner;
                 }
 
-                public void setIsBusinessOwner(String isBusinessOwner) {
+                public void setIsBusinessOwner(int isBusinessOwner) {
                     this.isBusinessOwner = isBusinessOwner;
                 }
 
@@ -756,11 +756,11 @@ public class ApplyInfoBean {
                     this.mobilephone = mobilephone;
                 }
 
-                public int getMonthlyIncome() {
+                public double getMonthlyIncome() {
                     return monthlyIncome;
                 }
 
-                public void setMonthlyIncome(int monthlyIncome) {
+                public void setMonthlyIncome(double monthlyIncome) {
                     this.monthlyIncome = monthlyIncome;
                 }
 
@@ -950,7 +950,7 @@ public class ApplyInfoBean {
                 private String cname;
                 private int coborrowerStatus;
                 private String domicile;
-                private int exitingBuildAcreage;
+                private double exitingBuildAcreage;
                 private String exitingBuildAddr;
                 private String exitingBuildLivetime;
                 private int id;
@@ -961,10 +961,10 @@ public class ApplyInfoBean {
                 private String mobilephone;
                 private int monthlyWage;
                 private String opinion;
-                private int otherBuildAcreage;
+                private double otherBuildAcreage;
                 private String otherBuildInfo;
                 private String otherBuildProperty;
-                private int ownBuildAcreage;
+                private double ownBuildAcreage;
                 private String ownBuildAddr;
                 private int ownBuildProperty;
                 private String qq;
@@ -977,7 +977,7 @@ public class ApplyInfoBean {
                 private String workunitExtPhone;
                 private String workunitMark;
                 private String workunitName;
-                private String workunitNature;
+                private int workunitNature;
                 private String workunitPhone;
                 private String workunitPlot;
                 private String workunitPostcode;
@@ -1058,11 +1058,11 @@ public class ApplyInfoBean {
                     this.domicile = domicile;
                 }
 
-                public int getExitingBuildAcreage() {
+                public double getExitingBuildAcreage() {
                     return exitingBuildAcreage;
                 }
 
-                public void setExitingBuildAcreage(int exitingBuildAcreage) {
+                public void setExitingBuildAcreage(double exitingBuildAcreage) {
                     this.exitingBuildAcreage = exitingBuildAcreage;
                 }
 
@@ -1146,11 +1146,11 @@ public class ApplyInfoBean {
                     this.opinion = opinion;
                 }
 
-                public int getOtherBuildAcreage() {
+                public double getOtherBuildAcreage() {
                     return otherBuildAcreage;
                 }
 
-                public void setOtherBuildAcreage(int otherBuildAcreage) {
+                public void setOtherBuildAcreage(double otherBuildAcreage) {
                     this.otherBuildAcreage = otherBuildAcreage;
                 }
 
@@ -1170,11 +1170,11 @@ public class ApplyInfoBean {
                     this.otherBuildProperty = otherBuildProperty;
                 }
 
-                public int getOwnBuildAcreage() {
+                public double getOwnBuildAcreage() {
                     return ownBuildAcreage;
                 }
 
-                public void setOwnBuildAcreage(int ownBuildAcreage) {
+                public void setOwnBuildAcreage(double ownBuildAcreage) {
                     this.ownBuildAcreage = ownBuildAcreage;
                 }
 
@@ -1274,11 +1274,11 @@ public class ApplyInfoBean {
                     this.workunitName = workunitName;
                 }
 
-                public String getWorkunitNature() {
+                public int getWorkunitNature() {
                     return workunitNature;
                 }
 
-                public void setWorkunitNature(String workunitNature) {
+                public void setWorkunitNature(int workunitNature) {
                     this.workunitNature = workunitNature;
                 }
 
@@ -1377,7 +1377,7 @@ public class ApplyInfoBean {
                 private String buildAddr;
                 private int buildBorrowTime;
                 private int buildType;
-                private String car;
+                private int car;
                 private int credit;
                 private String creditNumOne;
                 private String creditNumPer;
@@ -1430,11 +1430,11 @@ public class ApplyInfoBean {
                     this.buildType = buildType;
                 }
 
-                public String getCar() {
+                public int getCar() {
                     return car;
                 }
 
-                public void setCar(String car) {
+                public void setCar(int car) {
                     this.car = car;
                 }
 

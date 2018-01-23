@@ -23,167 +23,209 @@
             <View
                 style="@style/horizontalLine"/>
 
-        <LinearLayout
-            style="@style/filloutLinearLayout">
             <LinearLayout
-                style="@style/filloutItemLayout">
+                style="@style/filloutLinearLayout">
 
-                <TextView
-                    style="@style/filloutItemText"
-                    android:text="车辆所有人："/>
+                <LinearLayout
+                    style="@style/filloutItemLayout">
+
+                    <TextView
+                        style="@style/filloutItemText"
+                        android:text="车辆所有人："/>
+
+                    <View
+                        style="@style/autoFillStyle"/>
+
+                    <EditText
+                        android:id="@+id/car_owner"
+                        style="@style/filloutItemEdit"
+                        android:hint="请输入姓名"/>
+
+                </LinearLayout>
 
                 <View
-                    style="@style/autoFillStyle"/>
+                    style="@style/horizontalLine"
+                    android:layout_marginLeft="@dimen/x30"/>
 
-                <EditText
+                <LinearLayout
+                    style="@style/filloutItemLayout">
 
-                    style="@style/filloutItemEdit"
-                    android:hint="请输入姓名"/>
+                    <TextView
+                        style="@style/filloutItemText"
+                        android:text="车辆品牌："/>
 
-            </LinearLayout>
+                    <View style="@style/autoFillStyle"/>
 
-            <View
-                style="@style/horizontalLine"
-                android:layout_marginLeft="@dimen/x30"/>
-            <LinearLayout
-                style="@style/filloutItemLayout">
+                    <EditText
+                        android:id="@+id/car_brand"
+                        style="@style/filloutItemEdit"
+                        android:hint="请输入车辆品牌"/>
 
-                <TextView
-                    style="@style/filloutItemText"
-                    android:text="车辆品牌："/>
-
-                <View style="@style/autoFillStyle"/>
-
-                <EditText
-                    style="@style/filloutItemEdit"
-                    android:hint="请输入车辆品牌"/>
-
-            </LinearLayout>
-
-            <View
-                style="@style/horizontalLine"
-                android:layout_marginLeft="@dimen/x30"/>
-            <LinearLayout
-                style="@style/filloutItemLayout">
-
-                <TextView
-                    style="@style/filloutItemText"
-                    android:text="车辆颜色："/>
-
-                <View style="@style/autoFillStyle"/>
-
-                <EditText
-                    style="@style/filloutItemEdit"
-                    android:hint="请输入颜色"/>
-
-            </LinearLayout>
-            <View
-                style="@style/horizontalLine"
-                android:layout_marginLeft="@dimen/x30"/>
-
-            <LinearLayout
-                style="@style/filloutItemLayout">
-
-                <TextView
-                    style="@style/filloutItemText"
-                    android:text="车辆号码："/>
-
-                <View style="@style/autoFillStyle"/>
-
-                <EditText
-                    style="@style/filloutItemEdit"
-                    android:hint="请输入车辆号码"/>
-
-            </LinearLayout>
-
-            <View
-                style="@style/horizontalLine"
-                android:layout_marginLeft="@dimen/x30"/>
-            <LinearLayout
-                style="@style/filloutItemLayout">
-
-                <TextView
-                    style="@style/filloutItemText"
-                    android:text="车辆状况："/>
-
-                <View style="@style/autoFillStyle"/>
-
-                <TextView
-                    style="@style/filloutItemEditRight"
-                    android:text="请选择"/>
-
-                <ImageView style="@style/filloutImageStyle"/>
-
-            </LinearLayout>
-
-            <View
-                style="@style/horizontalLine"
-                android:layout_marginLeft="@dimen/x30"/>
-            <LinearLayout
-                style="@style/filloutItemLayout">
-
-                <TextView
-
-                    style="@style/filloutItemText"
-                    android:text="裸车价："/>
+                </LinearLayout>
 
                 <View
-                    style="@style/autoFillStyle"/>
+                    style="@style/horizontalLine"
+                    android:layout_marginLeft="@dimen/x30"/>
 
-                <EditText
-                    style="@style/filloutItemEditRight"
-                    android:hint="请输入"/>
+                <LinearLayout
+                    style="@style/filloutItemLayout">
 
-                <TextView
-                    style="@style/filloutItemTextRight"
-                    android:text="万元"/>
+                    <TextView
+                        style="@style/filloutItemText"
+                        android:text="车辆颜色："/>
 
-            </LinearLayout>
+                    <View style="@style/autoFillStyle"/>
 
-            <View
-                style="@style/horizontalLine"
-                android:layout_marginLeft="@dimen/x30"/>
-            <LinearLayout
-                style="@style/filloutItemLayout">
+                    <EditText
+                        android:id="@+id/car_color"
+                        style="@style/filloutItemEdit"
+                        android:hint="请输入颜色"/>
 
-                <TextView
-                    style="@style/filloutItemText"
-                    android:text="车辆购买日期："/>
-
-                <View style="@style/autoFillStyle"/>
-
-                <TextView
-                    style="@style/filloutItemEditRight"
-                    android:text="请选择"/>
-
-                <ImageView style="@style/filloutImageStyle"/>
-
-            </LinearLayout>
-            <View
-                style="@style/horizontalLine"
-                android:layout_marginLeft="@dimen/x30"/>
-
-            <LinearLayout
-                style="@style/filloutItemLayout">
-
-                <TextView
-                    style="@style/filloutItemText"
-                    android:text="其他车辆信息："/>
+                </LinearLayout>
 
                 <View
-                    style="@style/autoFillStyle"/>
+                    style="@style/horizontalLine"
+                    android:layout_marginLeft="@dimen/x30"/>
 
-                <EditText
-                    style="@style/filloutItemEdit"
-                    android:hint="请输入"/>
+                <LinearLayout
+                    style="@style/filloutItemLayout">
 
+                    <TextView
+                        style="@style/filloutItemText"
+                        android:text="车辆号码："/>
+
+                    <View style="@style/autoFillStyle"/>
+
+                    <EditText
+                        android:id="@+id/car_cardid"
+                        style="@style/filloutItemEdit"
+                        android:hint="请输入车辆号码"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/horizontalLine"
+                    android:layout_marginLeft="@dimen/x30"/>
+
+                <LinearLayout
+                    android:id="@+id/car_status_item"
+                    style="@style/filloutItemLayout">
+
+                    <TextView
+                        style="@style/filloutItemText"
+                        android:text="车辆状况："/>
+
+                    <View style="@style/autoFillStyle"/>
+
+                    <TextView
+                        android:id="@+id/car_status"
+                        style="@style/filloutItemEditRight"
+                        android:text="请选择"/>
+
+                    <ImageView style="@style/filloutImageStyle"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/car_monthlyMoney_item"
+                    style="@style/filloutItemLayout">
+
+                    <TextView
+                        style="@style/filloutItemText"
+                        android:text="每月需要还："/>
+
+                    <View
+                        style="@style/autoFillStyle"/>
+
+                    <EditText
+                        android:id="@+id/car_monthlyMoney"
+                        style="@style/filloutItemEdit"
+                        android:inputType="numberDecimal"
+                        android:layout_marginRight="@dimen/x10"
+                        android:hint="请输入还款金额"/>
+
+                    <TextView
+                        style="@style/filloutItemText"
+                        android:layout_marginLeft="0px"
+                        android:layout_marginRight="@dimen/x30"
+                        android:text="元"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/horizontalLine"
+                    android:layout_marginLeft="@dimen/x30"/>
+
+                <LinearLayout
+                    style="@style/filloutItemLayout">
+
+                    <TextView
+
+                        style="@style/filloutItemText"
+                        android:text="裸车价："/>
+
+                    <View
+                        style="@style/autoFillStyle"/>
+
+                    <EditText
+                        android:id="@+id/car_price"
+                        style="@style/filloutItemEditRight"
+                        android:hint="请输入"/>
+
+                    <TextView
+                        style="@style/filloutItemTextRight"
+                        android:text="万元"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/horizontalLine"
+                    android:layout_marginLeft="@dimen/x30"/>
+
+                <LinearLayout
+                    android:id="@+id/car_buyDate_item"
+                    style="@style/filloutItemLayout">
+
+                    <TextView
+                        style="@style/filloutItemText"
+                        android:text="车辆购买日期："/>
+
+                    <View style="@style/autoFillStyle"/>
+
+                    <TextView
+                        android:id="@+id/car_buyDate"
+                        style="@style/filloutItemEditRight"
+                        android:text="请选择"/>
+
+                    <ImageView style="@style/filloutImageStyle"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/horizontalLine"
+                    android:layout_marginLeft="@dimen/x30"/>
+
+                <LinearLayout
+                    style="@style/filloutItemLayout">
+
+                    <TextView
+                        style="@style/filloutItemText"
+                        android:text="其他车辆信息："/>
+
+                    <View
+                        style="@style/autoFillStyle"/>
+
+                    <EditText
+                        android:id="@+id/car_otherInfo"
+                        style="@style/filloutItemEdit"
+                        android:hint="请输入"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/horizontalLine"/>
             </LinearLayout>
-            <View
-                style="@style/horizontalLine"/>
-            </LinearLayout>
-
-
-
 
 
         </LinearLayout>

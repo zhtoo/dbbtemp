@@ -39,7 +39,7 @@
                         style="@style/autoFillStyle"/>
 
                     <EditText
-
+                        android:id="@+id/coborrow_coname"
                         style="@style/filloutItemEdit"
                         android:hint="请输入姓名"/>
 
@@ -66,10 +66,12 @@
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:id="@+id/coborrow_sex_male"
                             style="@style/filloutRadioButton"
                             android:text="男"/>
 
                         <RadioButton
+                            android:id="@+id/coborrow_sex_female"
                             style="@style/filloutRadioButton"
                             android:text="女"/>
 
@@ -96,13 +98,13 @@
                     style="@style/filloutItemLayout">
 
                     <TextView
-                        android:id="@+id/textView2"
                         style="@style/filloutItemText"
                         android:text="与借款人关系："/>
 
                     <View style="@style/autoFillStyle"/>
 
                     <EditText
+                        android:id="@+id/coborrow_crelationship"
                         style="@style/filloutItemEdit"
                         android:hint="请输入"/>
 
@@ -122,6 +124,7 @@
                     <View style="@style/autoFillStyle"/>
 
                     <EditText
+                        android:id="@+id/coborrow_cardid"
                         style="@style/filloutItemEdit"
                         android:hint="请输入身份证号码"/>
 
@@ -141,6 +144,7 @@
                     <View style="@style/autoFillStyle"/>
 
                     <EditText
+                        android:id="@+id/coborrow_domicile"
                         style="@style/filloutItemEdit"
                         android:hint="请输入户籍所在地"/>
 
@@ -151,6 +155,7 @@
                     android:layout_marginLeft="@dimen/x30"/>
 
                 <LinearLayout
+                    android:id="@+id/coborrow_exitingBuildAddr_item"
                     style="@style/filloutItemLayout">
 
                     <TextView
@@ -160,6 +165,7 @@
                     <View style="@style/autoFillStyle"/>
 
                     <TextView
+                        android:id="@+id/coborrow_exitingBuildAddr"
                         style="@style/filloutItemEditRight"
                         android:text="请选择"/>
 
@@ -181,6 +187,7 @@
                     <View style="@style/autoFillStyle"/>
 
                     <EditText
+                        android:id="@+id/coborrow_exitingBuildAddr01"
                         style="@style/filloutItemEdit"
                         android:hint="乡镇/街道/小区/楼层"/>
 
@@ -214,6 +221,7 @@
                         style="@style/autoFillStyle"/>
 
                     <EditText
+                        android:id="@+id/coborrow_workunitName"
                         style="@style/filloutItemEdit"
                         android:hint="请输入单位名称"/>
 
@@ -235,6 +243,7 @@
                         style="@style/autoFillStyle"/>
 
                     <EditText
+                        android:id="@+id/coborrow_workunitDepartment"
                         style="@style/filloutItemEdit"
                         android:hint="请输入"/>
 
@@ -248,7 +257,6 @@
                     style="@style/filloutItemLayout">
 
                     <TextView
-
                         style="@style/filloutItemText"
                         android:text="工资月均收入："/>
 
@@ -256,6 +264,7 @@
                         style="@style/autoFillStyle"/>
 
                     <EditText
+                        android:id="@+id/coborrow_monthlyIncome"
                         style="@style/filloutItemEditRight"
                         android:layout_marginRight="@dimen/x10"
                         android:hint="请输入"/>
@@ -284,16 +293,19 @@
                         style="@style/autoFillStyle"/>
 
                     <RadioGroup
+
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
                         <RadioButton
+                            android:id="@+id/coborrow_isBusinessOwner"
                             style="@style/filloutRadioButton"
                             android:text="是"/>
 
                         <RadioButton
+                            android:id="@+id/coborrow_unBusinessOwner"
                             style="@style/filloutRadioButton"
                             android:text="否"/>
 
@@ -320,6 +332,7 @@
                 android:layout_marginBottom="@dimen/y20">
                 <!--单位性质-->
                 <LinearLayout
+                    android:id="@+id/coborrow_workunitNature_item"
                     style="@style/filloutItemLayout">
 
                     <TextView
@@ -329,6 +342,7 @@
                     <View style="@style/autoFillStyle"/>
 
                     <TextView
+                        android:id="@+id/coborrow_workunitNature"
                         style="@style/filloutItemEditRight"
                         android:text="请选择"/>
 
@@ -352,6 +366,8 @@
                         style="@style/autoFillStyle"/>
 
                     <EditText
+                        android:id="@+id/coborrow_phone"
+                        android:inputType="phone"
                         style="@style/filloutItemEdit"
                         android:hint="请输入单位电话"/>
 
@@ -372,6 +388,7 @@
                         style="@style/autoFillStyle"/>
 
                     <EditText
+                        android:id="@+id/coborrow_extPhone"
                         style="@style/filloutItemEdit"
                         android:hint="请输入分机号码"/>
 
@@ -386,7 +403,6 @@
                     style="@style/filloutItemLayout">
 
                     <TextView
-
                         style="@style/filloutItemText"
                         android:text="累计工作年限："/>
 
@@ -394,8 +410,8 @@
                         style="@style/autoFillStyle"/>
 
                     <EditText
+                        android:id="@+id/coborrow_workunitAge"
                         style="@style/filloutItemEditRight"
-
                         android:layout_marginRight="@dimen/x10"
                         android:hint="请输入"/>
 
@@ -423,16 +439,20 @@
 
 
                     <CheckBox
+                        android:id="@+id/coborrow_socialSecurity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="社保"
+                        android:layout_marginRight="@dimen/x30"
                         android:textSize="@dimen/x28"
                         android:theme="@style/MyCheckBox"/>
 
                     <CheckBox
+                        android:id="@+id/coborrow_providentFund"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="公积金"
+                        android:layout_marginRight="@dimen/x30"
                         android:textSize="@dimen/x28"
                         android:theme="@style/MyCheckBox"/>
 
@@ -444,6 +464,7 @@
                     android:layout_marginLeft="@dimen/x30"/>
                 <!--单位地址-->
                 <LinearLayout
+                    android:id="@+id/coborrow_workunit_pca_item"
                     style="@style/filloutItemLayout">
 
                     <TextView
@@ -453,6 +474,7 @@
                     <View style="@style/autoFillStyle"/>
 
                     <TextView
+                        android:id="@+id/coborrow_workunit_pca"
                         style="@style/filloutItemEditRight"
                         android:text="请选择"/>
 
@@ -474,6 +496,7 @@
                     <View style="@style/autoFillStyle"/>
 
                     <EditText
+                        android:id="@+id/coborrow_workunitStreet"
                         style="@style/filloutItemEdit"
                         android:hint="乡镇/街道/小区/楼层"/>
 

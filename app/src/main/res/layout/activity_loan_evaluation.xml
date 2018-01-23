@@ -101,6 +101,7 @@
                         android:text="额度:"/>
 
                     <EditText
+                        android:id="@+id/e_finalRationBbt"
                         style="@style/evaluationEdit"
                         android:hint="请输入"/>
 
@@ -110,8 +111,8 @@
 
                 </LinearLayout>
 
+                <!--android:id="@+id/radio_mortgage_time"-->
                 <com.hs.doubaobao.view.MyRadioGroup
-                    android:id="@+id/radio_mortgage_time"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -152,49 +153,62 @@
 
                     <TextView
                         style="@style/evaluationText02"
-                        android:text="额度:"/>
+                        android:text="额度:"
+                        android:visibility="invisible"/>
 
+                    <!--android:id="@+id/e_buildAddr"-->
                     <EditText
                         style="@style/evaluationEdit"
-                        android:hint="请输入"/>
+                        android:hint="请输入"
+                        android:visibility="invisible"/>
 
                     <TextView
                         style="@style/evaluationText03"
-                        android:text="万元"/>
+                        android:text="万元"
+                        android:visibility="invisible"/>
 
                 </LinearLayout>
 
-                <RadioGroup
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <RadioButton
-                        android:id="@+id/radio_housing_location01"
-                        style="@style/radio_bt_style"
-                        android:text="合肥市"/>
-
-                    <RadioButton
-                        android:id="@+id/radio_housing_location02"
-                        style="@style/radio_bt_style"
-                        android:text="三县"/>
-
-                    <View
-                        style="@style/autoFillStyle"/>
-
-                    <LinearLayout
-                        android:layout_width="@dimen/x320"
+                    <RadioGroup
+                        android:layout_width="1dp"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="3"
                         android:orientation="horizontal">
 
+                        <RadioButton
+                            android:id="@+id/radio_housing_location01"
+                            style="@style/radio_bt_style"
+                            android:text="合肥市"/>
+
+                        <RadioButton
+                            android:id="@+id/radio_housing_location02"
+                            style="@style/radio_bt_style"
+                            android:text="三县"/>
+
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_weight="2"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="市场均价："/>
+                            android:text="市场均价："
+                            android:textSize="@dimen/x28"/>
 
 
                         <EditText
+                            android:id="@+id/e_finalRationBa"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:hint="请输入"
@@ -204,12 +218,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="@dimen/x30"
-                            android:text="元"/>
-
+                            android:text="元"
+                            android:textSize="@dimen/x28"/>
 
                     </LinearLayout>
 
-                </RadioGroup>
+                </LinearLayout>
+
 
                 <!--房产性质-->
                 <LinearLayout
@@ -226,6 +241,7 @@
                         android:text="额度:"/>
 
                     <EditText
+                        android:id="@+id/e_finalRationBt"
                         style="@style/evaluationEdit"
                         android:hint="请输入"/>
 
@@ -235,8 +251,8 @@
 
                 </LinearLayout>
 
+                <!--android:id="@+id/radio_house_properties"-->
                 <com.hs.doubaobao.view.MyRadioGroup
-                    android:id="@+id/radio_house_properties"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -281,6 +297,7 @@
                         android:text="额度:"/>
 
                     <EditText
+                        android:id="@+id/e_finalRationCar"
                         style="@style/evaluationEdit"
                         android:hint="请输入"/>
 
@@ -290,8 +307,8 @@
 
                 </LinearLayout>
 
+                <!--android:id="@+id/radio_car_value"-->
                 <com.hs.doubaobao.view.MyRadioGroup
-                    android:id="@+id/radio_car_value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -336,6 +353,7 @@
                         android:text="额度:"/>
 
                     <EditText
+                        android:id="@+id/e_finalRationFamily"
                         style="@style/evaluationEdit"
                         android:hint="请输入"/>
 
@@ -363,6 +381,7 @@
                 </RadioGroup>
 
                 <CheckBox
+                    android:id="@+id/e_has_child"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/x30"
@@ -385,6 +404,7 @@
                         android:text="额度:"/>
 
                     <EditText
+                        android:id="@+id/e_finalRationWorkunit"
                         style="@style/evaluationEdit"
                         android:hint="请输入"/>
 
@@ -417,6 +437,7 @@
                     style="@style/evaluationContainer">
 
                     <CheckBox
+                        android:id="@+id/e_socialSecurity"
                         android:layout_width="@dimen/x220"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/x30"
@@ -425,6 +446,7 @@
                         android:theme="@style/MyCheckBox"/>
 
                     <CheckBox
+                        android:id="@+id/e_providentFund"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/x30"
@@ -449,6 +471,7 @@
                         android:text="额度:"/>
 
                     <EditText
+                        android:id="@+id/e_finalRationProprietor"
                         style="@style/evaluationEdit"
                         android:hint="请输入"/>
 
@@ -462,6 +485,7 @@
                     style="@style/evaluationContainer">
 
                     <CheckBox
+                        android:id="@+id/e_proprietor01"
                         android:layout_width="@dimen/x220"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/x30"
@@ -470,6 +494,7 @@
                         android:theme="@style/MyCheckBox"/>
 
                     <CheckBox
+                        android:id="@+id/e_proprietor02"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/x30"
@@ -527,6 +552,7 @@
                         android:text="额度:"/>
 
                     <EditText
+                        android:id="@+id/e_finalRationCredit"
                         style="@style/evaluationEdit"
                         android:hint="请输入"/>
 
@@ -536,9 +562,9 @@
 
                 </LinearLayout>
 
-
+<!-- android:id="@+id/radio_credit_liability"-->
                 <com.hs.doubaobao.view.MyRadioGroup
-                    android:id="@+id/radio_credit_liability"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -590,8 +616,11 @@
                     <TextView
                         style="@style/loanEvaluationQueryText01"
                         android:text="近一个月:"/>
+
                     <View style="@style/autoFillStyle"/>
+
                     <EditText
+                        android:id="@+id/e_creditNumOne"
                         style="@style/loanEvaluationQueryEdit"/>
 
                     <TextView
@@ -611,8 +640,11 @@
                     <TextView
                         style="@style/loanEvaluationQueryText01"
                         android:text="近三个月:"/>
+
                     <View style="@style/autoFillStyle"/>
+
                     <EditText
+                        android:id="@+id/e_creditNumThree"
                         style="@style/loanEvaluationQueryEdit"/>
 
                     <TextView
@@ -630,8 +662,11 @@
                     <TextView
                         style="@style/loanEvaluationQueryText01"
                         android:text="个人查询近三个月:"/>
+
                     <View style="@style/autoFillStyle"/>
+
                     <EditText
+                        android:id="@+id/e_creditNumPer"
                         style="@style/loanEvaluationQueryEdit"/>
 
                     <TextView
@@ -653,6 +688,7 @@
                     <View style="@style/autoFillStyle"/>
 
                     <EditText
+                        android:id="@+id/e_creditNumTotal"
                         style="@style/loanEvaluationQueryEdit"/>
 
                     <TextView
@@ -679,8 +715,8 @@
                 <View style="@style/autoFillStyle"/>
 
                 <EditText
-                    style="@style/loanEvaluationQueryEdit"
-                    android:hint="5.05"/>
+                    android:id="@+id/e_finalRation"
+                    style="@style/loanEvaluationQueryEdit"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -697,9 +733,9 @@
                 android:orientation="vertical">
 
                 <RelativeLayout
-                    android:background="#FFF"
+                    style="@style/referenceItem"
                     android:layout_height="@dimen/y90"
-                    style="@style/referenceItem">
+                    android:background="#FFF">
 
                     <TextView
                         style="@style/referenceText1"
@@ -711,16 +747,17 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    style="@style/referenceItem"
                     android:layout_height="@dimen/y90"
-                    android:background="#FFF"
-                    style="@style/referenceItem">
+                    android:background="#FFF">
 
                     <TextView
-                        android:layout_centerVertical="true"
                         style="@style/referenceText1"
+                        android:layout_centerVertical="true"
                         android:text="账号:"/>
 
                     <EditText
+                        android:id="@+id/e_wanglaNum"
                         style="@style/referenceEditText5"
                         android:layout_centerVertical="true"
                         android:hint="未填写"/>
@@ -728,33 +765,35 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    style="@style/referenceItem"
                     android:layout_height="@dimen/y90"
-                    android:background="#FFF"
-                    style="@style/referenceItem">
+                    android:background="#FFF">
 
                     <TextView
-                        android:layout_centerVertical="true"
                         style="@style/referenceText1"
+                        android:layout_centerVertical="true"
                         android:text="密码:"/>
 
                     <EditText
-                        android:layout_centerVertical="true"
+                        android:id="@+id/e_wanglaPwd"
                         style="@style/referenceEditText5"
+                        android:layout_centerVertical="true"
                         android:hint="未填写"/>
 
                 </RelativeLayout>
 
                 <RelativeLayout
+                    style="@style/referenceItem"
                     android:layout_height="@dimen/y90"
-                    android:background="#FFF"
-                    style="@style/referenceItem">
+                    android:background="#FFF">
 
                     <TextView
-                        android:layout_centerVertical="true"
                         style="@style/referenceText1"
+                        android:layout_centerVertical="true"
                         android:text="验证码:"/>
 
                     <EditText
+                        android:id="@+id/e_wanglaVercode"
                         style="@style/referenceEditText5"
                         android:layout_centerVertical="true"
                         android:hint="未填写"/>
@@ -771,24 +810,25 @@
                 android:orientation="vertical">
 
                 <RelativeLayout
+                    style="@style/referenceItem"
                     android:layout_height="@dimen/y90"
-                    android:background="#FFF"
-                    style="@style/referenceItem">
+                    android:background="#FFF">
 
                     <TextView
                         style="@style/referenceText1"
                         android:layout_centerVertical="true"
-                        android:textColor="#000000"
-                        android:text="社保"/>
+                        android:text="社保"
+                        android:textColor="#000000"/>
 
                 </RelativeLayout>
 
                 <RelativeLayout
+                    style="@style/referenceItem"
                     android:layout_height="@dimen/y90"
-                    android:background="#FFF"
-                    style="@style/referenceItem">
+                    android:background="#FFF">
 
                     <EditText
+                        android:id="@+id/e_socialNum"
                         style="@style/referenceEditText5"
                         android:layout_centerVertical="true"
                         android:hint="未填写"/>
@@ -801,9 +841,9 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:background="#FFF"
+                    style="@style/referenceItem"
                     android:layout_height="@dimen/y90"
-                    style="@style/referenceItem">
+                    android:background="#FFF">
 
                     <TextView
                         style="@style/referenceText1"
@@ -811,6 +851,7 @@
                         android:text="密码:"/>
 
                     <EditText
+                        android:id="@+id/e_socialPwd"
                         style="@style/referenceEditText5"
                         android:layout_centerVertical="true"
                         android:hint="未填写"/>
@@ -826,9 +867,9 @@
                 android:orientation="vertical">
 
                 <RelativeLayout
-                    android:background="#FFF"
+                    style="@style/referenceItem"
                     android:layout_height="@dimen/y90"
-                    style="@style/referenceItem">
+                    android:background="#FFF">
 
                     <TextView
                         style="@style/referenceText1"
@@ -839,9 +880,9 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    style="@style/referenceItem"
                     android:layout_height="@dimen/y90"
-                    android:background="#FFF"
-                    style="@style/referenceItem">
+                    android:background="#FFF">
 
                     <TextView
                         style="@style/referenceText1"
@@ -849,6 +890,7 @@
                         android:text="账号:"/>
 
                     <EditText
+                        android:id="@+id/e_reserveNum"
                         style="@style/referenceEditText5"
                         android:layout_centerVertical="true"
                         android:hint="未填写"/>
@@ -856,9 +898,9 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    style="@style/referenceItem"
                     android:layout_height="@dimen/y90"
-                    android:background="#FFF"
-                    style="@style/referenceItem">
+                    android:background="#FFF">
 
                     <TextView
                         style="@style/referenceText1"
@@ -866,6 +908,7 @@
                         android:text="密码:"/>
 
                     <EditText
+                        android:id="@+id/e_reservePwd"
                         style="@style/referenceEditText5"
                         android:layout_centerVertical="true"
                         android:hint="未填写"/>

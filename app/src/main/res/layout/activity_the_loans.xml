@@ -20,7 +20,7 @@
             style="@style/filloutLinearLayout">
 
             <LinearLayout
-
+                android:id="@+id/loan_type"
                 style="@style/filloutItemLayout">
 
                 <TextView
@@ -30,6 +30,7 @@
                 <View style="@style/autoFillStyle"/>
 
                 <TextView
+                    android:id="@+id/loan_type_text"
                     style="@style/filloutItemEdit"
                     android:text="请选择"/>
 
@@ -53,6 +54,8 @@
                     style="@style/autoFillStyle"/>
 
                 <EditText
+                    android:inputType="numberDecimal"
+                    android:id="@+id/loan_account"
                     style="@style/filloutItemEdit"
                     android:layout_marginRight="0px"
                     android:hint="请输入金额"/>
@@ -78,6 +81,7 @@
     <LinearLayout
         style="@style/filloutLinearLayout">
         <LinearLayout
+            android:id="@+id/loan_period"
             style="@style/filloutItemLayout">
 
             <TextView
@@ -87,6 +91,7 @@
             <View style="@style/autoFillStyle"/>
 
             <TextView
+                android:id="@+id/loan_period_text"
                 style="@style/filloutItemEdit"
                 android:text="请选择"/>
 
@@ -97,16 +102,17 @@
             android:layout_marginLeft="@dimen/x30"
             style="@style/horizontalLine"/>
         <LinearLayout
+            android:id="@+id/loan_applydate"
             style="@style/filloutItemLayout">
 
             <TextView
-                android:id="@+id/lender_marital_status"
                 style="@style/filloutItemText"
                 android:text="申请日期："/>
 
             <View style="@style/autoFillStyle"/>
 
             <TextView
+                android:id="@+id/loan_applydate_text"
                 style="@style/filloutItemEdit"
                 android:text="请选择"/>
 
@@ -128,6 +134,7 @@
                 style="@style/autoFillStyle"/>
 
             <EditText
+                android:id="@+id/loan_purpose"
                 style="@style/filloutItemEdit"
                 android:hint="请输入贷款用途"/>
 

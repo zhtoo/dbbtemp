@@ -351,7 +351,9 @@
     <style name="loanEvaluationQueryEdit">
         <item name="android:layout_width">@dimen/x300</item>
         <item name="android:layout_height">wrap_content</item>
-
+        <item name="android:hint">请输入</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:textSize">@dimen/x28</item>
         <item name="android:paddingRight">@dimen/x20</item>
         <item name="android:gravity">right|center</item>
     </style>

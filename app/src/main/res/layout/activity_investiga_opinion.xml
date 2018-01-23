@@ -32,6 +32,7 @@
                 android:textSize="@dimen/x28"/>
 
             <EditText
+                android:id="@+id/opinion_build_stauts"
                 style="@style/investigaOpinionEdit"
                 android:hint="请输入"/>
 
@@ -48,6 +49,7 @@
                 android:textSize="@dimen/x28"/>
 
             <EditText
+                android:id="@+id/opinion_car_stauts"
                 style="@style/investigaOpinionEdit"
                 android:hint="请输入"/>
 
@@ -64,6 +66,7 @@
                 android:textSize="@dimen/x28"/>
 
             <EditText
+                android:id="@+id/opinion_face_trial"
                 style="@style/investigaOpinionEdit"
                 android:hint="请输入"/>
 
@@ -80,6 +83,7 @@
                 android:textSize="@dimen/x28"/>
 
             <EditText
+                android:id="@+id/opinion_approve_content"
                 style="@style/investigaOpinionEdit"
                 android:hint="请输入"/>
 
@@ -98,14 +102,17 @@
                 style="@style/investigaOpinionCheckBoxLayout">
 
                 <CheckBox
+                    android:id="@+id/opinion_house_card"
                     android:text="房产证"
                     style="@style/investigaOpinionCheckBox"/>
 
                 <CheckBox
+                    android:id="@+id/opinion_license"
                     style="@style/investigaOpinionCheckBox"
                     android:text="驾驶证"/>
 
                 <CheckBox
+                    android:id="@+id/opinion_driving"
                     style="@style/investigaOpinionCheckBox"
                     android:text="行驶证"/>
 
@@ -115,14 +122,17 @@
                 style="@style/investigaOpinionCheckBoxLayout">
 
                 <CheckBox
+                    android:id="@+id/opinion_identity_card"
                     style="@style/investigaOpinionCheckBox"
                     android:text="身份证"/>
 
                 <CheckBox
+                    android:id="@+id/opinion_account_book"
                     style="@style/investigaOpinionCheckBox"
                     android:text="户口本"/>
 
                 <CheckBox
+                    android:id="@+id/opinion_marriage_license"
                     style="@style/investigaOpinionCheckBox"
                     android:text="结婚证"/>
 
@@ -132,14 +142,17 @@
                 style="@style/investigaOpinionCheckBoxLayout">
 
                 <CheckBox
+                    android:id="@+id/opinion_divorce_certificate"
                     style="@style/investigaOpinionCheckBox"
                     android:text="离婚证"/>
 
                 <CheckBox
+                    android:id="@+id/opinion_divorce_agreement"
                     style="@style/investigaOpinionCheckBox"
                     android:text="离婚协议"/>
 
                 <CheckBox
+                    android:id="@+id/opinion_abchelordom"
                     style="@style/investigaOpinionCheckBox"
                     android:text="单身证明"/>
 
@@ -149,14 +162,17 @@
                 style="@style/investigaOpinionCheckBoxLayout">
 
                 <CheckBox
+                    android:id="@+id/opinion_purchase_contract"
                     style="@style/investigaOpinionCheckBox"
                     android:text="购房合同"/>
 
                 <CheckBox
+                    android:id="@+id/opinion_mortgage_contract"
                     style="@style/investigaOpinionCheckBox"
                     android:text="银行按揭合同"/>
 
                 <CheckBox
+                    android:id="@+id/opinion_bank_card"
                     style="@style/investigaOpinionCheckBox"
                     android:text="银行卡"/>
 
@@ -166,14 +182,17 @@
                 style="@style/investigaOpinionCheckBoxLayout">
 
                 <CheckBox
+                    android:id="@+id/opinion_credit_report"
                     style="@style/investigaOpinionCheckBox"
                     android:text="个人征信报告"/>
 
                 <CheckBox
+                    android:id="@+id/opinion_account_statement"
                     style="@style/investigaOpinionCheckBox"
                     android:text="银行流水"/>
 
                 <CheckBox
+                    android:id="@+id/opinion_employment_certify"
                     style="@style/investigaOpinionCheckBox"
                     android:text="工作证明"/>
 
@@ -183,20 +202,47 @@
                 style="@style/investigaOpinionCheckBoxLayout">
 
                 <CheckBox
+                    android:id="@+id/opinion_social_security"
                     style="@style/investigaOpinionCheckBox"
                     android:text="社保"/>
 
                 <CheckBox
+                    android:id="@+id/opinion_provident_fund"
                     style="@style/investigaOpinionCheckBox"
                     android:text="公积金"/>
 
                 <CheckBox
+                    android:id="@+id/opinion_bill"
                     style="@style/investigaOpinionCheckBox"
                     android:text="水电费单"/>
 
             </LinearLayout>
 
+
+
+            <LinearLayout
+                style="@style/investigaOpinionCheckBoxLayout">
+
+                <CheckBox
+                    android:id="@+id/opinion_business_license"
+                    style="@style/investigaOpinionCheckBox"
+                    android:text="营业执照"/>
+
+                <CheckBox
+                    android:id="@+id/opinion_rfw"
+                    style="@style/investigaOpinionCheckBox"
+                    android:text="人法网查询"/>
+
+                <CheckBox
+                    android:id="@+id/opinion_hdw"
+                    style="@style/investigaOpinionCheckBox"
+                    android:text="红盾网查询"/>
+
+            </LinearLayout>
+
+
             <CheckBox
+                android:id="@+id/opinion_other"
                 style="@style/investigaOpinionCheckBox"
                 android:layout_marginLeft="@dimen/x20"
                 android:layout_width="match_parent"

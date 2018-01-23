@@ -30,6 +30,7 @@
         style="@style/horizontalLine"/>
 
     <LinearLayout
+        android:id="@+id/contact_info_relation_item01"
         style="@style/filloutItemLayout">
 
         <TextView
@@ -63,6 +64,7 @@
         <EditText
             android:id="@+id/contact_info_phone01"
             android:hint="请输入手机号码"
+            android:inputType="phone"
             style="@style/filloutItemEdit"/>
 
     </LinearLayout>
