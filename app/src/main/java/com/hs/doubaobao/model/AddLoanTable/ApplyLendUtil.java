@@ -119,6 +119,7 @@ public class ApplyLendUtil {
         String liveAddress = mLiveAddressEdit.getText().toString().trim();
         String liveStreet = mLiveStreetEdit.getText().toString().trim();
         String liveSupportNumber = mSupportNumberEdit.getText().toString().trim();
+
         ApplyInfoBean bean = ApplyInfoBean.getInstance();
         ApplyInfoBean.ResDataBean.BorrowdataModelBean.CustomerInfoBean customerInfo
                 = bean.getResData().getBorrowdataModel().getCustomerInfo();
@@ -155,6 +156,7 @@ public class ApplyLendUtil {
         String ownBuildProperty = mOwnHousePropertyEdit.getText().toString().trim();
         String monthlyWage = mMonthlyIncomeEdit.getText().toString().trim();
         String buildPrice = mBuildPriceEdit.getText().toString().trim();
+
         ApplyInfoBean bean = ApplyInfoBean.getInstance();
         ApplyInfoBean.ResDataBean.BorrowdataModelBean.CustomerInfoBean customerInfo
                 = bean.getResData().getBorrowdataModel().getCustomerInfo();
@@ -162,7 +164,7 @@ public class ApplyLendUtil {
         customerInfo.setOwnBuildAddr(ownBuildAddr + ownBuildAddr2);
 
         if(!TextUtils.isEmpty(ownBuildAcreage)){
-            customerInfo.setOwnBuildAcreage(Integer.parseInt(ownBuildAcreage));
+            customerInfo.setOwnBuildAcreage(Double.parseDouble(ownBuildAcreage));
         }
 
         String[] ownBuildPropertyArr = {"", "有房无贷款", "有房有贷款", "回迁房", "自建房"};
@@ -174,11 +176,11 @@ public class ApplyLendUtil {
         }
 
         if(!TextUtils.isEmpty(monthlyWage)){
-            customerInfo.setMonthlyWage(Integer.parseInt(monthlyWage));
+            customerInfo.setMonthlyWage(Double.parseDouble(monthlyWage));
         }
 
         if (!TextUtils.isEmpty(buildPrice)) {
-            customerInfo.setBuildPrice(buildPrice);
+            customerInfo.setBuildPrice(Double.parseDouble(buildPrice));
         }
 
     }
@@ -237,7 +239,7 @@ public class ApplyLendUtil {
         }
 
         if(!TextUtils.isEmpty(account)){
-            borrowModel.setAccount(Integer.parseInt(account));
+            borrowModel.setAccount(Double.parseDouble(account));
         }
 
         borrowModel.setApplydate(applydate);
@@ -506,7 +508,7 @@ public class ApplyLendUtil {
      * workunitRoom         String     单位地址室
      * <p>
      * birth                String     出生日期
-     * buildPrice           double     每月房贷
+     *
      * opinion              String     面审情况及意见
      * qq                   String     qq
      * alipay               String     支付宝

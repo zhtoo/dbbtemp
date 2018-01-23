@@ -1,13 +1,14 @@
 package com.hs.doubaobao.model.AddLoanTable;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.hs.doubaobao.R;
 import com.hs.doubaobao.base.AppBarActivity;
 import com.hs.doubaobao.model.AddLoanTable.uploadMessage.CarInfoActivity;
@@ -20,8 +21,10 @@ import com.hs.doubaobao.model.AddLoanTable.uploadMessage.MutualLenderInfoActivit
 import com.hs.doubaobao.model.AddLoanTable.uploadMessage.TheLoansActivity;
 import com.hs.doubaobao.model.AddLoanTable.uploadPicture.UploadPictureActivity;
 import com.hs.doubaobao.model.AddLoanTable.uploadVideo.UploadVideoActivity;
+import com.hs.doubaobao.utils.log.Logger;
 
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -60,7 +63,7 @@ public class AddLoanTableActivity extends AppBarActivity implements AddLoanTable
     @BindView(R.id.add_submit)
     Button mSubmit;
 
-    private AddLoanTableContract.Presenter presenter ;
+    private AddLoanTableContract.Presenter presenter;
 
     private int[] ids = {
             R.id.add_the_loans,
@@ -77,35 +80,100 @@ public class AddLoanTableActivity extends AppBarActivity implements AddLoanTable
     private String borrowId;
 
     private LinkedHashMap<Object, Object> map;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_loan_table);
         ButterKnife.bind(this);
         setTitle("填写资料");
-        setRightStatus("保存");
-
+        setRightStatus(Color.parseColor("#E2570F"), "保存");
 
         Intent intent = getIntent();
         borrowId = intent.getStringExtra("borrowId");
         map = new LinkedHashMap<>();
-        new AddLoanTablePresener(this,this);
+        new AddLoanTablePresener(this, this);
 
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        if(!TextUtils.isEmpty(borrowId)){
+        if (!TextUtils.isEmpty(borrowId)) {
             map.put("borrowId", borrowId);
             presenter.getData(map);
         }
     }
 
+    /**
+     * 提交数据
+     */
+    private void submitData() {
+        Map<String, Object> uploadDataMap = new LinkedHashMap<>();
+        uploadDataMap.put("flag", "2");// flag-----1:代表保存，2：代表提交
+        Gson gson = new Gson();
+        String s = gson.toJson(ApplyInfoBean.getInstance().getResData().getBorrowdataModel());
+        Logger.e("Tag",s);
+        uploadDataMap.put("borrowdataModel",
+                gson.toJson(ApplyInfoBean.getInstance().getResData().getBorrowdataModel()));
+        presenter.uploadData(uploadDataMap);
+    }
 
 
+    /**
+     * 保存数据
+     */
+    private void saveData() {
+        Map<String, Object> uploadDataMap = new LinkedHashMap<>();
+        uploadDataMap.put("flag", "1");// flag-----1:代表保存，2：代表提交
+        Gson gson = new Gson();
+        String json = gson.toJson(ApplyInfoBean.getInstance().getResData().getBorrowdataModel());
+        Logger.e("Tag",json);
+        uploadDataMap.put("borrowdataModel", json);
+        presenter.uploadData(uploadDataMap);
+    }
 
 
+    @Override
+    public void onRightForward(View forwardView) {
+        saveData();
+    }
+
+    /**
+     * 处理网络数据
+     *
+     * @param bean
+     */
+    @Override
+    public void setData(ApplyInfoBean bean) {
+        if (bean != null) {
+            //将网络数据存放到单例中
+            ApplyInfoBean.setInstance(bean);//数据可以正常设置
+//            Gson gson = new Gson();
+//            String s = gson.toJson(ApplyInfoBean.getInstance().getResData().getBorrowdataModel());
+//            Logger.e("Tag",s);
+        }
+    }
+
+    /**
+     * 处理上传返回的数据
+     *
+     * @param data
+     */
+    @Override
+    public void uploadDataBack(String data) {
+
+    }
+
+    @Override
+    public void setError(String text) {
+
+    }
+
+
+    /////////////////////////////////////////////////////////////////////
+    //////点击事件START
+    /////////////////////////////////////////////////////////////////////
     @OnClick({R.id.add_lender_information, R.id.add_the_loans,
             R.id.add_contact_information, R.id.add_investigation_and_opinion,
             R.id.add_lender_information_optional, R.id.add_mutual_lender_information,
@@ -128,14 +196,14 @@ public class AddLoanTableActivity extends AppBarActivity implements AddLoanTable
 
         for (int i = 0; i < ids.length; i++) {
             if (viewId == ids[i]) {
-                if (TextUtils.isEmpty(customId)) {
-                    //TODO:提示不能跳转界面
-                    Toast.makeText(this, "请先保存贷款人信息", Toast.LENGTH_SHORT).show();
-                } else {
-                    //TODO:跳转界面
-                    Intent intent = new Intent(this, classes[i]);
-                    startActivity(intent);
-                }
+//                if (TextUtils.isEmpty(customId)) {
+//                    //TODO:提示不能跳转界面（取消）
+//                    Toast.makeText(this, "请先保存贷款人信息", Toast.LENGTH_SHORT).show();
+//                } else {
+                //TODO:跳转界面
+                Intent intent = new Intent(this, classes[i]);
+                startActivity(intent);
+//                }
             }
         }
         switch (viewId) {
@@ -146,19 +214,11 @@ public class AddLoanTableActivity extends AppBarActivity implements AddLoanTable
                 break;
             case R.id.add_submit:
                 //TODO：联网申请改变客户的申请状态
+                submitData();
                 break;
         }
     }
 
-    @Override
-    public void setData(ApplyInfoBean bean) {
-
-    }
-
-    @Override
-    public void setError(String text) {
-
-    }
 
     @Override
     public void setPresenter(AddLoanTableContract.Presenter presenter) {

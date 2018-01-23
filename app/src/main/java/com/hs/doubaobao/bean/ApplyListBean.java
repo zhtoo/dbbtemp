@@ -14,7 +14,7 @@ public class ApplyListBean {
 
     /**
      * resCode : 1
-     * resData : {"pageDataList":{"list":[{"account":12,"actPeriod":2,"applydate":"2017-10-24","cusName":"f","id":166,"managerRation":0,"mobilephone":"13521613953","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":2,"purpose":"2","status":"01"}],"page":{"currentPage":1,"currentPageSum":0,"end":1,"pages":1,"pernum":10,"start":0,"total":1},"type":0}}
+     * resData : {"pageDataList":{"list":[{"account":12.6,"actPeriod":"","applydate":"2018-01-23","cusName":"sadasd","id":173,"managerRation":0,"mobilephone":"13517194559","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":1,"purpose":"maixiaohuangche","status":"11","type":"02"},{"account":12.6,"actPeriod":"","applydate":"2018-01-23","cusName":"sadasd","id":178,"managerRation":0,"mobilephone":"13517194559","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":0,"purpose":"maixiaohuangche","status":"00","type":"02"},{"account":12.6,"actPeriod":"","applydate":"2018-01-23","cusName":"sadasd","id":177,"managerRation":0,"mobilephone":"13517194559","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":0,"purpose":"maixiaohuangche","status":"00","type":"02"},{"account":12.6,"actPeriod":"","applydate":"2018-01-23","cusName":"sadasd","id":176,"managerRation":0,"mobilephone":"13517194559","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":0,"purpose":"maixiaohuangche","status":"00","type":"02"},{"account":12.6,"actPeriod":"","applydate":"2018-01-23","cusName":"sadasd","id":175,"managerRation":0,"mobilephone":"13517194559","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":0,"purpose":"maixiaohuangche","status":"00","type":"02"},{"account":12.6,"actPeriod":"","applydate":"2018-01-23","cusName":"sadasd","id":174,"managerRation":0,"mobilephone":"13517194559","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":0,"purpose":"maixiaohuangche","status":"00","type":"02"},{"account":12.6,"actPeriod":"","applydate":"2018-01-23","cusName":"zhangsan","id":172,"managerRation":0,"mobilephone":"15256290275","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":0,"purpose":"maixiaohuangche","status":"00","type":"02"},{"account":12,"actPeriod":"","applydate":"2017-10-24","cusName":"f","id":171,"managerRation":0,"mobilephone":"13521613953","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":2,"purpose":"2","status":"00","type":"01"},{"account":12,"actPeriod":"","applydate":"2017-10-24","cusName":"f","id":170,"managerRation":0,"mobilephone":"13521613953","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":2,"purpose":"2","status":"00","type":"01"},{"account":12,"actPeriod":"","applydate":"2017-10-24","cusName":"f","id":169,"managerRation":0,"mobilephone":"13521613953","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":2,"purpose":"2vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv","status":"00","type":"01"}],"page":{"currentPage":1,"currentPageSum":0,"end":10,"pages":2,"pernum":10,"start":0,"total":17},"type":0}}
      * resMsg : SUCCESS
      */
 
@@ -48,7 +48,7 @@ public class ApplyListBean {
 
     public static class ResDataBean {
         /**
-         * pageDataList : {"list":[{"account":12,"actPeriod":2,"applydate":"2017-10-24","cusName":"f","id":166,"managerRation":0,"mobilephone":"13521613953","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":2,"purpose":"2","status":"01"}],"page":{"currentPage":1,"currentPageSum":0,"end":1,"pages":1,"pernum":10,"start":0,"total":1},"type":0}
+         * pageDataList : {"list":[{"account":12.6,"actPeriod":"","applydate":"2018-01-23","cusName":"sadasd","id":173,"managerRation":0,"mobilephone":"13517194559","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":1,"purpose":"maixiaohuangche","status":"11","type":"02"},{"account":12.6,"actPeriod":"","applydate":"2018-01-23","cusName":"sadasd","id":178,"managerRation":0,"mobilephone":"13517194559","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":0,"purpose":"maixiaohuangche","status":"00","type":"02"},{"account":12.6,"actPeriod":"","applydate":"2018-01-23","cusName":"sadasd","id":177,"managerRation":0,"mobilephone":"13517194559","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":0,"purpose":"maixiaohuangche","status":"00","type":"02"},{"account":12.6,"actPeriod":"","applydate":"2018-01-23","cusName":"sadasd","id":176,"managerRation":0,"mobilephone":"13517194559","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":0,"purpose":"maixiaohuangche","status":"00","type":"02"},{"account":12.6,"actPeriod":"","applydate":"2018-01-23","cusName":"sadasd","id":175,"managerRation":0,"mobilephone":"13517194559","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":0,"purpose":"maixiaohuangche","status":"00","type":"02"},{"account":12.6,"actPeriod":"","applydate":"2018-01-23","cusName":"sadasd","id":174,"managerRation":0,"mobilephone":"13517194559","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":0,"purpose":"maixiaohuangche","status":"00","type":"02"},{"account":12.6,"actPeriod":"","applydate":"2018-01-23","cusName":"zhangsan","id":172,"managerRation":0,"mobilephone":"15256290275","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":0,"purpose":"maixiaohuangche","status":"00","type":"02"},{"account":12,"actPeriod":"","applydate":"2017-10-24","cusName":"f","id":171,"managerRation":0,"mobilephone":"13521613953","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":2,"purpose":"2","status":"00","type":"01"},{"account":12,"actPeriod":"","applydate":"2017-10-24","cusName":"f","id":170,"managerRation":0,"mobilephone":"13521613953","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":2,"purpose":"2","status":"00","type":"01"},{"account":12,"actPeriod":"","applydate":"2017-10-24","cusName":"f","id":169,"managerRation":0,"mobilephone":"13521613953","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":2,"purpose":"2vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv","status":"00","type":"01"}],"page":{"currentPage":1,"currentPageSum":0,"end":10,"pages":2,"pernum":10,"start":0,"total":17},"type":0}
          */
 
         private PageDataListBean pageDataList;
@@ -63,8 +63,8 @@ public class ApplyListBean {
 
         public static class PageDataListBean {
             /**
-             * list : [{"account":12,"actPeriod":2,"applydate":"2017-10-24","cusName":"f","id":166,"managerRation":0,"mobilephone":"13521613953","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":2,"purpose":"2","status":"01"}]
-             * page : {"currentPage":1,"currentPageSum":0,"end":1,"pages":1,"pernum":10,"start":0,"total":1}
+             * list : [{"account":12.6,"actPeriod":"","applydate":"2018-01-23","cusName":"sadasd","id":173,"managerRation":0,"mobilephone":"13517194559","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":1,"purpose":"maixiaohuangche","status":"11","type":"02"},{"account":12.6,"actPeriod":"","applydate":"2018-01-23","cusName":"sadasd","id":178,"managerRation":0,"mobilephone":"13517194559","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":0,"purpose":"maixiaohuangche","status":"00","type":"02"},{"account":12.6,"actPeriod":"","applydate":"2018-01-23","cusName":"sadasd","id":177,"managerRation":0,"mobilephone":"13517194559","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":0,"purpose":"maixiaohuangche","status":"00","type":"02"},{"account":12.6,"actPeriod":"","applydate":"2018-01-23","cusName":"sadasd","id":176,"managerRation":0,"mobilephone":"13517194559","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":0,"purpose":"maixiaohuangche","status":"00","type":"02"},{"account":12.6,"actPeriod":"","applydate":"2018-01-23","cusName":"sadasd","id":175,"managerRation":0,"mobilephone":"13517194559","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":0,"purpose":"maixiaohuangche","status":"00","type":"02"},{"account":12.6,"actPeriod":"","applydate":"2018-01-23","cusName":"sadasd","id":174,"managerRation":0,"mobilephone":"13517194559","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":0,"purpose":"maixiaohuangche","status":"00","type":"02"},{"account":12.6,"actPeriod":"","applydate":"2018-01-23","cusName":"zhangsan","id":172,"managerRation":0,"mobilephone":"15256290275","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":0,"purpose":"maixiaohuangche","status":"00","type":"02"},{"account":12,"actPeriod":"","applydate":"2017-10-24","cusName":"f","id":171,"managerRation":0,"mobilephone":"13521613953","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":2,"purpose":"2","status":"00","type":"01"},{"account":12,"actPeriod":"","applydate":"2017-10-24","cusName":"f","id":170,"managerRation":0,"mobilephone":"13521613953","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":2,"purpose":"2","status":"00","type":"01"},{"account":12,"actPeriod":"","applydate":"2017-10-24","cusName":"f","id":169,"managerRation":0,"mobilephone":"13521613953","officeName":"安徽豆宝宝","operatorName":"豆宝宝超级管理员","period":2,"purpose":"2vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv","status":"00","type":"01"}]
+             * page : {"currentPage":1,"currentPageSum":0,"end":10,"pages":2,"pernum":10,"start":0,"total":17}
              * type : 0
              */
 
@@ -100,11 +100,11 @@ public class ApplyListBean {
                 /**
                  * currentPage : 1
                  * currentPageSum : 0
-                 * end : 1
-                 * pages : 1
+                 * end : 10
+                 * pages : 2
                  * pernum : 10
                  * start : 0
-                 * total : 1
+                 * total : 17
                  */
 
                 private int currentPage;
@@ -174,22 +174,23 @@ public class ApplyListBean {
 
             public static class ListBean {
                 /**
-                 * account : 12
-                 * actPeriod : 2
-                 * applydate : 2017-10-24
-                 * cusName : f
-                 * id : 166
+                 * account : 12.6
+                 * actPeriod :
+                 * applydate : 2018-01-23
+                 * cusName : sadasd
+                 * id : 173
                  * managerRation : 0
-                 * mobilephone : 13521613953
+                 * mobilephone : 13517194559
                  * officeName : 安徽豆宝宝
                  * operatorName : 豆宝宝超级管理员
-                 * period : 2
-                 * purpose : 2
-                 * status : 01
+                 * period : 1
+                 * purpose : maixiaohuangche
+                 * status : 11
+                 * type : 02
                  */
 
-                private int account;
-                private int actPeriod;
+                private double account;
+                private String actPeriod;
                 private String applydate;
                 private String cusName;
                 private int id;
@@ -200,20 +201,21 @@ public class ApplyListBean {
                 private int period;
                 private String purpose;
                 private String status;
+                private String type;
 
-                public int getAccount() {
+                public double getAccount() {
                     return account;
                 }
 
-                public void setAccount(int account) {
+                public void setAccount(double account) {
                     this.account = account;
                 }
 
-                public int getActPeriod() {
+                public String getActPeriod() {
                     return actPeriod;
                 }
 
-                public void setActPeriod(int actPeriod) {
+                public void setActPeriod(String actPeriod) {
                     this.actPeriod = actPeriod;
                 }
 
@@ -295,6 +297,14 @@ public class ApplyListBean {
 
                 public void setStatus(String status) {
                     this.status = status;
+                }
+
+                public String getType() {
+                    return type;
+                }
+
+                public void setType(String type) {
+                    this.type = type;
                 }
             }
         }

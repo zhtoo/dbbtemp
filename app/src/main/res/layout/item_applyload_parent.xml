@@ -31,7 +31,7 @@
         android:textSize="@dimen/x36"/>
 
     <TextView
-        android:id="@+id/parent_title"
+        android:id="@+id/parent_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="2017-11-01"

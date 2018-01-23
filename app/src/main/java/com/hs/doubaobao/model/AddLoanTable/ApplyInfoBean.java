@@ -210,7 +210,7 @@ public class ApplyInfoBean {
                  * type : 01
                  */
 
-                private int account;
+                private double account;
                 private String applydate;
                 private String approveContent;
                 private int id;
@@ -218,11 +218,11 @@ public class ApplyInfoBean {
                 private String purpose;
                 private String type;
 
-                public int getAccount() {
+                public double getAccount() {
                     return account;
                 }
 
-                public void setAccount(int account) {
+                public void setAccount(double account) {
                     this.account = account;
                 }
 
@@ -655,7 +655,7 @@ public class ApplyInfoBean {
                 private String domicile;
                 private String exitingBuildAddr;
                 private String extPhone;
-                private int id;
+                private long id;
                 private int isBusinessOwner;
                 private String mobilephone;
                 private double monthlyIncome;
@@ -732,11 +732,11 @@ public class ApplyInfoBean {
                     this.extPhone = extPhone;
                 }
 
-                public int getId() {
+                public long getId() {
                     return id;
                 }
 
-                public void setId(int id) {
+                public void setId(long id) {
                     this.id = id;
                 }
 
@@ -943,7 +943,7 @@ public class ApplyInfoBean {
 
                 private String alipay;
                 private String birth;
-                private String buildPrice;
+                private double buildPrice;
                 private String buildStauts;
                 private String carStauts;
                 private String cardId;
@@ -959,7 +959,7 @@ public class ApplyInfoBean {
                 private String jobdepartmentCount;
                 private int marriage;
                 private String mobilephone;
-                private int monthlyWage;
+                private double monthlyWage;
                 private String opinion;
                 private double otherBuildAcreage;
                 private String otherBuildInfo;
@@ -1002,12 +1002,13 @@ public class ApplyInfoBean {
                     this.birth = birth;
                 }
 
-                public String getBuildPrice() {
+                public double getBuildPrice() {
                     return buildPrice;
                 }
 
-                public void setBuildPrice(String buildPrice) {
-                    this.buildPrice = buildPrice;
+                public void setBuildPrice(double buildPrice) {
+
+                    this.buildPrice =buildPrice;
                 }
 
                 public String getBuildStauts() {
@@ -1130,11 +1131,11 @@ public class ApplyInfoBean {
                     this.mobilephone = mobilephone;
                 }
 
-                public int getMonthlyWage() {
+                public double getMonthlyWage() {
                     return monthlyWage;
                 }
 
-                public void setMonthlyWage(int monthlyWage) {
+                public void setMonthlyWage(double monthlyWage) {
                     this.monthlyWage = monthlyWage;
                 }
 

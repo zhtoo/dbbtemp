@@ -247,14 +247,14 @@ public class FilloutLenderInformationActivity extends AppBarActivity {
 
     @Override
     public boolean savaData() {
-//        BasicInformationFragment fragment =(BasicInformationFragment) fragments.get(0);
-//        fragment.saveData();
-//
-//        LiveInformationFragment fragment1 =(LiveInformationFragment) fragments.get(1);
-//        fragment1.saveData();
-//
-//        AssetInformationFragment fragment2 =(AssetInformationFragment) fragments.get(2);
-//        fragment2.saveData();
+        BasicInformationFragment fragment =(BasicInformationFragment) fragments.get(0);
+        fragment.saveData();
+
+        LiveInformationFragment fragment1 =(LiveInformationFragment) fragments.get(1);
+        fragment1.saveData();
+
+        AssetInformationFragment fragment2 =(AssetInformationFragment) fragments.get(2);
+        fragment2.saveData();
 
         return super.savaData();
     }

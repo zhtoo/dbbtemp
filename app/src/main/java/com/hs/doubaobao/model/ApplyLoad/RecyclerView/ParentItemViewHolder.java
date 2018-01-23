@@ -6,8 +6,10 @@ import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.hs.doubaobao.R;
+import com.hs.doubaobao.view.CircleImageView;
 import com.zht.expandablerecyclerview.ParentViewHolder;
 
 /**
@@ -25,13 +27,30 @@ public class ParentItemViewHolder extends ParentViewHolder {
 
     @NonNull
     private final ImageView mArrowExpandImageView;
+    private final TextView name;
+    private final TextView time;
+    private final CircleImageView mIcon;
+
 
     public ParentItemViewHolder(@NonNull View itemView) {
         super(itemView);
         mArrowExpandImageView = (ImageView) itemView.findViewById(R.id.arrow_expand_imageview);
+        mIcon = (CircleImageView) itemView.findViewById(R.id.me_portrait);
+        name = (TextView) itemView.findViewById(R.id.parent_name);
+        time = (TextView) itemView.findViewById(R.id.parent_time);
     }
 
+
+    /**
+     * 绑定数据
+     *
+     * @param parentItem
+     * @param parentPosition
+     */
     public void bind(ParentItem parentItem, int parentPosition) {
+
+        name.setText(parentItem.getCustomName());
+        time.setText(parentItem.getApplyDate());
     }
 
     @SuppressLint("NewApi")

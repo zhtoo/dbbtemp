@@ -272,6 +272,22 @@ public class AppBarActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
+    //只设置文字
+    public void setRightStatus(int color,String title) {
+        if (mBarRightText != null) {
+            int visibility = mBarRightText.getVisibility();
+            if (visibility == View.GONE || visibility == View.INVISIBLE) {
+                mBarRightText.setVisibility(View.VISIBLE);
+            }
+            mBarRightText.setText(title);
+            mBarRightText.setTextColor(color);
+        }
+        if (mBarRightImage != null) {
+            mBarRightImage.setVisibility(View.GONE);
+        }
+    }
+
+
     //只设置图片
     public void setRightStatus(int image) {
         if (mBarRightText != null) {

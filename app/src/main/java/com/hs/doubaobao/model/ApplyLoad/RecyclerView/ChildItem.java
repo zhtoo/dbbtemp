@@ -16,6 +16,8 @@ public class ChildItem {
     private String storeName;
     private String loanAmount;
 
+    private String[] aar = new String[]{"", "12期", "18期", "24期", "36期", "48期", "60期"};
+
     public ChildItem() {}
 
     public ChildItem(String loansUse, String loanCategories, String telephone, String applicationPeriod, String storeName, String loanAmount) {
@@ -40,7 +42,16 @@ public class ChildItem {
     }
 
     public void setLoanCategories(String loanCategories) {
-        this.loanCategories = loanCategories;
+        //贷款类别，值： 01 汇民贷 02 汇商贷 03 汇业贷 04 汇车贷 06 汇房贷 05 汇农贷
+        String[] typeArr = {"","01汇民贷","02汇商贷","03汇业贷","04汇车贷","05汇农贷","06汇房贷"};
+        for (int i = 1; i < typeArr.length; i++) {
+            if(typeArr[i].contains(loanCategories)){
+                this.loanCategories = typeArr[i].substring(2,typeArr[i].length());
+                return;
+            }
+        }
+
+        this.loanCategories = "未填写";
     }
 
     public String getTelephone() {
@@ -55,8 +66,12 @@ public class ChildItem {
         return applicationPeriod;
     }
 
-    public void setApplicationPeriod(String applicationPeriod) {
-        this.applicationPeriod = applicationPeriod;
+    public void setApplicationPeriod(int applicationPeriod) {
+        if (applicationPeriod > 0 && applicationPeriod < 7) {
+            this.applicationPeriod = aar[applicationPeriod];
+        } else {
+            this.applicationPeriod = "";
+        }
     }
 
     public String getStoreName() {
@@ -72,6 +87,6 @@ public class ChildItem {
     }
 
     public void setLoanAmount(String loanAmount) {
-        this.loanAmount = loanAmount;
+        this.loanAmount = loanAmount + "万元";
     }
 }

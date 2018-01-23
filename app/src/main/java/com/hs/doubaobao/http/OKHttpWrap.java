@@ -122,8 +122,8 @@ public class OKHttpWrap {
      * @param paramsMap
      * @return
      */
-    private static String getStringParams(Map<String, String> paramsMap) {
-        Map<String, String> mParamsMap = getRequestMap(paramsMap);
+    private static String getStringParams(Map<String, Object> paramsMap) {
+        Map<String, Object> mParamsMap = getRequestMap(paramsMap);
         //处理参数
         StringBuilder tempParams = new StringBuilder();
         try {
@@ -132,7 +132,7 @@ public class OKHttpWrap {
                 if (pos > 0) {
                     tempParams.append("&");
                 }
-                tempParams.append(String.format("%s=%s", key, URLEncoder.encode(mParamsMap.get(key), "utf-8")));
+                tempParams.append(String.format("%s=%s", key, URLEncoder.encode((String) mParamsMap.get(key), "utf-8")));
                 pos++;
             }
             //生成参数
@@ -160,7 +160,7 @@ public class OKHttpWrap {
      * @param paramsMap
      * @return
      */
-    public void requestPost(String url, Map<String, String> paramsMap, final CallBack callback) {
+    public void requestPost(String url, Map<String, Object> paramsMap, final CallBack callback) {
         if (loading != null) loading.show();
         //同步锁
         synchronized (MyApplication.getContext()) {

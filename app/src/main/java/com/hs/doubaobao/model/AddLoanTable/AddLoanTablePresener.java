@@ -3,7 +3,6 @@ package com.hs.doubaobao.model.AddLoanTable;
 import android.content.Context;
 
 import com.hs.doubaobao.base.BaseParams;
-import com.hs.doubaobao.bean.CommonBean;
 import com.hs.doubaobao.http.JsonWrap;
 import com.hs.doubaobao.http.OKHttpWrap;
 import com.hs.doubaobao.http.requestCallBack;
@@ -22,7 +21,7 @@ import okhttp3.Call;
 
 public class AddLoanTablePresener implements AddLoanTableContract.Presenter {
 
-    private static final String TAG ="CopyPresener" ;
+    private  final String TAG =this.getClass().getSimpleName() ;
     AddLoanTableContract.View viewRoot;
 
 
@@ -62,5 +61,38 @@ public class AddLoanTablePresener implements AddLoanTableContract.Presenter {
                     }
                 });
 
+    }
+
+    /**
+     * 数据上传
+     * @param map
+     */
+    @Override
+    public void uploadData(Map<String, Object> map) {
+        OKHttpWrap.getOKHttpWrap(context)
+                .requestPost(BaseParams.SUBMIT_URL, map, new requestCallBack() {
+
+                    private ApplyInfoBean bean;
+
+                    @Override
+                    public void onError(Call call, Exception e) {
+                        viewRoot.setError(e.getLocalizedMessage());
+                    }
+                    @Override
+                    public void onResponse(String response) {
+                        Logger.e(TAG,response);
+                       // bean = JsonWrap.getObject(response, ApplyInfoBean.class);
+                        //回到不能在子线程中
+                        if(bean !=null){
+                            if(bean.getResCode() == 1){
+                                viewRoot.uploadDataBack("成功");
+                            }else {
+                                viewRoot.setError(bean.getResMsg());
+                            }
+                        }else {
+                            viewRoot.setError("Json解析异常");
+                        }
+                    }
+                });
     }
 }

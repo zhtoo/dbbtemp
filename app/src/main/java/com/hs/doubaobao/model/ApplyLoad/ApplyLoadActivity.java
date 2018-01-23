@@ -94,7 +94,7 @@ public class ApplyLoadActivity extends AppBarActivity implements ApplyLoadContra
         map.put("page", page+"");
         map.put("rows", "10");
         //flag-----值： 1:贷款申请列表  2:部门初审列表  3:门店一审列表
-        map.put("flag", "3");
+        map.put("flag", "1");
         presenter.getData(map);
     }
 
@@ -172,9 +172,9 @@ public class ApplyLoadActivity extends AppBarActivity implements ApplyLoadContra
             for (int i = 0; i < listBeen.size(); i++) {
                 ChildItem child = new ChildItem();
                 child.setLoansUse(listBeen.get(i).getPurpose());
-                child.setLoanCategories("网汇贷" + i);
+                child.setLoanCategories(listBeen.get(i).getType());
                 child.setTelephone(listBeen.get(i).getMobilephone());
-                child.setApplicationPeriod("期数" + listBeen.get(i).getPeriod());
+                child.setApplicationPeriod(listBeen.get(i).getPeriod());
                 child.setStoreName(listBeen.get(i).getOfficeName());
                 child.setLoanAmount(listBeen.get(i).getStatus());
                 ParentItem parentItem = new ParentItem();
