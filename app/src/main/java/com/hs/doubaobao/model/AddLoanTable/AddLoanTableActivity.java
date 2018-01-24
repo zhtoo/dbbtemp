@@ -93,12 +93,6 @@ public class AddLoanTableActivity extends AppBarActivity implements AddLoanTable
         borrowId = intent.getStringExtra("borrowId");
         map = new LinkedHashMap<>();
         new AddLoanTablePresener(this, this);
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
         if (!TextUtils.isEmpty(borrowId)) {
             map.put("borrowId", borrowId);
             presenter.getData(map);
@@ -123,12 +117,12 @@ public class AddLoanTableActivity extends AppBarActivity implements AddLoanTable
     /**
      * 保存数据
      */
-    private void saveData() {
+    private void saveNewData() {
         Map<String, Object> uploadDataMap = new LinkedHashMap<>();
         uploadDataMap.put("flag", "1");// flag-----1:代表保存，2：代表提交
         Gson gson = new Gson();
         String json = gson.toJson(ApplyInfoBean.getInstance().getResData().getBorrowdataModel());
-        Logger.e("Tag",json);
+        Logger.e("经过修改保存的数据",json);
         uploadDataMap.put("borrowdataModel", json);
         presenter.uploadData(uploadDataMap);
     }
@@ -136,7 +130,7 @@ public class AddLoanTableActivity extends AppBarActivity implements AddLoanTable
 
     @Override
     public void onRightForward(View forwardView) {
-        saveData();
+        saveNewData();
     }
 
     /**
@@ -149,9 +143,9 @@ public class AddLoanTableActivity extends AppBarActivity implements AddLoanTable
         if (bean != null) {
             //将网络数据存放到单例中
             ApplyInfoBean.setInstance(bean);//数据可以正常设置
-//            Gson gson = new Gson();
-//            String s = gson.toJson(ApplyInfoBean.getInstance().getResData().getBorrowdataModel());
-//            Logger.e("Tag",s);
+            Gson gson = new Gson();
+            String s = gson.toJson(ApplyInfoBean.getInstance().getResData().getBorrowdataModel());
+            Logger.e("请求回来的数据",s);
         }
     }
 
@@ -223,5 +217,12 @@ public class AddLoanTableActivity extends AppBarActivity implements AddLoanTable
     @Override
     public void setPresenter(AddLoanTableContract.Presenter presenter) {
         this.presenter = presenter;
+    }
+
+
+    @Override
+    public boolean savaData() {
+        ApplyInfoBean.setInstance(null);
+        return super.savaData();
     }
 }

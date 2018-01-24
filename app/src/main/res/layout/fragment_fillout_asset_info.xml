@@ -33,22 +33,35 @@
 
                 <View style="@style/autoFillStyle"/>
 
-                <TextView
+                <EditText
+                    android:id="@+id/lender_own_address_edit"
+                    style="@style/filloutItemEdit"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:hint="请输入"
+                    android:maxWidth="@dimen/x450"
+                    android:paddingRight="@dimen/x1"/>
+
+
+                <!--<TextView
                     android:id="@+id/lender_own_address_edit"
                     style="@style/filloutItemEdit"
                     android:layout_marginRight="0px"
                     android:text="请选择"/>
 
-                <ImageView style="@style/filloutImageStyle"/>
+                <ImageView style="@style/filloutImageStyle"/>-->
 
             </LinearLayout>
 
 
             <View
+                android:visibility="gone"
                 style="@style/horizontalLine"
                 android:layout_marginLeft="@dimen/y22"/>
 
-            <LinearLayout style="@style/filloutItemLayout">
+            <LinearLayout
+                android:visibility="gone"
+                style="@style/filloutItemLayout">
 
                 <TextView
                     style="@style/filloutItemText"
@@ -160,6 +173,7 @@
                 android:layout_marginLeft="@dimen/y22"/>
 
             <LinearLayout
+
                 style="@style/filloutItemLayout">
 
                 <TextView

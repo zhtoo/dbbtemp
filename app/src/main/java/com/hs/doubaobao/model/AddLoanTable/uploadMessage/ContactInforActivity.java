@@ -10,9 +10,12 @@ import android.widget.TextView;
 
 import com.hs.doubaobao.R;
 import com.hs.doubaobao.base.AppBarActivity;
+import com.hs.doubaobao.model.AddLoanTable.ApplyInfoBean;
 import com.hs.doubaobao.model.AddLoanTable.ApplyLendUtil;
 import com.hs.doubaobao.view.ExpandableView;
 import com.zht.bottomdialog.SelectBottomDialog;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -71,6 +74,63 @@ public class ContactInforActivity extends AppBarActivity {
         setTitle("联系人信息");
         isShowRightView(false);
         init();
+        initView();
+    }
+
+    /**
+     * 根据数据渲染界面
+     */
+    private void initView() {
+        ApplyInfoBean bean = ApplyInfoBean.getInstance();
+
+        List<ApplyInfoBean.ResDataBean.BorrowdataModelBean.UclListBean> uclList
+                = bean.getResData().getBorrowdataModel().getUclList();
+        if(uclList == null ||uclList.size()==0)return;
+
+        int firstPosition = 1;
+        int secondPosition = 1;
+
+        for (int i = 0; i < uclList.size(); i++) {
+            ApplyInfoBean.ResDataBean.BorrowdataModelBean.UclListBean
+                    uclListBean = uclList.get(i);
+
+            int type = uclListBean.getType();
+
+            if(type == 0){
+                if(firstPosition == 1){
+                    ApplyLendUtil.setContacts(
+                            0,0,
+                            contactInfoName01,
+                            contactInfoRelation01,
+                            contactInfoPhone01,
+                            contactInfoYes01,
+                            contactInfoNo01
+                    );
+
+                    firstPosition ++ ;
+                }else {
+
+                }
+            }
+
+
+            if(type == 1){
+                if(secondPosition == 1){
+
+
+                    secondPosition ++ ;
+                }else {
+
+                }
+            }
+
+        }
+
+
+        ApplyLendUtil.setContacts(0,0, contactInfoName01, contactInfoRelation01, contactInfoPhone01, contactInfoYes01, contactInfoNo01);
+        ApplyLendUtil.setContacts(1,0, contactInfoName02, contactInfoRelation02, contactInfoPhone02, contactInfoYes02, contactInfoNo02);
+        ApplyLendUtil.setContacts(2,1, contactInfoName03, contactInfoRelation03, contactInfoPhone03, contactInfoYes03, contactInfoNo03);
+        ApplyLendUtil.setContacts(3,1, contactInfoName04, contactInfoRelation04, contactInfoPhone04, contactInfoYes04, contactInfoNo04);
     }
 
 
@@ -80,6 +140,7 @@ public class ContactInforActivity extends AppBarActivity {
      */
     @Override
     public boolean savaData() {
+
         ApplyLendUtil.changeContacts(0,0, contactInfoName01, contactInfoRelation01, contactInfoPhone01, contactInfoYes01, contactInfoNo01);
         ApplyLendUtil.changeContacts(1,0, contactInfoName02, contactInfoRelation02, contactInfoPhone02, contactInfoYes02, contactInfoNo02);
         ApplyLendUtil.changeContacts(2,1, contactInfoName03, contactInfoRelation03, contactInfoPhone03, contactInfoYes03, contactInfoNo03);
@@ -164,7 +225,6 @@ public class ContactInforActivity extends AppBarActivity {
 
 
     private void initView01(View itemView) {
-
         contactInfoName01 = (EditText) itemView.findViewById(R.id.contact_info_name01);
         contactInfoRelation01 = (TextView) itemView.findViewById(R.id.contact_info_relation01);
         contactInfoRelationItem01 = (LinearLayout) itemView.findViewById(R.id.contact_info_relation_item01);
@@ -175,7 +235,6 @@ public class ContactInforActivity extends AppBarActivity {
     }
 
     private void initView02(View itemView) {
-
         contactInfoName02 = (EditText) itemView.findViewById(R.id.contact_info_name02);
         contactInfoRelation02 = (TextView) itemView.findViewById(R.id.contact_info_relation02);
         contactInfoRelationItem02 = (LinearLayout) itemView.findViewById(R.id.contact_info_relation_item02);
@@ -186,7 +245,6 @@ public class ContactInforActivity extends AppBarActivity {
     }
 
     private void initView03(View itemView) {
-
         contactInfoName03 = (EditText) itemView.findViewById(R.id.contact_info_name03);
         contactInfoRelation03 = (TextView) itemView.findViewById(R.id.contact_info_relation03);
         contactInfoRelationItem03 = (LinearLayout) itemView.findViewById(R.id.contact_info_relation_item03);
@@ -197,7 +255,6 @@ public class ContactInforActivity extends AppBarActivity {
     }
 
     private void initView04(View itemView) {
-
         contactInfoName04 = (EditText) itemView.findViewById(R.id.contact_info_name04);
         contactInfoRelation04 = (TextView) itemView.findViewById(R.id.contact_info_relation04);
         contactInfoRelationItem04 = (LinearLayout) itemView.findViewById(R.id.contact_info_relation_item04);

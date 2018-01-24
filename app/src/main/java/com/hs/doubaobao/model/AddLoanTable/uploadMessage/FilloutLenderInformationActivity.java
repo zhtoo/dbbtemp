@@ -71,8 +71,8 @@ public class FilloutLenderInformationActivity extends AppBarActivity {
 
     //最大值
     private int maxBasicProgress = 6;
-    private int maxLiveProgress = 3;
-    private int maxAssetProgress = 5;
+    private int maxLiveProgress = 2;
+    private int maxAssetProgress = 4;
 
 
     @Override
@@ -90,47 +90,35 @@ public class FilloutLenderInformationActivity extends AppBarActivity {
      * 初始化监听
      */
     private void initListener() {
+        /**输入监听*/
         editBasicListener = new EditListener() {
             @Override
             public void toChangedProgress(int isAdd) {
-                changeIcon(mBasicInfoIcon,
-                        mBasicProgress, isAdd,
-                        R.drawable.ic_basic_info,
-                        R.drawable.ic_basic_info_finish);
-
                 changeProgress(mBasicProgress, isAdd);
             }
         };
         editLiveListener = new EditListener() {
             @Override
             public void toChangedProgress(int isAdd) {
-                changeIcon(mLiveInfoIcon,
-                        mLiveProgress, isAdd,
-                        R.drawable.ic_live_info,
-                        R.drawable.ic_live_info_finish);
-
                 changeProgress(mLiveProgress, isAdd);
             }
         };
         editAssetListener = new EditListener() {
             @Override
             public void toChangedProgress(int isAdd) {
-                changeIcon(mAssetInfoIcon,
-                        mAssetProgress, isAdd,
-                        R.drawable.ic_asset_info,
-                        R.drawable.ic_asset_info_finish);
-
                 changeProgress(mAssetProgress, isAdd);
             }
         };
 
-
+        /**
+         * 滑动监听
+         */
         mViewpager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                if(position == 2){
+                if (position == 2) {
                     filloutSave.setText("保存");
-                }else {
+                } else {
                     filloutSave.setText("保存并下一步");
                 }
             }
@@ -145,21 +133,25 @@ public class FilloutLenderInformationActivity extends AppBarActivity {
 
             }
         });
-
     }
 
-    private void changeIcon(ImageView image, ArcProgressView progressView, int isAdd, int normal, int finish) {
+    /**
+     * 改变Icon的状态
+     *
+     * @param image
+     * @param progressView
+     * @param normal
+     * @param finish
+     */
+    private void changeIcon(ImageView image,
+                            ArcProgressView progressView,
+                            int normal, int finish) {
         float progress = progressView.getmProgress();
         float max = progressView.getmProgressMax();
-        if (isAdd == 1) {
-            if (progress == max - 1) {
-                image.setImageResource(finish);
-            }
-        } else if (isAdd == -1) {
-            if (progress == max) {
-                image.setImageResource(normal);
-            }
-
+        if(progress == max){
+            image.setImageResource(finish);
+        }else {
+            image.setImageResource(normal);
         }
     }
 
@@ -173,12 +165,34 @@ public class FilloutLenderInformationActivity extends AppBarActivity {
         if (isAdd != 0) {
             float progress = progressView.getmProgress();
             progressView.setmProgress(progress + isAdd);
+            changeIcon(progressView);
         }
 
     }
 
+    private void changeIcon(ArcProgressView progressView){
+        if(progressView == mBasicProgress){
+            changeIcon(mBasicInfoIcon,
+                    mBasicProgress,
+                    R.drawable.ic_basic_info,
+                    R.drawable.ic_basic_info_finish);
+        }
+        if(progressView == mLiveProgress){
+            changeIcon(mLiveInfoIcon,
+                    mLiveProgress,
+                    R.drawable.ic_live_info,
+                    R.drawable.ic_live_info_finish);
+        }
+        if(progressView == mAssetProgress){
+            changeIcon(mAssetInfoIcon,
+                    mAssetProgress,
+                    R.drawable.ic_asset_info,
+                    R.drawable.ic_asset_info_finish);
+        }
+    }
+
     /**
-     * 初始化数据（不需要联网，联网操作交给fragment来实现）
+     * 初始化数据（不需要联网）
      */
     private void intData() {
         mTabItemNameArray = getResources().getStringArray(R.array.fillout_tab_item);
@@ -206,17 +220,17 @@ public class FilloutLenderInformationActivity extends AppBarActivity {
         int currentItem = mViewpager.getCurrentItem();
         switch (currentItem) {
             case 0:
-                BasicInformationFragment fragment =(BasicInformationFragment) fragments.get(0);
+                BasicInformationFragment fragment = (BasicInformationFragment) fragments.get(0);
                 fragment.saveData();
                 mViewpager.setCurrentItem(1);
                 break;
             case 1:
-                LiveInformationFragment fragment1 =(LiveInformationFragment) fragments.get(1);
+                LiveInformationFragment fragment1 = (LiveInformationFragment) fragments.get(1);
                 fragment1.saveData();
                 mViewpager.setCurrentItem(2);
                 break;
             case 2:
-                AssetInformationFragment fragment2 =(AssetInformationFragment) fragments.get(2);
+                AssetInformationFragment fragment2 = (AssetInformationFragment) fragments.get(2);
                 fragment2.saveData();
                 break;
         }
@@ -244,17 +258,8 @@ public class FilloutLenderInformationActivity extends AppBarActivity {
         }
     }
 
-
     @Override
     public boolean savaData() {
-        BasicInformationFragment fragment =(BasicInformationFragment) fragments.get(0);
-        fragment.saveData();
-
-        LiveInformationFragment fragment1 =(LiveInformationFragment) fragments.get(1);
-        fragment1.saveData();
-
-        AssetInformationFragment fragment2 =(AssetInformationFragment) fragments.get(2);
-        fragment2.saveData();
 
         return super.savaData();
     }

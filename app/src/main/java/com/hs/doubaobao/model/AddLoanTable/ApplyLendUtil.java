@@ -37,8 +37,13 @@ public class ApplyLendUtil {
             EditText mDomicileEdit,
             EditText mPhoneEdit) {
         ApplyInfoBean bean = ApplyInfoBean.getInstance();
+
         ApplyInfoBean.ResDataBean.BorrowdataModelBean.CustomerInfoBean customerInfo
                 = bean.getResData().getBorrowdataModel().getCustomerInfo();
+
+        if (customerInfo == null) {
+            return;
+        }
 
         mNameEdit.setText(customerInfo.getCname());
         mIdCardEdit.setText(customerInfo.getCardId());
@@ -53,13 +58,45 @@ public class ApplyLendUtil {
             mSexMale.setChecked(false);
             mSexFemale.setChecked(false);
         }
-        String[] marriageArr = {"", "未婚", "已婚", "离异", "丧偶"};
+//        String[] marriageArr = {"", "未婚", "已婚", "离异", "丧偶"};
+        addValues(
+                new String[]{"", "未婚", "已婚", "离异", "丧偶"},
+                mMaritalStatusText,customerInfo.getMarriage()
+        );
+//        int marriagePosition = customerInfo.getMarriage();
+//        if(marriagePosition>0&&marriagePosition<=4){
+//            String marriage = marriageArr[customerInfo.getMarriage()];
+//            mMaritalStatusText.setText(marriage);
+//        }
 
-        String marriage = marriageArr[customerInfo.getMarriage()];
-        mMaritalStatusText.setText(marriage);
+        chenckValues(mDomicileEdit,customerInfo.getDomicile());
+        chenckValues(mPhoneEdit,customerInfo.getMobilephone());
+    }
 
-        mDomicileEdit.setText(customerInfo.getDomicile());
-        mPhoneEdit.setText(customerInfo.getMobilephone());
+    public static void addValues(String[] arr,TextView view,int position){
+        if(position > 0 && position < arr.length){
+            String text = arr[position];
+            view.setText(text);
+        }
+    }
+
+    public static void chenckValues(TextView view,String text){
+        if(!TextUtils.isEmpty(text)){
+            view.setText(text);
+        }
+    }
+
+    public static void chenckValues(EditText view,String text){
+        if(!TextUtils.isEmpty(text)){
+            view.setText(text);
+        }
+    }
+
+
+    public static void chenckValues(TextView view,double value){
+        if(value>0){
+            view.setText(String.valueOf(value));
+        }
     }
 
     public static void changeBasic(
@@ -102,29 +139,42 @@ public class ApplyLendUtil {
      * customerInfo:客户基本信息
      * exitingBuildAddr     String     现居住地址
      * jobdepartmentCount   String     供养人数
+     * @param mLiveAddressEdit
+     * @param mLiveStreetEdit
+     * @param mSupportNumberEdit
      */
-    public static void setLive() {
+    public static void setLive(
+            EditText mLiveAddressEdit,
+            EditText mLiveStreetEdit,
+            EditText mSupportNumberEdit) {
         ApplyInfoBean bean = ApplyInfoBean.getInstance();
         ApplyInfoBean.ResDataBean.BorrowdataModelBean.CustomerInfoBean customerInfo
                 = bean.getResData().getBorrowdataModel().getCustomerInfo();
 
+        if (customerInfo == null) {
+            return;
+        }
+        String exitingBuildAddr = customerInfo.getExitingBuildAddr();
+        String jobdepartmentCount = customerInfo.getJobdepartmentCount();
 
+        chenckValues(mLiveAddressEdit,exitingBuildAddr);
+        chenckValues(mSupportNumberEdit,jobdepartmentCount);
     }
 
     public static void changeLive(
-            TextView mLiveAddressEdit,
+            EditText mLiveAddressEdit,
             EditText mLiveStreetEdit,
             EditText mSupportNumberEdit) {
 
         String liveAddress = mLiveAddressEdit.getText().toString().trim();
-        String liveStreet = mLiveStreetEdit.getText().toString().trim();
+       // String liveStreet = mLiveStreetEdit.getText().toString().trim();
         String liveSupportNumber = mSupportNumberEdit.getText().toString().trim();
 
         ApplyInfoBean bean = ApplyInfoBean.getInstance();
         ApplyInfoBean.ResDataBean.BorrowdataModelBean.CustomerInfoBean customerInfo
                 = bean.getResData().getBorrowdataModel().getCustomerInfo();
 
-        customerInfo.setExitingBuildAddr(liveAddress + "-" + liveStreet);
+        customerInfo.setExitingBuildAddr(liveAddress /*+ "-" + liveStreet*/);
         customerInfo.setJobdepartmentCount(liveSupportNumber);
 
     }
@@ -137,13 +187,48 @@ public class ApplyLendUtil {
      * ownBuildProperty     int        自有房产性质，值：1：有房无贷款   2： 有房有贷款   3:回迁房  4：自建房
      * monthlyWage          double     工资月均收入
      * buildPrice           double     每月房贷
+     * @param mOwnAddressEdit
+     * @param mOwnStreetEdit
+     * @param mOwnHouseAreaEdit
+     * @param mOwnHousePropertyEdit
+     * @param mMonthlyIncomeEdit
+     * @param mBuildPriceEdit
      */
-    public static void setAsset() {
+    public static void setAsset(EditText mOwnAddressEdit, EditText mOwnStreetEdit, EditText mOwnHouseAreaEdit, TextView mOwnHousePropertyEdit, EditText mMonthlyIncomeEdit, EditText mBuildPriceEdit) {
+        ApplyInfoBean bean = ApplyInfoBean.getInstance();
+        ApplyInfoBean.ResDataBean.BorrowdataModelBean.CustomerInfoBean customerInfo
+                = bean.getResData().getBorrowdataModel().getCustomerInfo();
 
+        if (customerInfo == null) {
+            return;
+        }
+
+        String ownBuildAddr = customerInfo.getOwnBuildAddr();
+        double ownBuildAcreage = customerInfo.getOwnBuildAcreage();
+        int ownBuildProperty = customerInfo.getOwnBuildProperty();
+        double monthlyWage = customerInfo.getMonthlyWage();
+        double buildPrice = customerInfo.getBuildPrice();
+
+
+        /** mOwnAddressEdit
+            mOwnHouseAreaEdit.
+            mOwnHousePropertyEdit.
+            mMonthlyIncomeEdit.
+            mBuildPriceEdit.
+         */
+
+        chenckValues(mOwnAddressEdit,ownBuildAddr);
+        chenckValues(mOwnHouseAreaEdit,ownBuildAcreage);
+        addValues(new String[]{"", "有房无贷款", "有房有贷款", "回迁房", "自建房"},
+                mOwnHousePropertyEdit,ownBuildProperty
+                );
+
+        chenckValues(mMonthlyIncomeEdit,monthlyWage);
+        chenckValues(mBuildPriceEdit,buildPrice);
     }
 
     public static void changeAsset(
-            TextView mOwnAddressEdit,
+            EditText mOwnAddressEdit,
             EditText mOwnStreetEdit,
             EditText mOwnHouseAreaEdit,
             TextView mOwnHousePropertyEdit,
@@ -151,7 +236,7 @@ public class ApplyLendUtil {
             EditText mBuildPriceEdit) {
 
         String ownBuildAddr = mOwnAddressEdit.getText().toString().trim();
-        String ownBuildAddr2 = mOwnStreetEdit.getText().toString().trim();
+       // String ownBuildAddr2 = mOwnStreetEdit.getText().toString().trim();
         String ownBuildAcreage = mOwnHouseAreaEdit.getText().toString().trim();
         String ownBuildProperty = mOwnHousePropertyEdit.getText().toString().trim();
         String monthlyWage = mMonthlyIncomeEdit.getText().toString().trim();
@@ -160,10 +245,10 @@ public class ApplyLendUtil {
         ApplyInfoBean bean = ApplyInfoBean.getInstance();
         ApplyInfoBean.ResDataBean.BorrowdataModelBean.CustomerInfoBean customerInfo
                 = bean.getResData().getBorrowdataModel().getCustomerInfo();
+        /**复制*/
+        customerInfo.setOwnBuildAddr(ownBuildAddr /*+ ownBuildAddr2*/);
 
-        customerInfo.setOwnBuildAddr(ownBuildAddr + ownBuildAddr2);
-
-        if(!TextUtils.isEmpty(ownBuildAcreage)){
+        if (!TextUtils.isEmpty(ownBuildAcreage)) {
             customerInfo.setOwnBuildAcreage(Double.parseDouble(ownBuildAcreage));
         }
 
@@ -175,7 +260,7 @@ public class ApplyLendUtil {
             }
         }
 
-        if(!TextUtils.isEmpty(monthlyWage)){
+        if (!TextUtils.isEmpty(monthlyWage)) {
             customerInfo.setMonthlyWage(Double.parseDouble(monthlyWage));
         }
 
@@ -193,17 +278,41 @@ public class ApplyLendUtil {
      * period               int       申请期限，值：1:12期 2:18期 3:24期 4:36期 5:48期 6:60期
      * applydate            String    申请日期
      * purpose              String    借款用途
+     * @param mTypeText
+     * @param mAccount
+     * @param mPeriodText
+     * @param mApplydateText
+     * @param mPurpose
      */
-    public static void setTheloans() {
+    public static void setTheloans(TextView mTypeText, EditText mAccount, TextView mPeriodText, TextView mApplydateText, EditText mPurpose) {
         ApplyInfoBean bean = ApplyInfoBean.getInstance();
         ApplyInfoBean.ResDataBean.BorrowdataModelBean.BorrowModelBean borrowModel
                 = bean.getResData().getBorrowdataModel().getBorrowModel();
-        borrowModel.getType();
-        borrowModel.getAccount();
-        borrowModel.getPeriod();
-        borrowModel.getApplydate();
-        borrowModel.getPurpose();
+        if(borrowModel == null){
+            return;
+        }
 
+        String type = borrowModel.getType();
+        double account = borrowModel.getAccount();
+        int period = borrowModel.getPeriod();
+        String applydate = borrowModel.getApplydate();
+        String purpose = borrowModel.getPurpose();
+
+        if(!TextUtils.isEmpty(type)){
+            String[] marriageArr = {"", "汇民贷", "汇商贷", "汇业贷", "汇车贷", "汇农贷", "汇房贷"};
+            for (int i = 1; i < marriageArr.length; i++) {
+                String position = "0"+i;
+                if(type.equals(position)){
+                    mTypeText.setText(marriageArr[i]);
+                }
+            }
+        }
+        chenckValues(mAccount,account);
+        addValues(new String[]{"", "12期", "18期", "24期", "36期", "48期", "60期"},
+                mPeriodText,period);
+
+        chenckValues(mApplydateText,applydate);
+        chenckValues(mPurpose,purpose);
     }
 
     public static void changeTheloans(
@@ -232,13 +341,13 @@ public class ApplyLendUtil {
         }
         //申请期限，值：1:12期 2:18期 3:24期 4:36期 5:48期 6:60期
         String[] periodArr = {"", "12期", "18期", "24期", "36期", "48期", "60期"};
-        for (int i = 0; i < marriageArr.length; i++) {
-            if (period.equals(marriageArr[i])) {
+        for (int i = 0; i < periodArr.length; i++) {
+            if (period.equals(periodArr[i])) {
                 borrowModel.setPeriod(i);
             }
         }
 
-        if(!TextUtils.isEmpty(account)){
+        if (!TextUtils.isEmpty(account)) {
             borrowModel.setAccount(Double.parseDouble(account));
         }
 
@@ -256,7 +365,14 @@ public class ApplyLendUtil {
      * notice               int         是否知晓贷款，值：1是  2否
      * type                 int         联系人类型，值：1：一般联系人 ，2：直系亲属联系人
      */
-    public static void setContacts(int position, int type) {
+    public static void setContacts(
+           int position, int type,
+           EditText contactInfoName,
+           TextView contactInfoRelation,
+           EditText contactInfoPhone,
+           RadioButton contactInfoYes,
+           RadioButton contactInfoNo
+    ) {
         ApplyInfoBean bean = ApplyInfoBean.getInstance();
         List<ApplyInfoBean.ResDataBean.BorrowdataModelBean.UclListBean> uclList
                 = bean.getResData().getBorrowdataModel().getUclList();
@@ -290,12 +406,11 @@ public class ApplyLendUtil {
                 = bean.getResData().getBorrowdataModel().getUclList();
         ApplyInfoBean.ResDataBean.BorrowdataModelBean.UclListBean
                 uclListBean;
-        if (uclList != null && uclList.size() == 4) {
+        if (uclList != null && uclList.size() > position) {
             uclListBean = uclList.get(position);
         } else {
-            uclListBean  = new ApplyInfoBean.ResDataBean.BorrowdataModelBean.UclListBean();
+            uclListBean = new ApplyInfoBean.ResDataBean.BorrowdataModelBean.UclListBean();
         }
-
         uclListBean.setName(name);
         uclListBean.setRelation(relation);
         uclListBean.setPhone(phone);
@@ -306,7 +421,8 @@ public class ApplyLendUtil {
         }
         uclListBean.setType(type);
 
-        if (uclList != null && uclList.size() == 4) {
+        if (uclList != null && uclList.size() > position) {
+
         } else {
             uclList.add(uclListBean);
         }
@@ -415,28 +531,28 @@ public class ApplyLendUtil {
         String opinion = mFaceTrial.getText().toString().trim();
         String approveContent = mApproveContent.getText().toString().trim();
 
-        boolean houseCard           =             mHouseCard .isChecked();
-        boolean license             =               mLicense .isChecked();
-        boolean driving             =               mDriving .isChecked();
-        boolean identityCard        =          mIdentityCard .isChecked();
-        boolean accountBook         =           mAccountBook .isChecked();
-        boolean marriageLicense     =       mMarriageLicense .isChecked();
-        boolean divorceCertificat   =     mDivorceCertificate .isChecked();
-        boolean divorceAgreemen     =       mDivorceAgreement.isChecked();
-        boolean abchelordom         =           mAbchelordom .isChecked();
-        boolean purchaseContract    =      mPurchaseContract .isChecked();
-        boolean mortgageContract    =      mMortgageContract .isChecked();
-        boolean bankCard            =              mBankCard .isChecked();
-        boolean creditReport        =          mCreditReport .isChecked();
-        boolean accountStatement    =      mAccountStatement .isChecked();
-        boolean employmentCertify   =     mEmploymentCertify .isChecked();
-        boolean socialSecurity      =        mSocialSecurity .isChecked();
-        boolean providentFund       =         mProvidentFund .isChecked();
-        boolean bill                =                  mBill .isChecked();
-        boolean businessLicense     =       mBusinessLicense .isChecked();
-        boolean rfw                 =                   mRfw .isChecked();
-        boolean hdw                 =                   mHdw .isChecked();
-        boolean other               =                   mOther.isChecked();
+        boolean houseCard = mHouseCard.isChecked();
+        boolean license = mLicense.isChecked();
+        boolean driving = mDriving.isChecked();
+        boolean identityCard = mIdentityCard.isChecked();
+        boolean accountBook = mAccountBook.isChecked();
+        boolean marriageLicense = mMarriageLicense.isChecked();
+        boolean divorceCertificat = mDivorceCertificate.isChecked();
+        boolean divorceAgreemen = mDivorceAgreement.isChecked();
+        boolean abchelordom = mAbchelordom.isChecked();
+        boolean purchaseContract = mPurchaseContract.isChecked();
+        boolean mortgageContract = mMortgageContract.isChecked();
+        boolean bankCard = mBankCard.isChecked();
+        boolean creditReport = mCreditReport.isChecked();
+        boolean accountStatement = mAccountStatement.isChecked();
+        boolean employmentCertify = mEmploymentCertify.isChecked();
+        boolean socialSecurity = mSocialSecurity.isChecked();
+        boolean providentFund = mProvidentFund.isChecked();
+        boolean bill = mBill.isChecked();
+        boolean businessLicense = mBusinessLicense.isChecked();
+        boolean rfw = mRfw.isChecked();
+        boolean hdw = mHdw.isChecked();
+        boolean other = mOther.isChecked();
 
 
         ApplyInfoBean bean = ApplyInfoBean.getInstance();
@@ -451,33 +567,34 @@ public class ApplyLendUtil {
         customerInfo.setOpinion(opinion);
         borrowModel.setApproveContent(approveContent);
 
-        certificates.setHouseCard           (checkCustomerSurveyOpinion(houseCard         ));
-        certificates.setLicense             (checkCustomerSurveyOpinion(license           ));
-        certificates.setDriving             (checkCustomerSurveyOpinion(driving           ));
-        certificates.setIdentityCard        (checkCustomerSurveyOpinion(identityCard      ));
-        certificates.setAccountBook         (checkCustomerSurveyOpinion(accountBook       ));
-        certificates.setMarriageLicense     (checkCustomerSurveyOpinion(marriageLicense   ));
-        certificates.setDivorceCertificate  (checkCustomerSurveyOpinion(divorceCertificat ));
-        certificates.setDivorceAgreement    (checkCustomerSurveyOpinion(divorceAgreemen   ));
-        certificates.setAbchelordom         (checkCustomerSurveyOpinion(abchelordom       ));
-        certificates.setPurchaseContract    (checkCustomerSurveyOpinion(purchaseContract  ));
-        certificates.setMortgageContract    (checkCustomerSurveyOpinion(mortgageContract  ));
-        certificates.setBankCard            (checkCustomerSurveyOpinion(bankCard          ));
-        certificates.setCreditReport        (checkCustomerSurveyOpinion(creditReport      ));
-        certificates.setAccountStatement    (checkCustomerSurveyOpinion(accountStatement  ));
-        certificates.setEmploymentCertify   (checkCustomerSurveyOpinion(employmentCertify ));
-        certificates.setSocialSecurity      (checkCustomerSurveyOpinion(socialSecurity    ));
-        certificates.setProvidentFund       (checkCustomerSurveyOpinion(providentFund     ));
-        certificates.setBill                (checkCustomerSurveyOpinion(bill              ));
-        certificates.setBusinessLicense     (checkCustomerSurveyOpinion(businessLicense   ));
-        certificates.setRfw                 (checkCustomerSurveyOpinion(rfw               ));
-        certificates.setHdw                 (checkCustomerSurveyOpinion(hdw               ));
-        certificates.setOther               (checkCustomerSurveyOpinion(other             ));
+        certificates.setHouseCard(checkCustomerSurveyOpinion(houseCard));
+        certificates.setLicense(checkCustomerSurveyOpinion(license));
+        certificates.setDriving(checkCustomerSurveyOpinion(driving));
+        certificates.setIdentityCard(checkCustomerSurveyOpinion(identityCard));
+        certificates.setAccountBook(checkCustomerSurveyOpinion(accountBook));
+        certificates.setMarriageLicense(checkCustomerSurveyOpinion(marriageLicense));
+        certificates.setDivorceCertificate(checkCustomerSurveyOpinion(divorceCertificat));
+        certificates.setDivorceAgreement(checkCustomerSurveyOpinion(divorceAgreemen));
+        certificates.setAbchelordom(checkCustomerSurveyOpinion(abchelordom));
+        certificates.setPurchaseContract(checkCustomerSurveyOpinion(purchaseContract));
+        certificates.setMortgageContract(checkCustomerSurveyOpinion(mortgageContract));
+        certificates.setBankCard(checkCustomerSurveyOpinion(bankCard));
+        certificates.setCreditReport(checkCustomerSurveyOpinion(creditReport));
+        certificates.setAccountStatement(checkCustomerSurveyOpinion(accountStatement));
+        certificates.setEmploymentCertify(checkCustomerSurveyOpinion(employmentCertify));
+        certificates.setSocialSecurity(checkCustomerSurveyOpinion(socialSecurity));
+        certificates.setProvidentFund(checkCustomerSurveyOpinion(providentFund));
+        certificates.setBill(checkCustomerSurveyOpinion(bill));
+        certificates.setBusinessLicense(checkCustomerSurveyOpinion(businessLicense));
+        certificates.setRfw(checkCustomerSurveyOpinion(rfw));
+        certificates.setHdw(checkCustomerSurveyOpinion(hdw));
+        certificates.setOther(checkCustomerSurveyOpinion(other));
     }
 
-    private static String checkCustomerSurveyOpinion(Boolean isCheck){
-        return  isCheck?"有":"";
+    private static String checkCustomerSurveyOpinion(Boolean isCheck) {
+        return isCheck ? "有" : "";
     }
+
     /**
      * 贷款人信息（选填）LenderInfo
      * customerInfo:客户基本信息
@@ -508,7 +625,7 @@ public class ApplyLendUtil {
      * workunitRoom         String     单位地址室
      * <p>
      * birth                String     出生日期
-     *
+     * <p>
      * opinion              String     面审情况及意见
      * qq                   String     qq
      * alipay               String     支付宝
@@ -544,37 +661,37 @@ public class ApplyLendUtil {
 
     public static void changeLenderInfo(EditText mExitingBuildAcreage, EditText mExitingBuildLiveTime, EditText mOtherBuildInfo, EditText mOtherBuildAcreage, TextView mOtherBuildProperty, EditText mWorkunitName, EditText mJobDepartment, RadioButton mIsBusinessOwner, RadioButton mUnBusinessOwner, TextView mWorkunitNature, EditText mWorkunitPhone, EditText mWorkunitExtPhone, EditText mWorkunitAge, CheckBox mSocialSecurity, CheckBox mReservedFunds, TextView mWorkunitPca, EditText mWorkunitStreet, EditText mQQ, EditText mAlipay) {
 
-        String exitingBuildAcreage  = mExitingBuildAcreage.getText().toString().trim();
+        String exitingBuildAcreage = mExitingBuildAcreage.getText().toString().trim();
         String exitingBuildLivetime = mExitingBuildLiveTime.getText().toString().trim();
-        String otherBuildInfo       = mOtherBuildInfo.getText().toString().trim();
-        String otherBuildAcreage    = mOtherBuildAcreage.getText().toString().trim();
-        String otherBuildProperty   = mOtherBuildProperty.getText().toString().trim();
-        String workunitName         = mWorkunitName.getText().toString().trim();
-        String jobdepartment        = mJobDepartment.getText().toString().trim();
-        boolean isBusinessOwner     = mIsBusinessOwner.isChecked();
-        boolean unBusinessOwner     = mUnBusinessOwner.isChecked();
-        String workunitNature       = mWorkunitNature.getText().toString().trim();
-        String workunitPhone        = mWorkunitPhone.getText().toString().trim();
-        String workunitExtPhone     = mWorkunitExtPhone.getText().toString().trim();
-        String workunitAge          = mWorkunitAge.getText().toString().trim();
-        boolean socialSecurity      = mSocialSecurity.isChecked();
-        boolean reservedFunds       = mReservedFunds.isChecked();
-        String workunitProvince     = mWorkunitPca.getText().toString().trim();
-        String workunitStreet       = mWorkunitStreet.getText().toString().trim();
-        String qq                   = mQQ.getText().toString().trim();
-        String alipay               = mAlipay.getText().toString().trim();
+        String otherBuildInfo = mOtherBuildInfo.getText().toString().trim();
+        String otherBuildAcreage = mOtherBuildAcreage.getText().toString().trim();
+        String otherBuildProperty = mOtherBuildProperty.getText().toString().trim();
+        String workunitName = mWorkunitName.getText().toString().trim();
+        String jobdepartment = mJobDepartment.getText().toString().trim();
+        boolean isBusinessOwner = mIsBusinessOwner.isChecked();
+        boolean unBusinessOwner = mUnBusinessOwner.isChecked();
+        String workunitNature = mWorkunitNature.getText().toString().trim();
+        String workunitPhone = mWorkunitPhone.getText().toString().trim();
+        String workunitExtPhone = mWorkunitExtPhone.getText().toString().trim();
+        String workunitAge = mWorkunitAge.getText().toString().trim();
+        boolean socialSecurity = mSocialSecurity.isChecked();
+        boolean reservedFunds = mReservedFunds.isChecked();
+        String workunitProvince = mWorkunitPca.getText().toString().trim();
+        String workunitStreet = mWorkunitStreet.getText().toString().trim();
+        String qq = mQQ.getText().toString().trim();
+        String alipay = mAlipay.getText().toString().trim();
 
         ApplyInfoBean bean = ApplyInfoBean.getInstance();
         ApplyInfoBean.ResDataBean.BorrowdataModelBean.CustomerInfoBean customerInfo
                 = bean.getResData().getBorrowdataModel().getCustomerInfo();
 
-        if(!TextUtils.isEmpty(exitingBuildAcreage)){
+        if (!TextUtils.isEmpty(exitingBuildAcreage)) {
             customerInfo.setExitingBuildAcreage(Double.parseDouble(exitingBuildAcreage));
         }
         customerInfo.setExitingBuildLivetime(exitingBuildLivetime);
         customerInfo.setOtherBuildInfo(otherBuildInfo);
 
-        if(!TextUtils.isEmpty(otherBuildAcreage)){
+        if (!TextUtils.isEmpty(otherBuildAcreage)) {
             customerInfo.setOtherBuildAcreage(Double.parseDouble(otherBuildAcreage));
         }
 
@@ -583,10 +700,9 @@ public class ApplyLendUtil {
         customerInfo.setJobdepartment(jobdepartment);
 
         // 是否是企业主/个体户 ，值：2 ：是   ，1：否
-        if(isBusinessOwner){
+        if (isBusinessOwner) {
             customerInfo.setIsBusinessOwner(2);
-        }else
-        if(unBusinessOwner){
+        } else if (unBusinessOwner) {
             customerInfo.setIsBusinessOwner(1);
         }
         //1：事业单位/国家机关，2：国有企业/上市公司，3：外资/私营 ，4 个体 ，5：公检法/军队 ，6：自由/无业
@@ -603,8 +719,8 @@ public class ApplyLendUtil {
         customerInfo.setWorkunitAge(workunitAge);
         //是否有社保，值：1 代表有 ，-1：代表无
         //是否有公积金，值：2：代表有，-1代表无
-        customerInfo.setSocialSecurity(socialSecurity?1:-1);
-        customerInfo.setReservedFunds(reservedFunds?1:-1);
+        customerInfo.setSocialSecurity(socialSecurity ? 1 : -1);
+        customerInfo.setReservedFunds(reservedFunds ? 1 : -1);
 
         customerInfo.setWorkunitProvince(workunitProvince);
         customerInfo.setWorkunitCity("");
@@ -684,27 +800,27 @@ public class ApplyLendUtil {
     }
 
     public static void changeCommonLenderInfo(EditText mConame, RadioButton mSexMale, RadioButton mSexFemale, EditText mCrelationship, EditText mCardid, EditText mDomicile, TextView mExitingBuildAddr, EditText mExitingBuildAddr01, EditText mWorkunitName, EditText mWorkunitDepartment, EditText mMonthlyIncome, RadioButton mIsBusinessOwner, RadioButton mUnBusinessOwner, TextView mWorkunitNature, EditText mPhone, EditText mExtPhone, EditText mWorkunitAge, CheckBox mSocialSecurity, CheckBox mProvidentFund, TextView mWorkunitPca, EditText mWorkunitStreet) {
-        String  coname              =  mConame.getText().toString().trim();
-        boolean male                =  mSexMale.isChecked();
-        boolean female              =  mSexFemale.isChecked();
-        String  crelationship       =  mCrelationship.getText().toString().trim();
-        String  cardid              =  mCardid.getText().toString().trim();
-        String  domicile            =  mDomicile.getText().toString().trim();
-        String  exitingBuildAddr    =  mExitingBuildAddr.getText().toString().trim();
-        String  exitingBuildAddr01  =  mExitingBuildAddr01.getText().toString().trim();
-        String  workunitName        =  mWorkunitName.getText().toString().trim();
-        String  workunitDepartment  =  mWorkunitDepartment.getText().toString().trim();
-        String  monthlyIncome       =  mMonthlyIncome.getText().toString().trim();
-        boolean isBusinessOwner     =  mIsBusinessOwner.isChecked();
-        boolean unBusinessOwner     =  mUnBusinessOwner.isChecked();
-        String  workunitNature      =  mWorkunitNature.getText().toString().trim();
-        String  phone               =  mPhone.getText().toString().trim();
-        String  extPhone            =  mExtPhone.getText().toString().trim();
-        String  workunitAge         =  mWorkunitAge.getText().toString().trim();
-        boolean socialSecurity      =  mSocialSecurity.isChecked();
-        boolean providentFund       =  mProvidentFund.isChecked();
-        String  workunitProvince    =  mWorkunitPca.getText().toString().trim();
-        String  workunitStreet      =  mWorkunitStreet.getText().toString().trim();
+        String coname = mConame.getText().toString().trim();
+        boolean male = mSexMale.isChecked();
+        boolean female = mSexFemale.isChecked();
+        String crelationship = mCrelationship.getText().toString().trim();
+        String cardid = mCardid.getText().toString().trim();
+        String domicile = mDomicile.getText().toString().trim();
+        String exitingBuildAddr = mExitingBuildAddr.getText().toString().trim();
+        String exitingBuildAddr01 = mExitingBuildAddr01.getText().toString().trim();
+        String workunitName = mWorkunitName.getText().toString().trim();
+        String workunitDepartment = mWorkunitDepartment.getText().toString().trim();
+        String monthlyIncome = mMonthlyIncome.getText().toString().trim();
+        boolean isBusinessOwner = mIsBusinessOwner.isChecked();
+        boolean unBusinessOwner = mUnBusinessOwner.isChecked();
+        String workunitNature = mWorkunitNature.getText().toString().trim();
+        String phone = mPhone.getText().toString().trim();
+        String extPhone = mExtPhone.getText().toString().trim();
+        String workunitAge = mWorkunitAge.getText().toString().trim();
+        boolean socialSecurity = mSocialSecurity.isChecked();
+        boolean providentFund = mProvidentFund.isChecked();
+        String workunitProvince = mWorkunitPca.getText().toString().trim();
+        String workunitStreet = mWorkunitStreet.getText().toString().trim();
 
         ApplyInfoBean bean = ApplyInfoBean.getInstance();
         ApplyInfoBean.ResDataBean.BorrowdataModelBean.CoborrowBean coborrow
@@ -712,30 +828,28 @@ public class ApplyLendUtil {
 
         coborrow.setConame(coname);
 
-        if(male){
+        if (male) {
             coborrow.setSex(1);
-        }else
-        if(female){
+        } else if (female) {
             coborrow.setSex(2);
         }
 
         coborrow.setCrelationship(crelationship);
         coborrow.setCardid(cardid);
-       // coborrow.setBirth(domicile);
+        // coborrow.setBirth(domicile);
         coborrow.setDomicile(domicile);
-        coborrow.setExitingBuildAddr(exitingBuildAddr +exitingBuildAddr01);
+        coborrow.setExitingBuildAddr(exitingBuildAddr + exitingBuildAddr01);
         coborrow.setWorkunitName(workunitName);
         coborrow.setWorkunitDepartment(workunitDepartment);
 
-        if(!TextUtils.isEmpty(monthlyIncome)){
+        if (!TextUtils.isEmpty(monthlyIncome)) {
             coborrow.setMonthlyIncome(Double.parseDouble(monthlyIncome));
         }
 
         // 是否是企业主/个体户 ，值：2 ：是   ，1：否
-        if(isBusinessOwner){
+        if (isBusinessOwner) {
             coborrow.setIsBusinessOwner(2);
-        }else
-        if(unBusinessOwner){
+        } else if (unBusinessOwner) {
             coborrow.setIsBusinessOwner(1);
         }
 
@@ -752,8 +866,8 @@ public class ApplyLendUtil {
         coborrow.setExtPhone(extPhone);
         coborrow.setWorkunitAge(workunitAge);
 
-        coborrow.setSocialSecurity(socialSecurity?1:-1);
-        coborrow.setProvidentFund(providentFund?1:-1);
+        coborrow.setSocialSecurity(socialSecurity ? 1 : -1);
+        coborrow.setProvidentFund(providentFund ? 1 : -1);
 
         coborrow.setWorkunitProvince(workunitProvince);
         coborrow.setWorkunitCity("");
@@ -806,15 +920,15 @@ public class ApplyLendUtil {
             TextView carBuyDate,
             EditText carOtherInfo
     ) {
-        String owner            = carOwner.getText().toString().trim();
-        String brand            = carBrand.getText().toString().trim();
-        String color            = carColor.getText().toString().trim();
-        String cardid           = carCardid.getText().toString().trim();
-        String status           = carStatus.getText().toString().trim();
-        String monthlyMoney     = carMonthlyMoney.getText().toString().trim();
-        String price            = carPrice.getText().toString().trim();
-        String buyDate          = carBuyDate.getText().toString().trim();
-        String otherInfo        = carOtherInfo.getText().toString().trim();
+        String owner = carOwner.getText().toString().trim();
+        String brand = carBrand.getText().toString().trim();
+        String color = carColor.getText().toString().trim();
+        String cardid = carCardid.getText().toString().trim();
+        String status = carStatus.getText().toString().trim();
+        String monthlyMoney = carMonthlyMoney.getText().toString().trim();
+        String price = carPrice.getText().toString().trim();
+        String buyDate = carBuyDate.getText().toString().trim();
+        String otherInfo = carOtherInfo.getText().toString().trim();
 
         ApplyInfoBean bean = ApplyInfoBean.getInstance();
         ApplyInfoBean.ResDataBean.BorrowdataModelBean.CarInfoBean carInfo =
@@ -834,11 +948,11 @@ public class ApplyLendUtil {
             }
         }
 
-        if(!TextUtils.isEmpty(monthlyMoney)){
+        if (!TextUtils.isEmpty(monthlyMoney)) {
             carInfo.setMonthlyMoney(Double.parseDouble(monthlyMoney));
         }
 
-        if(!TextUtils.isEmpty(price)){
+        if (!TextUtils.isEmpty(price)) {
             carInfo.setPrice(Double.parseDouble(price));
         }
         carInfo.setBuyDate(buyDate);
@@ -849,36 +963,36 @@ public class ApplyLendUtil {
      * customerRation放款评估信息
      * buildBorrowTime         int         放贷时间，值为：1 6-12月 2 12-24月   3 24月 以上  4 全款
      * finalRationBbt          String      放贷时间额度
-     *
+     * <p>
      * buildAddr               String      房产位置，值：1合肥市，2三县
      * finalRationBa           String      市场均价
-     *
+     * <p>
      * buildType               int         房产性质，值：1：回迁房，2：公寓，3：住宅，4：单位集资房
      * finalRationBt           String      房产性质额度
-     *
+     * <p>
      * car                     Integer     车辆，值：1：5万以下，2：5-10万，3:10-20万  ，4:20万以上
      * finalRationCar          String      车辆额度
-     *
+     * <p>
      * family                  String      家庭情况，值1：已婚，2：未婚，3：孩子；为多选，两个值之间以，连接
      * finalRationFamily       String      家庭情况额度
-     *
+     * <p>
      * workunit                String      单位性质，值：1：国企/公务员，2：民营，3：社保，4：公积金    为多选，两个值之间以，连接
      * finalRationWorkunit     String      单位性质额度
-     *
+     * <p>
      * proprietor              String      私人业主，值：1：营业执照，2：实体经营    为多选，两个值之间以，连接
      * finalRationProprietor   String      私人业主额度
-     *
+     * <p>
      * credit                  int         信用卡负债，值：1:50%，2:60%，3:70%，4:80%，5:90%
      * finalRationCredit       String      征信报告额度
-     *
+     * <p>
      * finalRation             String      汇总额度
-     *
+     * <p>
      * creditNumOne            String      近一个月查询次数
      * creditNumThree          String      近三个月查询次数
      * creditNumPer            String      个人查询近三个月查询次数
      * creditNumTotal          String      个人查询总共次数
-     *
-     *
+     * <p>
+     * <p>
      * wanglaNum               String      网拉账号
      * wanglaPwd               String      网拉密码
      * wanglaVercode           String      网拉验证码
@@ -892,216 +1006,200 @@ public class ApplyLendUtil {
         ApplyInfoBean bean = ApplyInfoBean.getInstance();
     }
 
-    public static void changeLoanAssessment( EditText eFinalRationBbt, RadioButton radioMortgageTime01, RadioButton radioMortgageTime02, RadioButton radioMortgageTime03, RadioButton radioMortgageTime04, RadioButton radioHousingLocation01, RadioButton radioHousingLocation02, EditText eFinalRationBa, EditText eFinalRationBt, RadioButton radioHouseProperties01, RadioButton radioHouseProperties02, RadioButton radioHouseProperties03, RadioButton radioHouseProperties04, EditText eFinalRationCar, RadioButton radioCarValue01, RadioButton radioCarValue02, RadioButton radioCarValue03, RadioButton radioCarValue04, EditText eFinalRationFamily, RadioButton familyStatus01, RadioButton familyStatus02, CheckBox eHasChild, EditText eFinalRationWorkunit, RadioButton unitNature01, RadioButton unitNature02, CheckBox eSocialSecurity, CheckBox eProvidentFund, EditText eFinalRationProprietor, CheckBox eProprietor01, CheckBox eProprietor02, EditText eFinalRationCredit, RadioButton radioCreditLiability01, RadioButton radioCreditLiability02, RadioButton radioCreditLiability03, RadioButton radioCreditLiability04, RadioButton radioCreditLiability05, EditText eCreditNumOne, EditText eCreditNumThree, EditText eCreditNumPer, EditText eCreditNumTotal, EditText eFinalRation, EditText eWanglaNum, EditText eWanglaPwd, EditText eWanglaVercode, EditText eSocialNum, EditText eSocialPwd, EditText eReserveNum, EditText eReservePwd) {
-        String  finalRationBbt        = eFinalRationBbt.getText().toString().trim();
-        boolean buildBorrowTime01 =  radioMortgageTime01.isChecked();
-        boolean buildBorrowTime02 =  radioMortgageTime02.isChecked();
-        boolean buildBorrowTime03 =  radioMortgageTime03.isChecked();
-        boolean buildBorrowTime04 =  radioMortgageTime04.isChecked();
+    public static void changeLoanAssessment(EditText eFinalRationBbt, RadioButton radioMortgageTime01, RadioButton radioMortgageTime02, RadioButton radioMortgageTime03, RadioButton radioMortgageTime04, RadioButton radioHousingLocation01, RadioButton radioHousingLocation02, EditText eFinalRationBa, EditText eFinalRationBt, RadioButton radioHouseProperties01, RadioButton radioHouseProperties02, RadioButton radioHouseProperties03, RadioButton radioHouseProperties04, EditText eFinalRationCar, RadioButton radioCarValue01, RadioButton radioCarValue02, RadioButton radioCarValue03, RadioButton radioCarValue04, EditText eFinalRationFamily, RadioButton familyStatus01, RadioButton familyStatus02, CheckBox eHasChild, EditText eFinalRationWorkunit, RadioButton unitNature01, RadioButton unitNature02, CheckBox eSocialSecurity, CheckBox eProvidentFund, EditText eFinalRationProprietor, CheckBox eProprietor01, CheckBox eProprietor02, EditText eFinalRationCredit, RadioButton radioCreditLiability01, RadioButton radioCreditLiability02, RadioButton radioCreditLiability03, RadioButton radioCreditLiability04, RadioButton radioCreditLiability05, EditText eCreditNumOne, EditText eCreditNumThree, EditText eCreditNumPer, EditText eCreditNumTotal, EditText eFinalRation, EditText eWanglaNum, EditText eWanglaPwd, EditText eWanglaVercode, EditText eSocialNum, EditText eSocialPwd, EditText eReserveNum, EditText eReservePwd) {
+        String finalRationBbt = eFinalRationBbt.getText().toString().trim();
+        boolean buildBorrowTime01 = radioMortgageTime01.isChecked();
+        boolean buildBorrowTime02 = radioMortgageTime02.isChecked();
+        boolean buildBorrowTime03 = radioMortgageTime03.isChecked();
+        boolean buildBorrowTime04 = radioMortgageTime04.isChecked();
 
-        String  finalRationBa         = eFinalRationBa.getText().toString().trim();
-        boolean  buildAddr01           = radioHousingLocation01.isChecked();
-        boolean  buildAddr02           = radioHousingLocation02.isChecked();
+        String finalRationBa = eFinalRationBa.getText().toString().trim();
+        boolean buildAddr01 = radioHousingLocation01.isChecked();
+        boolean buildAddr02 = radioHousingLocation02.isChecked();
 
-        String  finalRationBt         = eFinalRationBt.getText().toString().trim();
-        boolean  buildType01          = radioHouseProperties01.isChecked();
-        boolean  buildType02          = radioHouseProperties02.isChecked();
-        boolean  buildType03          = radioHouseProperties03.isChecked();
-        boolean  buildType04          = radioHouseProperties04.isChecked();
+        String finalRationBt = eFinalRationBt.getText().toString().trim();
+        boolean buildType01 = radioHouseProperties01.isChecked();
+        boolean buildType02 = radioHouseProperties02.isChecked();
+        boolean buildType03 = radioHouseProperties03.isChecked();
+        boolean buildType04 = radioHouseProperties04.isChecked();
 
-        String  finalRationCar        = eFinalRationCar.getText().toString().trim();
-        boolean  car01                 = radioCarValue01.isChecked();
-        boolean  car02                 = radioCarValue02.isChecked();
-        boolean  car03                 = radioCarValue03.isChecked();
-        boolean  car04                 = radioCarValue04.isChecked();
+        String finalRationCar = eFinalRationCar.getText().toString().trim();
+        boolean car01 = radioCarValue01.isChecked();
+        boolean car02 = radioCarValue02.isChecked();
+        boolean car03 = radioCarValue03.isChecked();
+        boolean car04 = radioCarValue04.isChecked();
 
-        String  finalRationFamily     = eFinalRationFamily.getText().toString().trim();
-        boolean  family01              = familyStatus01.isChecked();
-        boolean  family02              = familyStatus02.isChecked();
-        boolean  hasChild              = eHasChild.isChecked();
+        String finalRationFamily = eFinalRationFamily.getText().toString().trim();
+        boolean family01 = familyStatus01.isChecked();
+        boolean family02 = familyStatus02.isChecked();
+        boolean hasChild = eHasChild.isChecked();
 
-        String  finalRationWorkunit   = eFinalRationWorkunit.getText().toString().trim();
-        boolean  workunit01            = unitNature01.isChecked();
-        boolean  workunit02            = unitNature02.isChecked();
-        boolean socialSecurity        = eSocialSecurity.isChecked();
-        boolean providentFund         = eProvidentFund.isChecked();
+        String finalRationWorkunit = eFinalRationWorkunit.getText().toString().trim();
+        boolean workunit01 = unitNature01.isChecked();
+        boolean workunit02 = unitNature02.isChecked();
+        boolean socialSecurity = eSocialSecurity.isChecked();
+        boolean providentFund = eProvidentFund.isChecked();
 
-        String  finalRationProprietor = eFinalRationProprietor.getText().toString().trim();
-        boolean  proprietor01          = eProprietor01.isChecked();
-        boolean  proprietor02          = eProprietor02.isChecked();
+        String finalRationProprietor = eFinalRationProprietor.getText().toString().trim();
+        boolean proprietor01 = eProprietor01.isChecked();
+        boolean proprietor02 = eProprietor02.isChecked();
 
-        String  finalRationCredit     = eFinalRationCredit.getText().toString().trim();
-        boolean  credit01              = radioCreditLiability01.isChecked();
-        boolean  credit02              = radioCreditLiability02.isChecked();
-        boolean  credit03              = radioCreditLiability03.isChecked();
-        boolean  credit04              = radioCreditLiability04.isChecked();
-        boolean  credit05              = radioCreditLiability05.isChecked();
+        String finalRationCredit = eFinalRationCredit.getText().toString().trim();
+        boolean credit01 = radioCreditLiability01.isChecked();
+        boolean credit02 = radioCreditLiability02.isChecked();
+        boolean credit03 = radioCreditLiability03.isChecked();
+        boolean credit04 = radioCreditLiability04.isChecked();
+        boolean credit05 = radioCreditLiability05.isChecked();
 
-        String  creditNumOne          = eCreditNumOne.getText().toString().trim();
-        String  creditNumThree        = eCreditNumThree.getText().toString().trim();
-        String  creditNumPer          = eCreditNumPer.getText().toString().trim();
-        String  creditNumTotal        = eCreditNumTotal.getText().toString().trim();
+        String creditNumOne = eCreditNumOne.getText().toString().trim();
+        String creditNumThree = eCreditNumThree.getText().toString().trim();
+        String creditNumPer = eCreditNumPer.getText().toString().trim();
+        String creditNumTotal = eCreditNumTotal.getText().toString().trim();
 
-        String finalRation            = eFinalRation.getText().toString().trim();
+        String finalRation = eFinalRation.getText().toString().trim();
 
-        String  wanglaNum             = eWanglaNum.getText().toString().trim();
-        String  wanglaPwd             = eWanglaPwd.getText().toString().trim();
-        String  wanglaVercode         = eWanglaVercode.getText().toString().trim();
+        String wanglaNum = eWanglaNum.getText().toString().trim();
+        String wanglaPwd = eWanglaPwd.getText().toString().trim();
+        String wanglaVercode = eWanglaVercode.getText().toString().trim();
 
-        String  socialNum             = eSocialNum.getText().toString().trim();
-        String  socialPwd             = eSocialPwd.getText().toString().trim();
+        String socialNum = eSocialNum.getText().toString().trim();
+        String socialPwd = eSocialPwd.getText().toString().trim();
 
-        String  reserveNum            = eReserveNum.getText().toString().trim();
-        String  reservePwd            = eReservePwd.getText().toString().trim();
+        String reserveNum = eReserveNum.getText().toString().trim();
+        String reservePwd = eReservePwd.getText().toString().trim();
 
         ApplyInfoBean bean = ApplyInfoBean.getInstance();
         ApplyInfoBean.ResDataBean.BorrowdataModelBean.CustomerRationBean customerRation =
                 bean.getResData().getBorrowdataModel().getCustomerRation();
         /**放贷时间：1 6-12月 2 12-24月   3 24月 以上  4 全款*/
-        if(buildBorrowTime01){
+        if (buildBorrowTime01) {
             customerRation.setBuildBorrowTime(1);
-        }else
-        if(buildBorrowTime02){
+        } else if (buildBorrowTime02) {
             customerRation.setBuildBorrowTime(2);
-        }else
-        if(buildBorrowTime03){
+        } else if (buildBorrowTime03) {
             customerRation.setBuildBorrowTime(3);
-        }else
-        if(buildBorrowTime04){
+        } else if (buildBorrowTime04) {
             customerRation.setBuildBorrowTime(4);
         }
         customerRation.setFinalRationBbt(finalRationBbt);
         /**房产位置，值：1合肥市，2三县*/
-        if(buildAddr01){
+        if (buildAddr01) {
             customerRation.setBuildAddr("1");
-        }else
-        if(buildAddr02){
+        } else if (buildAddr02) {
             customerRation.setBuildAddr("2");
         }
         customerRation.setFinalRationBa(finalRationBa);
         /**房产性质，值：1：回迁房，2：公寓，3：住宅，4：单位集资房*/
-        if(buildType01){
+        if (buildType01) {
             customerRation.setBuildType(1);
-        }else
-        if(buildType02){
+        } else if (buildType02) {
             customerRation.setBuildType(2);
-        }else
-        if(buildType03){
+        } else if (buildType03) {
             customerRation.setBuildType(3);
-        }else
-        if(buildType04){
+        } else if (buildType04) {
             customerRation.setBuildType(4);
         }
         customerRation.setFinalRationBt(finalRationBt);
         /**车辆，值：1：5万以下，2：5-10万，3:10-20万  ，4:20万以上*/
-        if(car01){
+        if (car01) {
             customerRation.setCar(1);
-        }else
-        if(car02){
+        } else if (car02) {
             customerRation.setCar(2);
-        }else
-        if(car03){
+        } else if (car03) {
             customerRation.setCar(3);
-        }else
-        if(car04){
+        } else if (car04) {
             customerRation.setCar(4);
         }
         customerRation.setFinalRationCar(finalRationCar);
         /**家庭情况，值1：已婚，2：未婚，3：孩子；为多选，两个值之间以，连接*/
         String family = "";
-        if(family01){
+        if (family01) {
             family = "1";
-        }else
-        if(family02){
+        } else if (family02) {
             family = "2";
         }
-        if(hasChild){
-           if(!TextUtils.isEmpty(family)){
-               family +=",3";
-           }else {
-               family ="3";
-           }
+        if (hasChild) {
+            if (!TextUtils.isEmpty(family)) {
+                family += ",3";
+            } else {
+                family = "3";
+            }
         }
-        if(!TextUtils.isEmpty(family)){
+        if (!TextUtils.isEmpty(family)) {
             customerRation.setFamily(family);
         }
         customerRation.setFinalRationFamily(finalRationFamily);
         /**单位性质，值：1：国企/公务员，2：民营，3：社保，4：公积金*/
         String workunit = "";
-        if(workunit01){
+        if (workunit01) {
             workunit = "1";
-        }else
-        if(workunit02){
+        } else if (workunit02) {
             workunit = "2";
         }
-        if(socialSecurity){
-            if(!TextUtils.isEmpty(workunit)){
-                workunit +=",3";
-            }else {
-                workunit ="3";
+        if (socialSecurity) {
+            if (!TextUtils.isEmpty(workunit)) {
+                workunit += ",3";
+            } else {
+                workunit = "3";
             }
         }
-        if(providentFund){
-            if(!TextUtils.isEmpty(workunit)){
-                workunit +=",4";
-            }else {
-                workunit ="4";
+        if (providentFund) {
+            if (!TextUtils.isEmpty(workunit)) {
+                workunit += ",4";
+            } else {
+                workunit = "4";
             }
         }
-        if(!TextUtils.isEmpty(workunit)){
+        if (!TextUtils.isEmpty(workunit)) {
             customerRation.setWorkunit(workunit);
         }
         customerRation.setFinalRationWorkunit(finalRationWorkunit);
         /**私人业主，值：1：营业执照，2：实体经营   为多选，两个值之间以，连接*/
         String proprietor = "";
-        if(proprietor01){
-            if(!TextUtils.isEmpty(proprietor)){
-                proprietor +=",1";
-            }else {
-                proprietor ="1";
+        if (proprietor01) {
+            if (!TextUtils.isEmpty(proprietor)) {
+                proprietor += ",1";
+            } else {
+                proprietor = "1";
             }
         }
-        if(proprietor02){
-            if(!TextUtils.isEmpty(proprietor)){
-                proprietor +=",2";
-            }else {
-                proprietor ="2";
+        if (proprietor02) {
+            if (!TextUtils.isEmpty(proprietor)) {
+                proprietor += ",2";
+            } else {
+                proprietor = "2";
             }
         }
-        if(!TextUtils.isEmpty(proprietor)){
+        if (!TextUtils.isEmpty(proprietor)) {
             customerRation.setProprietor(proprietor);
         }
         customerRation.setFinalRationProprietor(finalRationProprietor);
         /**信用卡负债，值：1:50%，2:60%，3:70%，4:80%，5:90%*/
-        if(credit01){
+        if (credit01) {
             customerRation.setCredit(1);
-        }else
-        if(credit02){
+        } else if (credit02) {
             customerRation.setCredit(2);
-        }else
-        if(credit03){
+        } else if (credit03) {
             customerRation.setCredit(3);
-        }else
-        if(credit04){
+        } else if (credit04) {
             customerRation.setCredit(4);
-        } else
-        if(credit05){
+        } else if (credit05) {
             customerRation.setCredit(5);
         }
         customerRation.setFinalRationCredit(finalRationCredit);
 
-        customerRation.setFinalRation           (finalRation    );
-        customerRation.setCreditNumOne          (creditNumOne   );
-        customerRation.setCreditNumThree        (creditNumThree );
-        customerRation.setCreditNumPer          (creditNumPer   );
-        customerRation.setCreditNumTotal        (creditNumTotal );
-        customerRation.setWanglaNum             (wanglaNum      );
-        customerRation.setWanglaPwd             (wanglaPwd      );
-        customerRation.setWanglaVercode         (wanglaVercode  );
-        customerRation.setSocialNum             (socialNum      );
-        customerRation.setSocialPwd             (socialPwd      );
-        customerRation.setReserveNum            (reserveNum     );
-        customerRation.setReservePwd            (reservePwd     );
+        customerRation.setFinalRation(finalRation);
+        customerRation.setCreditNumOne(creditNumOne);
+        customerRation.setCreditNumThree(creditNumThree);
+        customerRation.setCreditNumPer(creditNumPer);
+        customerRation.setCreditNumTotal(creditNumTotal);
+        customerRation.setWanglaNum(wanglaNum);
+        customerRation.setWanglaPwd(wanglaPwd);
+        customerRation.setWanglaVercode(wanglaVercode);
+        customerRation.setSocialNum(socialNum);
+        customerRation.setSocialPwd(socialPwd);
+        customerRation.setReserveNum(reserveNum);
+        customerRation.setReservePwd(reservePwd);
     }
 
 }

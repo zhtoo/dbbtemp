@@ -70,23 +70,29 @@ public class BasicInformationFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_fillout_basic_info, null, false);
         unbinder = ButterKnife.bind(this, view);
         activity = (FilloutLenderInformationActivity) getActivity();
-        intitState();
+
         initListener();
 
-//        ApplyLendUtil.setBasic(
-//                mNameEdit,
-//                mIdCardEdit,
-//                mSexMale,
-//                mSexFemale,
-//                mMaritalStatusText,
-//                mDomicileEdit,
-//                mPhoneEdit
-//                );
+        initView();
+        intitState();
 
         return view;
     }
 
-
+    /**
+     * 初始化视图的状态
+     */
+    private void initView() {
+        ApplyLendUtil.setBasic(
+                mNameEdit,
+                mIdCardEdit,
+                mSexMale,
+                mSexFemale,
+                mMaritalStatusText,
+                mDomicileEdit,
+                mPhoneEdit
+                );
+    }
 
 
     /**

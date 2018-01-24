@@ -32,7 +32,7 @@ public class AssetInformationFragment extends Fragment implements CityPickerList
 
     Unbinder unbinder;
     @BindView(R.id.lender_own_address_edit)
-    TextView mOwnAddressEdit;
+    EditText mOwnAddressEdit;
     @BindView(R.id.lender_own_house_address)
     LinearLayout mOwnHouseAddress;
     @BindView(R.id.lender_own_street_edit)
@@ -60,18 +60,40 @@ public class AssetInformationFragment extends Fragment implements CityPickerList
         mBuildPrice.setVisibility(View.GONE);
         initListener();
         cityPicker = new CityPicker(activity, this);
+
+        ApplyLendUtil.setAsset(
+                mOwnAddressEdit,
+                mOwnStreetEdit,
+                mOwnHouseAreaEdit,
+                mOwnHousePropertyEdit,
+                mMonthlyIncomeEdit,
+                mBuildPriceEdit
+        );
+
+        String text = mOwnHousePropertyEdit.getText().toString().trim();
+        if(!text.equals("请选择")){
+            activity.changeProgress(activity.mAssetProgress, 1);
+            if(text.equals("有房有贷款")){
+                mBuildPrice.setVisibility(View.VISIBLE);
+            }else {
+                mBuildPrice.setVisibility(View.GONE);
+            }
+        }
+
+
         return view;
     }
 
 
     private void initListener() {
+        mOwnAddressEdit.addTextChangedListener(activity.editAssetListener);
         mOwnStreetEdit.addTextChangedListener(activity.editAssetListener);
         mOwnHouseAreaEdit.addTextChangedListener(activity.editAssetListener);
         mMonthlyIncomeEdit.addTextChangedListener(activity.editAssetListener);
         mOwnHouseAddress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cityPicker.show();
+              //  cityPicker.show();
             }
         });
 

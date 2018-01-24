@@ -16,6 +16,9 @@ public class ParentItem implements Parent<ChildItem> {
     private String customName;
     private String applyDate;
 
+
+    private String id;
+
     private List<ChildItem> mChildItems;
 
     public ParentItem( ) {
@@ -62,5 +65,14 @@ public class ParentItem implements Parent<ChildItem> {
     public void setmChildItems(List<ChildItem> mChildItems) {
         this.mChildItems = mChildItems;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
 
 }

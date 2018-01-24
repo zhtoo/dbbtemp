@@ -55,7 +55,13 @@ public class TheLoansActivity extends AppBarActivity {
     }
 
     private void initView() {
-
+        ApplyLendUtil.setTheloans(
+                mTypeText,
+                mAccount,
+                mPeriodText,
+                mApplydateText,
+                mPurpose
+        );
 
     }
 

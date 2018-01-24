@@ -11,62 +11,80 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <View style="@style/horizontalLine"
+        <View
+            style="@style/horizontalLine"
             android:layout_marginTop="@dimen/y10"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFF"
-        android:orientation="vertical">
-
         <LinearLayout
-            android:id="@+id/lender_live_address"
-            style="@style/filloutItemLayout">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFF"
+            android:orientation="vertical">
 
-            <TextView
-                android:text="居住地址："
-                style="@style/filloutItemText"/>
+            <LinearLayout
+                android:id="@+id/lender_live_address"
+                style="@style/filloutItemLayout"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/y90">
 
-            <View style="@style/autoFillStyle"/>
+                <TextView
+                    style="@style/filloutItemText"
+                    android:text="居住地址："/>
+
+                <View style="@style/autoFillStyle"/>
+
+                <EditText
+                    android:id="@+id/lender_live_address_edit"
+                    style="@style/filloutItemEdit"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:hint="请输入"
+                    android:maxWidth="@dimen/x500"
+                    android:paddingRight="@dimen/x1"/>
 
 
-            <TextView
-                android:id="@+id/lender_live_address_edit"
-                style="@style/filloutItemEdit"
-                android:layout_marginRight="0px"
-                android:text="请选择"/>
 
-            <ImageView style="@style/filloutImageStyle"/>
+                <!-- <TextView
+                     android:id="@+id/lender_live_address_edit"
+                     style="@style/filloutItemEdit"
+                     android:layout_marginRight="0px"
+                     android:text="请选择"/>
 
+                 <ImageView style="@style/filloutImageStyle"/>-->
+
+
+            </LinearLayout>
+
+
+            <View
+                style="@style/horizontalLine"
+                android:layout_marginLeft="@dimen/y22"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                style="@style/filloutItemLayout"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/lender_live_street"
+                    style="@style/filloutItemText"
+                    android:text="街道："/>
+
+                <View style="@style/autoFillStyle"/>
+
+                <EditText
+                    android:id="@+id/lender_live_street_edit"
+                    style="@style/filloutItemEdit"
+                    android:hint="乡镇/街道/小区/楼"/>
+
+            </LinearLayout>
+
+            <View style="@style/horizontalLine"/>
 
         </LinearLayout>
 
-
-        <View style="@style/horizontalLine"
-              android:layout_marginLeft="@dimen/y22"/>
-
-        <LinearLayout style="@style/filloutItemLayout">
-
-            <TextView
-                android:id="@+id/lender_live_street"
-                android:text="街道："
-                style="@style/filloutItemText"/>
-
-            <View style="@style/autoFillStyle"/>
-
-            <EditText
-                android:id="@+id/lender_live_street_edit"
-                android:hint="乡镇/街道/小区/楼"
-                style="@style/filloutItemEdit"/>
-
-        </LinearLayout>
-
-        <View style="@style/horizontalLine"/>
-
-        </LinearLayout>
-
-        <View style="@style/horizontalLine"
+        <View
+            style="@style/horizontalLine"
             android:layout_marginTop="@dimen/y10"/>
 
         <LinearLayout
@@ -74,24 +92,24 @@
 
             <TextView
                 android:id="@+id/lender_support_number"
-                android:text="供养人数："
-                style="@style/filloutItemText"/>
+                style="@style/filloutItemText"
+                android:text="供养人数："/>
 
             <View
                 style="@style/autoFillStyle"/>
 
             <EditText
                 android:id="@+id/lender_support_number_edit"
-                android:hint="请输入人数"
-                android:inputType="number"
+                style="@style/filloutItemEdit"
                 android:layout_marginRight="@dimen/x10"
-                style="@style/filloutItemEdit"/>
+                android:hint="请输入人数"
+                android:inputType="number"/>
 
             <TextView
-                android:text="人"
+                style="@style/filloutItemText"
                 android:layout_marginLeft="0px"
                 android:layout_marginRight="@dimen/x30"
-                style="@style/filloutItemText"/>
+                android:text="人"/>
 
         </LinearLayout>
 

@@ -32,7 +32,7 @@ public class LiveInformationFragment extends Fragment implements CityPickerListe
     @BindView(R.id.lender_live_address)
     LinearLayout mLiveAddress;
     @BindView(R.id.lender_live_address_edit)
-    TextView mLiveAddressEdit;
+    EditText mLiveAddressEdit;
     @BindView(R.id.lender_live_street)
     TextView mLiveStreet;
     @BindView(R.id.lender_live_street_edit)
@@ -47,26 +47,23 @@ public class LiveInformationFragment extends Fragment implements CityPickerListe
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_fillout_live_info, null, false);
         unbinder = ButterKnife.bind(this, view);
 
         activity = (FilloutLenderInformationActivity) getActivity();
         initListener();
         cityPicker = new CityPicker(activity, this);
+
+        ApplyLendUtil.setLive(
+                mLiveAddressEdit,
+                mLiveStreetEdit,
+                mSupportNumberEdit
+        );
+
         return view;
 
 
     }
-
-//    @Override
-//    public void onBackPressed() {
-//        if (cityPicker.isShow()) {
-//            cityPicker.close();
-//            return;
-//        }
-//        super.onBackPressed();
-//    }
 
     /**
      * 初始化监听
@@ -78,7 +75,7 @@ public class LiveInformationFragment extends Fragment implements CityPickerListe
         mLiveAddress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cityPicker.show();
+                //cityPicker.show();
             }
         });
     }

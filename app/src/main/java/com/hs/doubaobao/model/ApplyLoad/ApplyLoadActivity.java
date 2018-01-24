@@ -46,13 +46,12 @@ public class ApplyLoadActivity extends AppBarActivity implements ApplyLoadContra
     private PtrClassicFrameLayout ptrFrame;
     private PtrClassicFrameLayout ptrFrame1;
     private ApplyListBean.ResDataBean.PageDataListBean.PageBean pageBean;
-    private List<ApplyListBean.ResDataBean.PageDataListBean.ListBean> listBeen;
+    private List<ApplyListBean.ResDataBean.PageDataListBean.ListBean> listBeen =new ArrayList<>();
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_apply_load);
         setTitle("贷款申请");
         setRightStatus(R.drawable.ic_add_loan_table);
@@ -70,6 +69,7 @@ public class ApplyLoadActivity extends AppBarActivity implements ApplyLoadContra
     protected void onStart() {
         super.onStart();
         parentItems.clear();
+        page = 1;
         loadData();
     }
 
@@ -91,7 +91,7 @@ public class ApplyLoadActivity extends AppBarActivity implements ApplyLoadContra
 
 
     private void loadData() {
-        map.put("page", page+"");
+        map.put("page", String.valueOf(page));
         map.put("rows", "10");
         //flag-----值： 1:贷款申请列表  2:部门初审列表  3:门店一审列表
         map.put("flag", "1");
@@ -114,28 +114,14 @@ public class ApplyLoadActivity extends AppBarActivity implements ApplyLoadContra
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new ApplyLoadAdapter(this, parentItems);
         recyclerView.setAdapter(adapter);
-        /**父类条目展开的监听*/
-//        adapter.setExpandCollapseListener(new ExpandableRecyclerAdapter.ExpandCollapseListener() {
-//            @Override
-//            public void onParentExpanded(int parentPosition) {
-//                Toast.makeText(ApplyLoadActivity.this, "parentPosition:" + parentPosition,
-//                        Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onParentCollapsed(int parentPosition) {
-//                Toast.makeText(ApplyLoadActivity.this, "parentPosition:" + parentPosition,
-//                        Toast.LENGTH_SHORT).show();
-//            }
-//        });
+
         /**详情界面按钮的监听*/
         adapter.setChildItemClickListener(new ApplyLoadAdapter.ChildItemClickListener() {
             @Override
             public void onChildItemClick(int parentPosition, int childPosition) {
-//                Toast.makeText(ApplyLoadActivity.this, "clickPosition:" + parentPosition,
-//                        Toast.LENGTH_SHORT).show();
+
                 Intent intent = new Intent(ApplyLoadActivity.this,AddLoanTableActivity.class);
-                intent.putExtra("borrowId",listBeen.get(parentPosition).getId()+"");
+                intent.putExtra("borrowId",parentItems.get(parentPosition).getId());
                 startActivity(intent);
             }
         });
@@ -176,11 +162,12 @@ public class ApplyLoadActivity extends AppBarActivity implements ApplyLoadContra
                 child.setTelephone(listBeen.get(i).getMobilephone());
                 child.setApplicationPeriod(listBeen.get(i).getPeriod());
                 child.setStoreName(listBeen.get(i).getOfficeName());
-                child.setLoanAmount(listBeen.get(i).getStatus());
+                child.setLoanAmount(String.valueOf(listBeen.get(i).getAccount()));
                 ParentItem parentItem = new ParentItem();
                 parentItem.setCustomName(listBeen.get(i).getCusName());
                 parentItem.setApplyDate(listBeen.get(i).getApplydate());
                 parentItem.setmChildItems(Arrays.asList(child));
+                parentItem.setId(String.valueOf(listBeen.get(i).getId()));
                 parentItems.add(parentItem);
             }
             adapter.setFlatItemList(parentItems);
@@ -205,6 +192,7 @@ public class ApplyLoadActivity extends AppBarActivity implements ApplyLoadContra
 
     @Override
     public void pullToRefresh() {
+        page = 1;
         parentItems.clear();
         loadData();
     }

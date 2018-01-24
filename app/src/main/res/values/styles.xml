@@ -181,8 +181,9 @@
     <style name="filloutItemLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:background">@color/white</item>
-        <item name="android:layout_height">@dimen/y90</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">@dimen/y90</item>
         <item name="android:orientation">horizontal</item>
     </style>
 
@@ -207,6 +208,7 @@
         <item name="android:textColorHint">@color/textGray</item>
         <item name="android:layout_marginRight">@dimen/x30</item>
         <item name="android:theme">@style/MyEditText</item>
+        <item name="android:gravity">right|center</item>
         <item name="android:textSize">@dimen/x28</item>
     </style>
 
