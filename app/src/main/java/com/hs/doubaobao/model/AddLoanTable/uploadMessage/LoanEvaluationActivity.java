@@ -141,58 +141,56 @@ public class LoanEvaluationActivity extends AppBarActivity {
 
     private void initView() {
 
-//        TextView        evaluateName;
-//        TextView        evaluateManager;
-//        EditText        eFinalRationBbt;
-//        RadioButton     radioMortgageTime01;
-//        RadioButton     radioMortgageTime02;
-//        RadioButton     radioMortgageTime03;
-//        RadioButton     radioMortgageTime04;
-//        RadioButton     radioHousingLocation01;
-//        RadioButton     radioHousingLocation02;
-//        EditText        eFinalRationBa;
-//        EditText        eFinalRationBt;
-//        RadioButton     radioHouseProperties01;
-//        RadioButton     radioHouseProperties02;
-//        RadioButton     radioHouseProperties03;
-//        RadioButton     radioHouseProperties04;
-//        EditText        eFinalRationCar;
-//        RadioButton     radioCarValue01;
-//        RadioButton     radioCarValue02;
-//        RadioButton     radioCarValue03;
-//        RadioButton     radioCarValue04;
-//        EditText        eFinalRationFamily;
-//        RadioButton     familyStatus01;
-//        RadioButton     familyStatus02;
-//        CheckBox        eHasChild;
-//        EditText        eFinalRationWorkunit;
-//        RadioButton     unitNature01;
-//        RadioButton     unitNature02;
-//        CheckBox        eSocialSecurity;
-//        CheckBox        eProvidentFund;
-//        EditText        eFinalRationProprietor;
-//        CheckBox        eProprietor01;
-//        CheckBox        eProprietor02;
-//        EditText        eFinalRationCredit;
-//        RadioButton     radioCreditLiability01;
-//        RadioButton     radioCreditLiability02;
-//        RadioButton     radioCreditLiability03;
-//        RadioButton     radioCreditLiability04;
-//        RadioButton     radioCreditLiability05;
-//        EditText        eCreditNumOne;
-//        EditText        eCreditNumThree;
-//        EditText        eCreditNumPer;
-//        EditText        eCreditNumTotal;
-//        EditText        eFinalRation;
-//        EditText        eWanglaNum;
-//        EditText        eWanglaPwd;
-//        EditText        eWanglaVercode;
-//        EditText        eSocialNum;
-//        EditText        eSocialPwd;
-//        EditText        eReserveNum;
-//        EditText        eReservePwd;
-
-
+        ApplyLendUtil.setLoanAssessment(
+                eFinalRationBbt,
+                radioMortgageTime01,
+                radioMortgageTime02,
+                radioMortgageTime03,
+                radioMortgageTime04,
+                radioHousingLocation01,
+                radioHousingLocation02,
+                eFinalRationBa,
+                eFinalRationBt,
+                radioHouseProperties01,
+                radioHouseProperties02,
+                radioHouseProperties03,
+                radioHouseProperties04,
+                eFinalRationCar,
+                radioCarValue01,
+                radioCarValue02,
+                radioCarValue03,
+                radioCarValue04,
+                eFinalRationFamily,
+                familyStatus01,
+                familyStatus02,
+                eHasChild,
+                eFinalRationWorkunit,
+                unitNature01,
+                unitNature02,
+                eSocialSecurity,
+                eProvidentFund,
+                eFinalRationProprietor,
+                eProprietor01,
+                eProprietor02,
+                eFinalRationCredit,
+                radioCreditLiability01,
+                radioCreditLiability02,
+                radioCreditLiability03,
+                radioCreditLiability04,
+                radioCreditLiability05,
+                eCreditNumOne,
+                eCreditNumThree,
+                eCreditNumPer,
+                eCreditNumTotal,
+                eFinalRation,
+                eWanglaNum,
+                eWanglaPwd,
+                eWanglaVercode,
+                eSocialNum,
+                eSocialPwd,
+                eReserveNum,
+                eReservePwd
+        );
     }
 
 

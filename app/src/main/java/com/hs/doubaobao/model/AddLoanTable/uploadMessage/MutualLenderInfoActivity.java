@@ -91,6 +91,34 @@ public class MutualLenderInfoActivity extends AppBarActivity implements CityPick
         setTitle("共同借款人信息");
         isShowRightView(false);
         cityPicker = new CityPicker(this, this);
+        initView();
+    }
+
+    private void initView() {
+        ApplyLendUtil.setCommonLenderInfo(
+                mConame,
+                mSexMale,
+                mSexFemale,
+                mCrelationship,
+                mCardid,
+                mDomicile,
+                mExitingBuildAddr,
+                mExitingBuildAddr01,
+                mWorkunitName,
+                mWorkunitDepartment,
+                mMonthlyIncome,
+                mIsBusinessOwner,
+                mUnBusinessOwner,
+                mWorkunitNature,
+                mPhone,
+                mExtPhone,
+                mWorkunitAge,
+                mSocialSecurity,
+                mProvidentFund,
+                mWorkunitPca,
+                mWorkunitStreet
+        );
+
     }
 
 

@@ -185,7 +185,12 @@ public class HttpLogging implements Interceptor {
                 if (isPlaintext(buffer)) {
                     String requestParams = buffer.readString(charset);
                     requestParams = requestParams.replaceAll("&","\n");
-                    logger.log(requestParams);
+                    if(requestParams.length()<=(1024*10)){
+                        logger.log(requestParams);
+                    }else {
+                        logger.log(requestParams.substring(0,1024*10));
+                    }
+
                     logger.log("--> END " + request.method() + " (" + requestBody.contentLength() + "-byte body)");
                 } else {
                     logger.log("--> END " + request.method() + " (binary " + requestBody.contentLength() + "-byte body omitted)");

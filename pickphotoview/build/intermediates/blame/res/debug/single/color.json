@@ -8,12 +8,12 @@
         "source": "E:\\github\\dbbtemp\\pickphotoview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\color\\abc_tint_spinner.xml"
     },
     {
-        "merged": "E:\\DBBProjectReconstruct\\dbb2\\pickphotoview\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
-        "source": "E:\\DBBProjectReconstruct\\dbb2\\pickphotoview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
-    },
-    {
         "merged": "E:\\github\\dbbtemp\\pickphotoview\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
         "source": "E:\\github\\dbbtemp\\pickphotoview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "E:\\DBBProjectReconstruct\\dbb2\\pickphotoview\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "E:\\DBBProjectReconstruct\\dbb2\\pickphotoview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
         "merged": "E:\\DBBProjectReconstruct\\dbb2\\pickphotoview\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",

@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.hs.doubaobao.R;
 import com.hs.doubaobao.base.AppBarActivity;
+import com.hs.doubaobao.model.AddLoanTable.ApplyInfoBean;
 import com.hs.doubaobao.model.AddLoanTable.ApplyLendUtil;
 import com.zht.bottomdialog.SelectBottomDialog;
 import com.zht.datepicker.DateSelectUtil;
@@ -60,8 +61,32 @@ public class CarInfoActivity extends AppBarActivity {
         setTitle("贷款人车辆信息");
         isShowRightView(false);
 
+        initView();
+    }
 
-        carMonthlyMoneyItem.setVisibility(View.GONE);
+    private void initView() {
+        ApplyLendUtil.setCarInfo(
+                carOwner,
+                carBrand,
+                carColor,
+                carCardid,
+                carStatus,
+                carMonthlyMoney,
+                carPrice,
+                carBuyDate,
+                carOtherInfo
+        );
+
+        ApplyInfoBean bean = ApplyInfoBean.getInstance();
+        ApplyInfoBean.ResDataBean.BorrowdataModelBean.CarInfoBean carInfo =
+                bean.getResData().getBorrowdataModel().getCarInfo();
+        int status = carInfo.getStatus();
+        if(status == 2 ){
+            carMonthlyMoneyItem.setVisibility(View.VISIBLE);
+        }else {
+            carMonthlyMoneyItem.setVisibility(View.GONE);
+        }
+
     }
 
     @OnClick({R.id.car_status_item, R.id.car_buyDate_item})

@@ -3,8 +3,11 @@ package com.hs.doubaobao.model.AddLoanTable.uploadVideo;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.media.ThumbnailUtils;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
@@ -14,17 +17,27 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
+import com.hs.doubaobao.MyApplication;
 import com.hs.doubaobao.R;
 import com.hs.doubaobao.base.AppBarActivity;
+import com.hs.doubaobao.base.BaseParams;
+import com.hs.doubaobao.http.OKHttpWrap;
+import com.hs.doubaobao.http.requestCallBack;
 import com.hs.doubaobao.model.AddLoanTable.uploadVideo.VideoPick.VideoConfig;
 import com.hs.doubaobao.model.AddLoanTable.uploadVideo.VideoPick.VideoListActivity;
+import com.hs.doubaobao.utils.ToastUtil;
 import com.hs.doubaobao.utils.log.Logger;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.Call;
 
 import static com.hs.doubaobao.MyApplication.getContext;
 import static com.hs.doubaobao.model.AddLoanTable.uploadVideo.VideoPick.VideoConfig.VIDEO_LIST;
@@ -105,12 +118,94 @@ public class UploadVideoActivity extends AppBarActivity {
         if (requestCode == VideoConfig.PICK_VIDEO_REQUEST) {
             ArrayList<CharSequence> list = data.getCharSequenceArrayListExtra(VIDEO_LIST);
             int currentItem = mViewpager.getCurrentItem();
-            if(list!=null){
+            if (list != null && list.size() > 0) {
                 fragments.get(currentItem).setVideoPaths(list);
                 fragments.get(currentItem).getRecycler().getAdapter().notifyDataSetChanged();
+
+                for (int i = 0; i < list.size(); i++) {
+                    uploadFile(list.get(i).toString());
+                }
             }
         }
     }
+
+    /**
+     * 获取视频缩略图
+     */
+    private File getVideoThumbnail(String videoPath, int width, int height, int kind) {
+        long mStartTime = System.currentTimeMillis();
+        Bitmap bitmap = null;
+        bitmap = ThumbnailUtils.createVideoThumbnail(videoPath, kind);
+        bitmap = ThumbnailUtils.extractThumbnail(bitmap, width, height, ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
+        long mEndTime = System.currentTimeMillis();
+        Logger.e("获取视频耗时", "" + (mEndTime - mStartTime));
+
+        String[] split = videoPath.split("/");
+
+        String videoPicturesName = split[split.length - 1];
+
+        boolean contains = videoPicturesName.contains(".");
+
+        if(contains){
+            int i = videoPicturesName.indexOf(".");
+            videoPicturesName = videoPicturesName.substring(0,i) + ".jpg";
+        }
+
+        File file = new File(MyApplication.getContext().getCacheDir(), videoPicturesName);
+        //创建输出流
+        FileOutputStream stream;
+        try {
+            stream = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return file;
+    }
+    /**
+     * 上传文件
+     */
+    private void uploadFile(String filePath) {
+
+        final long startTime = System.currentTimeMillis();
+
+        File videoFile = new File(filePath);
+        File videoPictures =getVideoThumbnail(filePath,
+                480, 270,
+                MediaStore.Video.Thumbnails.MINI_KIND);
+
+        Map<String, Object> paramsMap = new LinkedHashMap<>();
+        /**
+         videoPictures
+         videoUploads
+         name
+         category
+         */
+        paramsMap.put("category", "8");
+        paramsMap.put("videoUploads", videoFile);
+        paramsMap.put("videoPictures", videoPictures);
+        OKHttpWrap.getOKHttpWrap(this)
+                .upLoadFile(BaseParams.UPLOAD_VIDEO,
+                        paramsMap, new requestCallBack() {
+
+                            @Override
+                            public void onError(Call call, Exception e) {
+                                long endTime = System.currentTimeMillis();
+                                ToastUtil.showToast("哎呀！网络不给力o-o！");
+                                Logger.e("用时", (endTime - startTime) + "ms");
+                                Logger.e("用时", e.toString());
+                            }
+
+                            @Override
+                            public void onResponse(String response) {
+                                Logger.e("123", response);
+                                long endTime = System.currentTimeMillis();
+                                Logger.e("用时", (endTime - startTime) + "ms");
+                            }
+                        });
+
+    }
+
 
     private void addFragment() {
         if (tablayout == null || mViewpager == null) {
@@ -206,7 +301,7 @@ public class UploadVideoActivity extends AppBarActivity {
     public void onVideoClick(View view) {
         String mVendor = Build.MANUFACTURER;
         Logger.e("手机制造商", mVendor);
-        startActivityForResult(new Intent(this, VideoListActivity.class),VideoConfig.PICK_VIDEO_REQUEST);
+        startActivityForResult(new Intent(this, VideoListActivity.class), VideoConfig.PICK_VIDEO_REQUEST);
     }
 
 }

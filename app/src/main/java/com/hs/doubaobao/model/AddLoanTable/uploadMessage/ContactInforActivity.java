@@ -82,69 +82,49 @@ public class ContactInforActivity extends AppBarActivity {
      */
     private void initView() {
         ApplyInfoBean bean = ApplyInfoBean.getInstance();
-
         List<ApplyInfoBean.ResDataBean.BorrowdataModelBean.UclListBean> uclList
                 = bean.getResData().getBorrowdataModel().getUclList();
-        if(uclList == null ||uclList.size()==0)return;
-
+        if (uclList == null || uclList.size() == 0) return;
         int firstPosition = 1;
         int secondPosition = 1;
-
         for (int i = 0; i < uclList.size(); i++) {
             ApplyInfoBean.ResDataBean.BorrowdataModelBean.UclListBean
                     uclListBean = uclList.get(i);
-
             int type = uclListBean.getType();
-
-            if(type == 0){
-                if(firstPosition == 1){
-                    ApplyLendUtil.setContacts(
-                            0,0,
-                            contactInfoName01,
-                            contactInfoRelation01,
-                            contactInfoPhone01,
-                            contactInfoYes01,
-                            contactInfoNo01
+            if (type == 0) {
+                if (firstPosition == 1) {
+                    ApplyLendUtil.setContacts(uclListBean, contactInfoName01, contactInfoRelation01, contactInfoPhone01, contactInfoYes01, contactInfoNo01
                     );
-
-                    firstPosition ++ ;
-                }else {
-
+                    firstPosition++;
+                } else {
+                    ApplyLendUtil.setContacts(uclListBean, contactInfoName02, contactInfoRelation02, contactInfoPhone02, contactInfoYes02, contactInfoNo02
+                    );
                 }
             }
-
-
-            if(type == 1){
-                if(secondPosition == 1){
-
-
-                    secondPosition ++ ;
-                }else {
-
+            if (type == 1) {
+                if (secondPosition == 1) {
+                    ApplyLendUtil.setContacts(uclListBean, contactInfoName03, contactInfoRelation03, contactInfoPhone03, contactInfoYes03, contactInfoNo03);
+                    secondPosition++;
+                } else {
+                    ApplyLendUtil.setContacts(uclListBean, contactInfoName04, contactInfoRelation04, contactInfoPhone04, contactInfoYes04, contactInfoNo04);
                 }
             }
-
         }
-
-
-        ApplyLendUtil.setContacts(0,0, contactInfoName01, contactInfoRelation01, contactInfoPhone01, contactInfoYes01, contactInfoNo01);
-        ApplyLendUtil.setContacts(1,0, contactInfoName02, contactInfoRelation02, contactInfoPhone02, contactInfoYes02, contactInfoNo02);
-        ApplyLendUtil.setContacts(2,1, contactInfoName03, contactInfoRelation03, contactInfoPhone03, contactInfoYes03, contactInfoNo03);
-        ApplyLendUtil.setContacts(3,1, contactInfoName04, contactInfoRelation04, contactInfoPhone04, contactInfoYes04, contactInfoNo04);
     }
 
 
     /**
      * 保存数据
+     *
      * @return
      */
     @Override
     public boolean savaData() {
 
-        ApplyLendUtil.changeContacts(0,0, contactInfoName01, contactInfoRelation01, contactInfoPhone01, contactInfoYes01, contactInfoNo01);
-        ApplyLendUtil.changeContacts(1,0, contactInfoName02, contactInfoRelation02, contactInfoPhone02, contactInfoYes02, contactInfoNo02);
-        ApplyLendUtil.changeContacts(2,1, contactInfoName03, contactInfoRelation03, contactInfoPhone03, contactInfoYes03, contactInfoNo03);
-        ApplyLendUtil.changeContacts(3,1, contactInfoName04, contactInfoRelation04, contactInfoPhone04, contactInfoYes04, contactInfoNo04);
+        ApplyLendUtil.changeContacts(0, 0, contactInfoName01, contactInfoRelation01, contactInfoPhone01, contactInfoYes01, contactInfoNo01);
+        ApplyLendUtil.changeContacts(1, 0, contactInfoName02, contactInfoRelation02, contactInfoPhone02, contactInfoYes02, contactInfoNo02);
+        ApplyLendUtil.changeContacts(2, 1, contactInfoName03, contactInfoRelation03, contactInfoPhone03, contactInfoYes03, contactInfoNo03);
+        ApplyLendUtil.changeContacts(3, 1, contactInfoName04, contactInfoRelation04, contactInfoPhone04, contactInfoYes04, contactInfoNo04);
         return super.savaData();
     }
 
@@ -194,7 +174,6 @@ public class ContactInforActivity extends AppBarActivity {
     }
 
 
-
     private void createExpandableView1(ExpandableView mExpandableView, String title) {
         mExpandableView.fillData(0, title, true);
         View itemView = View.inflate(this, R.layout.item_contact_info03, null);
@@ -221,7 +200,6 @@ public class ContactInforActivity extends AppBarActivity {
             }
         });
     }
-
 
 
     private void initView01(View itemView) {

@@ -73,9 +73,9 @@ public class OKHttpWrap {
         // 创建一个OkHttpClient
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         //设置连接超时时间
-        builder.connectTimeout(15, TimeUnit.SECONDS);
-        builder.readTimeout(15, TimeUnit.SECONDS);
-        builder.writeTimeout(15, TimeUnit.SECONDS);
+        builder.connectTimeout(3000, TimeUnit.SECONDS);
+        builder.readTimeout(3000, TimeUnit.SECONDS);
+        builder.writeTimeout(3000, TimeUnit.SECONDS);
         // 打印参数
         builder.addInterceptor(new HttpLogging().setLevel(HttpLogging.Level.BODY));
         // 创建一个OkHttpClient
@@ -173,6 +173,7 @@ public class OKHttpWrap {
             //发起请求
             Request request = builder.url(url).post(body).build();
             //请求回来的响应
+
             requestClient(callback, request);
         }
     }
@@ -183,18 +184,11 @@ public class OKHttpWrap {
      * @param url       接口地址
      * @param paramsMap 参数
      */
-    public void upLoadFile(String url, HashMap<String, Object> paramsMap, final CallBack callback) {
+    public void upLoadFile(String url, Map<String, Object> paramsMap, final CallBack callback) {
+
+        if (loading != null) loading.show();
         synchronized (MyApplication.getContext()) {
-            // 时间戳
-//            final String ts = String.valueOf(System.currentTimeMillis() / 1000);
-//            Map<String, Object> mParamsMap = new HashMap<>();
-//            mParamsMap.put("appkey", BaseParams.APP_KEY);
-//            mParamsMap.put("signa", getSigna(ts));
-//            mParamsMap.put("ts", ts);
-//            mParamsMap.put("mobileType", BaseParams.MOBILE_TYPE);
-//            mParamsMap.put("versionNumber", getVersion());
-//            mParamsMap.putAll(paramsMap);
-//            Log.e(TAG, mParamsMap.toString());
+
             Map<String, Object> mParamsMap = getRequestMap(paramsMap);
             Logger.e("请求参数", mParamsMap.toString().replaceAll(",", "\n"));
             MultipartBody.Builder builder = new MultipartBody.Builder();

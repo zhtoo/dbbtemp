@@ -85,6 +85,32 @@ public class LenderInfoOptionalActivity extends AppBarActivity implements CityPi
         setTitle("贷款人信息-选填");
         isShowRightView(false);
         cityPicker = new CityPicker(this, this);
+        initView();
+    }
+
+    private void initView() {
+        ApplyLendUtil.setLenderInfo(
+                mExitingBuildAcreage,
+                mExitingBuildLiveTime,
+                mOtherBuildInfo,
+                mOtherBuildAcreage,
+                mOtherBuildProperty,
+                mWorkunitName,
+                mJobDepartment,
+                mIsBusinessOwner,
+                mUnBusinessOwner,
+                mWorkunitNature,
+                mWorkunitPhone,
+                mWorkunitExtPhone,
+                mWorkunitAge,
+                mSocialSecurity,
+                mReservedFunds,
+                mWorkunitPca,
+                mWorkunitStreet,
+                mQQ,
+                mAlipay
+        );
+
     }
 
 

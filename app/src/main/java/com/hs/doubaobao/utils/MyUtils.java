@@ -59,13 +59,10 @@ public class MyUtils {
         //获取采样率压缩的对象
         //该方法会改变像素
         BitmapFactory.Options options = new BitmapFactory.Options();
+       // options.inPreferredConfig =   Bitmap.Config.RGB_565;
         //设置压缩比例 原图的（1/i）
         options.inSampleSize = i;
         bitmap = BitmapFactory.decodeFile(path, options);
-
-
-        int width1 = bitmap.getWidth();
-        int height1 = bitmap.getHeight();
 
 
         //获取图片名称

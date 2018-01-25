@@ -1,6 +1,7 @@
 package com.hs.doubaobao.model.AddLoanTable.uploadPicture;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -15,14 +16,23 @@ import android.support.v4.view.ViewPager;
 
 import com.hs.doubaobao.R;
 import com.hs.doubaobao.base.AppBarActivity;
+import com.hs.doubaobao.base.BaseParams;
+import com.hs.doubaobao.http.OKHttpWrap;
+import com.hs.doubaobao.http.requestCallBack;
+import com.hs.doubaobao.utils.MyUtils;
 import com.hs.doubaobao.utils.ToastUtil;
+import com.hs.doubaobao.utils.log.Logger;
 import com.werb.pickphotoview.util.PickConfig;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.Call;
 
 import static com.hs.doubaobao.MyApplication.getContext;
 
@@ -42,7 +52,9 @@ public class UploadPictureActivity extends AppBarActivity {
     ViewPager mViewpager;
     private ArrayList<UploadPictureFragment> fragments;
     private TabFragmentPagerAdapter adapter;
-    private String[] mTabItemNameArray = {"四证", "征信报告", "银行流水", "车辆社保公积金", "经营场所", "其他", "签约"};
+    private String[] mTabItemNameArray = {"四证", "征信报告", "银行流水", "车辆社保公积金", "家访", "经营场所", "其他", "签约"};
+    private ProgressDialog dialog;
+    private List<String> picturePaths;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +101,13 @@ public class UploadPictureActivity extends AppBarActivity {
             }
     }
 
-
+    /**
+     * 返回数据，上传图片
+     *
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -101,12 +119,44 @@ public class UploadPictureActivity extends AppBarActivity {
         }
         if (requestCode == PickConfig.PICK_PHOTO_DATA) {
             int currentItem = mViewpager.getCurrentItem();
-            List<String> picturePaths = (List<String>) data.getSerializableExtra(PickConfig.INTENT_IMG_LIST_SELECT);
-           if(picturePaths!=null){
-               fragments.get(currentItem).setSelectPaths(picturePaths);
-               fragments.get(currentItem).getmRecycler().getAdapter().notifyDataSetChanged();
-           }
+            picturePaths = (List<String>) data.getSerializableExtra(PickConfig.INTENT_IMG_LIST_SELECT);
+            if (picturePaths != null&&picturePaths.size()>0) {
+                fragments.get(currentItem).setSelectPaths(picturePaths);
+                fragments.get(currentItem).getmRecycler().getAdapter().notifyDataSetChanged();
+                for (int i = 0; i < picturePaths.size(); i++) {
+                    uploadFile(picturePaths.get(i));
+                }
+
+
+            }
         }
+    }
+
+    /**
+     * 上传文件
+     */
+    private void uploadFile(String filePath) {
+
+        File file = MyUtils.compressImage(filePath);
+
+        Map<String, Object> paramsMap = new LinkedHashMap<>();
+        paramsMap.put("category", "1");
+        paramsMap.put("uploads", file);
+        OKHttpWrap.getOKHttpWrap(this)
+                .upLoadFile(BaseParams.UPLOAD_PICTURE,
+                        paramsMap, new requestCallBack() {
+
+                            @Override
+                            public void onError(Call call, Exception e) {
+                                ToastUtil.showToast("哎呀！网络不给力o-o！");
+                            }
+                            @Override
+                            public void onResponse(String response) {
+                                Logger.e("123",response);
+
+                            }
+                        });
+
     }
 
     @Override
@@ -118,7 +168,7 @@ public class UploadPictureActivity extends AppBarActivity {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                   // ToastUtil.showToast("我同意");
+                    // ToastUtil.showToast("我同意");
                 } else {
                     ToastUtil.showToast("您还没有授权应用相应的权限，部分功能暂不可用。");
                 }
@@ -138,6 +188,7 @@ public class UploadPictureActivity extends AppBarActivity {
         }
         fragments = new ArrayList<>();
 
+        fragments.add(new UploadPictureFragment());
         fragments.add(new UploadPictureFragment());
         fragments.add(new UploadPictureFragment());
         fragments.add(new UploadPictureFragment());

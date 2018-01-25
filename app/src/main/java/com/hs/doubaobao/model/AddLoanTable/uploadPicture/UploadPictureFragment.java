@@ -59,18 +59,18 @@ public class UploadPictureFragment extends Fragment {
     }
 
     public void setSelectPaths(List<String> newSelectPaths) {
-
-        if (this.selectPaths.size() > 0) {
-            for (int i = 0; i < newSelectPaths.size(); i++) {
-                String newPath = newSelectPaths.get(i).toString();
-                for (int j = 0; j < this.selectPaths.size(); j++) {
-                    String oldPath = selectPaths.get(j).toString();
-                    if (newPath.equals(oldPath)) {
-                        selectPaths.remove(j);
-                    }
-                }
-            }
-        }
+        //去重逻辑
+//        if (this.selectPaths.size() > 0) {
+//            for (int i = 0; i < newSelectPaths.size(); i++) {
+//                String newPath = newSelectPaths.get(i).toString();
+//                for (int j = 0; j < this.selectPaths.size(); j++) {
+//                    String oldPath = selectPaths.get(j).toString();
+//                    if (newPath.equals(oldPath)) {
+//                        selectPaths.remove(j);
+//                    }
+//                }
+//            }
+//        }
         this.selectPaths.addAll(newSelectPaths);
     }
 

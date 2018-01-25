@@ -85,7 +85,6 @@ public class VideoListActivity extends AppBarActivity {
             listVideoPath.add(path);
         }
         intent.putCharSequenceArrayListExtra(VIDEO_LIST, listVideoPath);
-        intent.putExtra("123", "456");
         setResult(VideoConfig.PICK_VIDEO_REQUEST, intent);
         finish();
     }

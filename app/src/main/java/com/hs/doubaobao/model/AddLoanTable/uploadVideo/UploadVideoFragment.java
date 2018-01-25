@@ -124,19 +124,19 @@ public class UploadVideoFragment extends Fragment {
     }
 
     public void setVideoPaths(ArrayList<CharSequence> videoPaths1) {
-        if (this.videoPaths.size() > 0) {
-            for (int i = 0; i < videoPaths1.size(); i++) {
-                String newPath = videoPaths1.get(i).toString();
-                for (int j = 0; j < this.videoPaths.size(); j++) {
-                    String oldPath = videoPaths.get(j).toString();
-                    if (newPath.equals(oldPath)) {
-                        videoPaths.remove(j);
-                    }
-                }
-            }
-        }
+//        if (this.videoPaths.size() > 0) {
+//            for (int i = 0; i < videoPaths1.size(); i++) {
+//                String newPath = videoPaths1.get(i).toString();
+//                for (int j = 0; j < this.videoPaths.size(); j++) {
+//                    String oldPath = videoPaths.get(j).toString();
+//                    if (newPath.equals(oldPath)) {
+//                        videoPaths.remove(j);
+//                    }
+//                }
+//            }
+//        }
         this.videoPaths.addAll(videoPaths1);
-        Logger.e("videoPaths长度",""+videoPaths.size());
+       // Logger.e("videoPaths长度",""+videoPaths.size());
         loadImages();
     }
 

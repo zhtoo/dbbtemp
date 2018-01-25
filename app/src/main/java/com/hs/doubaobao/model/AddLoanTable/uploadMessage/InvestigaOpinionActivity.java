@@ -80,7 +80,37 @@ public class InvestigaOpinionActivity extends AppBarActivity {
         ButterKnife.bind(this);
         setTitle("客户情况调查及意见");
         isShowRightView(false);
+        intiView();
+    }
 
+    private void intiView() {
+        ApplyLendUtil.setCustomerSurveyOpinion(
+                mBuildStauts,
+                mCarStauts,
+                mFaceTrial,
+                mApproveContent,
+                mHouseCard,
+                mLicense,
+                mDriving,
+                mIdentityCard,
+                mAccountBook,
+                mMarriageLicense,
+                mDivorceCertificate,
+                mDivorceAgreement,
+                mAbchelordom,
+                mPurchaseContract,
+                mMortgageContract,
+                mBankCard,
+                mCreditReport,
+                mAccountStatement,
+                mEmploymentCertify,
+                mSocialSecurity,
+                mProvidentFund,
+                mBill,
+                mBusinessLicense,
+                mRfw,
+                mHdw,
+                mOther);
     }
 
 

@@ -31,10 +31,16 @@ public class BaseParams {
     //测试地址
     public static final String TEST_URL = /*"http://manage.ahbabybean.com:8081/";*/
             "http://192.168.1.103:8081/";
+    public static final String TEST_FILE_URL = /*"http://manage.ahbabybean.com:8081/";*/
+            "http://192.168.1.103:8085/";
+
     //真实测试
     public static final String TRUE_URL = "http://manage.ahbabybean.com:8081/";
+    public static final String TRUE_FILE_URL
+            =  "http://192.168.1.103:8085/";
     //http路径
     public static final String BASE_URL = isDebug ? TEST_URL : TRUE_URL;
+    public static final String FILE_URL = isDebug ? TEST_FILE_URL : TRUE_FILE_URL;
 
     public static String USER_ID = "";
     public static String OPERATOR_NAME = "";
@@ -85,6 +91,12 @@ public class BaseParams {
     //借款信息保存与提交
     public static final String SUBMIT_URL = BASE_URL + "app/borrow/dataSave.html";
     public static final String LOAN_APPLICATION_PARTICULARS_URL = BASE_URL + "/app/borrowData.html";
+    //图片上传
+    public static final String UPLOAD_PICTURE = FILE_URL + "/upload/appAvatar.html";
+    //视频上传
+    public static final String UPLOAD_VIDEO = FILE_URL + "/upload/saveVideo.html";
+
+
 
 
 

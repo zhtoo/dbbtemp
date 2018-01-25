@@ -105,6 +105,12 @@ public class AddLoanTableActivity extends AppBarActivity implements AddLoanTable
     private void submitData() {
         Map<String, Object> uploadDataMap = new LinkedHashMap<>();
         uploadDataMap.put("flag", "2");// flag-----1:代表保存，2：代表提交
+
+
+        if (!TextUtils.isEmpty(borrowId)) {
+            uploadDataMap.put("borrowId", borrowId);
+        }
+
         Gson gson = new Gson();
         String s = gson.toJson(ApplyInfoBean.getInstance().getResData().getBorrowdataModel());
         Logger.e("Tag",s);
@@ -120,6 +126,10 @@ public class AddLoanTableActivity extends AppBarActivity implements AddLoanTable
     private void saveNewData() {
         Map<String, Object> uploadDataMap = new LinkedHashMap<>();
         uploadDataMap.put("flag", "1");// flag-----1:代表保存，2：代表提交
+        if (!TextUtils.isEmpty(borrowId)) {
+            uploadDataMap.put("borrowId", borrowId);
+        }
+
         Gson gson = new Gson();
         String json = gson.toJson(ApplyInfoBean.getInstance().getResData().getBorrowdataModel());
         Logger.e("经过修改保存的数据",json);
