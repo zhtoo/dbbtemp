@@ -42,6 +42,11 @@ public class OKHttpWrap {
     private static OKHttpWrap okHttpWrap;
     //创建okHttpClient对象
     private static OkHttpClient okHttpClient;
+
+    public static LoadWaiting getLoading() {
+        return loading;
+    }
+
     //联网加载动画
     private static LoadWaiting loading;
     private final Handler handler;
@@ -73,9 +78,9 @@ public class OKHttpWrap {
         // 创建一个OkHttpClient
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         //设置连接超时时间
-        builder.connectTimeout(3000, TimeUnit.SECONDS);
-        builder.readTimeout(3000, TimeUnit.SECONDS);
-        builder.writeTimeout(3000, TimeUnit.SECONDS);
+        builder.connectTimeout(15, TimeUnit.SECONDS);
+        builder.readTimeout(15, TimeUnit.SECONDS);
+        builder.writeTimeout(15, TimeUnit.SECONDS);
         // 打印参数
         builder.addInterceptor(new HttpLogging().setLevel(HttpLogging.Level.BODY));
         // 创建一个OkHttpClient

@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -57,6 +58,7 @@ public class LoadWaiting extends Dialog {
      */
     public LoadWaiting setMessage(String strMessage) {
         TextView tvMsg = (TextView) loadWaiting.findViewById(R.id.loadingMsg);
+        tvMsg.setVisibility(View.VISIBLE);
         if (tvMsg != null) {
             tvMsg.setText(strMessage);
         }

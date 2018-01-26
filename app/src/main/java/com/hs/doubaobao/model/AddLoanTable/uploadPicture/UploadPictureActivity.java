@@ -5,6 +5,8 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
@@ -17,7 +19,7 @@ import android.support.v4.view.ViewPager;
 import com.hs.doubaobao.R;
 import com.hs.doubaobao.base.AppBarActivity;
 import com.hs.doubaobao.base.BaseParams;
-import com.hs.doubaobao.http.OKHttpWrap;
+import com.hs.doubaobao.http.UploadFileHttp;
 import com.hs.doubaobao.http.requestCallBack;
 import com.hs.doubaobao.utils.MyUtils;
 import com.hs.doubaobao.utils.ToastUtil;
@@ -56,6 +58,29 @@ public class UploadPictureActivity extends AppBarActivity {
     private ProgressDialog dialog;
     private List<String> picturePaths;
 
+    private Handler handler =new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+
+            switch (msg.what) {
+                case 1:
+
+                    break;
+                case 2:
+                    //上传成功
+                    ToastUtil.showToast("上传成功");
+                    break;
+                case 3:
+                    //上传进度
+                    int current = msg.arg1;
+                    int total = msg.arg2;
+                    Logger.e("进度",current+"/"+total);
+                    break;
+            }
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +93,7 @@ public class UploadPictureActivity extends AppBarActivity {
         initViewPager();
         tablayout.setupWithViewPager(mViewpager);
         checkPermission();
+        loading.setMessage("正在上传中，请耐心等待！");
     }
 
 
@@ -118,13 +144,15 @@ public class UploadPictureActivity extends AppBarActivity {
             return;
         }
         if (requestCode == PickConfig.PICK_PHOTO_DATA) {
+
             int currentItem = mViewpager.getCurrentItem();
             picturePaths = (List<String>) data.getSerializableExtra(PickConfig.INTENT_IMG_LIST_SELECT);
             if (picturePaths != null&&picturePaths.size()>0) {
+                if(loading !=null )loading.show();
                 fragments.get(currentItem).setSelectPaths(picturePaths);
                 fragments.get(currentItem).getmRecycler().getAdapter().notifyDataSetChanged();
                 for (int i = 0; i < picturePaths.size(); i++) {
-                    uploadFile(picturePaths.get(i));
+                    uploadFile(picturePaths.get(i),i != picturePaths.size() -1);
                 }
 
 
@@ -135,28 +163,48 @@ public class UploadPictureActivity extends AppBarActivity {
     /**
      * 上传文件
      */
-    private void uploadFile(String filePath) {
+    private void uploadFile(String filePath, final boolean showDialog) {
 
         File file = MyUtils.compressImage(filePath);
 
         Map<String, Object> paramsMap = new LinkedHashMap<>();
         paramsMap.put("category", "1");
         paramsMap.put("uploads", file);
-        OKHttpWrap.getOKHttpWrap(this)
+        UploadFileHttp.getInstance(this)
                 .upLoadFile(BaseParams.UPLOAD_PICTURE,
                         paramsMap, new requestCallBack() {
 
                             @Override
                             public void onError(Call call, Exception e) {
+
+                                if(!showDialog){
+                                    if(loading !=null )loading.dismiss();
+                                }
+
                                 ToastUtil.showToast("哎呀！网络不给力o-o！");
                             }
                             @Override
                             public void onResponse(String response) {
+
+                                if(!showDialog){
+                                    if(loading !=null )loading.dismiss();
+                                }
+
                                 Logger.e("123",response);
 
                             }
                         });
 
+    }
+
+
+    public void sendMessage(int what, long current, long total, String msg) {
+        Message message = Message.obtain();
+        message.what = what;
+        message.arg1 = (int) current;
+        message.arg2 = (int) total;
+        message.obj = msg;
+        handler.sendMessage(message);
     }
 
     @Override

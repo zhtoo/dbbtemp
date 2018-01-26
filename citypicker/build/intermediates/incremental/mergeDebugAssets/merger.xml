@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\github\dbbtemp\citypicker\src\main\assets"><file name="province_data.xml" path="E:\github\dbbtemp\citypicker\src\main\assets\province_data.xml"/></source><source path="E:\github\dbbtemp\citypicker\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="E:\github\dbbtemp\citypicker\src\debug\assets"/></dataSet></merger>

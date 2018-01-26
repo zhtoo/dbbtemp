@@ -8,3 +8,5 @@
 /captures
 .externalNativeBuild
 /app/build
+/pickphotoview/build
+/citypicker/build

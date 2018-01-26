@@ -21,7 +21,7 @@ import com.hs.doubaobao.MyApplication;
 import com.hs.doubaobao.R;
 import com.hs.doubaobao.base.AppBarActivity;
 import com.hs.doubaobao.base.BaseParams;
-import com.hs.doubaobao.http.OKHttpWrap;
+import com.hs.doubaobao.http.UploadFileHttp;
 import com.hs.doubaobao.http.requestCallBack;
 import com.hs.doubaobao.model.AddLoanTable.uploadVideo.VideoPick.VideoConfig;
 import com.hs.doubaobao.model.AddLoanTable.uploadVideo.VideoPick.VideoListActivity;
@@ -73,6 +73,7 @@ public class UploadVideoActivity extends AppBarActivity {
         tablayout.setupWithViewPager(mViewpager);
         mViewpager.setOffscreenPageLimit(fragments.size());
         checkPermission();
+        loading.setMessage("正在上传中，请耐心等待！");
     }
 
 
@@ -119,11 +120,13 @@ public class UploadVideoActivity extends AppBarActivity {
             ArrayList<CharSequence> list = data.getCharSequenceArrayListExtra(VIDEO_LIST);
             int currentItem = mViewpager.getCurrentItem();
             if (list != null && list.size() > 0) {
+
+                if(loading !=null )loading.show();
                 fragments.get(currentItem).setVideoPaths(list);
                 fragments.get(currentItem).getRecycler().getAdapter().notifyDataSetChanged();
 
                 for (int i = 0; i < list.size(); i++) {
-                    uploadFile(list.get(i).toString());
+                    uploadFile(list.get(i).toString(),i != list.size() -1);
                 }
             }
         }
@@ -146,9 +149,9 @@ public class UploadVideoActivity extends AppBarActivity {
 
         boolean contains = videoPicturesName.contains(".");
 
-        if(contains){
+        if (contains) {
             int i = videoPicturesName.indexOf(".");
-            videoPicturesName = videoPicturesName.substring(0,i) + ".jpg";
+            videoPicturesName = videoPicturesName.substring(0, i) + ".jpg";
         }
 
         File file = new File(MyApplication.getContext().getCacheDir(), videoPicturesName);
@@ -162,29 +165,53 @@ public class UploadVideoActivity extends AppBarActivity {
         }
         return file;
     }
+
     /**
      * 上传文件
      */
-    private void uploadFile(String filePath) {
+    private void uploadFile(final String filePath, final boolean showDialog) {
+
+
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    File videoFile = new File(filePath);
+//                    File videoPictures = getVideoThumbnail(filePath,
+//                            120, 120,
+//                            MediaStore.Video.Thumbnails.MINI_KIND);
+//
+//                    Map<String, Object> paramsMap = new LinkedHashMap<>();
+//                    paramsMap.put("category", "8");
+//
+//                    new HttpSocket().uploadFile(paramsMap,
+//                            "videoUploads", videoFile, null,
+//                            "videoPictures", videoPictures, null,
+//                            BaseParams.UPLOAD_VIDEO);
+//
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }).start();
+
+
+
+
+
 
         final long startTime = System.currentTimeMillis();
 
         File videoFile = new File(filePath);
-        File videoPictures =getVideoThumbnail(filePath,
-                480, 270,
+        File videoPictures = getVideoThumbnail(filePath,
+                120, 120,
                 MediaStore.Video.Thumbnails.MINI_KIND);
 
         Map<String, Object> paramsMap = new LinkedHashMap<>();
-        /**
-         videoPictures
-         videoUploads
-         name
-         category
-         */
         paramsMap.put("category", "8");
         paramsMap.put("videoUploads", videoFile);
         paramsMap.put("videoPictures", videoPictures);
-        OKHttpWrap.getOKHttpWrap(this)
+        UploadFileHttp.getInstance(this)
                 .upLoadFile(BaseParams.UPLOAD_VIDEO,
                         paramsMap, new requestCallBack() {
 
@@ -194,6 +221,10 @@ public class UploadVideoActivity extends AppBarActivity {
                                 ToastUtil.showToast("哎呀！网络不给力o-o！");
                                 Logger.e("用时", (endTime - startTime) + "ms");
                                 Logger.e("用时", e.toString());
+
+                                if(!showDialog){
+                                    if(loading !=null )loading.dismiss();
+                                }
                             }
 
                             @Override
@@ -201,6 +232,10 @@ public class UploadVideoActivity extends AppBarActivity {
                                 Logger.e("123", response);
                                 long endTime = System.currentTimeMillis();
                                 Logger.e("用时", (endTime - startTime) + "ms");
+
+                                if(!showDialog){
+                                    if(loading !=null )loading.dismiss();
+                                }
                             }
                         });
 
