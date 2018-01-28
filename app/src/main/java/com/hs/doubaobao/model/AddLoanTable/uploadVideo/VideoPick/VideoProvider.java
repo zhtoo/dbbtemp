@@ -56,8 +56,12 @@ public class VideoProvider implements AbstructProvider {
                     long size = cursor
                             .getLong(cursor
                                     .getColumnIndexOrThrow(MediaStore.Video.Media.SIZE));
-                    Video video = new Video(id, title, album, artist, displayName, mimeType, path, size, duration);
-                    list.add(video);
+                    long maxSize = size/1024/1024;
+                    //大于100M 的视频将不显示
+                    if(maxSize<100){
+                        Video video = new Video(id, title, album, artist, displayName, mimeType, path, size, duration);
+                        list.add(video);
+                    }
                 }
                 cursor.close();
             }

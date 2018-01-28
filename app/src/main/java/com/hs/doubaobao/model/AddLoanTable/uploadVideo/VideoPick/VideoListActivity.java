@@ -57,6 +57,15 @@ public class VideoListActivity extends AppBarActivity {
         instance = this;
         AbstructProvider provider = new VideoProvider(instance);
         listVideos = provider.getList();
+//        for (int i = 0; i < listVideos.size(); i++) {
+//            Video video = listVideos.get(i);
+//
+//            long size = video.getSize();
+//           long maxSize =  size/1024/1024;
+//           if(maxSize >= 100){
+//               listVideos.remove(i);
+//           }
+//        }
         videoSize = listVideos.size();
 
         initRecycler();

@@ -21,11 +21,9 @@ import com.hs.doubaobao.MyApplication;
 import com.hs.doubaobao.R;
 import com.hs.doubaobao.base.AppBarActivity;
 import com.hs.doubaobao.base.BaseParams;
-import com.hs.doubaobao.http.UploadFileHttp;
-import com.hs.doubaobao.http.requestCallBack;
+import com.hs.doubaobao.http.HttpSocket;
 import com.hs.doubaobao.model.AddLoanTable.uploadVideo.VideoPick.VideoConfig;
 import com.hs.doubaobao.model.AddLoanTable.uploadVideo.VideoPick.VideoListActivity;
-import com.hs.doubaobao.utils.ToastUtil;
 import com.hs.doubaobao.utils.log.Logger;
 
 import java.io.File;
@@ -37,7 +35,6 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import okhttp3.Call;
 
 import static com.hs.doubaobao.MyApplication.getContext;
 import static com.hs.doubaobao.model.AddLoanTable.uploadVideo.VideoPick.VideoConfig.VIDEO_LIST;
@@ -171,73 +168,75 @@ public class UploadVideoActivity extends AppBarActivity {
      */
     private void uploadFile(final String filePath, final boolean showDialog) {
 
-
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                try {
-//                    File videoFile = new File(filePath);
-//                    File videoPictures = getVideoThumbnail(filePath,
-//                            120, 120,
-//                            MediaStore.Video.Thumbnails.MINI_KIND);
-//
-//                    Map<String, Object> paramsMap = new LinkedHashMap<>();
-//                    paramsMap.put("category", "8");
-//
-//                    new HttpSocket().uploadFile(paramsMap,
-//                            "videoUploads", videoFile, null,
-//                            "videoPictures", videoPictures, null,
-//                            BaseParams.UPLOAD_VIDEO);
-//
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }).start();
-
-
-
-
-
-
         final long startTime = System.currentTimeMillis();
 
-        File videoFile = new File(filePath);
-        File videoPictures = getVideoThumbnail(filePath,
-                120, 120,
-                MediaStore.Video.Thumbnails.MINI_KIND);
 
-        Map<String, Object> paramsMap = new LinkedHashMap<>();
-        paramsMap.put("category", "8");
-        paramsMap.put("videoUploads", videoFile);
-        paramsMap.put("videoPictures", videoPictures);
-        UploadFileHttp.getInstance(this)
-                .upLoadFile(BaseParams.UPLOAD_VIDEO,
-                        paramsMap, new requestCallBack() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    File videoFile = new File(filePath);
+                    File videoPictures = getVideoThumbnail(filePath,
+                            120, 120,
+                            MediaStore.Video.Thumbnails.MINI_KIND);
 
-                            @Override
-                            public void onError(Call call, Exception e) {
-                                long endTime = System.currentTimeMillis();
-                                ToastUtil.showToast("哎呀！网络不给力o-o！");
-                                Logger.e("用时", (endTime - startTime) + "ms");
-                                Logger.e("用时", e.toString());
+                    Map<String, Object> paramsMap = new LinkedHashMap<>();
+                    paramsMap.put("category", "8");
 
-                                if(!showDialog){
-                                    if(loading !=null )loading.dismiss();
-                                }
-                            }
+                    new HttpSocket(startTime).uploadFile(paramsMap,
+                            "videoUploads", videoFile, null,
+                            "videoPictures", videoPictures, null,
+                            BaseParams.UPLOAD_VIDEO);
 
-                            @Override
-                            public void onResponse(String response) {
-                                Logger.e("123", response);
-                                long endTime = System.currentTimeMillis();
-                                Logger.e("用时", (endTime - startTime) + "ms");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
 
-                                if(!showDialog){
-                                    if(loading !=null )loading.dismiss();
-                                }
-                            }
-                        });
+
+
+
+
+
+
+
+//        File videoFile = new File(filePath);
+//        File videoPictures = getVideoThumbnail(filePath,
+//                120, 120,
+//                MediaStore.Video.Thumbnails.MINI_KIND);
+//
+//        Map<String, Object> paramsMap = new LinkedHashMap<>();
+//        paramsMap.put("category", "8");
+//        paramsMap.put("videoUploads", videoFile);
+//        paramsMap.put("videoPictures", videoPictures);
+//        UploadFileHttp.getInstance(this)
+//                .upLoadFile(BaseParams.UPLOAD_VIDEO,
+//                        paramsMap, new requestCallBack() {
+//
+//                            @Override
+//                            public void onError(Call call, Exception e) {
+//                                long endTime = System.currentTimeMillis();
+//                                ToastUtil.showToast("哎呀！网络不给力o-o！");
+//                                Logger.e("用时", (endTime - startTime) + "ms");
+//                                Logger.e("用时", e.toString());
+//
+//                                if(!showDialog){
+//                                    if(loading !=null )loading.dismiss();
+//                                }
+//                            }
+//
+//                            @Override
+//                            public void onResponse(String response) {
+//                                Logger.e("123", response);
+//                                long endTime = System.currentTimeMillis();
+//                                Logger.e("用时", (endTime - startTime) + "ms");
+//
+//                                if(!showDialog){
+//                                    if(loading !=null )loading.dismiss();
+//                                }
+//                            }
+//                        });
 
     }
 

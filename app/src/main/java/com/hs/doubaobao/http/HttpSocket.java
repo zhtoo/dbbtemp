@@ -38,6 +38,7 @@ public class HttpSocket {
 
     private int progress;
     private Context context;
+    private long startTime;
 
     public HttpSocket(Context context) {
         this.context = context;
@@ -45,6 +46,10 @@ public class HttpSocket {
 
 
     public HttpSocket() {
+    }
+
+    public HttpSocket(long startTime) {
+        this.startTime = startTime;
     }
 
 
@@ -169,7 +174,7 @@ public class HttpSocket {
         while ((len = pictureIn.read(buf)) != -1) {
             os.write(buf, 0, len);
             progress += len;
-            Logger.e("图片进度", "" + progress);
+           // Logger.e("图片进度", "" + progress);
         }
 
         os.write("\r\n".toString().getBytes("UTF-8"));
@@ -182,17 +187,23 @@ public class HttpSocket {
         while ((viedeoLen = videoIn.read(viedeoBuf)) != -1) {
             os.write(viedeoBuf, 0, viedeoLen);
             progress += viedeoLen;
-            Logger.e("视频进度", "" + progress);
+           // Logger.e("视频进度", "" + progress);
         }
 
         //文件书写结束
         os.write(endInfo);
 
-
+        long endTime = System.currentTimeMillis();
+        Logger.e("上传耗时",(endTime - startTime)+"ms");
 
         InputStream inputStream = socket.getInputStream();
 
         // SocketChannel channel = socket.getChannel();
+//<<<<<<< Updated upstream
+//=======
+//
+//        int read = inputStream.read();
+//>>>>>>> Stashed changes
 
         //获取服务器返回的数据
         String s = streamToString(inputStream);
@@ -201,7 +212,10 @@ public class HttpSocket {
         for (int i = 0; i < split.length; i++) {
             Log.e("文件上传返回", split[i]);
         }
-    //    pictureIn.close();
+
+        long endTime2 = System.currentTimeMillis();
+        Logger.e("服务器处理耗时",(endTime2 - endTime)+"ms");
+        pictureIn.close();
         videoIn.close();
         os.close();
         inputStream.close();

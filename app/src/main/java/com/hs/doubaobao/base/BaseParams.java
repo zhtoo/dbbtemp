@@ -30,9 +30,10 @@ public class BaseParams {
     public static final String MOBILE_TYPE = "2";
     //测试地址
     public static final String TEST_URL = /*"http://manage.ahbabybean.com:8081/";*/
-            "http://192.168.1.103:8081/";
+            /*"http://192.168.1.103:8081/";*/
+            "http://192.168.137.112:8081/";
     public static final String TEST_FILE_URL = /*"http://manage.ahbabybean.com:8081/";*/
-            "http://192.168.1.103:8085/";
+            "http://192.168.137.112:8085/";
 
     //真实测试
     public static final String TRUE_URL = "http://manage.ahbabybean.com:8081/";
