@@ -179,7 +179,7 @@ public class DepartmentStatisticsActivity extends AppBarActivity implements Pull
         DepartmentStatisticsBean.ResDataBean resData = bean.getResData();
         List<String> dates = resData.getDates();
         List<Integer> counts = resData.getCounts();
-        List<Integer> accounts = resData.getAccounts();
+        List<Double> accounts = resData.getAccounts();
         DSViewPagerDataBean bean0 = new DSViewPagerDataBean();
         bean0.setTitle("贷款个数最近7天统计");
         bean0.setTitleY("个数(个)");

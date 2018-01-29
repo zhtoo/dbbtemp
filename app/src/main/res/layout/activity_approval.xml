@@ -41,6 +41,7 @@
                 android:padding="@dimen/x15"/>
 
             <LinearLayout
+                android:id="@+id/approval_quota_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/y31"

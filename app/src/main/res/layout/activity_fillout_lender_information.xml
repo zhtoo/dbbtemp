@@ -103,10 +103,7 @@
 
     <Button
         android:id="@+id/fillout_lender_info_save"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/y100"
-        android:gravity="center"
         android:text="保存并下一步"
-        android:textSize="@dimen/x36"/>
+        style="@style/saveButtonStyle"/>
 
 </LinearLayout>

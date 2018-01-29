@@ -98,7 +98,7 @@ public class DepartmentTrialActivity extends AppBarActivity implements Departmen
     public void onItemClick(int postion) {
         Intent intent = new Intent(this, DetailActivity.class);
         intent.putExtra("ID", mList.get(postion).getId() + "");
-        intent.putExtra("ShowRightType", "MANAGER");
+        intent.putExtra("ShowRightType", "DEPARTMENT");
         startActivity(intent);
     }
 

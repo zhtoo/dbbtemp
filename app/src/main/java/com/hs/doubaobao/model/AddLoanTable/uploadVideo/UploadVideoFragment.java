@@ -3,10 +3,7 @@ package com.hs.doubaobao.model.AddLoanTable.uploadVideo;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.media.MediaMetadataRetriever;
-import android.media.ThumbnailUtils;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -18,9 +15,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.hs.doubaobao.R;
-import com.hs.doubaobao.model.AddLoanTable.uploadVideo.VideoPick.LoadedImage;
-import com.hs.doubaobao.utils.log.Logger;
+import com.hs.doubaobao.model.AddLoanTable.ApplyInfoBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +40,8 @@ public class UploadVideoFragment extends Fragment {
     Unbinder unbinder;
 
     private MyAdapter mAdapter;
-    private List<CharSequence> videoPaths = new ArrayList<>();
+    private List<ApplyInfoBean.ResDataBean.BorrowdataModelBean.VideoListBean> videoPaths = new ArrayList<>();
+    private List<Integer> positionArr  = new ArrayList<>();
 
     @Nullable
     @Override
@@ -60,60 +58,6 @@ public class UploadVideoFragment extends Fragment {
         return view;
     }
 
-    /////////////////////////////////////////////////////////////////////
-//////加载图片START
-/////////////////////////////////////////////////////////////////////
-    //添加图片
-    private void addImage(LoadedImage... value) {
-
-        for (LoadedImage image : value) {
-            mAdapter.addPhoto(image);
-            mAdapter.notifyDataSetChanged();
-        }
-    }
-
-    public void loadImages() {
-        mAdapter.getVideoThumbnail().clear();
-        new LoadImages().execute();
-    }
-
-    class LoadImages extends AsyncTask<Object, LoadedImage, Object> {
-
-        @Override
-        protected Object doInBackground(Object... params) {
-            Bitmap bitmap = null;
-            for (int i = 0; i < videoPaths.size(); i++) {
-                //   bitmap = getLocalVideoBitmap(videoPaths.get(i).toString());
-                bitmap = getVideoThumbnail(videoPaths.get(i).toString(), 480, 270, MediaStore.Video.Thumbnails.MINI_KIND);
-                if (bitmap != null) {
-                    publishProgress(new LoadedImage(bitmap));
-                }
-            }
-            return null;
-        }
-
-
-        /**
-         * 获取视频缩略图
-         */
-        private Bitmap getVideoThumbnail(String videoPath, int width, int height, int kind) {
-            long mStartTime = System.currentTimeMillis();
-            Bitmap bitmap = null;
-            bitmap = ThumbnailUtils.createVideoThumbnail(videoPath, kind);
-            bitmap = ThumbnailUtils.extractThumbnail(bitmap, width, height, ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
-            long mEndTime = System.currentTimeMillis();
-            Logger.e("获取视频耗时", "" + (mEndTime - mStartTime));
-            return bitmap;
-        }
-
-
-        @Override
-        public void onProgressUpdate(LoadedImage... value) {
-            addImage(value);
-        }
-
-    }
-
 
     /////////////////////////////////////////////////////////////////////
     //////适配器START
@@ -123,7 +67,7 @@ public class UploadVideoFragment extends Fragment {
         return mRecycler;
     }
 
-    public void setVideoPaths(ArrayList<CharSequence> videoPaths1) {
+    public void setVideoPaths(int  category) {
 //        if (this.videoPaths.size() > 0) {
 //            for (int i = 0; i < videoPaths1.size(); i++) {
 //                String newPath = videoPaths1.get(i).toString();
@@ -135,26 +79,44 @@ public class UploadVideoFragment extends Fragment {
 //                }
 //            }
 //        }
-        this.videoPaths.addAll(videoPaths1);
+      //  this.videoPaths.addAll(videoPaths1);
        // Logger.e("videoPaths长度",""+videoPaths.size());
-        loadImages();
+
+
+        ApplyInfoBean bean = ApplyInfoBean.getInstance();
+        List<ApplyInfoBean.ResDataBean.BorrowdataModelBean.VideoListBean> videoList
+                = bean.getResData().getBorrowdataModel().getVideoList();
+
+        if(videoList == null ||videoList.size()==0)return;
+
+        positionArr.clear();
+        videoPaths.clear();
+
+        for (int i = 0; i < videoList.size(); i++) {
+
+            if(videoList.get(i).getCategory() == category){
+                videoPaths.add(videoList.get(i));
+                positionArr.add(i);
+            }
+        }
+//        loadImages();
     }
 
     static class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-        private List<CharSequence> videoPaths;
+        private List<ApplyInfoBean.ResDataBean.BorrowdataModelBean.VideoListBean> videoPaths;
 
-        public List<LoadedImage> getVideoThumbnail() {
-            return videoThumbnail;
-        }
-
-        private List<LoadedImage> videoThumbnail;
+//        public List<LoadedImage> getVideoThumbnail() {
+//            return videoThumbnail;
+//        }
+//
+//        private List<LoadedImage> videoThumbnail;
         private Context context;
 
-        public MyAdapter(Context context, List<CharSequence> videoPaths) {
+        public MyAdapter(Context context, List<ApplyInfoBean.ResDataBean.BorrowdataModelBean.VideoListBean> videoPaths) {
             this.context = context;
             this.videoPaths = videoPaths;
-            videoThumbnail = new ArrayList<>();
+//            videoThumbnail = new ArrayList<>();
         }
 
         /*
@@ -175,7 +137,7 @@ public class UploadVideoFragment extends Fragment {
             String path = "";
             if (videoPaths != null) {
                 if (videoPaths.size() > position) {
-                    path = videoPaths.get(position).toString();
+                    path = videoPaths.get(position).getPathTure();
                 }
             }
             MyViewHolder viewHolder = (MyViewHolder) holder;
@@ -185,19 +147,19 @@ public class UploadVideoFragment extends Fragment {
 
         @Override
         public int getItemCount() {
-            if (videoThumbnail != null) {
-                return videoThumbnail.size();
+            if (videoPaths != null) {
+                return videoPaths.size();
             } else {
                 return 0;
             }
         }
 
-        public void addPhoto(LoadedImage image) {
-            Logger.e(
-                    "来吧来吧","我的好孩子"
-            );
-            videoThumbnail.add(image);
-        }
+//        public void addPhoto(LoadedImage image) {
+//            Logger.e(
+//                    "来吧来吧","我的好孩子"
+//            );
+//            videoThumbnail.add(image);
+//        }
 
         private class MyViewHolder extends RecyclerView.ViewHolder {
 
@@ -214,10 +176,13 @@ public class UploadVideoFragment extends Fragment {
 
             void bindItem(final String path, int position) {
                 if (!TextUtils.isEmpty(path)) {
-                    String[] split = path.split("/");
-                    String videoName = split[split.length - 1];
-                    mVideoName.setText(videoName);
-                    mImage.setImageBitmap(videoThumbnail.get(position).getBitmap());
+//                    String[] split = path.split("/");
+//                    String videoName = split[split.length - 1];
+                    mVideoName.setText(videoPaths.get(position).getName());
+                    Glide.with(context)
+                            .load(path)
+                            .into(mImage);
+                    //mImage.setImageBitmap(videoThumbnail.get(position).getBitmap());
                 }
             }
 

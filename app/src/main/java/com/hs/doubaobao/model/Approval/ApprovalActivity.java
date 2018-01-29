@@ -48,6 +48,7 @@ public class ApprovalActivity extends AppBarActivity implements ApprovalContract
     private String mManagerRation;
     private int mApproveStatus;
     private int mApprove = 0;
+    private LinearLayout mQuotaItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +68,10 @@ public class ApprovalActivity extends AppBarActivity implements ApprovalContract
         mManagerRation = intent.getStringExtra("managerRation");
 
         id = intent.getStringExtra("ID");
+
         if (TextUtils.isEmpty(showRightType)) {
-        } else if (showRightType.equals("RISK")) {
+        } else
+        if (showRightType.equals("RISK")) {
             setTitle(getString(R.string.risk_control));
             mOpinion.setText("风控意见:");
             mQuota.setText("风控定额:");
@@ -77,7 +80,8 @@ public class ApprovalActivity extends AppBarActivity implements ApprovalContract
                 mQuotaText.setText(mRiskControl);
             }
             type = 3;
-        } else if (showRightType.equals("MANAGER")) {
+        } else
+        if (showRightType.equals("MANAGER")) {
             setTitle(getString(R.string.general_manager));
             mOpinion.setText("总经理意见:");
             mQuota.setText("总经理定额:");
@@ -86,6 +90,18 @@ public class ApprovalActivity extends AppBarActivity implements ApprovalContract
                 mQuotaText.setText(mManagerRation);
             }
             type = 4;
+        }else
+        if (showRightType.equals("DEPARTMENT")) {
+            setTitle("部门初审");
+            mOpinion.setText("部门经理意见:");
+            mQuotaItem.setVisibility(View.GONE);
+            type = 7;
+        } else
+        if (showRightType.equals("STORE")) {
+            setTitle("门店一审");
+            mOpinion.setText("门店意见:");
+            mQuotaItem.setVisibility(View.GONE);
+            type = 1;
         }
 
         mClose.setOnClickListener(this);
@@ -124,6 +140,7 @@ public class ApprovalActivity extends AppBarActivity implements ApprovalContract
     private void initView() {
         mOpinion = (TextView) findViewById(R.id.approval_opinion);
         mQuota = (TextView) findViewById(R.id.approval_quota);
+        mQuotaItem = (LinearLayout) findViewById(R.id.approval_quota_item);
         mOpinionText = (EditText) findViewById(R.id.approval_opinion_text);
         mQuotaText = (EditText) findViewById(R.id.approval_quota_text);
         mPass = (Button) findViewById(R.id.approval_pass);
@@ -179,7 +196,9 @@ public class ApprovalActivity extends AppBarActivity implements ApprovalContract
     void checkNull(int status, String content, String riskControl) {
         if (status != 3 && TextUtils.isEmpty(content)) {
             Toast.makeText(this, "请填写意见", Toast.LENGTH_SHORT).show();
-        } else if (status != 3 && TextUtils.isEmpty(riskControl)) {
+        } else if (status != 3
+                && TextUtils.isEmpty(riskControl)
+                &&(showRightType.equals("MANAGER")||showRightType.equals("RISK"))) {
             Toast.makeText(this, "请填写金额", Toast.LENGTH_SHORT).show();
         } else {
             loadData(status, content, riskControl, "");

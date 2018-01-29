@@ -923,8 +923,8 @@
 
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="提交"/>
+        android:id="@+id/recference_save"
+        android:text="保存"
+        style="@style/saveButtonStyle"/>
 
 </LinearLayout>

@@ -36,10 +36,13 @@
         android:layout_weight="1"/>
 
 
-    <Button
+    <ImageButton
+        android:layout_gravity="center"
         android:onClick="onVideoClick"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/x650"
+        android:layout_height="@dimen/y98"
+        android:layout_marginBottom="@dimen/y15"
+        android:background="@drawable/ic_add_video"
         android:text="选择视频"/>
 
 </LinearLayout>

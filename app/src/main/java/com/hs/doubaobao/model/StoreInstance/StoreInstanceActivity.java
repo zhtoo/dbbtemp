@@ -95,7 +95,7 @@ public class StoreInstanceActivity extends AppBarActivity implements StoreInstan
     public void onItemClick(int postion) {
         Intent intent = new Intent(this, DetailActivity.class);
         intent.putExtra("ID", mList.get(postion).getId() + "");
-        intent.putExtra("ShowRightType", "MANAGER");
+        intent.putExtra("ShowRightType", "STORE");
         startActivity(intent);
     }
 

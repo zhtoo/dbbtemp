@@ -7,6 +7,10 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.hs.doubaobao.bean.PictureUrlBean;
+import com.hs.doubaobao.bean.VideoUrlBean;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -1073,11 +1077,13 @@ public class ApplyLendUtil {
          finalRationBa           String      市场均价*/
         chenckValues(  eFinalRationBa    ,  finalRationBa   );
 
-        if(buildAddr.contains("1")){
-            radioHousingLocation01.setChecked(true);
-        }else
-        if(buildAddr.contains("2")){
-            radioHousingLocation02.setChecked(true);
+        if(!TextUtils.isEmpty(buildAddr)){
+            if(buildAddr.contains("1")){
+                radioHousingLocation01.setChecked(true);
+            }else
+            if(buildAddr.contains("2")){
+                radioHousingLocation02.setChecked(true);
+            }
         }
 
         /**buildType               int         房产性质，值：1：回迁房，2：公寓，3：住宅，4：单位集资房
@@ -1108,43 +1114,52 @@ public class ApplyLendUtil {
             carArr[car].setChecked(true);
         }
 
-        /**family家庭情况，值1：已婚，2：未婚，3：孩子；为多选，两个值之间以，连接
+        /**family  家庭情况，值1：已婚，2：未婚，3：孩子；为多选，两个值之间以，连接
          finalRationFamily 家庭情况额度*/
         chenckValues(  eFinalRationFamily    ,  finalRationFamily   );
-        if(workunit.contains("1")){
-            familyStatus01.setChecked(true);
-        }else
-        if(workunit.contains("2")){
-            familyStatus02.setChecked(true);
-        }
-        if(workunit.contains("3")){
-            eHasChild.setChecked(true);
+
+        if(!TextUtils.isEmpty(family)){
+            if(family.contains("1")){
+                familyStatus01.setChecked(true);
+            }else
+            if(family.contains("2")){
+                familyStatus02.setChecked(true);
+            }
+            if(family.contains("3")){
+                eHasChild.setChecked(true);
+            }
         }
 
         /** * workunit 单位性质，值：1：国企/公务员，2：民营，3：社保，4：公积金    为多选，两个值之间以，连接
          * finalRationWorkuni单位性质额度*/
         chenckValues(  eFinalRationWorkunit    ,  finalRationWorkunit   );
 
-        if(workunit.contains("1")){
-            unitNature01.setChecked(true);
-        }else
-        if(workunit.contains("2")){
-            unitNature02.setChecked(true);
+        if(!TextUtils.isEmpty(workunit)){
+            if(workunit.contains("1")){
+                unitNature01.setChecked(true);
+            }else
+            if(workunit.contains("2")){
+                unitNature02.setChecked(true);
+            }
+            if(workunit.contains("3")){
+                eSocialSecurity.setChecked(true);
+            }
+            if(workunit.contains("4")){
+                eProvidentFund.setChecked(true);
+            }
         }
-        if(workunit.contains("3")){
-            eSocialSecurity.setChecked(true);
-        }
-        if(workunit.contains("4")){
-            eProvidentFund.setChecked(true);
-        }
+
 
         /** proprietor 私人业主，值：1：营业执照，2：实体经营    为多选，两个值之间以，连接*/
         chenckValues(  eFinalRationProprietor    ,  finalRationProprietor   );
-        if(proprietor.contains("1")){
-            eProprietor01.setChecked(true);
-        }
-        if(proprietor.contains("2")){
-            eProprietor02.setChecked(true);
+
+        if(!TextUtils.isEmpty(proprietor)){
+            if(proprietor.contains("1")){
+                eProprietor01.setChecked(true);
+            }
+            if(proprietor.contains("2")){
+                eProprietor02.setChecked(true);
+            }
         }
 
         /** credit信用卡负债，值：1:50%，2:60%，3:70%，4:80%，5:90%*/
@@ -1374,6 +1389,93 @@ public class ApplyLendUtil {
         customerRation.setReservePwd(reservePwd);
     }
 
+    /**
+     * 添加图片
+     */
+    public static void addPicture(PictureUrlBean picture){
+        ApplyInfoBean bean = ApplyInfoBean.getInstance();
+        List<ApplyInfoBean.ResDataBean.BorrowdataModelBean.PictureListBean> pictureList
+                = bean.getResData().getBorrowdataModel().getPictureList();
+
+        if(picture == null)return;
+        List<PictureUrlBean.ResDataBean.PictureListBean> pictureBean
+                = picture.getResData().getPictureList();
+
+        if(pictureBean == null||pictureBean.size() ==0)return;
+        PictureUrlBean.ResDataBean.PictureListBean
+                pictureListBean = pictureBean.get(0);
+
+        int category =      pictureListBean.getCategory();
+        String name =       pictureListBean.getName();
+        String path =       pictureListBean.getPath();
+        String pathTure =   pictureListBean.getPathTure();
+        long size =          pictureListBean.getSize();
+        String type =       pictureListBean.getType();
+
+        ApplyInfoBean.ResDataBean.BorrowdataModelBean.PictureListBean pictureListBean1
+                = new ApplyInfoBean.ResDataBean.BorrowdataModelBean.PictureListBean();
+
+        pictureListBean1.setCategory(category);
+        pictureListBean1.setName(name);
+        pictureListBean1.setPath(path);
+        pictureListBean1.setPathTure(pathTure);
+        pictureListBean1.setSize(size);
+        pictureListBean1.setType(type);
+
+        if(pictureList == null){
+            pictureList = new ArrayList<>();
+            pictureList.add(pictureListBean1);
+            bean.getResData().getBorrowdataModel()
+                    .setPictureList(pictureList);
+        }else {
+            pictureList.add(pictureListBean1);
+        }
+    }
+
+    /**
+     * 添加视频
+     */
+    public static void addVideo(VideoUrlBean video){
+        ApplyInfoBean bean = ApplyInfoBean.getInstance();
+        List<ApplyInfoBean.ResDataBean.BorrowdataModelBean.VideoListBean> videoList
+                = bean.getResData().getBorrowdataModel().getVideoList();
+
+        if(video == null)return;
+        List<VideoUrlBean.ResDataBean.VideoListBean> videoBean
+                = video.getResData().getVideoList();
+
+        if(videoBean == null||videoBean.size() ==0)return;
+
+        VideoUrlBean.ResDataBean.VideoListBean
+                videoListBean = videoBean.get(0);
+
+           int      category  =       videoListBean.getCategory ();
+           String   name      =       videoListBean.getName     ();
+           String   path      =       videoListBean.getPath     ();
+           String   pathTure  =       videoListBean.getPathTure ();
+           long     size      =       videoListBean.getSize     ();
+           String   type      =       videoListBean.getType     ();
+
+        ApplyInfoBean.ResDataBean.BorrowdataModelBean.VideoListBean videoListBean1
+                = new ApplyInfoBean.ResDataBean.BorrowdataModelBean.VideoListBean();
+
+        videoListBean1.setCategory (category);
+        videoListBean1.setName     (name    );
+        videoListBean1.setPath     (path    );
+        videoListBean1.setPathTure (pathTure);
+        videoListBean1.setSize     (size    );
+        videoListBean1.setType     (type    );
+
+        if(videoList == null){
+            videoList = new ArrayList<>();
+            videoList.add(videoListBean1);
+            bean.getResData().getBorrowdataModel()
+                    .setVideoList(videoList);
+        }else {
+            videoList.add(videoListBean1);
+        }
+    }
+
     public static void addValues(String[] arr,TextView view,int position){
         if(position > 0 && position < arr.length){
             String text = arr[position];
@@ -1408,5 +1510,4 @@ public class ApplyLendUtil {
     private static String checkCustomerSurveyOpinion(Boolean isCheck) {
         return isCheck ? "有" : "";
     }
-
 }

@@ -136,6 +136,8 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     private LinearLayout mMenuStoreInstance;
     private DotView mMenuDepartmentTrialDot;
     private DotView mMenuStoreInstanceDot;
+    private TextView mStores;
+    private TextView mDepartment;
 
 
     @Override
@@ -261,6 +263,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         mMenuLogo = (RelativeLayout) findViewById(R.id.menu_logo_bg);
         //菜单的用户名称
         mMenuName = (TextView) findViewById(R.id.menu_person_name);
+        mStores = (TextView) findViewById(R.id.menu_person_stores);
+        mDepartment = (TextView) findViewById(R.id.menu_person_department);
+
         //菜单的七个条目(根据权限控制显示和隐藏)
 
         //部门申请
@@ -694,6 +699,17 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
      */
     @Override
     public void setData(HomeBean bean) {
+
+        String officeName = bean.getResData().getOfficeName();
+
+        String deptName = bean.getResData().getDeptName();
+        if(!TextUtils.isEmpty(officeName)){
+            mStores.setText(officeName);
+        }
+        if(!TextUtils.isEmpty(deptName)){
+            mDepartment.setText(deptName);
+        }
+
         //角色权限
         roleIdList = bean.getResData().getRoleIdList();
         //角色的消息

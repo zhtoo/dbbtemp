@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -15,12 +16,16 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 
+import com.google.gson.Gson;
 import com.hs.doubaobao.R;
 import com.hs.doubaobao.base.AppBarActivity;
 import com.hs.doubaobao.base.BaseParams;
+import com.hs.doubaobao.bean.PictureUrlBean;
 import com.hs.doubaobao.http.UploadFileHttp;
 import com.hs.doubaobao.http.requestCallBack;
+import com.hs.doubaobao.model.AddLoanTable.ApplyLendUtil;
 import com.hs.doubaobao.utils.MyUtils;
 import com.hs.doubaobao.utils.ToastUtil;
 import com.hs.doubaobao.utils.log.Logger;
@@ -57,8 +62,9 @@ public class UploadPictureActivity extends AppBarActivity {
     private String[] mTabItemNameArray = {"四证", "征信报告", "银行流水", "车辆社保公积金", "家访", "经营场所", "其他", "签约"};
     private ProgressDialog dialog;
     private List<String> picturePaths;
+    private int[] categoryArr = {1, 2, 3, 4, 5, 6, 7, 12};
 
-    private Handler handler =new Handler(){
+    private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
@@ -75,11 +81,13 @@ public class UploadPictureActivity extends AppBarActivity {
                     //上传进度
                     int current = msg.arg1;
                     int total = msg.arg2;
-                    Logger.e("进度",current+"/"+total);
+                    Logger.e("进度", current + "/" + total);
                     break;
             }
         }
     };
+
+    private String status = "编辑";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,14 +95,52 @@ public class UploadPictureActivity extends AppBarActivity {
         setContentView(R.layout.activity_upload_picture);
         ButterKnife.bind(this);
         setTitle("照片上传");
-        isShowRightView(false);
+        //isShowRightView(false);
+        setRightStatus(Color.parseColor("#E2570F"), status);
 
         addFragment();//初始化Fragmrnt，并添加到ViewPager中。
         initViewPager();
         tablayout.setupWithViewPager(mViewpager);
         checkPermission();
-        loading.setMessage("正在上传中，请耐心等待！");
+       // loading.setMessage("正在上传中，请耐心等待！");
+        dialog = new ProgressDialog(this);
+        dialog.setMessage("正在上传中，请耐心等待！");
+        initData();
     }
+
+    @Override
+    public void onRightForward(View forwardView) {
+        super.onRightForward(forwardView);
+
+        if(status.equals("编辑")){
+            status = "完成";
+            editPiture(true);
+        }else {
+            status = "编辑";
+            editPiture(false);
+        }
+        setRightStatus(Color.parseColor("#E2570F"), status);
+
+    }
+
+
+    private void editPiture(boolean showDelete) {
+        for (int i = 0; i < categoryArr.length; i++) {
+            fragments.get(i).setSelectPaths(categoryArr[i],showDelete);
+
+        }
+    }
+
+    /**
+     * 初始化数据
+     */
+    private void initData() {
+        for (int i = 0; i < categoryArr.length; i++) {
+            fragments.get(i).setSelectPaths(categoryArr[i],status.equals("完成"));
+        }
+    }
+
+
 
 
     /**
@@ -146,15 +192,18 @@ public class UploadPictureActivity extends AppBarActivity {
         if (requestCode == PickConfig.PICK_PHOTO_DATA) {
 
             int currentItem = mViewpager.getCurrentItem();
-            picturePaths = (List<String>) data.getSerializableExtra(PickConfig.INTENT_IMG_LIST_SELECT);
-            if (picturePaths != null&&picturePaths.size()>0) {
-                if(loading !=null )loading.show();
-                fragments.get(currentItem).setSelectPaths(picturePaths);
-                fragments.get(currentItem).getmRecycler().getAdapter().notifyDataSetChanged();
-                for (int i = 0; i < picturePaths.size(); i++) {
-                    uploadFile(picturePaths.get(i),i != picturePaths.size() -1);
-                }
 
+
+            picturePaths = (List<String>) data.getSerializableExtra(PickConfig.INTENT_IMG_LIST_SELECT);
+            if (picturePaths != null && picturePaths.size() > 0) {
+                if (dialog != null) dialog.show();
+
+                for (int i = 0; i < picturePaths.size(); i++) {
+                    uploadFile(picturePaths.get(i),
+                            i != picturePaths.size() - 1,
+                            categoryArr[currentItem],
+                            currentItem);
+                }
 
             }
         }
@@ -163,12 +212,12 @@ public class UploadPictureActivity extends AppBarActivity {
     /**
      * 上传文件
      */
-    private void uploadFile(String filePath, final boolean showDialog) {
+    private void uploadFile(String filePath, final boolean showDialog, int category, final int currentItem) {
 
         File file = MyUtils.compressImage(filePath);
 
         Map<String, Object> paramsMap = new LinkedHashMap<>();
-        paramsMap.put("category", "1");
+        paramsMap.put("category", category);
         paramsMap.put("uploads", file);
         UploadFileHttp.getInstance(this)
                 .upLoadFile(BaseParams.UPLOAD_PICTURE,
@@ -177,21 +226,34 @@ public class UploadPictureActivity extends AppBarActivity {
                             @Override
                             public void onError(Call call, Exception e) {
 
-                                if(!showDialog){
-                                    if(loading !=null )loading.dismiss();
-                                }
+                                if (!showDialog) {
+                                    if (dialog != null) dialog.dismiss();
+                                    fragments.get(currentItem).setSelectPaths(categoryArr[currentItem],status.equals("完成"));
 
+                                }
                                 ToastUtil.showToast("哎呀！网络不给力o-o！");
                             }
+
                             @Override
                             public void onResponse(String response) {
 
-                                if(!showDialog){
-                                    if(loading !=null )loading.dismiss();
+                                try{
+                                    Gson gson = new Gson();
+                                    PictureUrlBean pictureUrlBean = gson.fromJson(response, PictureUrlBean.class);
+                                    if (pictureUrlBean != null) {
+                                        ApplyLendUtil.addPicture(pictureUrlBean);
+                                    }
+
+
+
+                                }catch (Exception e){
+                                    ToastUtil.showToast("哎呀！网络不给力o-o！");
                                 }
+                                if (!showDialog) {
+                                    if (dialog != null) dialog.dismiss();
+                                    fragments.get(currentItem).setSelectPaths(categoryArr[currentItem],status.equals("完成"));
 
-                                Logger.e("123",response);
-
+                                }
                             }
                         });
 

@@ -9,6 +9,61 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--自定义主题样式-->
+    <style name="MyRadioButton" parent="Theme.AppCompat.Light">
+        <!--失去焦点的时候-->
+        <item name="colorControlNormal">@color/textGray</item>
+        <!--获取焦点的时候-->
+        <item name="colorControlActivated">@color/dialog_button_ensure</item>
+    </style>
+
+    <!--自定义-->
+    <style name="MyCheckBox" parent="Theme.AppCompat.Light">
+        <!--失去焦点的时候-->
+        <item name="colorControlNormal">#EEEEEE</item>
+        <!--获取焦点的时候-->
+        <item name="colorControlActivated">@color/dialog_button_ensure</item>
+    </style>
+
+
+    <!--自定义-->
+    <style name="loginEditText" parent="Theme.AppCompat.Light">
+        <!--失去焦点的时候-->
+        <item name="colorControlNormal">@color/textGray</item>
+        <!--获取焦点的时候-->
+        <item name="colorControlActivated">@color/dialog_button_ensure</item>
+    </style>
+
+
+    <!--对话框的样式-->
+    <style name="NormalDialogStyle">
+        <!--对话框背景 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!--没有标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 是否浮现在Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!--背景透明 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 是否有覆盖 -->
+        <item name="android:windowContentOverlay">@null</item>
+        <!--进出的显示动画 -->
+        <!--背景变暗-->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <!--<item name="android:windowAnimationStyle">@style/normalDialogAnim</item>-->
+
+    <!--对话框动画-->
+    <!--<style name="normalDialogAnim" parent="android:Animation">
+        <item name="@android:windowEnterAnimation">@anim/normal_dialog_enter</item>
+        <item name="@android:windowExitAnimation">@anim/normal_dialog_exit</item>
+    </style>-->
+
+
+
+
     <!-- 网络加载等待动画（自定义dialog的样式） -->
     <style name="CustomDialog" parent="android:Theme.Dialog">
         <item name="android:backgroundDimAmount">0.4</item>
@@ -235,21 +290,7 @@
     </style>
 
 
-<!--自定义主题样式-->
-    <style name="MyRadioButton" parent="Theme.AppCompat.Light">
-        <!--失去焦点的时候-->
-        <item name="colorControlNormal">@color/textGray</item>
-        <!--获取焦点的时候-->
-        <item name="colorControlActivated">@color/dialog_button_ensure</item>
-    </style>
 
-<!--自定义-->
-    <style name="MyCheckBox" parent="Theme.AppCompat.Light">
-        <!--失去焦点的时候-->
-        <item name="colorControlNormal">@color/textGray</item>
-        <!--获取焦点的时候-->
-        <item name="colorControlActivated">@color/dialog_button_ensure</item>
-    </style>
 
     <style name="radio_bt_style">
         <item name="android:layout_width">@dimen/x200</item>
@@ -407,6 +448,18 @@
         <item name="android:paddingLeft">@dimen/x20</item>
         <item name="android:paddingRight">@dimen/x20</item>
         <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="saveButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/y80</item>
+        <item name="android:layout_marginBottom">@dimen/y15</item>
+        <item name="android:layout_marginLeft">@dimen/x30</item>
+        <item name="android:layout_marginRight">@dimen/x30</item>
+        <item name="android:textColor">@color/Orange</item>
+        <item name="android:background">@drawable/bg_save_bt</item>
+        <item name="android:textSize">@dimen/x36</item>
+        <item name="android:gravity">center</item>
     </style>
 
 

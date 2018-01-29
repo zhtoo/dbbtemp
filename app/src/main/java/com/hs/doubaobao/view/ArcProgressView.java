@@ -12,7 +12,6 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.hs.doubaobao.R;
-import com.hs.doubaobao.utils.log.Logger;
 
 
 /**
@@ -157,7 +156,7 @@ public class ArcProgressView extends View {
 
         canvas.drawArc(oval, startAngle, maxAngle, false, backgroundPaint);
         canvas.drawArc(oval, startAngle, mProgress * maxAngle / mProgressMax, false, progressPaint);
-        Logger.e(TAG,"onDraw");
+       // Logger.e(TAG,"onDraw");
     }
 
 

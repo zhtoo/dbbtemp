@@ -1,5 +1,7 @@
 package com.hs.doubaobao.model.ApplyLoad.RecyclerView;
 
+import android.text.TextUtils;
+
 /**
  * 作者：zhanghaitao on 2017/11/20 17:21
  * 邮箱：820159571@qq.com
@@ -47,11 +49,13 @@ public class ChildItem {
         for (int i = 1; i < typeArr.length; i++) {
             if(typeArr[i].contains(loanCategories)){
                 this.loanCategories = typeArr[i].substring(2,typeArr[i].length());
-                return;
             }
         }
 
-        this.loanCategories = "未填写";
+        if(TextUtils.isEmpty(loanCategories)){
+
+            this.loanCategories = "未填写";
+        }
     }
 
     public String getTelephone() {

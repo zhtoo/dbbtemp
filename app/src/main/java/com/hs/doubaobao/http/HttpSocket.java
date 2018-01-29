@@ -2,7 +2,6 @@ package com.hs.doubaobao.http;
 
 import android.content.Context;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.hs.doubaobao.base.BaseParams;
 import com.hs.doubaobao.utils.MD5Util;
@@ -17,6 +16,7 @@ import java.io.OutputStream;
 import java.io.PrintStream;
 import java.net.Socket;
 import java.net.URL;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static com.hs.doubaobao.http.OKHttpWrap.getVersion;
@@ -61,10 +61,10 @@ public class HttpSocket {
      * @param urlStr       上传的服务器的路径
      * @throws IOException
      */
-    public void uploadFile(Map<String, Object> params,
-                           String videoName, File videoFile, String newVideoName,
-                           String pictureName, File pictureFile, String newPictureName,
-                           String urlStr) throws IOException {
+    public String uploadFile(Map<String, Object> params,
+                             String videoName, File videoFile, String newVideoName,
+                             String pictureName, File pictureFile, String newPictureName,
+                             String urlStr) throws IOException {
         if (newVideoName == null || newVideoName.trim().equals("")) {
             newVideoName = videoFile.getName();
         }
@@ -74,32 +74,37 @@ public class HttpSocket {
         }
 
         final String ts = String.valueOf(System.currentTimeMillis() / 1000);
+
+        Map<String, Object>  paramsMap = new LinkedHashMap<>();
         // appsecrt拼接ts的字符串后进行MD5（32）
         String signa = MD5Util.encode(BaseParams.APP_SECRET + ts, CHARSET_NAME);
         // 得到的MD5串拼接appkey再次MD5，所得结果转大写
         signa = MD5Util.encode(signa + BaseParams.APP_KEY, CHARSET_NAME).toUpperCase();
-        params.put("appkey", BaseParams.APP_KEY);
-        params.put("signa", signa);
-        params.put("ts", ts);
-        params.put("mobileType", BaseParams.MOBILE_TYPE);
-        params.put("versionNumber", getVersion());
+        paramsMap.put("appkey", BaseParams.APP_KEY);
+        paramsMap.put("signa", signa);
+        paramsMap.put("ts", ts);
+        paramsMap.put("mobileType", BaseParams.MOBILE_TYPE);
+        paramsMap.put("versionNumber", getVersion());
         //上传非空的userId
         if (!TextUtils.isEmpty(BaseParams.USER_ID)) {
-            params.put("userId", BaseParams.USER_ID);
+            paramsMap.put("userId", BaseParams.USER_ID);
         }
-        Logger.e("通用参数", params.toString());
+
+        paramsMap.putAll(params);
+        Logger.e("通用参数", paramsMap.toString());
+        Logger.e("通用参数",urlStr);
 
         StringBuilder sb = new StringBuilder();
         /**
          * 普通的表单数据
          */
         if (params != null)
-            for (String key : params.keySet()) {
+            for (String key : paramsMap.keySet()) {
                 sb.append("--" + BOUNDARY + "\r\n");
                 sb.append("Content-Disposition: form-data; name=\"" + key
                         + "\"" + "\r\n");
                 sb.append("\r\n");
-                sb.append(params.get(key) + "\r\n");
+                sb.append(paramsMap.get(key) + "\r\n");
             }
         else {
             sb.append("\r\n");
@@ -147,15 +152,15 @@ public class HttpSocket {
 
         // 写出请求头
         ps.println("POST " + urlStr + " HTTP/1.1");
-       // ps.println("Content-Encoding: UTF-8");
+        // ps.println("Content-Encoding: UTF-8");
         ps.println("Content-Type: multipart/form-data; boundary=" + BOUNDARY);
         ps.println("Content-Length: "
                 + String.valueOf(
-                        headerInfo.length           +
-                        pictureInfo.length          +
-                        videoInfo.length            +
-                        videoFile.length()          +
-                        pictureFile.length()        +
+                headerInfo.length +
+                        pictureInfo.length +
+                        videoInfo.length +
+                        videoFile.length() +
+                        pictureFile.length() +
                         endInfo.length));
         ps.println("Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
 
@@ -174,7 +179,7 @@ public class HttpSocket {
         while ((len = pictureIn.read(buf)) != -1) {
             os.write(buf, 0, len);
             progress += len;
-           // Logger.e("图片进度", "" + progress);
+            // Logger.e("图片进度", "" + progress);
         }
 
         os.write("\r\n".toString().getBytes("UTF-8"));
@@ -182,43 +187,45 @@ public class HttpSocket {
         os.write(videoInfo);
 
 
-        byte[] viedeoBuf = new byte[ 16 * 1024];
+        byte[] viedeoBuf = new byte[16 * 1024];
         int viedeoLen;
         while ((viedeoLen = videoIn.read(viedeoBuf)) != -1) {
             os.write(viedeoBuf, 0, viedeoLen);
             progress += viedeoLen;
-           // Logger.e("视频进度", "" + progress);
+            // Logger.e("视频进度", "" + progress);
         }
 
         //文件书写结束
         os.write(endInfo);
 
         long endTime = System.currentTimeMillis();
-        Logger.e("上传耗时",(endTime - startTime)+"ms");
+        Logger.e("上传耗时", (endTime - startTime) + "ms");
 
         InputStream inputStream = socket.getInputStream();
-
-        // SocketChannel channel = socket.getChannel();
-//<<<<<<< Updated upstream
-//=======
-//
-//        int read = inputStream.read();
-//>>>>>>> Stashed changes
 
         //获取服务器返回的数据
         String s = streamToString(inputStream);
 
         String[] split = s.split("\r\n");
         for (int i = 0; i < split.length; i++) {
-            Log.e("文件上传返回", split[i]);
+            Logger.e("文件上传返回", split[i]);
         }
 
         long endTime2 = System.currentTimeMillis();
-        Logger.e("服务器处理耗时",(endTime2 - endTime)+"ms");
+        Logger.e("服务器处理耗时", (endTime2 - endTime) + "ms");
         pictureIn.close();
         videoIn.close();
         os.close();
         inputStream.close();
+        /**
+         * HTTP/1.1 200 OK
+         */
+        if (split != null && split.length > 0 && split[0].contains("200") && split[0].contains("OK")) {
+            return split[split.length - 1 > 0 ? split.length - 1 : 0];
+        } else {
+            return null;
+        }
+
     }
 
 
@@ -241,7 +248,7 @@ public class HttpSocket {
             byte[] byteArray = baos.toByteArray();
             return new String(byteArray);
         } catch (Exception e) {
-            Log.e("文件上传", e.toString());
+            Logger.e("文件上传", e.toString());
             return null;
         }
     }

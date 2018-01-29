@@ -13,7 +13,6 @@ import android.graphics.Shader;
 import android.graphics.Typeface;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -48,7 +47,7 @@ public class HstogramView extends View {
 
     //需要由外面传进来的数据
     private List<String> date;
-    private List<Integer> values;
+    private List<Double> values;
 
     //---------------------可以自定义的属性start-------------------------------------------------------
 
@@ -65,7 +64,7 @@ public class HstogramView extends View {
     //---------------------可以自定义的属性end-------------------------------------------------------
 
     //最大的Y值
-    private int maxY = -1;
+    private double maxY = -1;
     //默认被点击的条目是-1
     private int clickItemPosion = -1;
     private List<PointRange> PointRangeList = new ArrayList<>();
@@ -171,16 +170,16 @@ public class HstogramView extends View {
         //设置宽高
         setMeasuredDimension(width, height);
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        Log.e(TAG, "onMeasure就在这里做数据的初始化");
+      //  Log.e(TAG, "onMeasure就在这里做数据的初始化");
 
         if (maxY == -1) {
-            int maxValue = 0;
+            double maxValue = 0;
 
             if(values == null){
 
             }
 
-            for (int value : values) {
+            for (double value : values) {
                 if (value > maxValue) {
                     maxValue = value;
                 }
@@ -188,11 +187,11 @@ public class HstogramView extends View {
             if ((maxValue % (Equal * 10)) == 0) {
                 maxY = maxValue;
             } else {
-                maxY = ((maxValue / (Equal * 10)) + 1) * Equal * 10;
+                maxY =  ((maxValue / (Equal * 10)) + 1) * Equal * 10;
             }
         }
 
-        float maxYTextWidth = getFontWidth(mTextPaint, String.valueOf(maxY));
+        float maxYTextWidth = getFontWidth(mTextPaint, String.valueOf( new java.text.DecimalFormat("#.00").format(maxY)));
         float maxXTextHeight = getFontHeight(mTextPaint);
         maxYValueWidth = maxYTextWidth + DensityUtil.dp2px(context, 5);
         maxXValueHeight = maxXTextHeight + DensityUtil.dp2px(context, 5);
@@ -204,8 +203,8 @@ public class HstogramView extends View {
         heightY = viewHeight - maxXValueHeight;
         //X轴的宽度
         weithX = viewWidth - maxYValueWidth;
-        unitLengthY = heightY / maxY;
-        dY = maxY / Equal;
+        unitLengthY = (float) (heightY / maxY);
+        dY = (int) (maxY / Equal);
         dHeight = heightY / Equal;
 
         centerYtextPoint = heightY + maxXTextHeight - 5;
@@ -216,7 +215,7 @@ public class HstogramView extends View {
                 pointRange = new PointRange();
                 pointRange.minX = maxYValueWidth + (i * columnWidth + Spacing * (i + 1));
                 pointRange.maxX = maxYValueWidth + (columnWidth + Spacing) * (i + 1);
-                pointRange.minY = heightY - values.get(i) * unitLengthY;
+                pointRange.minY =(float) (heightY - values.get(i) * unitLengthY);
                 pointRange.maxY = heightY - 2;
                 PointRangeList.add(pointRange);
             }
@@ -262,7 +261,7 @@ public class HstogramView extends View {
 
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        Log.e(TAG, "onLayout");
+       // Log.e(TAG, "onLayout");
         super.onLayout(changed, left, top, right, bottom);
     }
 
@@ -275,23 +274,40 @@ public class HstogramView extends View {
 
         //画刻度
         for (int i = 0; i < (Equal + 1); i++) {
-            float mValueWidth = getFontWidth(mTextPaint, String.valueOf(maxY - dY * i));
+
+            float mValueWidth = getFontWidth(mTextPaint, String.valueOf( new java.text.DecimalFormat("#.00").format(maxY - dY * i)));
             float X = 0;
             if (maxYValueWidth - mValueWidth >= 0) {
                 X = maxYValueWidth - mValueWidth - 10;
             }
             if (i == 0) {
-                canvas.drawText(String.valueOf(maxY - dY * i), X, maxXValueHeight / 2 + 5, mTextPaint);
-            } else {
-                canvas.drawText(String.valueOf(maxY - dY * i), X, dHeight * i + maxXValueHeight / 4, mTextPaint);
+                canvas.drawText(
+                        String.valueOf( new java.text.DecimalFormat("#.00").format(maxY - dY * i)),
+                        X,
+                        maxXValueHeight / 2 + 5,
+                        mTextPaint);
+            } else
+            if(i == Equal){
+                canvas.drawText(
+                       "0.00",
+                        maxYValueWidth - getFontWidth(mTextPaint, "0.00")-10,
+                        dHeight * i + maxXValueHeight / 4,
+                        mTextPaint);
+            }else
+            {
+                canvas.drawText(
+                        String.valueOf( new java.text.DecimalFormat("#.00").format(maxY - dY * i)),
+                        X,
+                        dHeight * i + maxXValueHeight / 4,
+                        mTextPaint);
             }
         }
 
         //画数值的虚线
         if (clickItemPosion != -1) {
             Path path = new Path();
-            path.moveTo(maxYValueWidth + 5, heightY - values.get(clickItemPosion) * unitLengthY);
-            path.lineTo(viewWidth, heightY - values.get(clickItemPosion) * unitLengthY);
+            path.moveTo(maxYValueWidth + 5, (float) (heightY - values.get( clickItemPosion) * unitLengthY));
+            path.lineTo(viewWidth,(float) (heightY - values.get(clickItemPosion) * unitLengthY));
             //绘制虚线效果
             PathEffect effects = new DashPathEffect(new float[]{1, 2, 4, 8}, 1);
             y_axisValuePaint.setPathEffect(effects);
@@ -460,17 +476,17 @@ public class HstogramView extends View {
         }
     }
 
-    public List<Integer> getValues() {
+    public List<Double> getValues() {
         return values;
     }
 
-    public void setValues(List<Integer> values) {
+    public void setValues(List<Double> values) {
         if(values != null&&values.size()>0){
             this.values = values;
         }else {
             this.values = new ArrayList<>();
            for (int i = 0 ; i<7 ; i++){
-               this.values.add(0);
+               this.values.add(0.0);
            }
         }
 

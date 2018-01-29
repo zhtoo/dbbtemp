@@ -55,7 +55,27 @@ public class HomeBean {
 
         private MessageCountBean messageCount;
         private PageDataListBean pageDataList;
+        private String deptName;
+        private String officeName;
         private List<Integer> roleIdList;
+
+
+        public String getDeptName() {
+            return deptName;
+        }
+
+        public void setDeptName(String deptName) {
+            this.deptName = deptName;
+        }
+
+        public String getOfficeName() {
+            return officeName;
+        }
+
+        public void setOfficeName(String officeName) {
+            this.officeName = officeName;
+        }
+
 
         public MessageCountBean getMessageCount() {
             return messageCount;

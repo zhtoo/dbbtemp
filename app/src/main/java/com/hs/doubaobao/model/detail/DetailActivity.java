@@ -1,6 +1,7 @@
 package com.hs.doubaobao.model.detail;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -61,17 +62,25 @@ public class DetailActivity extends AppBarActivity {
         mManagerRation = intent.getStringExtra("managerRation");
 
         setTitle(getString(R.string.read_data));
+//        if (TextUtils.isEmpty(showRightType)) {
+//            isShowRightView(false);
+//        } else if (showRightType.equals("RISK")) {
+//                float width = getResources().getDimension(R.dimen.x34);
+//                float height = getResources().getDimension(R.dimen.x40);
+//                setRightStatus(R.drawable.ic_risk_selector,width,height);
+//        } else if (showRightType.equals("MANAGER")) {
+//                float width = getResources().getDimension(R.dimen.x32);
+//                float height = getResources().getDimension(R.dimen.x45);
+//                setRightStatus(R.drawable.ic_manager_selector,width,height);
+//        }
+
+
         if (TextUtils.isEmpty(showRightType)) {
             isShowRightView(false);
-        } else if (showRightType.equals("RISK")) {
-                float width = getResources().getDimension(R.dimen.x34);
-                float height = getResources().getDimension(R.dimen.x40);
-                setRightStatus(R.drawable.ic_risk_selector,width,height);
-        } else if (showRightType.equals("MANAGER")) {
-                float width = getResources().getDimension(R.dimen.x32);
-                float height = getResources().getDimension(R.dimen.x45);
-                setRightStatus(R.drawable.ic_manager_selector,width,height);
+        } else  {
+            setRightStatus(Color.parseColor("#E2570F"), "审批");
         }
+
         setStatusBarBackground(R.drawable.ic_battery_bg);
 
         mFragmentManager = getSupportFragmentManager();

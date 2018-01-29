@@ -49,7 +49,7 @@ public class VideoListActivity extends AppBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_list);
         setTitle("本地视频");
-        setRightStatus("选择");
+        setRightStatus("上传");
 
         selectVideos = new LinkedHashMap<>();
 

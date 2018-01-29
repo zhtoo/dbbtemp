@@ -253,8 +253,8 @@
     </ScrollView>
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="保存"/>
+        android:id="@+id/opinion_save"
+        android:text="保存"
+        style="@style/saveButtonStyle"/>
 
 </LinearLayout>

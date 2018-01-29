@@ -70,8 +70,8 @@ public class DepartmentStatisticsBean {
         private int loanCountDept;
         private double loanMoneyDept;
         private int todayCountDept;
-        private int todayMoneyDept;
-        private List<Integer> accounts;
+        private double todayMoneyDept;
+        private List<Double> accounts;
         private List<Integer> counts;
         private List<String> dates;
 
@@ -139,19 +139,19 @@ public class DepartmentStatisticsBean {
             this.todayCountDept = todayCountDept;
         }
 
-        public int getTodayMoneyDept() {
+        public double getTodayMoneyDept() {
             return todayMoneyDept;
         }
 
-        public void setTodayMoneyDept(int todayMoneyDept) {
+        public void setTodayMoneyDept(double todayMoneyDept) {
             this.todayMoneyDept = todayMoneyDept;
         }
 
-        public List<Integer> getAccounts() {
+        public List<Double> getAccounts() {
             return accounts;
         }
 
-        public void setAccounts(List<Integer> accounts) {
+        public void setAccounts(List<Double> accounts) {
             this.accounts = accounts;
         }
 

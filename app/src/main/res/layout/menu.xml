@@ -4,10 +4,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="@dimen/x590"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@drawable/bg_menu"
     android:orientation="vertical">
 
     <RelativeLayout
+        android:visibility="gone"
         android:id="@+id/menu_logo_bg"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y420"
@@ -16,7 +17,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/menu_person_name"
+
             android:layout_width="@dimen/x260"
             android:layout_height="@dimen/y105"
             android:layout_centerHorizontal="true"
@@ -27,11 +28,65 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y250"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+
+
+        <ImageView
+            android:layout_marginLeft="@dimen/x80"
+            android:id="@+id/menu_icon"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/x120"
+            android:src="@drawable/ic_login_icon"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/y20"
+            android:layout_marginLeft="@dimen/x20"
+            android:id="@+id/menu_person_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_toRightOf="@id/menu_icon"
+            android:textSize="@dimen/x28"
+            android:gravity="center"
+            android:text="客服大倩"/>
+
+
+        <TextView
+            android:layout_marginTop="@dimen/x15"
+            android:id="@+id/menu_person_stores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_below="@id/menu_person_name"
+            android:layout_toRightOf="@id/menu_icon"
+            android:textSize="@dimen/x24"
+            android:gravity="center"
+            android:text="合肥都报"/>
+
+        <TextView
+            android:id="@+id/menu_person_department"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/x24"
+            android:text="业务一部"
+            android:layout_marginTop="@dimen/x15"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_below="@id/menu_person_name"
+            android:layout_toRightOf="@id/menu_person_stores"
+           />
+
+
+    </RelativeLayout>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_menu"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -45,7 +100,6 @@
                 android:id="@+id/ll_menu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/x59"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -60,9 +114,9 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="@dimen/x34"
-                        android:layout_height="@dimen/y40"
-                        android:src="@drawable/ic_risk_selector"
+                        android:layout_width="@dimen/x60"
+                        android:layout_height="@dimen/y60"
+                        android:src="@drawable/ic_menu_loan_apply"
                         android:layout_marginLeft="@dimen/x188" />
 
                     <TextView
@@ -88,9 +142,9 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="@dimen/x34"
-                        android:layout_height="@dimen/y40"
-                        android:src="@drawable/ic_risk_selector"
+                        android:layout_width="@dimen/x60"
+                        android:layout_height="@dimen/y60"
+                        android:src="@drawable/ic_menu_department_trial"
                         android:layout_marginLeft="@dimen/x188" />
 
                     <TextView
@@ -116,9 +170,9 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="@dimen/x34"
-                        android:layout_height="@dimen/y40"
-                        android:src="@drawable/ic_risk_selector"
+                        android:layout_width="@dimen/x60"
+                        android:layout_height="@dimen/y60"
+                        android:src="@drawable/ic_menu_statistical"
                         android:layout_marginLeft="@dimen/x188" />
 
                     <TextView
@@ -144,9 +198,9 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="@dimen/x34"
-                        android:layout_height="@dimen/y40"
-                        android:src="@drawable/ic_risk_selector"
+                        android:layout_width="@dimen/x60"
+                        android:layout_height="@dimen/y60"
+                        android:src="@drawable/ic_menu_stores_instance"
                         android:layout_marginLeft="@dimen/x188" />
 
                     <TextView
@@ -174,9 +228,9 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="@dimen/x34"
-                        android:layout_height="@dimen/y40"
-                        android:src="@drawable/ic_risk_selector"
+                        android:layout_width="@dimen/x60"
+                        android:layout_height="@dimen/y60"
+                        android:src="@drawable/ic_risk"
                        android:layout_marginLeft="@dimen/x188" />
 
                     <TextView
@@ -203,9 +257,9 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="@dimen/x32"
-                        android:layout_height="@dimen/y45"
-                        android:src="@drawable/ic_manager_selector"
+                        android:layout_width="@dimen/x60"
+                        android:layout_height="@dimen/y60"
+                        android:src="@drawable/ic_manager"
                         android:layout_marginLeft="@dimen/x188" />
 
                     <TextView
@@ -231,9 +285,9 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="@dimen/x40"
-                        android:layout_height="@dimen/y36"
-                        android:src="@drawable/ic_invalid_selector"
+                        android:layout_width="@dimen/x60"
+                        android:layout_height="@dimen/y60"
+                        android:src="@drawable/ic_invalid"
                         android:layout_marginLeft="@dimen/x188" />
                     <TextView
                         style="@style/menu_item_text_style"

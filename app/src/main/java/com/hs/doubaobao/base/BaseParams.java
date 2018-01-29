@@ -30,15 +30,17 @@ public class BaseParams {
     public static final String MOBILE_TYPE = "2";
     //测试地址
     public static final String TEST_URL = /*"http://manage.ahbabybean.com:8081/";*/
-            /*"http://192.168.1.103:8081/";*/
-            "http://192.168.137.112:8081/";
-    public static final String TEST_FILE_URL = /*"http://manage.ahbabybean.com:8081/";*/
-            "http://192.168.137.112:8085/";
+            "http://192.168.1.103:8081/";
+            /*"http://117.71.50.199:4083/";*/
+
+    public static final String TEST_FILE_URL = /*"http://manage.ahbabybean.com:8085/";*/
+            " http://192.168.1.103:8085/";
+         /*   "http://117.71.50.199:4080/";*/
 
     //真实测试
     public static final String TRUE_URL = "http://manage.ahbabybean.com:8081/";
     public static final String TRUE_FILE_URL
-            =  "http://192.168.1.103:8085/";
+            = "http://192.168.1.103:8085/";
     //http路径
     public static final String BASE_URL = isDebug ? TEST_URL : TRUE_URL;
     public static final String FILE_URL = isDebug ? TEST_FILE_URL : TRUE_FILE_URL;
@@ -82,9 +84,9 @@ public class BaseParams {
     //审批
     public static final String APPROVAL_URL = BASE_URL + "app/approval.html";
     //贷款申请列表
-    public static final String LOAN_APPLICATION_URL= BASE_URL + "app/borrower/borrowList.html";
+    public static final String LOAN_APPLICATION_URL = BASE_URL + "app/borrower/borrowList.html";
     //部门初审
-    public static final String DEPARTMENT_TRIAL_URL= BASE_URL + "app/borrower/borrowList.html";
+    public static final String DEPARTMENT_TRIAL_URL = BASE_URL + "app/borrower/borrowList.html";
     //门店一审
     public static final String STORES_INSTANCE_URL = BASE_URL + "app/borrower/borrowList.html";
     //部门统计

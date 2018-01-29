@@ -1,12 +1,15 @@
 package com.hs.doubaobao.model.AddLoanTable.uploadVideo;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.media.ThumbnailUtils;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.MediaStore;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
@@ -15,15 +18,20 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
+import android.text.TextUtils;
 import android.view.View;
 
+import com.google.gson.Gson;
 import com.hs.doubaobao.MyApplication;
 import com.hs.doubaobao.R;
 import com.hs.doubaobao.base.AppBarActivity;
 import com.hs.doubaobao.base.BaseParams;
+import com.hs.doubaobao.bean.VideoUrlBean;
 import com.hs.doubaobao.http.HttpSocket;
+import com.hs.doubaobao.model.AddLoanTable.ApplyLendUtil;
 import com.hs.doubaobao.model.AddLoanTable.uploadVideo.VideoPick.VideoConfig;
 import com.hs.doubaobao.model.AddLoanTable.uploadVideo.VideoPick.VideoListActivity;
+import com.hs.doubaobao.utils.ToastUtil;
 import com.hs.doubaobao.utils.log.Logger;
 
 import java.io.File;
@@ -53,9 +61,13 @@ public class UploadVideoActivity extends AppBarActivity {
     TabLayout tablayout;
     @BindView(R.id.upload_video_viewpager)
     ViewPager mViewpager;
+    // {"面审视频", "家访视频", "其他视频"};
+    //8:面审视频9：家访视频10：其他
     private String[] mTabItemNameArray = {"面审视频", "家访视频", "其他视频"};
+    private int[] categoryArr = {8, 9, 10};
     private List<UploadVideoFragment> fragments;
     private UploadVideoAdapter adapter;
+    private ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +82,18 @@ public class UploadVideoActivity extends AppBarActivity {
         tablayout.setupWithViewPager(mViewpager);
         mViewpager.setOffscreenPageLimit(fragments.size());
         checkPermission();
-        loading.setMessage("正在上传中，请耐心等待！");
+        // loading.setMessage("正在上传中，请耐心等待！");
+
+        dialog = new ProgressDialog(this);
+        dialog.setMessage("正在上传中，请耐心等待！");
+            initData();
+    }
+
+    private void initData() {
+        for (int i = 0; i < categoryArr.length; i++) {
+            fragments.get(i).setVideoPaths(categoryArr[i]);
+        }
+
     }
 
 
@@ -117,56 +140,21 @@ public class UploadVideoActivity extends AppBarActivity {
             ArrayList<CharSequence> list = data.getCharSequenceArrayListExtra(VIDEO_LIST);
             int currentItem = mViewpager.getCurrentItem();
             if (list != null && list.size() > 0) {
-
-                if(loading !=null )loading.show();
-                fragments.get(currentItem).setVideoPaths(list);
-                fragments.get(currentItem).getRecycler().getAdapter().notifyDataSetChanged();
-
+                if (dialog != null) dialog.show();
                 for (int i = 0; i < list.size(); i++) {
-                    uploadFile(list.get(i).toString(),i != list.size() -1);
+                    uploadFile(list.get(i).toString(), i != list.size() - 1, categoryArr[currentItem]);
                 }
+//                fragments.get(currentItem).setVideoPaths(list);
+//                fragments.get(currentItem).getRecycler().getAdapter().notifyDataSetChanged();
             }
         }
     }
 
-    /**
-     * 获取视频缩略图
-     */
-    private File getVideoThumbnail(String videoPath, int width, int height, int kind) {
-        long mStartTime = System.currentTimeMillis();
-        Bitmap bitmap = null;
-        bitmap = ThumbnailUtils.createVideoThumbnail(videoPath, kind);
-        bitmap = ThumbnailUtils.extractThumbnail(bitmap, width, height, ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
-        long mEndTime = System.currentTimeMillis();
-        Logger.e("获取视频耗时", "" + (mEndTime - mStartTime));
-
-        String[] split = videoPath.split("/");
-
-        String videoPicturesName = split[split.length - 1];
-
-        boolean contains = videoPicturesName.contains(".");
-
-        if (contains) {
-            int i = videoPicturesName.indexOf(".");
-            videoPicturesName = videoPicturesName.substring(0, i) + ".jpg";
-        }
-
-        File file = new File(MyApplication.getContext().getCacheDir(), videoPicturesName);
-        //创建输出流
-        FileOutputStream stream;
-        try {
-            stream = new FileOutputStream(file);
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return file;
-    }
 
     /**
      * 上传文件
      */
-    private void uploadFile(final String filePath, final boolean showDialog) {
+    private void uploadFile(final String filePath, final boolean showDialog, final int category) {
 
         final long startTime = System.currentTimeMillis();
 
@@ -181,25 +169,27 @@ public class UploadVideoActivity extends AppBarActivity {
                             MediaStore.Video.Thumbnails.MINI_KIND);
 
                     Map<String, Object> paramsMap = new LinkedHashMap<>();
-                    paramsMap.put("category", "8");
+                    paramsMap.put("category", category);
+                    //category
 
-                    new HttpSocket(startTime).uploadFile(paramsMap,
+                    HttpSocket socket = new HttpSocket(startTime);
+
+                    String response = socket.uploadFile(paramsMap,
                             "videoUploads", videoFile, null,
                             "videoPictures", videoPictures, null,
                             BaseParams.UPLOAD_VIDEO);
+
+                    if (!TextUtils.isEmpty(response)) {
+                        sendMessage(SUCCESS_CODE, response, showDialog ? 0 : 1);
+                    } else {
+                        sendMessage(FAIL_CODE, response, showDialog ? 0 : 1);
+                    }
 
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         }).start();
-
-
-
-
-
-
-
 
 //        File videoFile = new File(filePath);
 //        File videoPictures = getVideoThumbnail(filePath,
@@ -240,6 +230,63 @@ public class UploadVideoActivity extends AppBarActivity {
 
     }
 
+    private void sendMessage(int statusCode, String response, int stopDialog) {
+        Message message = new Message();
+        message.what = statusCode;
+        message.arg1 = stopDialog;
+        message.obj = response;
+        handler.sendMessage(message);
+
+    }
+
+    public static final int FAIL_CODE = 10;
+    public static final int SUCCESS_CODE = 11;
+
+
+    public Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+
+            switch (msg.what) {
+                case SUCCESS_CODE:
+                    if (msg.arg1 == 1) {
+                        dialog.dismiss();
+                    }
+                    String response = (String) msg.obj;
+                    try {
+                        Gson gson = new Gson();
+                        VideoUrlBean videoUrlBean = gson.fromJson(response, VideoUrlBean.class);
+                        if (videoUrlBean != null) {
+                            ApplyLendUtil.addVideo(videoUrlBean);
+                        }
+                        if (msg.arg1 == 1) {
+                            ToastUtil.showToast("上传成功");
+                        }
+                    } catch (Exception e) {
+                        if (msg.arg1 == 1) {
+                            ToastUtil.showToast("上传失败");
+                        }
+                    }
+
+                    if (msg.arg1 == 1) {
+                        int currentItem = mViewpager.getCurrentItem();
+                        fragments.get(currentItem).setVideoPaths(categoryArr[currentItem]);
+                        fragments.get(currentItem).getRecycler().getAdapter().notifyDataSetChanged();
+
+                    }
+
+                    break;
+                case FAIL_CODE:
+                    if (msg.arg1 == 1) {
+                        dialog.dismiss();
+                        ToastUtil.showToast("上传失败");
+                    }
+                    break;
+            }
+        }
+    };
+
 
     private void addFragment() {
         if (tablayout == null || mViewpager == null) {
@@ -260,7 +307,6 @@ public class UploadVideoActivity extends AppBarActivity {
         adapter = new UploadVideoAdapter(getSupportFragmentManager(), fragments, mTabItemNameArray);
         mViewpager.setAdapter(adapter);
     }
-
 
     public class UploadVideoAdapter extends FragmentPagerAdapter {
 
@@ -331,11 +377,45 @@ public class UploadVideoActivity extends AppBarActivity {
         }
     }
 
-
     public void onVideoClick(View view) {
         String mVendor = Build.MANUFACTURER;
         Logger.e("手机制造商", mVendor);
         startActivityForResult(new Intent(this, VideoListActivity.class), VideoConfig.PICK_VIDEO_REQUEST);
+    }
+
+
+    /**
+     * 获取视频缩略图
+     */
+    private File getVideoThumbnail(String videoPath, int width, int height, int kind) {
+        long mStartTime = System.currentTimeMillis();
+        Bitmap bitmap = null;
+        bitmap = ThumbnailUtils.createVideoThumbnail(videoPath, kind);
+        bitmap = ThumbnailUtils.extractThumbnail(bitmap, width, height, ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
+        long mEndTime = System.currentTimeMillis();
+        Logger.e("获取视频耗时", "" + (mEndTime - mStartTime));
+
+        String[] split = videoPath.split("/");
+
+        String videoPicturesName = split[split.length - 1];
+
+        boolean contains = videoPicturesName.contains(".");
+
+        if (contains) {
+            int i = videoPicturesName.indexOf(".");
+            videoPicturesName = videoPicturesName.substring(0, i) + ".jpg";
+        }
+
+        File file = new File(MyApplication.getContext().getCacheDir(), videoPicturesName);
+        //创建输出流
+        FileOutputStream stream;
+        try {
+            stream = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return file;
     }
 
 }

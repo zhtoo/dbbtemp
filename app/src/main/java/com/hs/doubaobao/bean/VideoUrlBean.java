@@ -71,7 +71,7 @@ public class VideoUrlBean {
             private String name;
             private String path;
             private String pathTure;
-            private int size;
+            private long size;
             private String type;
 
             public int getCategory() {
@@ -106,11 +106,11 @@ public class VideoUrlBean {
                 this.pathTure = pathTure;
             }
 
-            public int getSize() {
+            public long getSize() {
                 return size;
             }
 
-            public void setSize(int size) {
+            public void setSize(long size) {
                 this.size = size;
             }
 

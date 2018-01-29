@@ -2,7 +2,6 @@ package com.hs.doubaobao.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.RelativeLayout;
 
@@ -46,7 +45,7 @@ public class MyRelativeLayout extends RelativeLayout {
                 int distanceY = Math.abs((int) (ev.getY() - downY));
                 if (distanceX < distanceY) {
                     // 如果水平移动距离比垂直移动距离大，则认为是水平移动，把事件拦截，不让ScrollView使用
-                    Log.d(TAG, "拦截事件");
+                   // Log.d(TAG, "拦截事件");
                     return true;    // true代表拦截事件
                 }
                 break;

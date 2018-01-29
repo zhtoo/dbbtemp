@@ -1,5 +1,6 @@
 package com.hs.doubaobao.model.department;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,7 +22,7 @@ public class DSViewPagerDataBean {
 
     private List<String> date;
 
-    private List<Integer>  values;
+    private List<Double> values;
 
     public String getTitle() {
         return title;
@@ -63,11 +64,18 @@ public class DSViewPagerDataBean {
         this.date = date;
     }
 
-    public List<Integer>  getValues() {
+    public List<Double> getValues() {
         return values;
     }
 
-    public void setValues(List<Integer>  values) {
-        this.values = values;
+    public void setValues(List values) {
+        if (this.values == null) {
+            this.values = new ArrayList<>();
+        }
+
+        for (int i = 0; i < values.size(); i++) {
+            this.values.add(Double.parseDouble(values.get(i).toString()));
+        }
+
     }
 }
