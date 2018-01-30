@@ -13,8 +13,8 @@
 
     <com.hs.doubaobao.view.CircleImageView
         android:id="@+id/me_portrait"
-        android:layout_marginLeft="@dimen/x40"
-        android:layout_marginRight="@dimen/x40"
+        android:layout_marginLeft="@dimen/x30"
+        android:layout_marginRight="@dimen/x30"
         android:layout_width="@dimen/x100"
         android:layout_height="@dimen/y100"
         android:padding="@dimen/x20"
@@ -26,7 +26,9 @@
         android:id="@+id/parent_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="张三"
+        android:text="张三dsadasdasdasddsadasdasdad"
+        android:maxWidth="@dimen/x260"
+        android:singleLine="true"
         android:textColor="#000"
         android:textSize="@dimen/x36"/>
 
@@ -37,17 +39,17 @@
         android:text="2017-11-01"
         android:textColor="#808080"
         android:textSize="@dimen/x30"
-        android:layout_marginLeft="@dimen/x35"/>
+        android:layout_marginLeft="@dimen/x20"/>
 
     <View
         style="@style/autoFillStyle"/>
 
     <ImageView
         android:id="@+id/arrow_expand_imageview"
-        android:layout_width="@dimen/x31"
-        android:layout_height="@dimen/y23"
+        android:layout_width="@dimen/x58"
+        android:layout_height="@dimen/y58"
         android:layout_marginRight="@dimen/x30"
-        android:src="@drawable/ic_loan_apply_arrow_down"/>
+        android:src="@drawable/ic_apply_loan_arrow_down"/>
 
 
 </LinearLayout>

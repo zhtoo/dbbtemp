@@ -2,6 +2,7 @@ package com.hs.doubaobao.model.AddLoanTable.uploadMessage;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import com.hs.doubaobao.R;
 import com.hs.doubaobao.base.AppBarActivity;
 import com.hs.doubaobao.model.AddLoanTable.ApplyLendUtil;
+import com.hs.doubaobao.utils.ToastUtil;
 import com.zht.bottomdialog.SelectBottomDialog;
 import com.zht.datepicker.DateSelectUtil;
 
@@ -43,6 +45,8 @@ public class TheLoansActivity extends AppBarActivity {
     LinearLayout mApplydate;
     @BindView(R.id.loan_purpose)
     EditText mPurpose;
+    @BindView(R.id.the_loans_save)
+    Button mLoansSave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,17 +101,31 @@ public class TheLoansActivity extends AppBarActivity {
                 });
                 break;
             case R.id.loan_applydate:
-                DateSelectUtil.showSelectDateDialog(this,mApplydateText);
+                DateSelectUtil.showSelectDateDialog(this, mApplydateText);
                 break;
         }
     }
 
     /**
      * 保存数据
+     *
      * @return
      */
     @Override
     public boolean savaData() {
+//        ApplyLendUtil.changeTheloans(
+//                mTypeText,
+//                mAccount,
+//                mPeriodText,
+//                mApplydateText,
+//                mPurpose
+//        );
+
+        return super.savaData();
+    }
+
+    @OnClick(R.id.the_loans_save)
+    public void onViewClicked() {
         ApplyLendUtil.changeTheloans(
                 mTypeText,
                 mAccount,
@@ -115,7 +133,6 @@ public class TheLoansActivity extends AppBarActivity {
                 mApplydateText,
                 mPurpose
         );
-
-        return super.savaData();
+        ToastUtil.showToast("保存成功");
     }
 }

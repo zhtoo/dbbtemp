@@ -3,6 +3,7 @@ package com.hs.doubaobao.model.AddLoanTable;
 import android.content.Context;
 
 import com.hs.doubaobao.base.BaseParams;
+import com.hs.doubaobao.bean.SaveBean;
 import com.hs.doubaobao.http.JsonWrap;
 import com.hs.doubaobao.http.OKHttpWrap;
 import com.hs.doubaobao.http.requestCallBack;
@@ -72,7 +73,7 @@ public class AddLoanTablePresener implements AddLoanTableContract.Presenter {
         OKHttpWrap.getOKHttpWrap(context)
                 .requestPost(BaseParams.SUBMIT_URL, map, new requestCallBack() {
 
-                    private ApplyInfoBean bean;
+                    private SaveBean bean;
 
                     @Override
                     public void onError(Call call, Exception e) {
@@ -81,7 +82,7 @@ public class AddLoanTablePresener implements AddLoanTableContract.Presenter {
                     @Override
                     public void onResponse(String response) {
                         Logger.e(TAG,response);
-                       // bean = JsonWrap.getObject(response, ApplyInfoBean.class);
+                        bean = JsonWrap.getObject(response, SaveBean.class);
                         //回到不能在子线程中
                         if(bean !=null){
                             if(bean.getResCode() == 1){

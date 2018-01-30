@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.media.ThumbnailUtils;
 import android.os.Build;
 import android.os.Bundle;
@@ -31,6 +32,7 @@ import com.hs.doubaobao.http.HttpSocket;
 import com.hs.doubaobao.model.AddLoanTable.ApplyLendUtil;
 import com.hs.doubaobao.model.AddLoanTable.uploadVideo.VideoPick.VideoConfig;
 import com.hs.doubaobao.model.AddLoanTable.uploadVideo.VideoPick.VideoListActivity;
+import com.hs.doubaobao.threadpool.ThreadPoolProxyFactory;
 import com.hs.doubaobao.utils.ToastUtil;
 import com.hs.doubaobao.utils.log.Logger;
 
@@ -56,7 +58,6 @@ import static com.hs.doubaobao.model.AddLoanTable.uploadVideo.VideoPick.VideoCon
 
 public class UploadVideoActivity extends AppBarActivity {
 
-
     @BindView(R.id.upload_video_tablayout)
     TabLayout tablayout;
     @BindView(R.id.upload_video_viewpager)
@@ -68,64 +69,50 @@ public class UploadVideoActivity extends AppBarActivity {
     private List<UploadVideoFragment> fragments;
     private UploadVideoAdapter adapter;
     private ProgressDialog dialog;
-
+    private String status = "编辑";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_video);
         ButterKnife.bind(this);
         setTitle("视频上传");
-        isShowRightView(false);
+        setRightStatus(Color.parseColor("#E2570F"), status);
 
         addFragment();//初始化Fragmrnt，并添加到ViewPager中。
         initViewPager();
         tablayout.setupWithViewPager(mViewpager);
         mViewpager.setOffscreenPageLimit(fragments.size());
         checkPermission();
-        // loading.setMessage("正在上传中，请耐心等待！");
 
         dialog = new ProgressDialog(this);
         dialog.setMessage("正在上传中，请耐心等待！");
             initData();
     }
 
+    @Override
+    public void onRightForward(View forwardView) {
+        super.onRightForward(forwardView);
+        if (status.equals("编辑")) {
+            status = "完成";
+            editVideo(true);
+        } else {
+            status = "编辑";
+            editVideo(false);
+        }
+        setRightStatus(Color.parseColor("#E2570F"), status);
+    }
+
+    private void editVideo(boolean showDelete) {
+        for (int i = 0; i < categoryArr.length; i++) {
+            fragments.get(i).setVideoPaths(categoryArr[i], showDelete);
+        }
+    }
+
     private void initData() {
         for (int i = 0; i < categoryArr.length; i++) {
-            fragments.get(i).setVideoPaths(categoryArr[i]);
+            fragments.get(i).setVideoPaths(categoryArr[i],status.equals("完成"));
         }
-
     }
-
-
-    /**
-     * 权限检测
-     */
-    private void checkPermission() {
-        String[] permissions = new String[]{
-                Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                Manifest.permission.READ_EXTERNAL_STORAGE};
-
-        //定义一个变量 记录当前权限的状态
-        int checkSlfePermission = PackageManager.PERMISSION_GRANTED;
-
-        for (int i = 0; i < permissions.length; i++) {
-            int denide = ContextCompat.checkSelfPermission(getContext(), permissions[i]);
-            if (denide == PackageManager.PERMISSION_DENIED) {
-                checkSlfePermission = PackageManager.PERMISSION_DENIED;
-            }
-        }
-
-        //当前么有相应的权限
-        if (checkSlfePermission == PackageManager.PERMISSION_DENIED) {
-            //申请权限 （弹出一个申请权限的对话框）
-            ActivityCompat.requestPermissions(this, permissions, 120);
-        } else
-            //申请到了权限
-            if (checkSlfePermission == PackageManager.PERMISSION_GRANTED) {
-
-            }
-    }
-
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -144,12 +131,9 @@ public class UploadVideoActivity extends AppBarActivity {
                 for (int i = 0; i < list.size(); i++) {
                     uploadFile(list.get(i).toString(), i != list.size() - 1, categoryArr[currentItem]);
                 }
-//                fragments.get(currentItem).setVideoPaths(list);
-//                fragments.get(currentItem).getRecycler().getAdapter().notifyDataSetChanged();
             }
         }
     }
-
 
     /**
      * 上传文件
@@ -157,76 +141,36 @@ public class UploadVideoActivity extends AppBarActivity {
     private void uploadFile(final String filePath, final boolean showDialog, final int category) {
 
         final long startTime = System.currentTimeMillis();
-
-
-        new Thread(new Runnable() {
+        //利用线程池管理类开启线程
+        ThreadPoolProxyFactory.getNormalThreadPoolProxy().submit(new Runnable() {
             @Override
             public void run() {
-                try {
-                    File videoFile = new File(filePath);
-                    File videoPictures = getVideoThumbnail(filePath,
-                            120, 120,
-                            MediaStore.Video.Thumbnails.MINI_KIND);
 
-                    Map<String, Object> paramsMap = new LinkedHashMap<>();
-                    paramsMap.put("category", category);
-                    //category
+                synchronized (MyApplication.getContext()){
+                    try {
+                        File videoFile = new File(filePath);
+                        File videoPictures = getVideoThumbnail(filePath,
+                                120, 120,
+                                MediaStore.Video.Thumbnails.MINI_KIND);
 
-                    HttpSocket socket = new HttpSocket(startTime);
-
-                    String response = socket.uploadFile(paramsMap,
-                            "videoUploads", videoFile, null,
-                            "videoPictures", videoPictures, null,
-                            BaseParams.UPLOAD_VIDEO);
-
-                    if (!TextUtils.isEmpty(response)) {
-                        sendMessage(SUCCESS_CODE, response, showDialog ? 0 : 1);
-                    } else {
-                        sendMessage(FAIL_CODE, response, showDialog ? 0 : 1);
+                        Map<String, Object> paramsMap = new LinkedHashMap<>();
+                        paramsMap.put("category", category);
+                        HttpSocket socket = new HttpSocket(startTime);
+                        String response = socket.uploadFile(paramsMap,
+                                "videoUploads", videoFile, null,
+                                "videoPictures", videoPictures, null,
+                                BaseParams.UPLOAD_VIDEO);
+                        if (!TextUtils.isEmpty(response)) {
+                            sendMessage(SUCCESS_CODE, response, showDialog ? 0 : 1);
+                        } else {
+                            sendMessage(FAIL_CODE, response, showDialog ? 0 : 1);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-
-                } catch (Exception e) {
-                    e.printStackTrace();
                 }
             }
-        }).start();
-
-//        File videoFile = new File(filePath);
-//        File videoPictures = getVideoThumbnail(filePath,
-//                120, 120,
-//                MediaStore.Video.Thumbnails.MINI_KIND);
-//
-//        Map<String, Object> paramsMap = new LinkedHashMap<>();
-//        paramsMap.put("category", "8");
-//        paramsMap.put("videoUploads", videoFile);
-//        paramsMap.put("videoPictures", videoPictures);
-//        UploadFileHttp.getInstance(this)
-//                .upLoadFile(BaseParams.UPLOAD_VIDEO,
-//                        paramsMap, new requestCallBack() {
-//
-//                            @Override
-//                            public void onError(Call call, Exception e) {
-//                                long endTime = System.currentTimeMillis();
-//                                ToastUtil.showToast("哎呀！网络不给力o-o！");
-//                                Logger.e("用时", (endTime - startTime) + "ms");
-//                                Logger.e("用时", e.toString());
-//
-//                                if(!showDialog){
-//                                    if(loading !=null )loading.dismiss();
-//                                }
-//                            }
-//
-//                            @Override
-//                            public void onResponse(String response) {
-//                                Logger.e("123", response);
-//                                long endTime = System.currentTimeMillis();
-//                                Logger.e("用时", (endTime - startTime) + "ms");
-//
-//                                if(!showDialog){
-//                                    if(loading !=null )loading.dismiss();
-//                                }
-//                            }
-//                        });
+        });
 
     }
 
@@ -268,14 +212,10 @@ public class UploadVideoActivity extends AppBarActivity {
                             ToastUtil.showToast("上传失败");
                         }
                     }
-
                     if (msg.arg1 == 1) {
                         int currentItem = mViewpager.getCurrentItem();
-                        fragments.get(currentItem).setVideoPaths(categoryArr[currentItem]);
-                        fragments.get(currentItem).getRecycler().getAdapter().notifyDataSetChanged();
-
+                        fragments.get(currentItem).setVideoPaths(categoryArr[currentItem],status.equals("完成"));
                     }
-
                     break;
                 case FAIL_CODE:
                     if (msg.arg1 == 1) {
@@ -286,7 +226,6 @@ public class UploadVideoActivity extends AppBarActivity {
             }
         }
     };
-
 
     private void addFragment() {
         if (tablayout == null || mViewpager == null) {
@@ -383,7 +322,6 @@ public class UploadVideoActivity extends AppBarActivity {
         startActivityForResult(new Intent(this, VideoListActivity.class), VideoConfig.PICK_VIDEO_REQUEST);
     }
 
-
     /**
      * 获取视频缩略图
      */
@@ -416,6 +354,35 @@ public class UploadVideoActivity extends AppBarActivity {
             e.printStackTrace();
         }
         return file;
+    }
+
+    /**
+     * 权限检测
+     */
+    private void checkPermission() {
+        String[] permissions = new String[]{
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.READ_EXTERNAL_STORAGE};
+
+        //定义一个变量 记录当前权限的状态
+        int checkSlfePermission = PackageManager.PERMISSION_GRANTED;
+
+        for (int i = 0; i < permissions.length; i++) {
+            int denide = ContextCompat.checkSelfPermission(getContext(), permissions[i]);
+            if (denide == PackageManager.PERMISSION_DENIED) {
+                checkSlfePermission = PackageManager.PERMISSION_DENIED;
+            }
+        }
+
+        //当前么有相应的权限
+        if (checkSlfePermission == PackageManager.PERMISSION_DENIED) {
+            //申请权限 （弹出一个申请权限的对话框）
+            ActivityCompat.requestPermissions(this, permissions, 120);
+        } else
+            //申请到了权限
+            if (checkSlfePermission == PackageManager.PERMISSION_GRANTED) {
+
+            }
     }
 
 }

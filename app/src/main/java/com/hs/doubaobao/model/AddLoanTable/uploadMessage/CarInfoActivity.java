@@ -10,6 +10,7 @@ import com.hs.doubaobao.R;
 import com.hs.doubaobao.base.AppBarActivity;
 import com.hs.doubaobao.model.AddLoanTable.ApplyInfoBean;
 import com.hs.doubaobao.model.AddLoanTable.ApplyLendUtil;
+import com.hs.doubaobao.utils.ToastUtil;
 import com.zht.bottomdialog.SelectBottomDialog;
 import com.zht.datepicker.DateSelectUtil;
 
@@ -60,7 +61,6 @@ public class CarInfoActivity extends AppBarActivity {
         ButterKnife.bind(this);
         setTitle("贷款人车辆信息");
         isShowRightView(false);
-
         initView();
     }
 
@@ -81,9 +81,9 @@ public class CarInfoActivity extends AppBarActivity {
         ApplyInfoBean.ResDataBean.BorrowdataModelBean.CarInfoBean carInfo =
                 bean.getResData().getBorrowdataModel().getCarInfo();
         int status = carInfo.getStatus();
-        if(status == 2 ){
+        if (status == 2) {
             carMonthlyMoneyItem.setVisibility(View.VISIBLE);
-        }else {
+        } else {
             carMonthlyMoneyItem.setVisibility(View.GONE);
         }
 
@@ -102,10 +102,10 @@ public class CarInfoActivity extends AppBarActivity {
                     @Override
                     public void onClick(String text) {
                         carStatus.setText(text);
-                        if(text.equals("有车有贷款")){
+                        if (text.equals("有车有贷款")) {
                             carPrice.setText("");
                             carMonthlyMoneyItem.setVisibility(View.VISIBLE);
-                        }else {
+                        } else {
                             carPrice.setText("");
                             carMonthlyMoneyItem.setVisibility(View.GONE);
                         }
@@ -113,7 +113,7 @@ public class CarInfoActivity extends AppBarActivity {
                 });
                 break;
             case R.id.car_buyDate_item:
-                DateSelectUtil.showSelectDateDialog(this,carBuyDate);
+                DateSelectUtil.showSelectDateDialog(this, carBuyDate);
                 break;
         }
     }
@@ -121,10 +121,29 @@ public class CarInfoActivity extends AppBarActivity {
 
     /**
      * 保存数据
+     *
      * @return
      */
     @Override
     public boolean savaData() {
+//        ApplyLendUtil.changeCarInfo(
+//                carOwner,
+//                carBrand,
+//                carColor,
+//                carCardid,
+//                carStatus,
+//                carMonthlyMoney,
+//                carPrice,
+//                carBuyDate,
+//                carOtherInfo
+//        );
+
+        return super.savaData();
+    }
+
+
+    @OnClick(R.id.car_save)
+    public void onViewClicked() {
         ApplyLendUtil.changeCarInfo(
                 carOwner,
                 carBrand,
@@ -136,9 +155,6 @@ public class CarInfoActivity extends AppBarActivity {
                 carBuyDate,
                 carOtherInfo
         );
-
-        return super.savaData();
+        ToastUtil.showToast("保存成功");
     }
-
-
 }

@@ -30,17 +30,22 @@ public class BaseParams {
     public static final String MOBILE_TYPE = "2";
     //测试地址
     public static final String TEST_URL = /*"http://manage.ahbabybean.com:8081/";*/
-            "http://192.168.1.103:8081/";
-            /*"http://117.71.50.199:4083/";*/
+            /*"http://192.168.1.103:8081/";*/
+            "http://117.71.50.199:4083/";
 
     public static final String TEST_FILE_URL = /*"http://manage.ahbabybean.com:8085/";*/
-            " http://192.168.1.103:8085/";
-         /*   "http://117.71.50.199:4080/";*/
+            /*" http://192.168.1.103:8085/";*/
+            "http://117.71.50.199:4080/";
 
-    //真实测试
-    public static final String TRUE_URL = "http://manage.ahbabybean.com:8081/";
-    public static final String TRUE_FILE_URL
-            = "http://192.168.1.103:8085/";
+    //生产环境
+    public static final String TRUE_URL =
+           /* "http://manage.ahbabybean.com:8081/";*/
+    "http://117.71.50.199:4083/";
+
+    public static final String TRUE_FILE_URL =
+         /*   "http://192.168.1.103:8085/";*/
+    "http://117.71.50.199:4080/";
+
     //http路径
     public static final String BASE_URL = isDebug ? TEST_URL : TRUE_URL;
     public static final String FILE_URL = isDebug ? TEST_FILE_URL : TRUE_FILE_URL;

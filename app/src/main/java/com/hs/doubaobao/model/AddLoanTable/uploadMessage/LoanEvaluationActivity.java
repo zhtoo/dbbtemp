@@ -2,6 +2,7 @@ package com.hs.doubaobao.model.AddLoanTable.uploadMessage;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import com.hs.doubaobao.R;
 import com.hs.doubaobao.base.AppBarActivity;
 import com.hs.doubaobao.model.AddLoanTable.ApplyLendUtil;
+import com.hs.doubaobao.utils.ToastUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -202,10 +204,69 @@ public class LoanEvaluationActivity extends AppBarActivity {
 
     /**
      * 保存数据
+     *
      * @return
      */
     @Override
     public boolean savaData() {
+//        ApplyLendUtil.changeLoanAssessment(
+//                eFinalRationBbt,
+//                radioMortgageTime01,
+//                radioMortgageTime02,
+//                radioMortgageTime03,
+//                radioMortgageTime04,
+//                radioHousingLocation01,
+//                radioHousingLocation02,
+//                eFinalRationBa,
+//                eFinalRationBt,
+//                radioHouseProperties01,
+//                radioHouseProperties02,
+//                radioHouseProperties03,
+//                radioHouseProperties04,
+//                eFinalRationCar,
+//                radioCarValue01,
+//                radioCarValue02,
+//                radioCarValue03,
+//                radioCarValue04,
+//                eFinalRationFamily,
+//                familyStatus01,
+//                familyStatus02,
+//                eHasChild,
+//                eFinalRationWorkunit,
+//                unitNature01,
+//                unitNature02,
+//                eSocialSecurity,
+//                eProvidentFund,
+//                eFinalRationProprietor,
+//                eProprietor01,
+//                eProprietor02,
+//                eFinalRationCredit,
+//                radioCreditLiability01,
+//                radioCreditLiability02,
+//                radioCreditLiability03,
+//                radioCreditLiability04,
+//                radioCreditLiability05,
+//                eCreditNumOne,
+//                eCreditNumThree,
+//                eCreditNumPer,
+//                eCreditNumTotal,
+//                eFinalRation,
+//                eWanglaNum,
+//                eWanglaPwd,
+//                eWanglaVercode,
+//                eSocialNum,
+//                eSocialPwd,
+//                eReserveNum,
+//                eReservePwd
+//        );
+
+        return super.savaData();
+    }
+
+
+
+    public void onSaveClicked(View view) {
+
         ApplyLendUtil.changeLoanAssessment(
                 eFinalRationBbt,
                 radioMortgageTime01,
@@ -256,9 +317,6 @@ public class LoanEvaluationActivity extends AppBarActivity {
                 eReserveNum,
                 eReservePwd
         );
-
-        return super.savaData();
+        ToastUtil.showToast("保存成功");
     }
-
-
 }

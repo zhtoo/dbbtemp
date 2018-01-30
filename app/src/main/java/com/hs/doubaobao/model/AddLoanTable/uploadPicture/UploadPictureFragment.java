@@ -66,19 +66,6 @@ public class UploadPictureFragment extends Fragment {
     }
 
     public void setSelectPaths(int category, boolean showDelete) {
-        //去重逻辑
-//        if (this.selectPaths.size() > 0) {
-//            for (int i = 0; i < newSelectPaths.size(); i++) {
-//                String newPath = newSelectPaths.get(i).toString();
-//                for (int j = 0; j < this.selectPaths.size(); j++) {
-//                    String oldPath = selectPaths.get(j).toString();
-//                    if (newPath.equals(oldPath)) {
-//                        selectPaths.remove(j);
-//                    }
-//                }
-//            }
-//        }
-        //this.selectPaths.addAll(newSelectPaths);
 
         ApplyInfoBean bean = ApplyInfoBean.getInstance();
         List<ApplyInfoBean.ResDataBean.BorrowdataModelBean.PictureListBean> pictureList
@@ -223,12 +210,27 @@ public class UploadPictureFragment extends Fragment {
     }
 
     private void detelePiture(int position) {
-        int integer = positionArr.get(position);
         ApplyInfoBean bean = ApplyInfoBean.getInstance();
         List<ApplyInfoBean.ResDataBean.BorrowdataModelBean.PictureListBean> pictureList
                 = bean.getResData().getBorrowdataModel().getPictureList();
 
-        pictureList.remove(integer);
+        ApplyInfoBean.ResDataBean.BorrowdataModelBean.PictureListBean
+                pictureListBean = selectPaths.get(position);
+
+        for (int i = 0; i < pictureList.size(); i++) {
+            ApplyInfoBean.ResDataBean.BorrowdataModelBean.PictureListBean
+                    listBean = pictureList.get(i);
+
+            if (listBean.getCategory() == pictureListBean.getCategory() &&
+                    listBean.getName().equals(pictureListBean.getName()) &&
+                    listBean.getPath().equals(pictureListBean.getPath()) &&
+                    listBean.getPathTure().equals(pictureListBean.getPathTure())
+                    ) {
+                pictureList.remove(i);
+            }
+        }
+
+        ApplyInfoBean bean1 = ApplyInfoBean.getInstance();
         selectPaths.remove(position);
         mAdapter.notifyDataSetChanged();
     }
@@ -314,7 +316,7 @@ public class UploadPictureFragment extends Fragment {
                     gridImage.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            if (listener != null&&imagePaths != null && position == imagePaths.size()) {
+                            if (listener != null && imagePaths != null && position == imagePaths.size()) {
                                 listener.pictrueClick();
                             }
                         }

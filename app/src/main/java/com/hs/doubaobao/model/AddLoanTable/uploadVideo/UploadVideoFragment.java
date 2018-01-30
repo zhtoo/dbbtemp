@@ -1,5 +1,6 @@
 package com.hs.doubaobao.model.AddLoanTable.uploadVideo;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.media.MediaMetadataRetriever;
@@ -9,15 +10,19 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.hs.doubaobao.R;
 import com.hs.doubaobao.model.AddLoanTable.ApplyInfoBean;
+import com.hs.doubaobao.utils.ScreenSizeUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +47,7 @@ public class UploadVideoFragment extends Fragment {
     private MyAdapter mAdapter;
     private List<ApplyInfoBean.ResDataBean.BorrowdataModelBean.VideoListBean> videoPaths = new ArrayList<>();
     private List<Integer> positionArr  = new ArrayList<>();
+    private List<Boolean> deleteList = new ArrayList<>();
 
     @Nullable
     @Override
@@ -49,16 +55,89 @@ public class UploadVideoFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_upload_video, null, false);
 
         unbinder = ButterKnife.bind(this, view);
-        mAdapter = new MyAdapter(getContext(), videoPaths);
+        mAdapter = new MyAdapter(getContext(), videoPaths,deleteList);
 
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         mRecycler.setLayoutManager(llm);
         mRecycler.setAdapter(mAdapter);
+
+        mAdapter.setOnItemClickListener(listener);
         return view;
     }
 
+/////////////////////////////////////////////////////////////////////
+/////删除逻辑
+/////////////////////////////////////////////////////////////////////
 
+    MyAdapter.onItemClickListener listener =new MyAdapter.onItemClickListener() {
+        @Override
+        public void pictrueClick() {
+
+        }
+
+        @Override
+        public void deleteVideoClick(int position) {
+            showDeteleDialog(position);
+        }
+    };
+
+    private void showDeteleDialog(final int position) {
+        final Dialog dialog = new Dialog(getContext(), R.style.NormalDialogStyle);
+        View view = View.inflate(getContext(), R.layout.dialog_normal, null);
+        TextView cancel = (TextView) view.findViewById(R.id.cancel);
+        TextView confirm = (TextView) view.findViewById(R.id.confirm);
+        dialog.setContentView(view);
+        //使得点击对话框外部不消失对话框
+        dialog.setCanceledOnTouchOutside(true);
+        //设置对话框的大小
+        view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(getContext()).getScreenHeight() * 0.25f));
+        Window dialogWindow = dialog.getWindow();
+        WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+        lp.width = (int) (ScreenSizeUtils.getInstance(getContext()).getScreenWidth() * 0.75f);
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.gravity = Gravity.CENTER;
+        dialogWindow.setAttributes(lp);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deteleVideo(position);
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
+
+    }
+
+    private void deteleVideo(int position) {
+        ApplyInfoBean bean = ApplyInfoBean.getInstance();
+        List<ApplyInfoBean.ResDataBean.BorrowdataModelBean.VideoListBean> videoList
+                = bean.getResData().getBorrowdataModel().getVideoList();
+
+        ApplyInfoBean.ResDataBean.BorrowdataModelBean.VideoListBean
+                pictureListBean = videoPaths.get(position);
+
+        for (int i = 0; i < videoList.size(); i++) {
+            ApplyInfoBean.ResDataBean.BorrowdataModelBean.VideoListBean
+                    listBean = videoList.get(i);
+
+            if (listBean.getCategory() == pictureListBean.getCategory() &&
+                    listBean.getName().equals(pictureListBean.getName()) &&
+                    listBean.getPath().equals(pictureListBean.getPath()) &&
+                    listBean.getPathTure().equals(pictureListBean.getPathTure())
+                    ) {
+                videoList.remove(i);
+            }
+        }
+        videoPaths.remove(position);
+        mAdapter.notifyDataSetChanged();
+    }
     /////////////////////////////////////////////////////////////////////
     //////适配器START
     /////////////////////////////////////////////////////////////////////
@@ -67,22 +146,7 @@ public class UploadVideoFragment extends Fragment {
         return mRecycler;
     }
 
-    public void setVideoPaths(int  category) {
-//        if (this.videoPaths.size() > 0) {
-//            for (int i = 0; i < videoPaths1.size(); i++) {
-//                String newPath = videoPaths1.get(i).toString();
-//                for (int j = 0; j < this.videoPaths.size(); j++) {
-//                    String oldPath = videoPaths.get(j).toString();
-//                    if (newPath.equals(oldPath)) {
-//                        videoPaths.remove(j);
-//                    }
-//                }
-//            }
-//        }
-      //  this.videoPaths.addAll(videoPaths1);
-       // Logger.e("videoPaths长度",""+videoPaths.size());
-
-
+    public void setVideoPaths(int  category,boolean showDelete) {
         ApplyInfoBean bean = ApplyInfoBean.getInstance();
         List<ApplyInfoBean.ResDataBean.BorrowdataModelBean.VideoListBean> videoList
                 = bean.getResData().getBorrowdataModel().getVideoList();
@@ -91,32 +155,34 @@ public class UploadVideoFragment extends Fragment {
 
         positionArr.clear();
         videoPaths.clear();
+        deleteList.clear();
 
         for (int i = 0; i < videoList.size(); i++) {
 
             if(videoList.get(i).getCategory() == category){
                 videoPaths.add(videoList.get(i));
                 positionArr.add(i);
+                deleteList.add(showDelete);
             }
         }
-//        loadImages();
+        if(mAdapter != null){
+            mAdapter.notifyDataSetChanged();
+        }
     }
 
     static class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-        private List<ApplyInfoBean.ResDataBean.BorrowdataModelBean.VideoListBean> videoPaths;
-
-//        public List<LoadedImage> getVideoThumbnail() {
-//            return videoThumbnail;
-//        }
-//
-//        private List<LoadedImage> videoThumbnail;
         private Context context;
 
-        public MyAdapter(Context context, List<ApplyInfoBean.ResDataBean.BorrowdataModelBean.VideoListBean> videoPaths) {
+        private List<ApplyInfoBean.ResDataBean.BorrowdataModelBean.VideoListBean> videoPaths;
+
+        private List<Boolean> deleteList;
+
+
+        public MyAdapter(Context context, List<ApplyInfoBean.ResDataBean.BorrowdataModelBean.VideoListBean> videoPaths, List<Boolean> deleteList) {
             this.context = context;
             this.videoPaths = videoPaths;
-//            videoThumbnail = new ArrayList<>();
+            this.deleteList = deleteList;
         }
 
         /*
@@ -154,35 +220,44 @@ public class UploadVideoFragment extends Fragment {
             }
         }
 
-//        public void addPhoto(LoadedImage image) {
-//            Logger.e(
-//                    "来吧来吧","我的好孩子"
-//            );
-//            videoThumbnail.add(image);
-//        }
-
         private class MyViewHolder extends RecyclerView.ViewHolder {
 
             private ImageView mImage;
+            private ImageView mDetele;
             private TextView mVideoName;
 
 
             MyViewHolder(View itemView) {
                 super(itemView);
                 mImage = (ImageView) itemView.findViewById(R.id.upload_video_image);
+                mDetele = (ImageView) itemView.findViewById(R.id.upload_video_delete);
                 mVideoName = (TextView) itemView.findViewById(R.id.upload_video_name);
 
             }
 
-            void bindItem(final String path, int position) {
+            void bindItem(final String path, final int position) {
+                Boolean showDelete = deleteList.get(position);
+                if (showDelete) {
+                    mDetele.setVisibility(View.VISIBLE);
+                } else {
+                    mDetele.setVisibility(View.GONE);
+                }
+
+                mDetele.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (listener != null) {
+                            listener.deleteVideoClick(position);
+                        }
+                    }
+                });
+
                 if (!TextUtils.isEmpty(path)) {
-//                    String[] split = path.split("/");
-//                    String videoName = split[split.length - 1];
                     mVideoName.setText(videoPaths.get(position).getName());
                     Glide.with(context)
                             .load(path)
                             .into(mImage);
-                    //mImage.setImageBitmap(videoThumbnail.get(position).getBitmap());
+
                 }
             }
 
@@ -197,6 +272,7 @@ public class UploadVideoFragment extends Fragment {
 
         public interface onItemClickListener {
             void pictrueClick();
+            void deleteVideoClick(int position);
         }
 
     }

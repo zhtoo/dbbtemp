@@ -12,6 +12,7 @@ import com.hs.doubaobao.R;
 import com.hs.doubaobao.base.AppBarActivity;
 import com.hs.doubaobao.model.AddLoanTable.ApplyInfoBean;
 import com.hs.doubaobao.model.AddLoanTable.ApplyLendUtil;
+import com.hs.doubaobao.utils.ToastUtil;
 import com.hs.doubaobao.view.ExpandableView;
 import com.zht.bottomdialog.SelectBottomDialog;
 
@@ -19,6 +20,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 import static com.hs.doubaobao.MyApplication.getContext;
 
@@ -111,23 +113,6 @@ public class ContactInforActivity extends AppBarActivity {
             }
         }
     }
-
-
-    /**
-     * 保存数据
-     *
-     * @return
-     */
-    @Override
-    public boolean savaData() {
-
-        ApplyLendUtil.changeContacts(0, 0, contactInfoName01, contactInfoRelation01, contactInfoPhone01, contactInfoYes01, contactInfoNo01);
-        ApplyLendUtil.changeContacts(1, 0, contactInfoName02, contactInfoRelation02, contactInfoPhone02, contactInfoYes02, contactInfoNo02);
-        ApplyLendUtil.changeContacts(2, 1, contactInfoName03, contactInfoRelation03, contactInfoPhone03, contactInfoYes03, contactInfoNo03);
-        ApplyLendUtil.changeContacts(3, 1, contactInfoName04, contactInfoRelation04, contactInfoPhone04, contactInfoYes04, contactInfoNo04);
-        return super.savaData();
-    }
-
 
     private void init() {
         createExpandableView(expandableView1, "两名直系亲属联系方式");
@@ -242,5 +227,22 @@ public class ContactInforActivity extends AppBarActivity {
         contactInfoKonw04 = (RadioGroup) itemView.findViewById(R.id.contact_info_konw04);
     }
 
+    /**
+     * 保存数据
+     *
+     * @return
+     */
+    @Override
+    public boolean savaData() {
+        return super.savaData();
+    }
 
+    @OnClick(R.id.contact_save)
+    public void onViewClicked() {
+        ApplyLendUtil.changeContacts(0, 0, contactInfoName01, contactInfoRelation01, contactInfoPhone01, contactInfoYes01, contactInfoNo01);
+        ApplyLendUtil.changeContacts(1, 0, contactInfoName02, contactInfoRelation02, contactInfoPhone02, contactInfoYes02, contactInfoNo02);
+        ApplyLendUtil.changeContacts(2, 1, contactInfoName03, contactInfoRelation03, contactInfoPhone03, contactInfoYes03, contactInfoNo03);
+        ApplyLendUtil.changeContacts(3, 1, contactInfoName04, contactInfoRelation04, contactInfoPhone04, contactInfoYes04, contactInfoNo04);
+        ToastUtil.showToast("保存成功");
+    }
 }

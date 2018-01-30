@@ -164,20 +164,27 @@
 
                     <View style="@style/autoFillStyle"/>
 
-                    <TextView
+                    <!--<TextView
                         android:id="@+id/coborrow_exitingBuildAddr"
                         style="@style/filloutItemEditRight"
                         android:text="请选择"/>
 
-                    <ImageView style="@style/filloutImageStyle"/>
+                    <ImageView style="@style/filloutImageStyle"/>-->
+
+                    <EditText
+                        android:id="@+id/coborrow_exitingBuildAddr"
+                        style="@style/filloutItemEdit"
+                        android:hint="请输入详细地址"/>
 
                 </LinearLayout>
 
                 <View
+                    android:visibility="gone"
                     style="@style/horizontalLine"
                     android:layout_marginLeft="@dimen/x30"/>
 
                 <LinearLayout
+                    android:visibility="gone"
                     style="@style/filloutItemLayout">
 
                     <TextView

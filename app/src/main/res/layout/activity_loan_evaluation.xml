@@ -709,6 +709,8 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textColor="#000"
+                    android:textSize="@dimen/x36"
                     style="@style/loanEvaluationQueryText01"
                     android:text="汇总额度:"/>
 
@@ -925,6 +927,7 @@
     <Button
         android:id="@+id/recference_save"
         android:text="保存"
+        android:onClick="onSaveClicked"
         style="@style/saveButtonStyle"/>
 
 </LinearLayout>

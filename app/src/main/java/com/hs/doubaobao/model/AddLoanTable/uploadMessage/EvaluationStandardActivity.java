@@ -9,14 +9,10 @@ import com.hs.doubaobao.base.AppBarActivity;
  * 作者：zhanghaitao on 2018/1/10 17:03
  * 邮箱：820159571@qq.com
  *
- * @describe:
+ * @describe:静态界面，没有数据变更
  */
 
 public class EvaluationStandardActivity extends AppBarActivity {
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +20,5 @@ public class EvaluationStandardActivity extends AppBarActivity {
         setContentView(R.layout.activity_evaluation_standard);
         setTitle("评估依据标准");
         isShowRightView(false);
-
     }
-
-
 }

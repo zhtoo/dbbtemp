@@ -7,9 +7,11 @@ import android.widget.EditText;
 import com.hs.doubaobao.R;
 import com.hs.doubaobao.base.AppBarActivity;
 import com.hs.doubaobao.model.AddLoanTable.ApplyLendUtil;
+import com.hs.doubaobao.utils.ToastUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * 作者：zhanghaitao on 2018/1/8 15:15
@@ -117,35 +119,67 @@ public class InvestigaOpinionActivity extends AppBarActivity {
     @Override
     public boolean savaData() {
 
-        ApplyLendUtil.changeCustomerSurveyOpinion(
-                 mBuildStauts,
-                 mCarStauts,
-                 mFaceTrial,
-                 mApproveContent,
-                 mHouseCard,
-                 mLicense,
-                 mDriving,
-                 mIdentityCard,
-                 mAccountBook,
-                 mMarriageLicense,
-                 mDivorceCertificate,
-                 mDivorceAgreement,
-                 mAbchelordom,
-                 mPurchaseContract,
-                 mMortgageContract,
-                 mBankCard,
-                 mCreditReport,
-                 mAccountStatement,
-                 mEmploymentCertify,
-                 mSocialSecurity,
-                 mProvidentFund,
-                 mBill,
-                 mBusinessLicense,
-                 mRfw,
-                 mHdw,
-                 mOther);
+//        ApplyLendUtil.changeCustomerSurveyOpinion(
+//                mBuildStauts,
+//                mCarStauts,
+//                mFaceTrial,
+//                mApproveContent,
+//                mHouseCard,
+//                mLicense,
+//                mDriving,
+//                mIdentityCard,
+//                mAccountBook,
+//                mMarriageLicense,
+//                mDivorceCertificate,
+//                mDivorceAgreement,
+//                mAbchelordom,
+//                mPurchaseContract,
+//                mMortgageContract,
+//                mBankCard,
+//                mCreditReport,
+//                mAccountStatement,
+//                mEmploymentCertify,
+//                mSocialSecurity,
+//                mProvidentFund,
+//                mBill,
+//                mBusinessLicense,
+//                mRfw,
+//                mHdw,
+//                mOther);
         return super.savaData();
     }
 
 
+    @OnClick(R.id.opinion_save)
+    public void onViewClicked() {
+
+        ApplyLendUtil.changeCustomerSurveyOpinion(
+                mBuildStauts,
+                mCarStauts,
+                mFaceTrial,
+                mApproveContent,
+                mHouseCard,
+                mLicense,
+                mDriving,
+                mIdentityCard,
+                mAccountBook,
+                mMarriageLicense,
+                mDivorceCertificate,
+                mDivorceAgreement,
+                mAbchelordom,
+                mPurchaseContract,
+                mMortgageContract,
+                mBankCard,
+                mCreditReport,
+                mAccountStatement,
+                mEmploymentCertify,
+                mSocialSecurity,
+                mProvidentFund,
+                mBill,
+                mBusinessLicense,
+                mRfw,
+                mHdw,
+                mOther);
+        ToastUtil.showToast("保存成功");
+    }
 }

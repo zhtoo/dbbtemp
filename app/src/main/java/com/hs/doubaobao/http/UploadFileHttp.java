@@ -1,26 +1,23 @@
 package com.hs.doubaobao.http;
 
-import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.hs.doubaobao.MyApplication;
 import com.hs.doubaobao.base.BaseParams;
-import com.hs.doubaobao.utils.LoadWaiting;
 import com.hs.doubaobao.utils.MD5Util;
 import com.hs.doubaobao.utils.log.Logger;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
-import okhttp3.Callback;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
@@ -37,18 +34,13 @@ import okhttp3.Response;
 
 public class UploadFileHttp {
 
-    private static final String TAG = "OKHttpWrap";
+    private static final String TAG = "UploadFileHttp";
 
     private static UploadFileHttp uploadFileHttp;
+
     //创建okHttpClient对象
     private static OkHttpClient okHttpClient;
 
-    public static LoadWaiting getLoading() {
-        return loading;
-    }
-
-    //联网加载动画
-    private static LoadWaiting loading;
     private final Handler handler;
 
     //编码格式
@@ -56,12 +48,11 @@ public class UploadFileHttp {
     //传输的数据类型
     private static final MediaType MEDIA_OBJECT_STREAM = MediaType.parse("text/x-markdown; charset=utf-8");//mdiatype 这个需要和服务端保持一致
 
-    public static UploadFileHttp getInstance(Context context) {
-        loading = LoadWaiting.createDialog(context);
-        loading.setMessage("正在上传中，请耐心等待！");
+
+    public static UploadFileHttp getInstance() {
         if (uploadFileHttp == null) {
 
-            synchronized (OKHttpWrap.class) {
+            synchronized (UploadFileHttp.class) {
 
                 if (uploadFileHttp == null) {
                     uploadFileHttp = new UploadFileHttp();
@@ -70,6 +61,7 @@ public class UploadFileHttp {
         }
         return uploadFileHttp;
     }
+
 
     /**
      * 私有构造函数
@@ -121,52 +113,13 @@ public class UploadFileHttp {
     }
 
     /**
-     * 获取通用参数
-     *
-     * @param paramsMap
-     * @return
-     */
-    private static String getStringParams(Map<String, Object> paramsMap) {
-        Map<String, Object> mParamsMap = getRequestMap(paramsMap);
-        //处理参数
-        StringBuilder tempParams = new StringBuilder();
-        try {
-            int pos = 0;
-            for (String key : mParamsMap.keySet()) {
-                if (pos > 0) {
-                    tempParams.append("&");
-                }
-                tempParams.append(String.format("%s=%s", key, URLEncoder.encode((String) mParamsMap.get(key), "utf-8")));
-                pos++;
-            }
-            //生成参数
-            return tempParams.toString();
-        } catch (Exception e) {
-            Logger.e(TAG, "getStringParams---" + e.toString());
-            Logger.e(TAG, "getStringParams---" + tempParams);
-            /*StringBuilder*/ tempParams = new StringBuilder();
-            int pos = 0;
-            for (String key : mParamsMap.keySet()) {
-                if (pos > 0) {
-                    tempParams.append("&");
-                }
-                tempParams.append(String.format("%s=%s", key, mParamsMap.get(key)));
-                pos++;
-            }
-            return tempParams.toString();
-        }
-    }
-
-
-    /**
      * 上传文件
      *
      * @param url       接口地址
      * @param paramsMap 参数
      */
-    public void upLoadFile(String url, Map<String, Object> paramsMap, final CallBack callback) {
+    public String upLoadFile(String url, Map<String, Object> paramsMap) {
 
-       // if (loading != null) loading.show();
         synchronized (MyApplication.getContext()) {
 
             Map<String, Object> mParamsMap = getRequestMap(paramsMap);
@@ -191,34 +144,28 @@ public class UploadFileHttp {
             //创建Request
             final Request request = new Request.Builder().url(url).post(body).build();
             //单独设置参数 比如读取超时时间
-            requestClient(callback, request);
+          return   requestClient(request);
         }
     }
 
     /**
-     * 发起网络请求
-     *
-     * @param callback
+     * 发起网络请求(同步请求，不然图片会换乱)
      * @param request
      */
-    private void requestClient(final CallBack callback, Request request) {
-        okHttpClient.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                sendFailResultCallBack(call, e, callback);
+    private String requestClient( Request request) {
+        try {
+            Response response =okHttpClient.newCall(request).execute();
+            if (response.isSuccessful()) {
+               String result = response.body().string();
+                return result;
+            } else {
+                Log.e(TAG, "Unexpected code " + response);
+                return "Unexpected code " + response.toString();
             }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                Object object = null;
-                try {
-                    object = callback.parseNetworkResponse(response);
-                    sendSuccessfulCallBack(object, callback);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     /**
@@ -232,9 +179,6 @@ public class UploadFileHttp {
         handler.post(new Runnable() {
             @Override
             public void run() {
-//                if (loading != null) {
-//                    loading.dismiss();
-//                }
                 callback.onResponse(object);
                 callback.onAfter();
             }
@@ -253,9 +197,6 @@ public class UploadFileHttp {
         handler.post(new Runnable() {
             @Override
             public void run() {
-//                if (loading != null) {
-//                    loading.dismiss();
-//                }
                 callback.onAfter();
                 callback.onError(call, e);
             }

@@ -59,7 +59,6 @@ public class FilloutLenderInformationActivity extends AppBarActivity {
     @BindView(R.id.fillout_asset_info_icon)
     ImageView mAssetInfoIcon;
 
-
     private String[] mTabItemNameArray;//标题集合
     private List<Fragment> fragments;
     //viewpager的监听器
@@ -73,7 +72,6 @@ public class FilloutLenderInformationActivity extends AppBarActivity {
     private int maxBasicProgress = 6;
     private int maxLiveProgress = 2;
     private int maxAssetProgress = 4;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

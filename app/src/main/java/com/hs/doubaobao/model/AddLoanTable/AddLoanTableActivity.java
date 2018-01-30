@@ -21,6 +21,7 @@ import com.hs.doubaobao.model.AddLoanTable.uploadMessage.MutualLenderInfoActivit
 import com.hs.doubaobao.model.AddLoanTable.uploadMessage.TheLoansActivity;
 import com.hs.doubaobao.model.AddLoanTable.uploadPicture.UploadPictureActivity;
 import com.hs.doubaobao.model.AddLoanTable.uploadVideo.UploadVideoActivity;
+import com.hs.doubaobao.utils.ToastUtil;
 import com.hs.doubaobao.utils.log.Logger;
 
 import java.util.LinkedHashMap;
@@ -80,6 +81,17 @@ public class AddLoanTableActivity extends AppBarActivity implements AddLoanTable
     private String borrowId;
 
     private LinkedHashMap<Object, Object> map;
+    private Class[] classes = {
+            TheLoansActivity.class,
+            ContactInforActivity.class,
+            InvestigaOpinionActivity.class,
+            LenderInfoOptionalActivity.class,
+            MutualLenderInfoActivity.class,
+            CarInfoActivity.class,
+            LoanEvaluationActivity.class,
+            UploadPictureActivity.class,
+            UploadVideoActivity.class
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,17 +118,30 @@ public class AddLoanTableActivity extends AppBarActivity implements AddLoanTable
         Map<String, Object> uploadDataMap = new LinkedHashMap<>();
         uploadDataMap.put("flag", "2");// flag-----1:代表保存，2：代表提交
 
-
         if (!TextUtils.isEmpty(borrowId)) {
             uploadDataMap.put("borrowId", borrowId);
         }
 
-        Gson gson = new Gson();
-        String s = gson.toJson(ApplyInfoBean.getInstance().getResData().getBorrowdataModel());
-        Logger.e("Tag",s);
-        uploadDataMap.put("borrowdataModel",
-                gson.toJson(ApplyInfoBean.getInstance().getResData().getBorrowdataModel()));
-        presenter.uploadData(uploadDataMap);
+        boolean basicMessage = ApplyLendUtil.checkBasicMessage();
+        boolean loanMessage = ApplyLendUtil.checkLoanMessage();
+        boolean contantMessage = ApplyLendUtil.checkContantMessage();
+
+        if(!basicMessage){
+            ToastUtil.showToast("请填写完“贷款人信息”并保存");
+        }else
+        if(!loanMessage){
+            ToastUtil.showToast("请填写完“贷款事项”并保存");
+        }else
+        if(!contantMessage){
+            ToastUtil.showToast("请填写完“联系人信息”并保存");
+        }else {
+            Gson gson = new Gson();
+            String s = gson.toJson(ApplyInfoBean.getInstance().getResData().getBorrowdataModel());
+            Logger.e("Tag",s);
+            uploadDataMap.put("borrowdataModel",
+                    gson.toJson(ApplyInfoBean.getInstance().getResData().getBorrowdataModel()));
+            presenter.uploadData(uploadDataMap);
+        }
     }
 
 
@@ -140,6 +165,7 @@ public class AddLoanTableActivity extends AppBarActivity implements AddLoanTable
 
     @Override
     public void onRightForward(View forwardView) {
+        cilckType = "保存";
         saveNewData();
     }
 
@@ -166,14 +192,15 @@ public class AddLoanTableActivity extends AppBarActivity implements AddLoanTable
      */
     @Override
     public void uploadDataBack(String data) {
-
+        ToastUtil.showToast(cilckType+"数据成功");
     }
 
     @Override
     public void setError(String text) {
-
+        ToastUtil.showToast("请求网络失败，请稍后再试。");
     }
 
+    private String cilckType ;
 
     /////////////////////////////////////////////////////////////////////
     //////点击事件START
@@ -185,39 +212,19 @@ public class AddLoanTableActivity extends AppBarActivity implements AddLoanTable
             R.id.add_upload_picture, R.id.add_upload_vidoe, R.id.add_submit})
     public void onViewClicked(View view) {
         int viewId = view.getId();
-
-        Class[] classes = {
-                TheLoansActivity.class,
-                ContactInforActivity.class,
-                InvestigaOpinionActivity.class,
-                LenderInfoOptionalActivity.class,
-                MutualLenderInfoActivity.class,
-                CarInfoActivity.class,
-                LoanEvaluationActivity.class,//待定
-                UploadPictureActivity.class,
-                UploadVideoActivity.class
-        };
-
         for (int i = 0; i < ids.length; i++) {
             if (viewId == ids[i]) {
-//                if (TextUtils.isEmpty(customId)) {
-//                    //TODO:提示不能跳转界面（取消）
-//                    Toast.makeText(this, "请先保存贷款人信息", Toast.LENGTH_SHORT).show();
-//                } else {
-                //TODO:跳转界面
                 Intent intent = new Intent(this, classes[i]);
                 startActivity(intent);
-//                }
             }
         }
         switch (viewId) {
             case R.id.add_lender_information:
-                //TODO：直接跳转贷款人信息填写界面
                 Intent intent = new Intent(this, FilloutLenderInformationActivity.class);
                 startActivity(intent);
                 break;
             case R.id.add_submit:
-                //TODO：联网申请改变客户的申请状态
+                cilckType = "提交";
                 submitData();
                 break;
         }
@@ -228,7 +235,6 @@ public class AddLoanTableActivity extends AppBarActivity implements AddLoanTable
     public void setPresenter(AddLoanTableContract.Presenter presenter) {
         this.presenter = presenter;
     }
-
 
     @Override
     public boolean savaData() {

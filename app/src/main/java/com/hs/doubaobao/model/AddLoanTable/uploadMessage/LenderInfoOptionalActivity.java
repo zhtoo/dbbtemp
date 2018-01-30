@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.hs.doubaobao.R;
 import com.hs.doubaobao.base.AppBarActivity;
 import com.hs.doubaobao.model.AddLoanTable.ApplyLendUtil;
+import com.hs.doubaobao.utils.ToastUtil;
 import com.zht.bottomdialog.SelectBottomDialog;
 
 import butterknife.BindView;
@@ -168,34 +169,60 @@ public class LenderInfoOptionalActivity extends AppBarActivity implements CityPi
 
     /**
      * 保存数据
+     *
      * @return
      */
     @Override
     public boolean savaData() {
-        ApplyLendUtil.changeLenderInfo(
-                 mExitingBuildAcreage,
-                 mExitingBuildLiveTime,
-                 mOtherBuildInfo,
-                 mOtherBuildAcreage,
-                 mOtherBuildProperty,
-                 mWorkunitName,
-                 mJobDepartment,
-                 mIsBusinessOwner,
-                 mUnBusinessOwner,
-                 mWorkunitNature,
-                 mWorkunitPhone,
-                 mWorkunitExtPhone,
-                 mWorkunitAge,
-                 mSocialSecurity,
-                 mReservedFunds,
-                 mWorkunitPca,
-                 mWorkunitStreet,
-                 mQQ,
-                 mAlipay
-        );
+//        ApplyLendUtil.changeLenderInfo(
+//                mExitingBuildAcreage,
+//                mExitingBuildLiveTime,
+//                mOtherBuildInfo,
+//                mOtherBuildAcreage,
+//                mOtherBuildProperty,
+//                mWorkunitName,
+//                mJobDepartment,
+//                mIsBusinessOwner,
+//                mUnBusinessOwner,
+//                mWorkunitNature,
+//                mWorkunitPhone,
+//                mWorkunitExtPhone,
+//                mWorkunitAge,
+//                mSocialSecurity,
+//                mReservedFunds,
+//                mWorkunitPca,
+//                mWorkunitStreet,
+//                mQQ,
+//                mAlipay
+//        );
 
         return super.savaData();
     }
 
 
+    @OnClick(R.id.lender_save)
+    public void onViewClicked() {
+        ApplyLendUtil.changeLenderInfo(
+                mExitingBuildAcreage,
+                mExitingBuildLiveTime,
+                mOtherBuildInfo,
+                mOtherBuildAcreage,
+                mOtherBuildProperty,
+                mWorkunitName,
+                mJobDepartment,
+                mIsBusinessOwner,
+                mUnBusinessOwner,
+                mWorkunitNature,
+                mWorkunitPhone,
+                mWorkunitExtPhone,
+                mWorkunitAge,
+                mSocialSecurity,
+                mReservedFunds,
+                mWorkunitPca,
+                mWorkunitStreet,
+                mQQ,
+                mAlipay
+        );
+        ToastUtil.showToast("保存成功");
+    }
 }

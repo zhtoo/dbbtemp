@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.hs.doubaobao.R;
 import com.hs.doubaobao.base.AppBarActivity;
 import com.hs.doubaobao.model.AddLoanTable.ApplyLendUtil;
+import com.hs.doubaobao.utils.ToastUtil;
 import com.zht.bottomdialog.SelectBottomDialog;
 
 import butterknife.BindView;
@@ -154,9 +155,9 @@ public class MutualLenderInfoActivity extends AppBarActivity implements CityPick
         if (name.contains("undefined")) {
             name = name.substring(0, name.length() - "undefined".length());
         }
-        if(isExitingBuildAddr){
+        if (isExitingBuildAddr) {
             mExitingBuildAddr.setText(name);
-        }else {
+        } else {
             mWorkunitPca.setText(name);
         }
 
@@ -174,36 +175,65 @@ public class MutualLenderInfoActivity extends AppBarActivity implements CityPick
 
     /**
      * 保存数据
+     *
      * @return
      */
     @Override
     public boolean savaData() {
-        ApplyLendUtil.changeCommonLenderInfo(
-                 mConame,
-                 mSexMale,
-                 mSexFemale,
-                 mCrelationship,
-                 mCardid,
-                 mDomicile,
-                 mExitingBuildAddr,
-                 mExitingBuildAddr01,
-                 mWorkunitName,
-                 mWorkunitDepartment,
-                 mMonthlyIncome,
-                 mIsBusinessOwner,
-                 mUnBusinessOwner,
-                 mWorkunitNature,
-                 mPhone,
-                 mExtPhone,
-                 mWorkunitAge,
-                 mSocialSecurity,
-                 mProvidentFund,
-                 mWorkunitPca,
-                 mWorkunitStreet
-        );
+//        ApplyLendUtil.changeCommonLenderInfo(
+//                mConame,
+//                mSexMale,
+//                mSexFemale,
+//                mCrelationship,
+//                mCardid,
+//                mDomicile,
+//                mExitingBuildAddr,
+//                mExitingBuildAddr01,
+//                mWorkunitName,
+//                mWorkunitDepartment,
+//                mMonthlyIncome,
+//                mIsBusinessOwner,
+//                mUnBusinessOwner,
+//                mWorkunitNature,
+//                mPhone,
+//                mExtPhone,
+//                mWorkunitAge,
+//                mSocialSecurity,
+//                mProvidentFund,
+//                mWorkunitPca,
+//                mWorkunitStreet
+//        );
 
         return super.savaData();
     }
 
 
+    @OnClick(R.id.coborrow_save)
+    public void onViewClicked() {
+
+        ApplyLendUtil.changeCommonLenderInfo(
+                mConame,
+                mSexMale,
+                mSexFemale,
+                mCrelationship,
+                mCardid,
+                mDomicile,
+                mExitingBuildAddr,
+                mExitingBuildAddr01,
+                mWorkunitName,
+                mWorkunitDepartment,
+                mMonthlyIncome,
+                mIsBusinessOwner,
+                mUnBusinessOwner,
+                mWorkunitNature,
+                mPhone,
+                mExtPhone,
+                mWorkunitAge,
+                mSocialSecurity,
+                mProvidentFund,
+                mWorkunitPca,
+                mWorkunitStreet
+        );
+        ToastUtil.showToast("保存成功");
+    }
 }
