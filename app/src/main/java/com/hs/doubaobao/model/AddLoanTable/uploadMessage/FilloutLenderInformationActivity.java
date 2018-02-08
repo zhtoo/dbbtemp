@@ -16,6 +16,7 @@ import com.hs.doubaobao.model.AddLoanTable.uploadMessage.fragment.AssetInformati
 import com.hs.doubaobao.model.AddLoanTable.uploadMessage.fragment.BasicInformationFragment;
 import com.hs.doubaobao.model.AddLoanTable.uploadMessage.fragment.FilloutLenderInfoAdapter;
 import com.hs.doubaobao.model.AddLoanTable.uploadMessage.fragment.LiveInformationFragment;
+import com.hs.doubaobao.utils.ToastUtil;
 import com.hs.doubaobao.view.ArcProgressView;
 
 import java.util.ArrayList;
@@ -219,8 +220,10 @@ public class FilloutLenderInformationActivity extends AppBarActivity {
         switch (currentItem) {
             case 0:
                 BasicInformationFragment fragment = (BasicInformationFragment) fragments.get(0);
-                fragment.saveData();
-                mViewpager.setCurrentItem(1);
+                boolean b = fragment.saveData();
+                if(b){
+                    mViewpager.setCurrentItem(1);
+                }
                 break;
             case 1:
                 LiveInformationFragment fragment1 = (LiveInformationFragment) fragments.get(1);
@@ -230,6 +233,7 @@ public class FilloutLenderInformationActivity extends AppBarActivity {
             case 2:
                 AssetInformationFragment fragment2 = (AssetInformationFragment) fragments.get(2);
                 fragment2.saveData();
+                ToastUtil.showToast("保存成功");
                 break;
         }
 

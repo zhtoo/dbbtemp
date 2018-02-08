@@ -209,7 +209,7 @@
         <item name="android:layout_width">@dimen/x230</item>
         <item name="android:layout_height">@dimen/y64</item>
         <item name="android:gravity">center</item>
-        <item name="android:drawableRight">@drawable/ic_del</item>
+        <item name="android:drawableRight">@drawable/ic_search_arrow</item>
         <item name="android:paddingRight">@dimen/x25</item>
         <item name="android:background">@drawable/bg_edit_text_corner</item>
         <item name="android:textSize">@dimen/x24</item>
@@ -265,6 +265,7 @@
         <item name="android:theme">@style/MyEditText</item>
         <item name="android:gravity">right|center</item>
         <item name="android:textSize">@dimen/x28</item>
+        <item name="android:maxWidth">@dimen/x500</item>
     </style>
 
 

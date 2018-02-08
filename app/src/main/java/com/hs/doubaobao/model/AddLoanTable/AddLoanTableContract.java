@@ -2,6 +2,7 @@ package com.hs.doubaobao.model.AddLoanTable;
 
 import com.hs.doubaobao.base.BasePresenter;
 import com.hs.doubaobao.base.BaseView;
+import com.hs.doubaobao.bean.ApplyInfoBean;
 
 import java.util.Map;
 

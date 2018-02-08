@@ -33,7 +33,6 @@ import in.srain.cube.views.ptr.PtrClassicFrameLayout;
 
 public class ApplyLoadActivity extends AppBarActivity implements ApplyLoadContract.View, PullToRefresh.PullToRefreshListener {
 
-
     private ApplyLoadContract.Presenter presenter;
     private RecyclerView recyclerView;
 
@@ -48,7 +47,6 @@ public class ApplyLoadActivity extends AppBarActivity implements ApplyLoadContra
     private ApplyListBean.ResDataBean.PageDataListBean.PageBean pageBean;
     private List<ApplyListBean.ResDataBean.PageDataListBean.ListBean> listBeen =new ArrayList<>();
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +54,6 @@ public class ApplyLoadActivity extends AppBarActivity implements ApplyLoadContra
         setTitle("贷款申请");
         setRightStatus(R.drawable.ic_add_loan_table);
         initData();
-
         ptrFrame = (PtrClassicFrameLayout) findViewById(R.id.applyload_ptr);
         ptrFrame1 = (PtrClassicFrameLayout) findViewById(R.id.applyload_ptr1);
         initPtrClassicFrameLayout();
@@ -73,8 +70,6 @@ public class ApplyLoadActivity extends AppBarActivity implements ApplyLoadContra
         loadData();
     }
 
-
-
     /**
      * 初始化上拉加载下拉刷新的布局
      * 注意：adapter的初始化在 PullToRefresh 之前
@@ -89,16 +84,13 @@ public class ApplyLoadActivity extends AppBarActivity implements ApplyLoadContra
         refresh.setPullToRefreshListener(this);
     }
 
-
     private void loadData() {
         map.put("page", String.valueOf(page));
         map.put("rows", "10");
-        //flag-----值： 1:贷款申请列表  2:部门初审列表  3:门店一审列表
+        //flag值： 1:贷款申请列表  2:部门初审列表  3:门店一审列表
         map.put("flag", "1");
         presenter.getData(map);
     }
-
-
 
     @Override
     public void onRightForward(View forwardView) {
@@ -114,7 +106,6 @@ public class ApplyLoadActivity extends AppBarActivity implements ApplyLoadContra
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new ApplyLoadAdapter(this, parentItems);
         recyclerView.setAdapter(adapter);
-
         /**详情界面按钮的监听*/
         adapter.setChildItemClickListener(new ApplyLoadAdapter.ChildItemClickListener() {
             @Override
@@ -126,15 +117,12 @@ public class ApplyLoadActivity extends AppBarActivity implements ApplyLoadContra
             }
         });
     }
-
     /////////////////////////////////////////////////////////////////////
     //////START 点击事件
     /////////////////////////////////////////////////////////////////////
     public void onBackClick(View view){
         finish();
     }
-
-
     /**
      * 跳转到创建新表界面
      * @param view
@@ -206,5 +194,4 @@ public class ApplyLoadActivity extends AppBarActivity implements ApplyLoadContra
             loadData();
         }
     }
-
 }

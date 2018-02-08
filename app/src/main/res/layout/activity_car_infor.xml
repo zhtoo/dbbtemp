@@ -170,6 +170,7 @@
 
                     <EditText
                         android:id="@+id/car_price"
+                        android:inputType="numberDecimal"
                         style="@style/filloutItemEditRight"
                         android:hint="请输入"/>
 

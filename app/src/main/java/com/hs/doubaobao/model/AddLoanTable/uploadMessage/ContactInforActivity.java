@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.hs.doubaobao.R;
 import com.hs.doubaobao.base.AppBarActivity;
-import com.hs.doubaobao.model.AddLoanTable.ApplyInfoBean;
+import com.hs.doubaobao.bean.ApplyInfoBean;
 import com.hs.doubaobao.model.AddLoanTable.ApplyLendUtil;
 import com.hs.doubaobao.utils.ToastUtil;
 import com.hs.doubaobao.view.ExpandableView;
@@ -237,6 +237,9 @@ public class ContactInforActivity extends AppBarActivity {
         return super.savaData();
     }
 
+    /**
+     *  type联系人类型，值：1：一般联系人 ，0：直系亲属联系人
+     */
     @OnClick(R.id.contact_save)
     public void onViewClicked() {
         ApplyLendUtil.changeContacts(0, 0, contactInfoName01, contactInfoRelation01, contactInfoPhone01, contactInfoYes01, contactInfoNo01);

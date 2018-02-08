@@ -141,6 +141,7 @@
             <EditText
                 android:id="@+id/loan_purpose"
                 style="@style/filloutItemEdit"
+                android:maxWidth="@dimen/x500"
                 android:hint="请输入贷款用途"/>
 
         </LinearLayout>

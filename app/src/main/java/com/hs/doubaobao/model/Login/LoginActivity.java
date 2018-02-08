@@ -18,6 +18,7 @@ import com.hs.doubaobao.bean.LoginBean;
 import com.hs.doubaobao.model.main.MainActivity;
 import com.hs.doubaobao.utils.Base64Util;
 import com.hs.doubaobao.utils.SPHelp;
+import com.hs.doubaobao.utils.RemoveJsonNullObjectUtil;
 import com.hs.doubaobao.utils.log.Logger;
 
 import java.util.LinkedHashMap;
@@ -53,6 +54,10 @@ public class LoginActivity extends AppBarActivity implements LoginContract.View 
 
         initView();
         initListener();
+
+        String s = RemoveJsonNullObjectUtil.removeNullObject(null);
+
+        Logger.e("过滤之后的数据",s);
 
         //将Presenter和View进行绑定
         new LoginPresener(this,this);

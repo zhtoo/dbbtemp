@@ -4,10 +4,10 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Environment;
-import android.util.Log;
 import android.widget.TextView;
 
 import com.hs.doubaobao.MyApplication;
+import com.hs.doubaobao.utils.log.Logger;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -77,8 +77,8 @@ public class MyUtils {
             e.printStackTrace();
         }
 
-        Log.d("wechat", "压缩后图片的大小" + (bitmap.getByteCount() / 1024 / 1024) + "M宽度为" + bitmap.getWidth() + "高度为" + bitmap.getHeight());
-        Log.d("文件大小", file.length() / 1024 + "kb");
+        Logger.d("wechat", "压缩后图片的大小" + (bitmap.getByteCount() / 1024 / 1024) + "M宽度为" + bitmap.getWidth() + "高度为" + bitmap.getHeight());
+        Logger.d("文件大小", file.length() / 1024 + "kb");
 
         return file;
     }
@@ -155,16 +155,6 @@ public class MyUtils {
         }
         File desFile = new File(dir, UUID.randomUUID().toString());
         return save(bitmap,format,quality,desFile);
-    }
-
-
-    public void Test() {
-        Map<String, String> map = new LinkedHashMap<>();
-        map.put("resData", "recommendedBorrowList");
-        map.put("addTime", "1495441666000");
-        map.put("amount", "100000");
-        map.put("apr", "13");
-        map.put("name", "定向标某服装企业房押借款60万第二期");
     }
 
 

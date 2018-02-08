@@ -105,7 +105,7 @@ public class DepartmentTrialActivity extends AppBarActivity implements Departmen
     private void loadData() {
         map.put("page", page+"");
         map.put("rows", "10");
-        //flag-----值： 1:贷款申请列表  2:部门初审列表  3:门店一审列表
+        //flag值： 1:贷款申请列表  2:部门初审列表  3:门店一审列表
         map.put("flag", "2");
         presenter.getData(map);
     }

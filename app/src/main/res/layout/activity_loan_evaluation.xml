@@ -103,6 +103,7 @@
                     <EditText
                         android:id="@+id/e_finalRationBbt"
                         style="@style/evaluationEdit"
+                        android:inputType="numberDecimal"
                         android:hint="请输入"/>
 
                     <TextView
@@ -178,7 +179,7 @@
                         android:layout_width="1dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="3"
+                        android:layout_weight="4"
                         android:orientation="horizontal">
 
                         <RadioButton
@@ -197,29 +198,33 @@
                         android:layout_width="1dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
-                        android:layout_weight="2"
+                        android:layout_weight="3"
                         android:orientation="horizontal">
 
                         <TextView
+
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="市场均价："
-                            android:textSize="@dimen/x28"/>
+                            android:textSize="@dimen/x24"/>
 
 
                         <EditText
+                            android:maxLength="8"
                             android:id="@+id/e_finalRationBa"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:hint="请输入"
-                            android:textSize="@dimen/x28"/>
+                            android:maxWidth="@dimen/x120"
+                            android:inputType="numberDecimal"
+                            android:textSize="@dimen/x24"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="@dimen/x30"
-                            android:text="元"
-                            android:textSize="@dimen/x28"/>
+                            android:text="万元"
+                            android:textSize="@dimen/x24"/>
 
                     </LinearLayout>
 
@@ -243,6 +248,7 @@
                     <EditText
                         android:id="@+id/e_finalRationBt"
                         style="@style/evaluationEdit"
+                        android:inputType="numberDecimal"
                         android:hint="请输入"/>
 
                     <TextView
@@ -299,6 +305,7 @@
                     <EditText
                         android:id="@+id/e_finalRationCar"
                         style="@style/evaluationEdit"
+                        android:inputType="numberDecimal"
                         android:hint="请输入"/>
 
                     <TextView
@@ -355,6 +362,7 @@
                     <EditText
                         android:id="@+id/e_finalRationFamily"
                         style="@style/evaluationEdit"
+                        android:inputType="numberDecimal"
                         android:hint="请输入"/>
 
                     <TextView
@@ -406,6 +414,7 @@
                     <EditText
                         android:id="@+id/e_finalRationWorkunit"
                         style="@style/evaluationEdit"
+                        android:inputType="numberDecimal"
                         android:hint="请输入"/>
 
                     <TextView
@@ -473,6 +482,7 @@
                     <EditText
                         android:id="@+id/e_finalRationProprietor"
                         style="@style/evaluationEdit"
+                        android:inputType="numberDecimal"
                         android:hint="请输入"/>
 
                     <TextView
@@ -554,6 +564,7 @@
                     <EditText
                         android:id="@+id/e_finalRationCredit"
                         style="@style/evaluationEdit"
+                        android:inputType="numberDecimal"
                         android:hint="请输入"/>
 
                     <TextView
@@ -625,6 +636,7 @@
 
                     <TextView
                         style="@style/loanEvaluationQueryText02"
+                        android:inputType="number"
                         android:text="次"/>
 
                 </LinearLayout>
@@ -645,6 +657,7 @@
 
                     <EditText
                         android:id="@+id/e_creditNumThree"
+                        android:inputType="number"
                         style="@style/loanEvaluationQueryEdit"/>
 
                     <TextView
@@ -667,6 +680,7 @@
 
                     <EditText
                         android:id="@+id/e_creditNumPer"
+                        android:inputType="number"
                         style="@style/loanEvaluationQueryEdit"/>
 
                     <TextView
@@ -688,6 +702,7 @@
                     <View style="@style/autoFillStyle"/>
 
                     <EditText
+                        android:inputType="number"
                         android:id="@+id/e_creditNumTotal"
                         style="@style/loanEvaluationQueryEdit"/>
 
@@ -717,6 +732,7 @@
                 <View style="@style/autoFillStyle"/>
 
                 <EditText
+                    android:inputType="numberDecimal"
                     android:id="@+id/e_finalRation"
                     style="@style/loanEvaluationQueryEdit"/>
 

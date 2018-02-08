@@ -27,6 +27,10 @@
     <!--贷款状态-->
     <string-array name="search_load_status_arr">
         <item>查看全部</item>
+        <item>待部门初审</item>
+        <item>待门店一审</item>
+        <item>待风控审批</item>
+        <item>待总经理审批</item>
         <item>待签约</item>
         <item>待放款</item>
         <item>放款成功</item>

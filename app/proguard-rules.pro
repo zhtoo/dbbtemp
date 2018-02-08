@@ -193,7 +193,9 @@
 #-keep class com.hs.doubaobao.base.** { *; }
 #用到Gson解析的时候，bean类不能混淆。
 -keep class com.hs.doubaobao.bean.** { *; }
-#-keep class com.hs.doubaobao.view.** { *; }
+
+#-keep class com.hs.doubaobao.model.AddLoanTable.** { *; }
+-keep class com.hs.doubaobao.view.** { *; }
 #-keep class com.hs.doubaobao.ui.** { *; }
 
 # gilde 混淆keep规则

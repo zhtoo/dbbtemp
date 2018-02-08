@@ -48,11 +48,13 @@
                 <TextView
                     android:id="@+id/lender_id_card"
                     style="@style/filloutItemText"
+
                     android:text="身份证号码："/>
 
                 <View style="@style/autoFillStyle"/>
 
                 <EditText
+                    android:maxLength="18"
                     android:id="@+id/lender_id_card_edit"
                     style="@style/filloutItemEdit"
                     android:hint="请输入身份证号码"/>

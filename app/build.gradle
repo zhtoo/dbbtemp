@@ -57,7 +57,7 @@ android {
 
         release {
             // 不显示Log
-            buildConfigField "boolean", "LOG_DEBUG", "false"
+            buildConfigField "boolean", "LOG_DEBUG", "true"
             signingConfig signingConfigs.release
 
             // 是否混淆

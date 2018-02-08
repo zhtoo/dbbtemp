@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import com.google.gson.Gson;
 import com.hs.doubaobao.R;
 import com.hs.doubaobao.base.AppBarActivity;
+import com.hs.doubaobao.bean.ApplyInfoBean;
 import com.hs.doubaobao.model.AddLoanTable.uploadMessage.CarInfoActivity;
 import com.hs.doubaobao.model.AddLoanTable.uploadMessage.ContactInforActivity;
 import com.hs.doubaobao.model.AddLoanTable.uploadMessage.FilloutLenderInformationActivity;
@@ -192,7 +193,11 @@ public class AddLoanTableActivity extends AppBarActivity implements AddLoanTable
      */
     @Override
     public void uploadDataBack(String data) {
+        if(cilckType.equals("提交")){
+            ApplyInfoBean.setInstance(null);
+        }
         ToastUtil.showToast(cilckType+"数据成功");
+        this.finish();
     }
 
     @Override

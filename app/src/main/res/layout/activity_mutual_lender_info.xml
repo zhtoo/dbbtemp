@@ -271,6 +271,7 @@
                         style="@style/autoFillStyle"/>
 
                     <EditText
+                        android:inputType="numberDecimal"
                         android:id="@+id/coborrow_monthlyIncome"
                         style="@style/filloutItemEditRight"
                         android:layout_marginRight="@dimen/x10"
@@ -395,6 +396,7 @@
                         style="@style/autoFillStyle"/>
 
                     <EditText
+                        android:inputType="phone"
                         android:id="@+id/coborrow_extPhone"
                         style="@style/filloutItemEdit"
                         android:hint="请输入分机号码"/>
@@ -417,6 +419,7 @@
                         style="@style/autoFillStyle"/>
 
                     <EditText
+                        android:inputType="numberDecimal"
                         android:id="@+id/coborrow_workunitAge"
                         style="@style/filloutItemEditRight"
                         android:layout_marginRight="@dimen/x10"

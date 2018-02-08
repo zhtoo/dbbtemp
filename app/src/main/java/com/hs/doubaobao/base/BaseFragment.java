@@ -12,6 +12,7 @@ import com.hs.doubaobao.threadpool.ThreadPoolProxyFactory;
 /**
  * Fragment的基类
  * Created by zhanghaitao on 2017/5/19.
+ * 这个类好像用过，想留就留着。
  */
 
 public abstract class BaseFragment extends Fragment {
@@ -24,8 +25,16 @@ public abstract class BaseFragment extends Fragment {
         return view;
     }
 
+    /**
+     * 子类必须实现，用来想父类传递布局有ID
+     * @return
+     */
     protected abstract int setLayout();
 
+    /**
+     * 子类必须实现，用来初始化View（findViewById（））
+     * @param view
+     */
     protected abstract void initView(View view);
 
     private LoadDataTask mLoadDataTask;

@@ -158,7 +158,7 @@ public final class Logger {
 
 
     /**
-     * Write log file to the SDCard
+     * 将异常信息写入到SD卡
      */
     private static void writeLog(int type, String msg) {
         Context context = MyApplication.getContext();

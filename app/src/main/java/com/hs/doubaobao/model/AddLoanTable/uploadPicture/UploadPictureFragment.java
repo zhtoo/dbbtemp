@@ -23,7 +23,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.hs.doubaobao.R;
-import com.hs.doubaobao.model.AddLoanTable.ApplyInfoBean;
+import com.hs.doubaobao.bean.ApplyInfoBean;
 import com.hs.doubaobao.utils.ScreenSizeUtils;
 import com.hs.doubaobao.utils.ToastUtil;
 import com.werb.pickphotoview.PickPhotoView;

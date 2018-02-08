@@ -18,7 +18,6 @@ public class BaseActivity  extends AppBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         //Activity切换中进入动画
         overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_in_to_left);
     }

@@ -9,6 +9,7 @@ import java.util.List;
 
 /**
  * Created by zht on 16/4/9.
+ *
  */
 public abstract class BaseRecycleViewAdapter<T,VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH> {
     protected RecycleViewItemListener itemListener;

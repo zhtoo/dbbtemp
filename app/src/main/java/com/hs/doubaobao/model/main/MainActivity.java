@@ -125,7 +125,11 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
      * 1：12期，2：18期，3：24期，4：36期，5：48期，6：60期
      * <p>
      * 贷款状态
-     * 00：待提交，01：待初审，03：初审不通过，10：待家访， 11：待放款评估，20：待风控审批，21：风控审批不通过，30：待总经理审批，31：总经理审批不通过，40：待签约，41:签约失败，50:待放款，52：放款失败，51：放款成功
+     * 00：待提交，01：待初审，03：初审不通过，
+     * 10：待家访， 11：待放款评估，20：待风控审批，
+     * 21：风控审批不通过，30：待总经理审批，31：总经理审批不通过，
+     * 40：待签约，41:签约失败，50:待放款，
+     * 52：放款失败，51：放款成功
      */
     private String[] loadTypeArr = {"", "汇民贷", "汇商贷", "汇业贷", "汇车贷", "汇农贷", "汇房贷"};
     private String[] loadPeriodsArr = {"", "12期", "18期", "24期", "36期", "48期", "60期"};
@@ -157,7 +161,8 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         mMenuName.setText(name);
         new MainPresenter(this, this);
         loadStatusMap.put("待提交", "00");
-        loadStatusMap.put("待初审", "01");
+        loadStatusMap.put("待部门初审", "12");
+        loadStatusMap.put("待门店一审", "01");
         loadStatusMap.put("初审不通过", "03");
         loadStatusMap.put("待家访", "10");
         loadStatusMap.put("待放款评估", "11");

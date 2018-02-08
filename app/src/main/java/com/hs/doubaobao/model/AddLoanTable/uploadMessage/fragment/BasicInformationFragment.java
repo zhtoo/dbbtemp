@@ -15,6 +15,8 @@ import android.widget.TextView;
 import com.hs.doubaobao.R;
 import com.hs.doubaobao.model.AddLoanTable.ApplyLendUtil;
 import com.hs.doubaobao.model.AddLoanTable.uploadMessage.FilloutLenderInformationActivity;
+import com.hs.doubaobao.utils.InputCheck;
+import com.hs.doubaobao.utils.ToastUtil;
 import com.zht.bottomdialog.SelectBottomDialog;
 
 import butterknife.BindView;
@@ -62,8 +64,8 @@ public class BasicInformationFragment extends Fragment {
     @BindView(R.id.lender_phone_edit)
     EditText mPhoneEdit;
     private FilloutLenderInformationActivity activity;
-    private boolean maleChecked;
-    private boolean femaleChecked;
+    private boolean maleChecked =false;
+    private boolean femaleChecked  = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -99,9 +101,14 @@ public class BasicInformationFragment extends Fragment {
      * 初始化状态
      */
     private void intitState() {
-        maleChecked = mSexMale.isChecked();
-        femaleChecked = mSexFemale.isChecked();
-        if (maleChecked || femaleChecked) {
+//        maleChecked = mSexMale.isChecked();
+//        femaleChecked = mSexFemale.isChecked();
+//        if (maleChecked || femaleChecked) {
+//            activity.changeProgress(activity.mBasicProgress, 1);
+//        }
+
+        String oldText = mMaritalStatusText.getText().toString().trim();
+        if ( !TextUtils.isEmpty(oldText) && !oldText.equals("请选择")) {
             activity.changeProgress(activity.mBasicProgress, 1);
         }
     }
@@ -189,15 +196,26 @@ public class BasicInformationFragment extends Fragment {
         unbinder.unbind();
     }
 
-    public void saveData() {
-        ApplyLendUtil.changeBasic(
-                mNameEdit,
-                mIdCardEdit,
-                mSexMale,
-                mSexFemale,
-                mMaritalStatusText,
-                mDomicileEdit,
-                mPhoneEdit
-        );
+    public boolean saveData() {
+        String idCard = mIdCardEdit.getText().toString().trim();
+        boolean b = InputCheck.checkCard(idCard);
+
+        if(b){
+            ApplyLendUtil.changeBasic(
+                    mNameEdit,
+                    mIdCardEdit,
+                    mSexMale,
+                    mSexFemale,
+                    mMaritalStatusText,
+                    mDomicileEdit,
+                    mPhoneEdit
+            );
+            return true;
+        }else {
+            ToastUtil.showToast("您输入的身份证格式不正确。");
+            return false;
+        }
+
+
     }
 }

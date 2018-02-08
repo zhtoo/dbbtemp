@@ -60,7 +60,13 @@ public class DSPagerAdapter extends PagerAdapter {
         hstogramView.setDate(list.get(position).getDate());
         hstogramView.setValues(list.get(position).getValues());
 
+        if(position == 0){
+            title.setBackgroundColor(Color.argb(255, 23, 140, 219));
+            hstogramView.setColors(new int[]{Color.argb(255, 23, 163, 219), Color.argb(255, 23, 140, 219)});
+        }
+
         if(position == 1){
+            title.setBackgroundColor(Color.argb(255, 239, 128, 0));
             hstogramView.setColors(new int[]{Color.argb(255, 242, 169, 100), Color.argb(255, 239, 128, 0)});
         }
 

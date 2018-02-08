@@ -3,6 +3,7 @@ package com.hs.doubaobao.model.AddLoanTable;
 import android.content.Context;
 
 import com.hs.doubaobao.base.BaseParams;
+import com.hs.doubaobao.bean.ApplyInfoBean;
 import com.hs.doubaobao.bean.SaveBean;
 import com.hs.doubaobao.http.JsonWrap;
 import com.hs.doubaobao.http.OKHttpWrap;

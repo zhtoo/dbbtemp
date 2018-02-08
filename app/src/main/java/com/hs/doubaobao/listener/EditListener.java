@@ -8,7 +8,7 @@ import android.text.TextWatcher;
  * 作者：zhanghaitao on 2017/11/28 16:08
  * 邮箱：820159571@qq.com
  *
- * @describe:EditText输入改变的监听
+ * @describe:EditText输入改变的监听（在填表界面---客户信息（必填））
  */
 
 public abstract class EditListener implements TextWatcher {
@@ -35,6 +35,17 @@ public abstract class EditListener implements TextWatcher {
      */
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+    }
+
+    /**
+     * 哦！这里是测试能不能用中文命名，抱歉一时兴起o
+     * @param 你说句话
+     * @param 滚
+     * @param 心里没数
+     * @param 是的吧
+     */
+    public void 厉害了我的哥(CharSequence 你说句话, String 滚, int 心里没数, int 是的吧) {
 
     }
 

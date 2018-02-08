@@ -25,7 +25,7 @@ import static com.hs.doubaobao.http.OKHttpWrap.getVersion;
  * 作者：zhanghaitao on 2018/1/25 10:40
  * 邮箱：820159571@qq.com
  *
- * @describe:
+ * @describe:大文件上传的类
  */
 
 public class HttpSocket {
@@ -145,10 +145,8 @@ public class HttpSocket {
 //        socket.connect(new InetSocketAddress(url.getHost(), port), 5*60*1000);//设置连接请求超时时间1s
         socket.setSoTimeout(5 * 60 * 1000);//设置读操作超时时间30 s
 
-
         OutputStream os = socket.getOutputStream();
         PrintStream ps = new PrintStream(os, true, "UTF-8");
-
 
         // 写出请求头
         ps.println("POST " + urlStr + " HTTP/1.1");
@@ -168,11 +166,11 @@ public class HttpSocket {
         InputStream videoIn = new FileInputStream(videoFile);
 
 
-        // 写出数据
+        // 写出头信息
         os.write(headerInfo);
-
+        //写出图片信息
         os.write(pictureInfo);
-
+        //将图片文件以字节的形式写出
         byte[] buf = new byte[16 * 1024];
         int len;
         progress = 0;
@@ -181,12 +179,10 @@ public class HttpSocket {
             progress += len;
             // Logger.e("图片进度", "" + progress);
         }
-
         os.write("\r\n".toString().getBytes("UTF-8"));
-
+        //写出视频信息
         os.write(videoInfo);
-
-
+        //将视频文件以字节的形式写出
         byte[] viedeoBuf = new byte[16 * 1024];
         int viedeoLen;
         while ((viedeoLen = videoIn.read(viedeoBuf)) != -1) {
@@ -194,13 +190,12 @@ public class HttpSocket {
             progress += viedeoLen;
             // Logger.e("视频进度", "" + progress);
         }
-
         //文件书写结束
         os.write(endInfo);
 
         long endTime = System.currentTimeMillis();
         Logger.e("上传耗时", (endTime - startTime) + "ms");
-
+        //获取服务器返回的数据流（这里是个阻塞方法，服务器不返回就一直等待）
         InputStream inputStream = socket.getInputStream();
 
         //获取服务器返回的数据

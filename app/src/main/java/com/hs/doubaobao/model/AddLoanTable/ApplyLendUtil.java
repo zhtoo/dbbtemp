@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.hs.doubaobao.bean.ApplyInfoBean;
 import com.hs.doubaobao.bean.PictureUrlBean;
 import com.hs.doubaobao.bean.VideoUrlBean;
 
@@ -45,10 +46,10 @@ public class ApplyLendUtil {
         mIdCardEdit.setText(customerInfo.getCardId());
 
         int sex = customerInfo.getSex();
-        //性别 1:男  0:女
+        //性别 1:男  2:女
         if (sex == 1) {
             mSexMale.setChecked(true);
-        } else if (sex == 1) {
+        } else if (sex == 2) {
             mSexFemale.setChecked(true);
         } else {
             mSexMale.setChecked(false);
@@ -75,9 +76,7 @@ public class ApplyLendUtil {
         if (maleChecked) {
             customerInfo.setSex(1);
         } else if (femaleChecked) {
-            customerInfo.setSex(0);
-        } else {
-            customerInfo.setSex(-1);
+            customerInfo.setSex(2);
         }
         String[] marriageArr = {"", "未婚", "已婚", "离异", "丧偶"};
         String marriage = mMaritalStatusText.getText().toString().trim();
@@ -1009,7 +1008,10 @@ public class ApplyLendUtil {
         if (!TextUtils.isEmpty(price)) {
             carInfo.setPrice(Double.parseDouble(price));
         }
-        carInfo.setBuyDate(buyDate);
+        if(!TextUtils.isEmpty(buyDate)&&
+                !buyDate.equals("请选择")){
+            carInfo.setBuyDate(buyDate);
+        }
         carInfo.setOtherInfo(otherInfo);
     }
 
@@ -1639,7 +1641,8 @@ public class ApplyLendUtil {
         if(TextUtils.isEmpty(type)){
             return false;
         }
-        if( account > 0){
+
+        if( account <= 0){
             return false;
         }
         if( period < 1 || period > 6 ){
@@ -1690,7 +1693,7 @@ public class ApplyLendUtil {
                 break;
             }
 
-            if( type1 < 1|| type1 > 2){
+            if( type1 < 0|| type1 > 1){
                 hasFinish =  false;
                 break;
             }

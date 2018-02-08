@@ -137,7 +137,7 @@
 
                 <LinearLayout
 
-                    android:paddingLeft="@dimen/x10"
+                    android:paddingLeft="@dimen/x30"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

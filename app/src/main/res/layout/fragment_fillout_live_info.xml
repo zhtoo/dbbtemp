@@ -101,6 +101,7 @@
             <EditText
                 android:id="@+id/lender_support_number_edit"
                 style="@style/filloutItemEdit"
+                android:maxWidth="@dimen/x500"
                 android:layout_marginRight="@dimen/x10"
                 android:hint="请输入人数"
                 android:inputType="number"/>

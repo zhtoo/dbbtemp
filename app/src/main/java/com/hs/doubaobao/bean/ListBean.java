@@ -121,7 +121,7 @@ public class ListBean {
         map.put("03", "初审不通过");
         map.put("10", "待家访");
         map.put("11", "待放款评估");
-        map.put("12", "待部门经理审批");
+        map.put("12", "待部门初审");
         map.put("13", "部门经理不通过");
         map.put("20", "待风控审批");
         map.put("21", "风控审批不通过");
@@ -132,6 +132,7 @@ public class ListBean {
         map.put("50", "待放款");
         map.put("52", "放款失败");
         map.put("51", "放款成功");
+
         for (String key : map.keySet()) {
             if (status.equals(key)) {
                 this.status = map.get(key);

@@ -40,6 +40,7 @@
                     <EditText
                         android:id="@+id/lender_exiting_build_acreage"
                         style="@style/filloutItemEditRight"
+                        android:inputType="numberDecimal"
                         android:hint="请输入"/>
 
                     <TextView
@@ -123,6 +124,7 @@
                     <EditText
                         android:id="@+id/lender_other_build_acreage"
                         style="@style/filloutItemEditRight"
+                        android:inputType="numberDecimal"
                         android:hint="请输入"/>
 
                     <TextView
@@ -366,6 +368,7 @@
                 <EditText
                     android:id="@+id/lender_workunit_age"
                     style="@style/filloutItemEditRight"
+                    android:inputType="numberDecimal"
                     android:hint="请输入"/>
 
                 <TextView
